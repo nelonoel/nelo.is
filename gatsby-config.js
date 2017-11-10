@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Starter Blog',
-    author: 'Kyle Mathews',
+    author: 'Aaron Noel De Leon',
     description: 'A starter blog demonstrating what Gatsby can do.',
     siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/',
   },
