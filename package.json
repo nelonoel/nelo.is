@@ -24,7 +24,8 @@
     "gatsby-transformer-remark": "^1.7.25",
     "gatsby-transformer-sharp": "^1.6.16",
     "lodash": "^4.17.4",
-    "react-responsive-grid": "^0.3.4",
+    "react-feather": "^1.0.8",
+    "react-twemoji": "^0.0.8",
     "styled-components": "^2.4.0"
   },
   "devDependencies": {

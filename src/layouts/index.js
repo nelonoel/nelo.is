@@ -1,64 +1,67 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import { Container } from 'react-responsive-grid'
+import get from 'lodash/get'
+import Twemoji from 'react-twemoji'
+
+import styled, { ThemeProvider } from 'styled-components'
+import theme from '../styles/theme'
+import globalStyles from '../styles/global'
+
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+
+const Page = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`
+
+const Content = styled.main`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+`
 
 class Template extends React.Component {
   render() {
     const { location, children } = this.props
-    let header
+    const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
-    let rootPath = `/`
-    if (typeof __PREFIX_PATHS__ !== `undefined` && __PREFIX_PATHS__) {
-      rootPath = __PATH_PREFIX__ + `/`
-    }
-
-    if (location.pathname === rootPath) {
-      header = (
-        <h1
-          style={{
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: 'none',
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
-            to={'/'}
-          >
-            Gatsby Starter Blog
-          </Link>
-        </h1>
-      )
-    } else {
-      header = (
-        <h3
-          style={{
-            fontFamily: 'Montserrat, sans-serif',
-            marginTop: 0
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: 'none',
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
-            to={'/'}
-          >
-            Gatsby Starter Blog
-          </Link>
-        </h3>
-      )
-    }
     return (
-      <Container>
-        {header}
-        {children()}
-      </Container>
+      <ThemeProvider theme={theme}>
+        <Twemoji>
+          <Page>
+            <Header />
+            <Content>
+              {children()}
+            </Content>
+            <Footer recent={posts} />
+          </Page>
+        </Twemoji>
+      </ThemeProvider>
     )
   }
 }
 
 export default Template
+
+export const pageQuery = graphql`
+  query RecentArticlesQuery {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC },
+      limit: 6,
+      filter: { frontmatter: { model: { ne: "project" } } }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+          }
+        }
+      }
+    }
+  }
+`
