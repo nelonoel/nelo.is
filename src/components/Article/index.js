@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import '../../styles/syntax-light.css'
 
 const Article = styled.article`
   font-size: 21px;
