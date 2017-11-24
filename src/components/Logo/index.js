@@ -11,8 +11,14 @@ const Title = styled.h1`
     color: ${props => props.theme.text};
     font-size: 1em;
     font-weight: 700;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.0362em;
+    opacity: 0.85;
     text-decoration: none;
+    transition: all .2s ease;
+
+    &:hover {
+      opacity: 0.9;
+    }
   }
 `
 

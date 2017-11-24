@@ -10,7 +10,6 @@ const FooterContainer = Wrapper.withComponent('footer').extend`
   align-items: flex-start;
   display: flex;
   justify-content: space-between;
-  opacity: 0.2;
   padding: 2em 0.5em;
 `
 
@@ -18,9 +17,14 @@ const Box = styled.div`
   display: flex;
   flex-direction: column;
 
+  & > h1 {
+    opacity: 0.25;
+  }
+
   & > h5 {
     letter-spacing: 0.125em;
     margin: 0 0 0.5em;
+    opacity: 0.25;
     text-transform: uppercase;
   }
 `
@@ -32,7 +36,14 @@ const FooterLink = ButtonLink.extend.attrs({
   font-size: 0.9em;
   line-height: 1.25;
   margin-left: 0;
+  opacity: 0.25;
   padding: 0.25em 0;
+  transition: all .2s ease;
+
+  &:hover {
+    background: none;
+    opacity: 0.3;
+  }
 `
 
 const ExternalLink = FooterLink.withComponent('a')

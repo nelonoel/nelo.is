@@ -25,11 +25,13 @@ const NavLink = ButtonLink.extend.attrs({
   letter-spacing: 0.125em;
   margin-left: 1.15em;
   margin-right: 0;
+  opacity: 0.85;
   padding: 0.75em;
   text-transform: uppercase;
 
   &:hover {
     background: none;
+    opacity: 1;
   }
 `
 
