@@ -62,7 +62,7 @@ class Home extends PureComponent {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     return (
       <HomeBanner>
-        <Helmet title={`${siteTitle} ∙ Creative Developer`} />
+        <Helmet title={`${siteTitle} ∙ Web Developer & UI Designer`} />
         <Wrapper>
           <Hero>
             <Avatar>
