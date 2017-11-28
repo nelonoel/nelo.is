@@ -26,9 +26,9 @@ export const Subtitle = styled.h2`
 `
 
 export const Description = styled.p`
-  font-size: 1.25em;
+  font-size: 1.15em;
   line-height: 1.4;
-  margin: 0 auto 2.5em;
+  margin: 0 auto 1.5em;
   max-width: 480px;
 
   & > a {
