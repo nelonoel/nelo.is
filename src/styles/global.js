@@ -2,19 +2,24 @@ import { injectGlobal } from 'styled-components'
 
 injectGlobal`
   * {
-    font-family: "San Francisco Display", -apple-system, BlinkMacSystemFont,
+    font-family: "Gravity", "San Francisco Display",
+      -apple-system, BlinkMacSystemFont,
       "Segoe UI", "Roboto", "Oxygen",
       "Ubuntu", "Cantarell", "Fira Sans",
-      "Droid Sans", "Helvetica Neue", sans-serif;
+			"Droid Sans", "Helvetica Neue", sans-serif;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
-    -webkit-font-smoothing: antialiased;
+		-webkit-font-smoothing: antialiased;
+
+		&:focus {
+			outline: none;
+		}
   }
 
   body {
-    background: #f5f8fa;
     font-size: 18px;
+    font-size: calc(0.18vw + 16px);
     line-height: 1.6;
     margin: 0;
     padding: 0;
