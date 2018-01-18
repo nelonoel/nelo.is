@@ -1,20 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
-import '../../styles/syntax-light.css'
+import { darken, lighten } from 'polished'
+import '../../styles/syntax-dark.css'
 
 const Article = styled.article`
-  font-size: 21px;
+  font-size: 1.1em;
 
   body > *:first-child {
     margin-top: 0 !important;
   }
 
   body > *:last-child {
-    margin-bottom: 0 !important
+    margin-bottom: 0 !important;
   }
 
   a {
-    border-bottom: rgba(0, 0, 0, 0.25) solid 1px;
+    border-bottom: ${props => lighten(0.75, props.theme.text)} solid 1px;
     color: ${props => props.theme.text};
     text-decoration: none;
 
@@ -29,7 +30,7 @@ const Article = styled.article`
   }
 
   a.absent {
-    color: #cc0000
+    color: #cc0000;
   }
 
   a.anchor {
@@ -40,44 +41,60 @@ const Article = styled.article`
     position: absolute;
     top: 0;
     left: 0;
-    bottom: 0
+    bottom: 0;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin: 20px 0 10px;
     padding: 0;
     font-weight: bold;
     -webkit-font-smoothing: antialiased;
     cursor: text;
-    position: relative
+    position: relative;
   }
 
-  h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
-    text-decoration: none
+  h1:hover a.anchor,
+  h2:hover a.anchor,
+  h3:hover a.anchor,
+  h4:hover a.anchor,
+  h5:hover a.anchor,
+  h6:hover a.anchor {
+    text-decoration: none;
   }
 
-  h1 tt, h1 code {
-    font-size: inherit
+  h1 tt,
+  h1 code {
+    font-size: inherit;
   }
 
-  h2 tt, h2 code {
-    font-size: inherit
+  h2 tt,
+  h2 code {
+    font-size: inherit;
   }
 
-  h3 tt, h3 code {
-    font-size: inherit
+  h3 tt,
+  h3 code {
+    font-size: inherit;
   }
 
-  h4 tt, h4 code {
-    font-size: inherit
+  h4 tt,
+  h4 code {
+    font-size: inherit;
   }
 
-  h5 tt, h5 code {
-    font-size: inherit
+  h5 tt,
+  h5 code {
+    font-size: inherit;
   }
 
-  h6 tt, h6 code {
-    font-size: inherit
+  h6 tt,
+  h6 code {
+    font-size: inherit;
   }
 
   h1 {
@@ -91,24 +108,32 @@ const Article = styled.article`
   }
 
   h3 {
-    font-size: 1.5em
+    font-size: 1.5em;
   }
 
   h4 {
-    font-size: 1.25em
+    font-size: 1.25em;
   }
 
   h5 {
-    font-size: 1em
+    font-size: 1em;
   }
 
   h6 {
+    color: ${props => lighten(0.35, props.theme.text)};
     font-size: 1em;
-    opacity: 0.5;
+    font-weight: 600;
   }
 
-  p, blockquote, ul, ol, dl, li, table, pre {
-    margin: 15px 0
+  p,
+  blockquote,
+  ul,
+  ol,
+  dl,
+  li,
+  table,
+  pre {
+    margin: 15px 0;
   }
 
   hr {
@@ -120,143 +145,165 @@ const Article = styled.article`
 
   body > h2:first-child {
     margin-top: 0;
-    padding-top: 0
+    padding-top: 0;
   }
 
   body > h1:first-child {
     margin-top: 0;
-    padding-top: 0
+    padding-top: 0;
   }
 
   body > h1:first-child + h2 {
     margin-top: 0;
-    padding-top: 0
+    padding-top: 0;
   }
 
-  body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  body > h3:first-child,
+  body > h4:first-child,
+  body > h5:first-child,
+  body > h6:first-child {
     margin-top: 0;
-    padding-top: 0
+    padding-top: 0;
   }
 
-  a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  a:first-child h1,
+  a:first-child h2,
+  a:first-child h3,
+  a:first-child h4,
+  a:first-child h5,
+  a:first-child h6 {
     margin-top: 0;
-    padding-top: 0
+    padding-top: 0;
   }
 
-  h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
-    margin-top: 0
+  h1 p,
+  h2 p,
+  h3 p,
+  h4 p,
+  h5 p,
+  h6 p {
+    margin-top: 0;
   }
 
   li p.first {
-    display: inline-block
+    display: inline-block;
   }
 
   li {
-    margin: 0
+    margin: 0;
   }
 
-  ul, ol {
-    padding-left: 30px
+  ul,
+  ol {
+    padding-left: 30px;
   }
 
-  ul :first-child, ol :first-child {
-    margin-top: 0
+  ul :first-child,
+  ol :first-child {
+    margin-top: 0;
   }
 
   dl {
-    padding: 0
+    padding: 0;
   }
 
   dl dt {
-    font-size: 14px;
     font-weight: bold;
     font-style: italic;
     padding: 0;
-    margin: 15px 0 5px
+    margin: 15px 0 5px;
   }
 
   dl dt:first-child {
-    padding: 0
+    padding: 0;
   }
 
   dl dt > :first-child {
-    margin-top: 0
+    margin-top: 0;
   }
 
   dl dt > :last-child {
-    margin-bottom: 0
+    margin-bottom: 0;
   }
 
   dl dd {
     margin: 0 0 15px;
-    padding: 0 15px
+    padding: 0 15px;
   }
 
   dl dd > :first-child {
-    margin-top: 0
+    margin-top: 0;
   }
 
   dl dd > :last-child {
-    margin-bottom: 0
+    margin-bottom: 0;
   }
 
   blockquote {
-    border-left: 4px solid #dddddd;
-    padding: 0 15px;
-    color: #777777
+    border-left: 4px solid ${props => props.theme.primary};
+    font-size: 1.15em;
+    font-weight: 500;
+    padding: 0.25em 1em;
+
+    & > p {
+      color: ${props => lighten(0.25, props.theme.text)};
+    }
   }
 
   blockquote > :first-child {
-    margin-top: 0
+    margin-top: 0;
   }
 
   blockquote > :last-child {
-    margin-bottom: 0
+    margin-bottom: 0;
   }
 
   table {
-    padding: 0;border-collapse: collapse
+    padding: 0;
+    border-collapse: collapse;
   }
 
   table tr {
     border-top: 1px solid #cccccc;
     background-color: white;
     margin: 0;
-    padding: 0
+    padding: 0;
   }
 
   table tr:nth-child(2n) {
-    background-color: #f8f8f8
+    background-color: #f8f8f8;
   }
 
   table tr th {
     font-weight: bold;
     border: 1px solid #cccccc;
     margin: 0;
-    padding: 6px 13px
+    padding: 6px 13px;
   }
 
   table tr td {
     border: 1px solid #cccccc;
     margin: 0;
-    padding: 6px 13px
+    padding: 6px 13px;
   }
 
-  table tr th :first-child, table tr td :first-child {
-    margin-top: 0
+  table tr th :first-child,
+  table tr td :first-child {
+    margin-top: 0;
   }
 
-  table tr th :last-child, table tr td :last-child {
-    margin-bottom: 0
+  table tr th :last-child,
+  table tr td :last-child {
+    margin-bottom: 0;
   }
 
   img {
-    max-width: 100%
+    max-width: 100%;
   }
 
   span.frame {
     display: block;
-    overflow: hidden
+    overflow: hidden;
   }
 
   span.frame > span {
@@ -266,89 +313,90 @@ const Article = styled.article`
     overflow: hidden;
     margin: 13px 0 0;
     padding: 7px;
-    width: auto
+    width: auto;
   }
 
   span.frame span img {
     display: block;
-    float: left
+    float: left;
   }
 
   span.frame span span {
     clear: both;
     color: #333333;
     display: block;
-    padding: 5px 0 0
+    padding: 5px 0 0;
   }
 
   span.align-center {
     display: block;
     overflow: hidden;
-    clear: both
+    clear: both;
   }
 
   span.align-center > span {
     display: block;
     overflow: hidden;
     margin: 13px auto 0;
-    text-align: center
+    text-align: center;
   }
 
   span.align-center span img {
     margin: 0 auto;
-    text-align: center
+    text-align: center;
   }
 
   span.align-right {
     display: block;
     overflow: hidden;
-    clear: both
+    clear: both;
   }
 
   span.align-right > span {
     display: block;
     overflow: hidden;
     margin: 13px 0 0;
-    text-align: right
+    text-align: right;
   }
 
   span.align-right span img {
     margin: 0;
-    text-align: right
+    text-align: right;
   }
 
   span.float-left {
     display: block;
     margin-right: 13px;
     overflow: hidden;
-    float: left
+    float: left;
   }
 
   span.float-left span {
-    margin: 13px 0 0
+    margin: 13px 0 0;
   }
 
   span.float-right {
     display: block;
     margin-left: 13px;
     overflow: hidden;
-    float: right
+    float: right;
   }
 
   span.float-right > span {
     display: block;
     overflow: hidden;
     margin: 13px auto 0;
-    text-align: right
+    text-align: right;
   }
 
-  code, tt {
-    font-family: monospace;
+  code,
+  tt {
     margin: 0 2px;
     padding: 0 5px;
     white-space: nowrap;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 3px
+    background: ${props => darken(0.075, props.theme.base)};
+    border-radius: ${props => props.theme.borderRadius};
+    color: ${props => props.theme.text};
   }
 
   pre code {
@@ -356,31 +404,31 @@ const Article = styled.article`
     padding: 0;
     white-space: pre;
     border: none;
-    background: transparent
+    background: transparent;
   }
 
   .highlight pre {
     background-color: #f8f8f8;
     border: 1px solid #cccccc;
-    font-size: 13px;
-    line-height: 19px;
+    line-height: 1.4;
     overflow: auto;
     padding: 6px 10px;
-    border-radius: 3px
+    border-radius: 3px;
   }
 
   pre {
-    background-color: #f8f8f8;
-    font-size: 13px;
-    line-height: 19px;
+    background-color: ${props => props.theme.white};
+    font-size: 0.85em;
+    line-height: 1.4;
     overflow: auto;
-    padding: 6px 10px;
-    border-radius: 3px
+    padding: 0.75em 1em;
+    border-radius: ${props => props.theme.borderRadius};
   }
 
-  pre code, pre tt {
+  pre code,
+  pre tt {
     background-color: transparent;
-    border: none
+    border: none;
   }
 
   sup {
@@ -390,6 +438,7 @@ const Article = styled.article`
   }
 
   * {
+    color: ${props => props.theme.text};
     -webkit-print-color-adjust: exact;
   }
 
@@ -400,7 +449,8 @@ const Article = styled.article`
   }
 
   @media print {
-    table, pre {
+    table,
+    pre {
       page-break-inside: avoid;
     }
     pre {
