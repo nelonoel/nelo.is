@@ -1,16 +1,17 @@
 ---
 title: Want a blog like this?
-subtitle: Introducing gatsby-starter-slick
-date: "2018-01-03T22:12:03.284Z"
+subtitle: Introducing gatsby-starter-journal, testing a longer subtitle becase why not?
+date: "2018-01-19T22:12:03.284Z"
+category: Engineering
 type: Announcement
 ---
 
-# Heading 1
-## Heading 2
-### Heading 3
-#### Heading 4
-##### Heading 5
-###### Heading 6
+# Heading 1 🐙
+## Heading 2 🤖
+### Heading 3 🐮
+#### Heading 4 🐷
+##### Heading 5 👦🏻
+###### Heading 6 🐱
 
 Lorem `ipsum` dolor sit amet, consectetur adipisicing elit. Dignissimos voluptates et dicta possimus sunt mollitia ab nisi repellat repellendus iure, magni aut modi deleniti quod ducimus iste, eligendi unde magnam.
 

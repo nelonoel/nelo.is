@@ -2,7 +2,7 @@
 cover: ./cover.jpg
 title: Stop scrolling mindlessly
 subtitle: Ideas to add intent on your social media visits
-date: "2018-01-03T22:12:03.284Z"
+date: "2018-01-19T22:12:03.284Z"
 category: Productivity
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: Hello World
+category: Thoughts
 date: "2015-05-01T22:12:03.284Z"
 ---
 
