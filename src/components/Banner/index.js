@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import Wrapper from '../Wrapper'
+import { transparentize } from 'polished'
 
 export const BannerContainer = styled.div`
   color: ${props => props.theme.text};
@@ -13,26 +14,27 @@ export const BannerContainer = styled.div`
 `
 
 export const Title = styled.h1`
-  font-size: 2.5em;
+  font-size: 2.25em;
   line-height: 1.25;
   margin: 0;
 `
 
 export const Subtitle = styled.h2`
+	color: ${props => props.theme.contrast4};
   font-weight: 500;
   line-height: 1.25;
   margin: 0;
-  opacity: 0.5;
 `
 
 export const Description = styled.p`
+	color: ${props => props.theme.contrast5};
   font-size: 1.15em;
-  line-height: 1.4;
+  line-height: 1.5;
   margin: 0 auto 1.5em;
   max-width: 480px;
 
   & > a {
-    border-bottom: rgba(0, 0, 0, 0.25) solid 1px;
+    border-bottom: ${props => transparentize(0.75, props.theme.text)} solid 1px;
     color: inherit;
     text-decoration: none;
 
@@ -44,15 +46,15 @@ export const Description = styled.p`
 `
 
 class Banner extends PureComponent {
-  render() {
-    return (
-      <BannerContainer>
-        <Wrapper>
-          {this.props.children}
-        </Wrapper>
-      </BannerContainer>
-    )
-  }
+	render() {
+		return (
+			<BannerContainer>
+				<Wrapper>
+					{this.props.children}
+				</Wrapper>
+			</BannerContainer>
+		)
+	}
 }
 
 export default Banner
