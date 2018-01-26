@@ -32,8 +32,8 @@ const Container = styled(Link).attrs({
   }
 
   &:hover {
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    transform: scale(1.01) translateY(-1%);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.075);
+    transform: translateY(-2px);
   }
 `
 
