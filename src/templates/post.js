@@ -40,6 +40,16 @@ export const pageQuery = graphql`
       frontmatter {
         title
         subtitle
+        cover {
+          childImageSharp {
+            resize {
+              src
+            }
+          }
+        }
+        model
+        category
+        type
         date(formatString: "MMMM DD, YYYY")
       }
     }
