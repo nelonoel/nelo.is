@@ -26,7 +26,9 @@
     "lodash": "^4.17.4",
     "polished": "^1.9.0",
     "react-feather": "^1.0.8",
+    "react-headroom": "^2.2.2",
     "react-twemoji": "^0.0.8",
+    "store": "^2.0.12",
     "styled-components": "^2.4.0"
   },
   "devDependencies": {
