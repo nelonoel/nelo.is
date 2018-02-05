@@ -10,7 +10,8 @@ import * as Icon from 'react-feather'
 import { ButtonLink } from '../components/Button'
 
 const HomeBanner = BannerContainer.extend`
-  background: #e1e8ed;
+  background: ${props => props.theme.contrast1};
+  margin-top: -8em;
 `
 
 const Hero = styled.section`
@@ -18,7 +19,7 @@ const Hero = styled.section`
 `
 
 const Avatar = styled.div`
-  align-items: flex-end;
+  align-self: flex-end;
   flex: 1;
 
   & > img {
@@ -29,20 +30,19 @@ const Avatar = styled.div`
 `
 
 const Copy = styled.div`
-  align-self: flex-end;
-  padding-bottom: 3.5em;
+	align-self: center;
+  padding: 2em 0;
   text-align: left;
 
   & > h1 {
     font-size: 1.85em;
     font-weight: 600;
     margin: 0;
-    opacity: 0.9;
   }
 
   & > p {
-    font-size: 1.15em;
-    opacity: 0.8;
+    font-size: 1em;
+    font-weight: 500;
     line-height: 1.5;
     margin: 0 0 0.6em;
   }
@@ -53,47 +53,47 @@ const Actions = styled.div`
 
   & > ${ButtonLink} {
     margin: 0.25em 0.5em 0.25em 0;
-    min-width: 7.15em;
+    min-width: 6em;
   }
 `
 
 class Home extends PureComponent {
-  render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    return (
-      <HomeBanner>
-        <Helmet title={`${siteTitle} ∙ Web Developer & UI Designer`} />
-        <Wrapper>
-          <Hero>
-            <Avatar>
-              <img draggable="false" src={avatar} />
-            </Avatar>
-            <Copy>
-              <h1>Hello there!</h1>
-              <p>
-                I'm Nelo — a software developer and UI designer currently
+	render() {
+		const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+		return (
+			<HomeBanner>
+				<Helmet title={`${siteTitle} ∙ Web Developer & UI Designer`} />
+				<Wrapper>
+					<Hero>
+						<Avatar>
+							<img draggable="false" src={avatar} />
+						</Avatar>
+						<Copy>
+							<h1>Hello there!</h1>
+							<p>
+								I'm Nelo — a software developer and UI designer currently
                 based in the Philippines.
               </p>
-              <p>
-                I team up with startups and agencies around the world to
-                turn ideas into delightful digital products.
+							<p>
+								I team up with startups and agencies around the world to
+                make delightful digital products.
               </p>
-              <Actions>
-                <ButtonLink to="/work">
-                  <Icon.Monitor />
-                  View works
+							<Actions>
+								<ButtonLink to="/work">
+									<Icon.Monitor />
+									View works
                 </ButtonLink>
-                <ButtonLink to="/contact" inverted>
-                  <Icon.Mail />
-                  Contact me
+								<ButtonLink to="/contact" inverted>
+									<Icon.Mail />
+									Contact me
                 </ButtonLink>
-              </Actions>
-            </Copy>
-          </Hero>
-        </Wrapper>
-      </HomeBanner>
-    )
-  }
+							</Actions>
+						</Copy>
+					</Hero>
+				</Wrapper>
+			</HomeBanner>
+		)
+	}
 }
 
 export default Home
