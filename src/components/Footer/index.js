@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import * as Icon from 'react-feather'
-import { transparentize } from 'polished'
+import { darken, transparentize } from 'polished'
 
 import { ButtonLink } from '../Button'
 import Wrapper from '../Wrapper'
@@ -45,7 +45,7 @@ const FooterLink = ButtonLink.extend.attrs({
 
   &:hover {
 		background: none;
-		color: ${props => props.theme.contrast4};
+		color: ${props => transparentize(0.1, props.theme.contrast4)};
 		transition: color .2s ease;
   }
 `
