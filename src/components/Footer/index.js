@@ -114,7 +114,7 @@ class Footer extends PureComponent {
 				<LogoBox>
 					<Logo />
 					<FooterLink home to="/">
-						www.nelo.ph
+						nelo.is
           </FooterLink>
 				</LogoBox>
 				<LatestArticles>
