@@ -115,19 +115,19 @@ class Menu extends PureComponent {
 			<Container>
 				<Navigation isNavOpen={isNavOpen}>
 					<li>
-						<NavLink to="/work">
+						<NavLink to="/making">
 							<Icon.Monitor />
 							Work
             </NavLink>
 					</li>
 					<li>
-						<NavLink to="/journal">
+						<NavLink to="/writing">
 							<Icon.Book />
 							Journal
             </NavLink>
 					</li>
 					<li>
-						<NavLink to="/contact">
+						<NavLink to="/at">
 							<Icon.Mail />
 							Contact
             </NavLink>
