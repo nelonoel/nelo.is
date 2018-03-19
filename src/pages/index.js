@@ -15,7 +15,11 @@ const HomeBanner = BannerContainer.extend`
 `
 
 const Hero = styled.section`
-  display: flex;
+	display: flex;
+
+	@media (max-width: 38em) {
+		flex-direction: column;
+	}
 `
 
 const Avatar = styled.div`
@@ -26,7 +30,16 @@ const Avatar = styled.div`
     display: flex;
     width: 15em;
     margin-right: 3em;
-  }
+	}
+
+	@media (max-width: 38em) {
+		align-self: center;
+		height: 16em;
+
+		& > img {
+			margin: 0;
+		}
+	}
 `
 
 const Copy = styled.div`
@@ -45,7 +58,15 @@ const Copy = styled.div`
     font-weight: 500;
     line-height: 1.5;
     margin: 0 0 0.6em;
-  }
+	}
+
+	@media (max-width: 38em) {
+		background: ${props => props.theme.dark1};
+		box-sizing: border-box;
+		padding: 1em;
+		text-align: center;
+		width: 100vw;
+	}
 `
 
 const Actions = styled.div`
@@ -69,21 +90,19 @@ class Home extends PureComponent {
 							<img draggable="false" src={avatar} />
 						</Avatar>
 						<Copy>
-							<h1>Hello there!</h1>
+							<h1>Hello there! 👋</h1>
 							<p>
-								I'm Nelo — a software developer and UI designer currently
-                based in the Philippines.
+								I'm Nelo — a software engineer focusing on front-end development and UI design.
               </p>
 							<p>
-								I team up with startups and agencies around the world to
-                make delightful digital products.
+								I work with companies around the world to make delightful digital products.
               </p>
 							<Actions>
-								<ButtonLink to="/work">
+								<ButtonLink to="/making">
 									<Icon.Monitor />
 									View works
                 </ButtonLink>
-								<ButtonLink to="/contact" inverted>
+								<ButtonLink to="/at" inverted>
 									<Icon.Mail />
 									Contact me
                 </ButtonLink>
