@@ -11,13 +11,13 @@ import { ButtonLink } from '../components/Button'
 
 const HomeBanner = BannerContainer.extend`
   background: ${props => props.theme.contrast1};
-  margin-top: -8em;
+	margin-top: -8em;
 `
 
 const Hero = styled.section`
 	display: flex;
 
-	@media (max-width: 38em) {
+	@media (max-width: 42em) {
 		flex-direction: column;
 	}
 `
@@ -32,7 +32,7 @@ const Avatar = styled.div`
     margin-right: 3em;
 	}
 
-	@media (max-width: 38em) {
+	@media (max-width: 42em) {
 		align-self: center;
 		height: 16em;
 
@@ -49,21 +49,23 @@ const Copy = styled.div`
 
   & > h1 {
     font-size: 1.85em;
-    font-weight: 600;
-    margin: 0;
+		font-weight: 600;
+		line-height: 1;
+    margin: 0 auto 0.5em;
   }
 
   & > p {
     font-size: 1em;
     font-weight: 500;
     line-height: 1.5;
-    margin: 0 0 0.6em;
+		margin: 0 auto 0.6em;
+		max-width: 20em;
 	}
 
-	@media (max-width: 38em) {
+	@media (max-width: 42em) {
 		background: ${props => props.theme.dark1};
 		box-sizing: border-box;
-		padding: 1em;
+		padding: 1.5em 1em;
 		text-align: center;
 		width: 100vw;
 	}
