@@ -12,6 +12,7 @@ import { ButtonLink } from '../components/Button'
 const HomeBanner = BannerContainer.extend`
   background: ${props => props.theme.contrast1};
 	margin-top: -8em;
+	opacity: 1;
 `
 
 const Hero = styled.section`
@@ -51,7 +52,8 @@ const Copy = styled.div`
     font-size: 1.85em;
 		font-weight: 600;
 		line-height: 1;
-    margin: 0 auto 0.5em;
+		margin: 0 auto 0.5em;
+		opacity: 0.9;
   }
 
   & > p {
@@ -60,6 +62,7 @@ const Copy = styled.div`
     line-height: 1.5;
 		margin: 0 auto 0.6em;
 		max-width: 20em;
+		opacity: 0.9;
 	}
 
 	@media (max-width: 42em) {
