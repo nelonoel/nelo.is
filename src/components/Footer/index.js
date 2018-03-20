@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
-import * as Icon from 'react-feather'
+import { Mail, Phone, Github, Twitter, Instagram, FileText } from 'react-feather'
 import { darken, transparentize } from 'polished'
 
 import { ButtonLink } from '../Button'
@@ -43,7 +43,7 @@ const FooterLink = ButtonLink.extend.attrs({
     margin-right: ${props => (props.icon ? '0' : '0.5em')};
   }
 
-  &:hover {
+  &:hover, &:focus {
 		background: none;
 		color: ${props => transparentize(0.1, props.theme.contrast4)};
 		transition: color .2s ease;
@@ -128,30 +128,30 @@ class Footer extends PureComponent {
 				<Links>
 					<h5>Connect</h5>
 					<ExternalLink href="mailto:hello@nelo.ph">
-						<Icon.Mail />hello@nelo.ph
+						<Mail />hello@nelo.ph
           </ExternalLink>
 					<ExternalLink href="tel:+639168375550">
-						<Icon.Phone />916 837 5550
+						<Phone />916 837 5550
           </ExternalLink>
 					<FooterLink to="//github.com/nelonoel" target="_blank" rel="nofollow">
-						<Icon.Github />Github
+						<Github />Github
           </FooterLink>
 					<FooterLink
 						to="//twitter.com/nelonoel"
 						target="_blank"
 						rel="nofollow"
 					>
-						<Icon.Twitter />Twitter
+						<Twitter />Twitter
           </FooterLink>
 					<FooterLink
 						to="//instagram.com/nelonoel"
 						target="_blank"
 						rel="nofollow"
 					>
-						<Icon.Instagram />Instagram
+						<Instagram />Instagram
           </FooterLink>
 					<FooterLink to="/cv.pdf" target="_blank" rel="nofollow">
-						<Icon.FileText />Resumé
+						<FileText />Resumé
           </FooterLink>
 				</Links>
 			</FooterContainer>

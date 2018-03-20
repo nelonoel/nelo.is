@@ -6,16 +6,16 @@ import Wrapper from '../../components/Wrapper'
 import Banner, { Title, Description } from '../../components/Banner'
 import Card, { Grid } from '../../components/Card'
 
-class WorkIndex extends React.Component {
+class ProjectsIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
     return (
       <div>
-        <Helmet title={`${siteTitle} ∙ Work`} />
+        <Helmet title={`${siteTitle} ∙ Projects`} />
         <Banner>
-          <Title>Work</Title>
+          <Title>Projects</Title>
           <Description>Blood, sweat, and tears over the years. I'm currently working on my own product called <a href="//timecheck.io">Timecheck</a> – a smart, passive time tracker.</Description>
         </Banner>
         <Wrapper>
@@ -39,10 +39,10 @@ class WorkIndex extends React.Component {
   }
 }
 
-export default WorkIndex
+export default ProjectsIndex
 
 export const pageQuery = graphql`
-  query WorkIndexQuery {
+  query ProjectsIndexQuery {
     site {
       siteMetadata {
         title

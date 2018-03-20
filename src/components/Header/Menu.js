@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
-import * as Icon from 'react-feather'
+import { Monitor, Book, Mail, Sun, Moon } from 'react-feather'
 import { rgba } from 'polished'
 
 import { ButtonLink } from '../Button'
@@ -52,24 +52,21 @@ const Navigation = styled.ul`
 const NavLink = ButtonLink.extend.attrs({
 	transparent: true
 }) `
-  color: ${props => props.theme.text};
-  font-size: 0.85em;
-  font-weight: 600;
-  letter-spacing: 0.125em;
-  margin-left: 1.15em;
+	color: ${props => props.theme.text};
+  font-size: 1em;
+	font-weight: 600;
+  margin-left: 0.75em;
   margin-right: 0;
   padding: 0.75em;
-  text-transform: uppercase;
+	transition: none;
 
-  &:hover {
+  &:hover, &:focus {
     background: none;
   }
 
   @media (max-width: ${breakpoint}) {
-    letter-spacing: 0.0312em;
-    text-transform: none;
     margin: auto;
-    min-width: 7.5em;
+    min-width: 8em;
   }
 `
 
@@ -78,7 +75,7 @@ const ButtonToggle = NavLink.withComponent('button').extend`
   margin-right: 0;
   z-index: 1;
 
-  &:hover {
+  &:hover, &:focus {
     background: none;
   }
 
@@ -116,25 +113,25 @@ class Menu extends PureComponent {
 				<Navigation isNavOpen={isNavOpen}>
 					<li>
 						<NavLink to="/making">
-							<Icon.Monitor />
-							Work
+							<Monitor />
+							Projects
             </NavLink>
 					</li>
 					<li>
 						<NavLink to="/writing">
-							<Icon.Book />
+							<Book />
 							Journal
             </NavLink>
 					</li>
 					<li>
 						<NavLink to="/at">
-							<Icon.Mail />
+							<Mail />
 							Contact
             </NavLink>
 					</li>
 				</Navigation>
 				<ButtonToggle onClick={toggleDarkMode} icon>
-					{isDarkMode ? <Icon.Sun /> : <Icon.Moon />}
+					{isDarkMode ? <Sun /> : <Moon />}
 				</ButtonToggle>
 				<NavToggle onClick={toggleNav} icon>
 					<Hamburger isNavOpen={isNavOpen} />
