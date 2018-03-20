@@ -80,7 +80,7 @@ const wave = keyframes`
 	}
 
 	from, to {
-		transform: rotate(160deg);
+		 transform: rotate(30deg) translateX(20%) translateY(100%);
 	}
 `
 
