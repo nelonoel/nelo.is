@@ -38,7 +38,7 @@ export const Description = styled.p`
     color: inherit;
     text-decoration: none;
 
-    &:hover {
+    &:hover, &:focus {
       border-color: ${props => props.theme.primary};
       border-width: 2px;
     }

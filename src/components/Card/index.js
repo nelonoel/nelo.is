@@ -104,7 +104,7 @@ const Item = styled(Link).attrs({
   }
 
 	@media (min-width: 27em) {
-		&:hover {
+		&:hover, &:focus {
 			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 			transform: translate3d(0, -2px, 0);
 		}

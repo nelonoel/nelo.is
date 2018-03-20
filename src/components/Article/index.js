@@ -20,7 +20,7 @@ const Article = styled.article`
     color: ${props => props.theme.text};
     text-decoration: none;
 
-    &:hover {
+    &:hover, &:focus {
       border-bottom-color: ${props => props.theme.primary};
       border-bottom-width: 2px;
     }
