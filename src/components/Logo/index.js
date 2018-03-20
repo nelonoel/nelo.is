@@ -97,7 +97,7 @@ const Title = styled.h1`
     letter-spacing: -0.0362em;
     text-decoration: none;
 
-    &:hover {
+    &.bouncing {
       & > ${Dot} {
 				&:before {
 					animation: ${bounce} 2s 1;
@@ -111,12 +111,31 @@ const Title = styled.h1`
 `
 
 class Logo extends PureComponent {
+	constructor(props) {
+		super(props)
+		this.addAnimation = this.addAnimation.bind(this)
+		this.removeAnimation = this.removeAnimation.bind(this)
+		this.state = {
+			isAnimating: false
+		}
+	}
+
+	addAnimation(e) {
+		this.setState({ isAnimating: true })
+	}
+
+	removeAnimation(e) {
+		if (this.state.isAnimating) {
+			this.setState({ isAnimating: false })
+		}
+	}
+
 	render() {
 		return (
 			<Title>
-				<Link to="/">
+				<Link to="/" className={this.state.isAnimating ? 'bouncing' : ''}>
 					Nelo
-          <Dot />
+          <Dot onMouseEnter={this.addAnimation} onAnimationEnd={this.removeAnimation} />
 				</Link>
 			</Title>
 		)
