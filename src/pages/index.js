@@ -67,19 +67,19 @@ const Face = styled.img.attrs({
 `
 
 const wave = keyframes`
-	20%, 40% {
+	30%, 50% {
 		transform: rotate(0);
 	}
 
-	from, 30%, 50%, 70% {
+	40%, 60%, 80% {
 		transform: rotate(-20deg);
 	}
 
-	60% {
+	70% {
 		transform: rotate(-10deg);
 	}
 
-	to {
+	from, to {
 		transform: rotate(160deg);
 	}
 `
@@ -88,7 +88,6 @@ const Hand = styled.img.attrs({
 	draggable: false,
 	src: svgHand
 }) `
-	animation: ${wave} 1.6s 1 ease-in;
 	left: 14em;
 	position: absolute;
 	top: 11em;
@@ -96,6 +95,10 @@ const Hand = styled.img.attrs({
 	transform-origin: 10% 100%;
 	width: 5.5em;
 	z-index: 2;
+
+	&.waving {
+		animation: ${wave} 1.6s ease-in;
+	}
 
 	@media (max-width: 42em) {
 		z-index: 0;
@@ -144,6 +147,23 @@ const Actions = styled.div`
 `
 
 class Home extends PureComponent {
+	constructor(props) {
+		super(props)
+		this.startAnimation = this.startAnimation.bind(this)
+		this.endAnimation = this.endAnimation.bind(this)
+		this.state = {
+			waving: false
+		}
+	}
+
+	startAnimation() {
+		this.setState({ waving: true })
+	}
+
+	endAnimation() {
+		this.setState({ waving: false })
+	}
+
 	componentDidMount() {
 		if (this.video) {
 			this.video.playbackRate = 0.75
@@ -158,9 +178,13 @@ class Home extends PureComponent {
 				<Helmet title={`${siteTitle} ∙ Digital Craftsman`} />
 				<Wrapper>
 					<Hero>
-						<Avatar>
+						<Avatar onClick={this.startAnimation}>
 							<Face />
-							<Hand />
+							<Hand
+								innerRef={hand => this.hand = hand}
+								className={this.state.waving && 'waving'}
+								onAnimationEnd={this.endAnimation}
+							/>
 						</Avatar>
 						<Copy>
 							<h1>Hello there!</h1>
@@ -181,7 +205,7 @@ class Home extends PureComponent {
                 </ButtonLink>
 							</Actions>
 						</Copy>
-						<Video innerRef={(video) => { this.video = video }} poster={jpgCover} autoplay muted loop>
+						<Video innerRef={video => { this.video = video }} poster={jpgCover} autoplay muted loop>
 							<source src={webmCover} type="video/webm" />
 							<source src={mp4Cover} type="video/mp4" />
 						</Video>

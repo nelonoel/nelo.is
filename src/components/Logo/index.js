@@ -120,11 +120,11 @@ class Logo extends PureComponent {
 		}
 	}
 
-	addAnimation(e) {
+	addAnimation() {
 		this.setState({ isAnimating: true })
 	}
 
-	removeAnimation(e) {
+	removeAnimation() {
 		if (this.state.isAnimating) {
 			this.setState({ isAnimating: false })
 		}
@@ -132,10 +132,10 @@ class Logo extends PureComponent {
 
 	render() {
 		return (
-			<Title>
+			<Title onClick={this.addAnimation}>
 				<Link to="/" className={this.state.isAnimating ? 'bouncing' : ''}>
 					Nelo
-          <Dot onMouseEnter={this.addAnimation} onAnimationEnd={this.removeAnimation} />
+          <Dot onAnimationEnd={this.removeAnimation} />
 				</Link>
 			</Title>
 		)
