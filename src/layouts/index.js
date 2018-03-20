@@ -39,8 +39,6 @@ class Template extends Component {
 		const { location, children } = this.props
 		const { isNavOpen, isDarkMode } = this.state
 		const posts = get(this, 'props.data.allMarkdownRemark.edges')
-		console.log('dark', dark)
-		console.log('light', light)
 
 		return (
 			<ThemeProvider theme={isDarkMode ? dark : light}>
