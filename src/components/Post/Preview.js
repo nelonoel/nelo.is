@@ -3,13 +3,13 @@ import styled from 'styled-components'
 import Link from 'gatsby-link'
 
 const card = {
-  height: 9.5
+	height: 9.5
 }
 
 const Container = styled(Link).attrs({
-  key: props => props.slug,
-  to: props => props.slug
-})`
+	key: props => props.slug,
+	to: props => props.slug
+}) `
   background: ${props => props.theme.white};
   border-radius: ${props => props.theme.borderRadius};
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -30,7 +30,7 @@ const Container = styled(Link).attrs({
     pointer-events: none;
   }
 
-  &:hover {
+  &:hover, &:focus {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.075);
     transform: translateY(-2px);
   }
@@ -113,20 +113,20 @@ const Type = styled.div`
 `
 
 class PostPreview extends PureComponent {
-  render() {
-    const { slug, cover, title, subtitle, category, type, date } = this.props
+	render() {
+		const { slug, cover, title, subtitle, category, type, date } = this.props
 
-    return (
-      <Container slug={slug}>
-        <Cover src={cover} />
-        {type && <Type>{type}</Type>}
-        <Title>{title}</Title>
-        {subtitle && <Subtitle>{subtitle}</Subtitle>}
-        <Date>{date}</Date>
-        <Category>{category || 'Random'}</Category>
-      </Container>
-    )
-  }
+		return (
+			<Container slug={slug}>
+				<Cover src={cover} />
+				{type && <Type>{type}</Type>}
+				<Title>{title}</Title>
+				{subtitle && <Subtitle>{subtitle}</Subtitle>}
+				<Date>{date}</Date>
+				<Category>{category || 'Random'}</Category>
+			</Container>
+		)
+	}
 }
 
 export default PostPreview
