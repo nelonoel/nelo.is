@@ -3,7 +3,7 @@ import { darken } from 'polished'
 
 const TextField = styled.input`
   background: ${props => props.theme.dark2};
-  border: transparent solid 1px;
+  border: none;
   border-radius: ${props => props.theme.borderRadius};
   color: ${props => props.theme.text};
 	font-size: 1.25em;
@@ -11,7 +11,7 @@ const TextField = styled.input`
 
 	&:focus {
 		background: ${props => darken(0.025, props.theme.dark2)};
-    border-color: ${props => darken(0.0375, props.theme.dark2)};
+		box-shadow: inset 0 0 0 2px ${props => props.theme.dark3};
 	}
 `
 
