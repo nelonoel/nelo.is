@@ -26,7 +26,7 @@ const Button = styled.button`
 	justify-content: ${props => props.wide ? 'center' : null};
   line-height: 1.2;
 	margin-right: ${props => props.wide ? null : '0.5em'};
-  padding: ${props => (props.icon ? '1em' : props.wide ? '0.9em 1.25em 1em' : '0.55em 1.25em 0.65em')};
+  padding: ${props => (props.icon ? '1em' : props.wide ? '0.9em 1.25em 0.95em' : '0.55em 1.25em 0.6em')};
 	text-decoration: none;
 	transform: translateY(0);
   transition: all 0.2s ease;
@@ -39,7 +39,7 @@ const Button = styled.button`
     position: relative;
   }
 
-  &:hover {
+  &:hover, &:focus {
     background: ${props => (props.transparent ? 'rgba(0, 0, 0, 0.025)' : null)};
     box-shadow: ${props =>
 		props.transparent ? null : '0 2px 4px rgba(0, 0, 0, 0.075)'};
