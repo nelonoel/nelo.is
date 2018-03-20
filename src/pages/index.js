@@ -5,8 +5,14 @@ import get from 'lodash/get'
 
 import { BannerContainer } from '../components/Banner'
 import Wrapper from '../components/Wrapper'
-import * as Icon from 'react-feather'
+import { Monitor, Mail } from 'react-feather'
 import { ButtonLink } from '../components/Button'
+
+import svgFace from '../../static/img/avatar.svg'
+import svgHand from '../../static/img/hand.svg'
+import jpgCover from '../../static/img/landing-cover.jpg'
+import webmCover from '../../static/vid/landing-cover.webm'
+import mp4Cover from '../../static/vid/landing-cover.mp4'
 
 const HomeBanner = BannerContainer.extend`
   background: ${props => props.theme.contrast1};
@@ -38,27 +44,68 @@ const Hero = styled.section`
 
 const Avatar = styled.div`
   align-self: flex-end;
-  flex: 1;
-
-  & > img {
-    display: flex;
-    width: 15em;
-    margin-right: 3em;
-	}
+	flex: 1;
+	position: relative;
 
 	@media (max-width: 42em) {
 		align-self: center;
-		height: 16em;
+		height: 20em;
+	}
+`
 
-		& > img {
-			margin: 0;
-		}
+const Face = styled.img.attrs({
+	draggable: false,
+	src: svgFace
+}) `
+	display: flex;
+	width: 15em;
+	margin-right: 3em;
+
+	@media (max-width: 42em) {
+		margin: 0;
+	}
+`
+
+const wave = keyframes`
+	20%, 40% {
+		transform: rotate(0);
+	}
+
+	from, 30%, 50%, 70% {
+		transform: rotate(-20deg);
+	}
+
+	60% {
+		transform: rotate(-10deg);
+	}
+
+	to {
+		transform: rotate(160deg);
+	}
+`
+
+const Hand = styled.img.attrs({
+	draggable: false,
+	src: svgHand
+}) `
+	animation: ${wave} 1.6s 1 ease-in;
+	left: 14em;
+	position: absolute;
+	top: 11em;
+	transform: rotate(160deg);
+	transform-origin: 10% 100%;
+	width: 5.5em;
+	z-index: 2;
+
+	@media (max-width: 42em) {
+		z-index: 0;
 	}
 `
 
 const Copy = styled.div`
 	align-self: center;
-  padding: 2em 0;
+	padding: 2em 0;
+	position: relative;
   text-align: left;
 
   & > h1 {
@@ -96,22 +143,6 @@ const Actions = styled.div`
   }
 `
 
-const wave = keyframes`
-  from, to {
-		transform: none;
-	}
-
-	50% {
-		transform: rotate(15deg);
-	}
-`
-
-const Wave = styled.div`
-	animation: ${wave} 0.4s 2 ease-in-out;
-	display: inline-block;
-	transform-origin: bottom right;
-`
-
 class Home extends PureComponent {
 	componentDidMount() {
 		if (this.video) {
@@ -124,34 +155,35 @@ class Home extends PureComponent {
 		const siteTitle = get(this, 'props.data.site.siteMetadata.title')
 		return (
 			<HomeBanner>
-				<Helmet title={`${siteTitle} ∙ Web Developer & UI Designer`} />
+				<Helmet title={`${siteTitle} ∙ Digital Craftsman`} />
 				<Wrapper>
 					<Hero>
 						<Avatar>
-							<img draggable="false" src="/img/avatar.svg" />
+							<Face />
+							<Hand />
 						</Avatar>
 						<Copy>
-							<h1>Hello there! <Wave>👋</Wave></h1>
+							<h1>Hello there!</h1>
 							<p>
-								I'm Nelo — a software engineer focusing on front-end development and UI design.
+								I'm Nelo — a digital craftsman focusing on front-end development and UI design.
               </p>
 							<p>
 								I work with companies around the world to make delightful digital products.
               </p>
 							<Actions>
 								<ButtonLink to="/making">
-									<Icon.Monitor />
+									<Monitor />
 									View works
                 </ButtonLink>
 								<ButtonLink to="/at" inverted>
-									<Icon.Mail />
+									<Mail />
 									Contact me
                 </ButtonLink>
 							</Actions>
 						</Copy>
-						<Video innerRef={(video) => { this.video = video }} autoplay muted loop>
-							<source src="/vid/landing-teaser.webm" type="video/webm" />
-							<source src="/vid/landing-teaser.mp4" type="video/mp4" />
+						<Video innerRef={(video) => { this.video = video }} poster={jpgCover} autoplay muted loop>
+							<source src={webmCover} type="video/webm" />
+							<source src={mp4Cover} type="video/mp4" />
 						</Video>
 					</Hero>
 				</Wrapper>
