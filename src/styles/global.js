@@ -1,4 +1,6 @@
 import { injectGlobal } from 'styled-components'
+import { selection } from 'polished'
+import { light as theme } from '../styles/theme'
 
 injectGlobal`
   * {
@@ -23,6 +25,8 @@ injectGlobal`
     line-height: 1.6;
     margin: 0;
     padding: 0;
+
+    ${selection({ 'backgroundColor': theme.selection }, '*')}
   }
 
   .emoji {

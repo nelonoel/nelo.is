@@ -17,7 +17,8 @@ const defaults = {
 	white: '#fff',
 	black: '#10161a',
 	primary: '#eb532d',
-	secondary: '#43BF4D',
+	secondary: '#43bf4d',
+	selection: '#ffe200'
 
 	borderRadius: '5px',
 	containerWidth: '38em'
