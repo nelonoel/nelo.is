@@ -1,8 +1,7 @@
 import React, { PureComponent } from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
-import avatar from '../../static/img/avatar.svg'
 
 import { BannerContainer } from '../components/Banner'
 import Wrapper from '../components/Wrapper'
@@ -13,6 +12,20 @@ const HomeBanner = BannerContainer.extend`
   background: ${props => props.theme.contrast1};
 	margin-top: -8em;
 	opacity: 1;
+	overflow: hidden;
+	position: relative;
+`
+
+const Video = styled.video`
+	left: 50%;
+	min-height: 100%;
+	min-width: 100%;
+	opacity: 0.075;
+	pointer-events: none;
+	position: absolute;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	z-index: -1;
 `
 
 const Hero = styled.section`
@@ -53,7 +66,7 @@ const Copy = styled.div`
 		font-weight: 600;
 		line-height: 1;
 		margin: 0 auto 0.5em;
-		opacity: 0.9;
+		opacity: 0.95;
   }
 
   & > p {
@@ -62,13 +75,13 @@ const Copy = styled.div`
     line-height: 1.5;
 		margin: 0 auto 0.6em;
 		max-width: 20em;
-		opacity: 0.9;
+		opacity: 0.95;
 	}
 
 	@media (max-width: 42em) {
 		background: ${props => props.theme.dark1};
 		box-sizing: border-box;
-		padding: 1.5em 1em;
+		padding: 2em 0.5em;
 		text-align: center;
 		width: 100vw;
 	}
@@ -83,7 +96,30 @@ const Actions = styled.div`
   }
 `
 
+const wave = keyframes`
+  from, to {
+		transform: none;
+	}
+
+	50% {
+		transform: rotate(15deg);
+	}
+`
+
+const Wave = styled.div`
+	animation: ${wave} 0.4s 2 ease-in-out;
+	display: inline-block;
+	transform-origin: bottom right;
+`
+
 class Home extends PureComponent {
+	componentDidMount() {
+		if (this.video) {
+			this.video.playbackRate = 0.75
+			this.video.play()
+		}
+	}
+
 	render() {
 		const siteTitle = get(this, 'props.data.site.siteMetadata.title')
 		return (
@@ -92,10 +128,10 @@ class Home extends PureComponent {
 				<Wrapper>
 					<Hero>
 						<Avatar>
-							<img draggable="false" src={avatar} />
+							<img draggable="false" src="/img/avatar.svg" />
 						</Avatar>
 						<Copy>
-							<h1>Hello there! 👋</h1>
+							<h1>Hello there! <Wave>👋</Wave></h1>
 							<p>
 								I'm Nelo — a software engineer focusing on front-end development and UI design.
               </p>
@@ -113,9 +149,13 @@ class Home extends PureComponent {
                 </ButtonLink>
 							</Actions>
 						</Copy>
+						<Video innerRef={(video) => { this.video = video }} autoplay muted loop>
+							<source src="/vid/landing-teaser.webm" type="video/webm" />
+							<source src="/vid/landing-teaser.mp4" type="video/mp4" />
+						</Video>
 					</Hero>
 				</Wrapper>
-			</HomeBanner>
+			</HomeBanner >
 		)
 	}
 }
