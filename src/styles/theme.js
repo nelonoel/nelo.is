@@ -18,8 +18,9 @@ const defaults = {
 	black: '#10161a',
 	primary: '#eb532d',
 	secondary: '#43bf4d',
-	selection: '#ffe200'
+	selection: '#ffe200',
 
+	baseFontSize: '18px',
 	borderRadius: '5px',
 	containerWidth: '38em'
 }
@@ -58,12 +59,12 @@ export const light = assign(
 	lightColors,
 	deriveColors(lightColors.base),
 	defaults,
-	{ breakpoints: breakpoints }
+	{ breakpoints }
 )
 
 export const dark = assign(
 	darkColors,
 	deriveColors(darkColors.base),
 	defaults,
-	{ breakpoints: breakpoints }
+	{ breakpoints }
 )
