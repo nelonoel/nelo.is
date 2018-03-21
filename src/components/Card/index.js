@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
 import { darken } from 'polished'
+import { subheading } from '../../styles/typography'
 
 const card = {
 	height: 15,
@@ -20,12 +21,11 @@ const Content = styled.section`
 `
 
 const Type = styled.div`
+	${subheading}
   align-items: center;
   color: ${props => props.theme.contrast5};
   display: flex;
-  font-family: 'Barlow';
   font-size: 0.75em;
-  font-weight: 600;
   letter-spacing: 0.0612em;
   margin-bottom: 0.125em;
   text-transform: uppercase;
@@ -46,29 +46,27 @@ const Title = styled.h1`
 const Subtitle = styled.h2`
   color: ${props => props.theme.contrast4};
   font-size: 1em;
-  font-weight: 500;
+  font-weight: normal;
   line-height: 1.35;
   margin: 0.15em 0 0.3em;
 `
 
 const Date = styled.div`
+	${subheading}
 	color: ${props => props.theme.contrast2};
-  font-family: 'Barlow';
   font-size: 0.85em;
-  font-weight: 600;
   letter-spacing: 0.0612em;
   text-transform: uppercase;
   margin-top: 0.4em;
 `
 
 const Category = styled.div`
+	${subheading}
   align-self: stretch;
   background-color: ${props => darken(0.025, props.theme.name === 'dark' ? props.theme.contrast1 : props.theme.white)};
   box-sizing: border-box;
   color: ${props => darken(0.2, props.theme.name === 'dark' ? props.theme.contrast1 : props.theme.white)};
-  font-family: 'Barlow';
   font-size: 0.75em;
-  font-weight: 600;
   letter-spacing: 0.2em;
   padding: 0.25em;
   text-align: center;

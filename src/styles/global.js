@@ -1,14 +1,15 @@
 import { injectGlobal } from 'styled-components'
-import { selection } from 'polished'
+import { normalize, selection } from 'polished'
 import { light as theme } from '../styles/theme'
+import { fontFaces, body } from '../styles/typography'
 
 injectGlobal`
+	${normalize()}
+	${fontFaces}
+
   * {
-    font-family: "Gravity", "San Francisco Display",
-      -apple-system, BlinkMacSystemFont,
-      "Segoe UI", "Roboto", "Oxygen",
-      "Ubuntu", "Cantarell", "Fira Sans",
-			"Droid Sans", "Helvetica Neue", sans-serif;
+		${body}
+
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
@@ -20,7 +21,7 @@ injectGlobal`
   }
 
   body {
-    font-size: 18px;
+    font-size: ${theme.baseFontSize};
     font-size: calc(0.18vw + 16px);
     line-height: 1.6;
     margin: 0;

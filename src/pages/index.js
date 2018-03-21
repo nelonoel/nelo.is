@@ -26,7 +26,7 @@ const Video = styled.video`
 	left: 50%;
 	min-height: 100%;
 	min-width: 100%;
-	opacity: 0.075;
+	opacity: ${props => props.theme.name === 'dark' ? 0.0325 : 0.075};
 	pointer-events: none;
 	position: absolute;
 	top: 50%;
@@ -79,8 +79,12 @@ const wave = keyframes`
 		transform: rotate(-10deg);
 	}
 
-	from, to {
+	from {
 		 transform: rotate(30deg) translateX(20%) translateY(100%);
+	}
+
+	to {
+		 transform: rotate(45deg) translateX(150%) translateY(100%);
 	}
 `
 
@@ -113,7 +117,7 @@ const Copy = styled.div`
 
   & > h1 {
     font-size: 1.85em;
-		font-weight: 600;
+		font-weight: bold;
 		line-height: 1;
 		margin: 0 auto 0.5em;
 		opacity: 0.95;
@@ -121,7 +125,6 @@ const Copy = styled.div`
 
   & > p {
     font-size: 1em;
-    font-weight: 500;
     line-height: 1.5;
 		margin: 0 auto 0.6em;
 		max-width: 20em;

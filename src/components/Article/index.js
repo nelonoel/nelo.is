@@ -123,7 +123,6 @@ const Article = styled.article`
   h6 {
     color: ${props => lighten(0.35, props.theme.text)};
     font-size: 1em;
-    font-weight: 600;
   }
 
   p,
@@ -243,7 +242,6 @@ const Article = styled.article`
   blockquote {
     border-left: 4px solid ${props => props.theme.primary};
     font-size: 1.15em;
-    font-weight: 500;
     padding: 0.25em 1em;
 
     & > p {

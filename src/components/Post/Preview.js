@@ -61,7 +61,7 @@ const Title = styled.h1`
 const Subtitle = styled.h2`
   color: #999;
   font-size: 1.15em;
-  font-weight: 500;
+  font-weight: normal;
   line-height: 1.2;
   margin: 0.15em 0;
 `
@@ -82,7 +82,6 @@ const Category = styled.div`
   box-sizing: border-box;
   color: rgba(0, 0, 0, 0.125);
   font-size: 0.75em;
-  font-weight: 600;
   letter-spacing: 0.2em;
   padding: 0.25em;
   position: absolute;

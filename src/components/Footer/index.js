@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Mail, Phone, Github, Twitter, Instagram, FileText } from 'react-feather'
 import { darken, transparentize } from 'polished'
 
+import { subheading } from '../../styles/typography'
 import { ButtonLink } from '../Button'
 import Wrapper from '../Wrapper'
 import Logo, { Dot } from '../Logo'
@@ -18,12 +19,10 @@ const FooterContainer = Wrapper.withComponent('footer').extend`
 
 const Box = styled.div`
   & > h5 {
+		${subheading}
 		color: ${props => props.theme.contrast3};
-    font-family: 'Barlow';
-    font-weight: 600;
-    letter-spacing: 0.125em;
-    margin: 0 0 0.5em;
-    text-transform: uppercase;
+		letter-spacing: 0.125em;
+    margin: 0 0 0.35em;
 	}
 `
 
@@ -34,8 +33,9 @@ const FooterLink = ButtonLink.extend.attrs({
 	display: flex;
 	font-size: 0.85em;
   line-height: 1.3;
-  margin-left: 0;
-	padding: ${props => (props.home ? '0' : '0.2em 0')};
+	margin-left: 0;
+	opacity: ${props => (props.update ? '0.5' : '1')};
+	padding: ${props => (props.update ? '0' : '0.2em 0')};
 	transition: none;
 	width: fit-content;
 
@@ -113,8 +113,8 @@ class Footer extends PureComponent {
 			<FooterContainer>
 				<LogoBox>
 					<Logo />
-					<FooterLink home to="/">
-						nelo.is
+					<FooterLink update to="/about">
+						Updated 5s ago
           </FooterLink>
 				</LogoBox>
 				<LatestArticles>

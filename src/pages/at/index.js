@@ -8,6 +8,7 @@ import Wrapper from '../../components/Wrapper'
 import Button from '../../components/Button'
 import Banner, { Title, Subtitle } from '../../components/Banner'
 import TextField, { TextArea } from '../../components/TextField'
+import { subheading } from '../../styles/typography'
 
 const Field = styled.div`
 	display: flex;
@@ -17,10 +18,9 @@ const Field = styled.div`
 `
 
 const Label = styled.label`
+	${subheading}
 	color: ${props => props.theme.contrast5};
 	display: flex;
-	font-family: "Barlow";
-	font-weight: 600;
 	font-size: 0.85em;
 	letter-spacing: 0.125em;
 	margin-bottom: 0.25em;

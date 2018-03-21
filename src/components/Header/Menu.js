@@ -54,15 +54,14 @@ const NavLink = ButtonLink.extend.attrs({
 }) `
 	color: ${props => props.theme.text};
   font-size: 1em;
-	font-weight: 600;
-  margin-left: 0.75em;
+  margin-left: 0.25em;
   margin-right: 0;
-  padding: 0.75em;
+  padding: 0.75em 1.125em;
 	transition: none;
 
   &:hover, &:focus {
     background: none;
-  }
+	}
 
   @media (max-width: ${breakpoint}) {
     margin: auto;
@@ -74,10 +73,6 @@ const ButtonToggle = NavLink.withComponent('button').extend`
 	color: ${props => props.theme.text};
   margin-right: 0;
   z-index: 1;
-
-  &:hover, &:focus {
-    background: none;
-  }
 
   @media (max-width: ${breakpoint}) {
 		min-width: 0;

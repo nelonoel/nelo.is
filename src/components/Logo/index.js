@@ -1,20 +1,21 @@
 import React, { PureComponent } from 'react'
 import Link from 'gatsby-link'
 import styled, { keyframes } from 'styled-components'
+import { logo } from '../../styles/typography'
 
 const bounce = keyframes`
-  from, 20%, 53%, 80%, to {
+  from, 53%, 80%, to {
     animation-timing-function: ease-out;
 		transform: translate3d(0,0,0);
   }
 
-  25%, 53%, 80% {
+  18%, 53%, 80% {
 		transform: scaleY(0.6) translate3d(0,0,0);
   }
 
-  40%, 43% {
+  30%, 43% {
 		animation-timing-function: ease-in;
-    transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -18px, 0);
   }
 
   70% {
@@ -32,12 +33,12 @@ const bounce = keyframes`
 `
 
 const shadow = keyframes`
-  from, 20%, 53%, 80%, to {
+  from, 18%, 53%, 80%, to {
 		animation-timing-function: ease-out;
 		transform: scaleY(0);
   }
 
-  40%, 43% {
+  30%, 43% {
 		animation-timing-function: ease-in;
     transform: scaleY(0.35);
   }
@@ -75,6 +76,8 @@ export const Dot = styled.span`
 
 	&:after {
 		color: rgba(0, 0, 0, 0.15);
+		position: relative;
+		z-index: -1;
 	}
 `
 
@@ -86,24 +89,22 @@ const Title = styled.h1`
   z-index: 1;
 
   * {
-    font-family: 'Montserrat';
-    text-transform: lowercase;
+		${logo}
   }
 
   a {
     color: ${props => props.theme.text};
     font-size: 0.8em;
-    font-weight: 700;
     letter-spacing: -0.0362em;
     text-decoration: none;
 
     &.bouncing {
       & > ${Dot} {
 				&:before {
-					animation: ${bounce} 2s 1;
+					animation: ${bounce} 1.8s 1;
 				}
 				&:after {
-					animation: ${shadow} 2s 1;
+					animation: ${shadow} 1.8s 1;
 				}
       }
     }

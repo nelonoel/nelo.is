@@ -22,11 +22,11 @@ const Button = styled.button`
   cursor: pointer;
   display: inline-flex;
   font-size: 0.95em;
-	font-weight: 400;
+	font-weight: normal;
 	justify-content: ${props => props.wide ? 'center' : null};
   line-height: 1.2;
 	margin-right: ${props => props.wide ? null : '0.5em'};
-  padding: ${props => (props.icon ? '1em' : props.wide ? '0.9em 1.25em 0.95em' : '0.55em 1.25em 0.6em')};
+  padding: ${props => (props.icon ? '1em' : props.wide ? '0.9em 1.25em' : '0.55em 1.25em')};
 	text-decoration: none;
 	transform: translateY(0);
   transition: all 0.2s ease;
@@ -34,6 +34,7 @@ const Button = styled.button`
   & > svg {
     margin-left: ${props => (props.icon ? '0' : '-0.125em')};
     margin-right: ${props => (props.icon ? '0' : '0.75em')};
+		margin-top: ${props => (props.icon ? '0' : '-0.125em')};
     opacity: ${props => (props.icon ? '1' : '0.8')};
     height: 1em;
     position: relative;
