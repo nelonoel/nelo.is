@@ -16,7 +16,7 @@ const Cover = styled.div`
   height: 100%;
 `
 
-const Content = styled.section`
+const Content = styled.div`
   padding: 1.5em;
 `
 
@@ -27,7 +27,7 @@ const Type = styled.div`
   display: flex;
   font-size: 0.75em;
   letter-spacing: 0.0612em;
-  margin-bottom: 0.125em;
+  margin-bottom: -0.25em;
   text-transform: uppercase;
 
   & > svg {
@@ -67,6 +67,7 @@ const Category = styled.div`
   box-sizing: border-box;
   color: ${props => darken(0.2, props.theme.name === 'dark' ? props.theme.contrast1 : props.theme.white)};
   font-size: 0.75em;
+	line-height: 1.9;
   letter-spacing: 0.2em;
   padding: 0.25em;
   text-align: center;
