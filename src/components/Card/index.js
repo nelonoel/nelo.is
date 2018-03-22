@@ -63,9 +63,9 @@ const Date = styled.div`
 const Category = styled.div`
 	${subheading}
   align-self: stretch;
-  background-color: ${props => darken(0.025, props.theme.name === 'dark' ? props.theme.contrast1 : props.theme.white)};
   box-sizing: border-box;
-  color: ${props => darken(0.2, props.theme.name === 'dark' ? props.theme.contrast1 : props.theme.white)};
+	border: ${props => darken(0.0306, props.theme.name === 'dark' ? props.theme.contrast1 : props.theme.white)} solid 0;
+  color: ${props => darken(0.125, props.theme.name === 'dark' ? props.theme.contrast1 : props.theme.white)};
   font-size: 0.75em;
 	line-height: 1.9;
   letter-spacing: 0.2em;
@@ -73,7 +73,7 @@ const Category = styled.div`
   text-align: center;
   text-transform: uppercase;
   width: 100%;
-  writing-mode: tb-rl;
+	writing-mode: lr;
 `
 
 const Item = styled(Link).attrs({
@@ -98,9 +98,11 @@ const Item = styled(Link).attrs({
   transition: box-shadow 0.2s ease,
   						transform 0.2s ease;
 
-  & > ${Category} {
-    writing-mode: ${props => (props.half ? 'lr' : 'tb-rl')};
-  }
+	& > ${Category} {
+		${props => props.half ? 'border-top-width: 1px;' : 'border-left-width: 1px;'}
+		line-height: ${props => props.half ? 1.8 : 1.9};
+		writing-mode: ${props => props.half ? 'lr' : 'tb-rl'};
+	}
 
 	@media (min-width: 27em) {
 		&:hover, &:focus {
@@ -114,6 +116,9 @@ const Item = styled(Link).attrs({
 		grid-template-rows: 6em 1fr 1.5em;
 
     & > ${Category} {
+			border-left-width: 0;
+			border-top-width: 1px;
+			line-height: 1.8;
       writing-mode: lr;
     }
   }
