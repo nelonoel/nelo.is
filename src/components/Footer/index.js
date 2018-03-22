@@ -29,12 +29,11 @@ const Box = styled.div`
 const FooterLink = ButtonLink.extend.attrs({
 	transparent: true,
 }) `
-	color: ${props => props.theme.contrast3};
+	color: ${props => props.update ? props.theme.contrast2 : props.theme.contrast3};
 	display: flex;
 	font-size: 0.85em;
   line-height: 1.3;
 	margin-left: 0;
-	opacity: ${props => (props.update ? '0.5' : '1')};
 	padding: ${props => (props.update ? '0' : '0.2em 0')};
 	transition: none;
 	width: fit-content;
@@ -45,7 +44,7 @@ const FooterLink = ButtonLink.extend.attrs({
 
   &:hover, &:focus {
 		background: none;
-		color: ${props => transparentize(0.1, props.theme.contrast4)};
+		color: ${props => transparentize(0.1, props.update ? props.theme.contrast3 : props.theme.contrast4)};
 		transition: color .2s ease;
   }
 `
@@ -56,6 +55,7 @@ const LogoBox = Box.extend`
   grid-column: span 3;
 
   & > h1 {
+		margin-bottom: 0.125em;
 		z-index: 0;
 
 		& > a {
