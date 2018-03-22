@@ -101,7 +101,7 @@ const Hand = styled.img.attrs({
 	z-index: 2;
 
 	&.waving {
-		animation: ${wave} 1.6s ease-in;
+		animation: ${wave} 1.8s ease;
 	}
 
 	@media (max-width: 42em) {
@@ -134,7 +134,7 @@ const Copy = styled.div`
 	@media (max-width: 42em) {
 		background: ${props => props.theme.dark1};
 		box-sizing: border-box;
-		padding: 2em 0.5em;
+		padding: 2em 1em;
 		text-align: center;
 		width: 100vw;
 	}
