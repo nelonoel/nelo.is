@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import Wrapper from '../Wrapper'
-import { transparentize } from 'polished'
+import { rgba } from 'polished'
 
 export const BannerContainer = styled.div`
   color: ${props => props.theme.text};
@@ -11,6 +11,40 @@ export const BannerContainer = styled.div`
   padding-top: 8em;
   text-align: center;
   z-index: 0;
+`
+
+export const Cover = styled.div`
+	height: 16em;
+	left: 0;
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: -1;
+
+	&:before,
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	&:after {
+		background: ${props => rgba(props.theme.base, 0.5)} linear-gradient(transparent, ${props => props.theme.base});
+	}
+
+	&:before {
+		${props => props.src ? `background-image: url(${props.src});` : null}
+		background-blend-mode: luminosity;
+		background-color: ${props => props.theme.base};
+		background-position:	center center;
+		background-size: cover;
+		opacity: 0.2;
+	}
 `
 
 export const Title = styled.h1`
@@ -30,27 +64,30 @@ export const Description = styled.p`
 	color: ${props => props.theme.contrast5};
   font-size: 1.15em;
   line-height: 1.5;
-  margin: 0 auto 1.5em;
+  margin: 0.125em auto 1.25em;
   max-width: 480px;
 
   & > a {
-    border-bottom: ${props => transparentize(0.75, props.theme.text)} solid 1px;
+    border-bottom: ${props => props.theme.contrast1} solid 2px;
     color: inherit;
     text-decoration: none;
 
     &:hover, &:focus {
       border-color: ${props => props.theme.primary};
-      border-width: 2px;
+			transition: border-color .1s ease;
     }
   }
 `
 
 class Banner extends PureComponent {
 	render() {
+		const { children, cover } = this.props
+
 		return (
 			<BannerContainer>
+				{cover && <Cover src={cover} />}
 				<Wrapper>
-					{this.props.children}
+					{children}
 				</Wrapper>
 			</BannerContainer>
 		)

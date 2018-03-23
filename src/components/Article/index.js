@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import { darken, lighten } from 'polished'
+import { darken, lighten, selection } from 'polished'
+import { monospace, subheading } from '../../styles/typography'
 
 const Article = styled.article`
 	${props => require(`../../styles/syntax-${props.theme.name}.css`)}
-
-  font-size: 1.1em;
+	font-size: 1.1em;
+	position: relative;
 
   body > *:first-child {
     margin-top: 0 !important;
@@ -16,18 +17,14 @@ const Article = styled.article`
   }
 
   a {
-    border-bottom: ${props => lighten(0.75, props.theme.text)} solid 1px;
+    border-bottom: ${props => props.theme.contrast1} solid 2px;
     color: ${props => props.theme.text};
-    text-decoration: none;
+		text-decoration: none;
 
     &:hover, &:focus {
-      border-bottom-color: ${props => props.theme.primary};
-      border-bottom-width: 2px;
+			border-bottom-color: ${props => props.theme.primary};
+			transition: border-color .1s ease;
     }
-  }
-
-  a.gatsby-resp-image-link {
-    border: none;
   }
 
   a.absent {
@@ -121,8 +118,10 @@ const Article = styled.article`
   }
 
   h6 {
-    color: ${props => lighten(0.35, props.theme.text)};
-    font-size: 1em;
+		${subheading}
+		color: ${props => lighten(0.35, props.theme.text)};
+		font-size: 0.85em;
+		letter-spacing: 0.0612em;
   }
 
   p,
@@ -390,15 +389,16 @@ const Article = styled.article`
 
   code,
   tt {
+		${monospace}
     margin: 0 2px;
     padding: 0 5px;
     white-space: nowrap;
     background: ${props => darken(0.075, props.theme.base)};
-    border-radius: ${props => props.theme.borderRadius};
     color: ${props => props.theme.text};
   }
 
   pre code {
+		${monospace}
     margin: 0;
     padding: 0;
     white-space: pre;
@@ -406,28 +406,30 @@ const Article = styled.article`
     background: transparent;
   }
 
-  .highlight pre {
-    background-color: #f8f8f8;
-    border: 1px solid #cccccc;
-    line-height: 1.4;
+  .gatsby-highlight pre {
+		${monospace}
+    border: ${props => lighten(0.03, props.theme.dark3)} solid 2px;
     overflow: auto;
-    padding: 6px 10px;
-    border-radius: 3px;
   }
 
   pre {
-    background-color: ${props => props.theme.white};
-    font-size: 0.85em;
+		background-color: ${props => props.theme.white};
     line-height: 1.4;
     overflow: auto;
     padding: 0.75em 1em;
-    border-radius: ${props => props.theme.borderRadius};
-  }
+	}
+
+	pre * {
+		${monospace}
+		font-size: 1.2rem;
+	}
 
   pre code,
   pre tt {
+		${monospace}
     background-color: transparent;
-    border: none;
+		border: none;
+		font-size: 1.2rem;
   }
 
   sup {
