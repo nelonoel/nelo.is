@@ -37,7 +37,7 @@ class ContactPage extends PureComponent {
 					<Title>Contact</Title>
 					<Subtitle>I love e-mail.</Subtitle>
 				</Banner>
-				<form name="contact" data-netlify="true">
+				<form name="contact" method="post" data-netlify="true">
 					<Field>
 						<Label for="name">Name</Label>
 						<TextField type="text" name="name" />
