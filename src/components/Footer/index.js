@@ -13,8 +13,10 @@ const breakpoint = '32em'
 const FooterContainer = Wrapper.withComponent('footer').extend`
   align-items: flex-start;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  padding: 1.5em 0.5em;
+	grid-template-columns: repeat(12, 1fr);
+	margin: 0.5em auto 0;
+	padding: 1.5em 0.5em;
+	position: relative;
 `
 
 const Box = styled.div`
@@ -29,12 +31,12 @@ const Box = styled.div`
 const FooterLink = ButtonLink.extend.attrs({
 	transparent: true,
 }) `
-	color: ${props => props.update ? props.theme.contrast2 : props.theme.contrast3};
+	color: ${props => props.theme.contrast3};
 	display: flex;
 	font-size: 0.85em;
   line-height: 1.3;
 	margin-left: 0;
-	padding: ${props => (props.update ? '0' : '0.2em 0')};
+	padding: 0.2em 0;
 	transition: none;
 	width: fit-content;
 
@@ -44,10 +46,20 @@ const FooterLink = ButtonLink.extend.attrs({
 
   &:hover, &:focus {
 		background: none;
-		color: ${props => transparentize(0.1, props.update ? props.theme.contrast3 : props.theme.contrast4)};
+		color: ${props => transparentize(0.1, props.theme.contrast4)};
 		transition: color .2s ease;
   }
 `
+
+const LastUpdate = FooterLink.extend`
+	color: ${props => props.theme.contrast2};
+	cursor: default;
+	padding: 0;
+
+	&:hover {
+		color: ${props => props.theme.contrast2};
+	}
+`.withComponent('span')
 
 const LogoBox = Box.extend`
   display: flex;
@@ -109,13 +121,15 @@ const ExternalLink = FooterLink.withComponent('a')
 class Footer extends PureComponent {
 	render() {
 		const posts = this.props.recent
+		const { lastUpdate } = this.props
+
 		return (
 			<FooterContainer>
 				<LogoBox>
 					<Logo />
-					<FooterLink update to="/about">
-						Updated 5s ago
-          </FooterLink>
+					<LastUpdate>
+						Updated {lastUpdate}
+					</LastUpdate>
 				</LogoBox>
 				<LatestArticles>
 					<h5>Latest</h5>
