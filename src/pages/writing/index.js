@@ -17,8 +17,8 @@ class BlogIndex extends React.Component {
 				<Banner>
 					<Title>Journal</Title>
 					<Description>
-						Fleeting thoughts go to <a href="//twitter.com/nelonoel">Twitter</a>.
-						Daily notes go to <a href="//github.com/nelonoel/open-notes">Github</a>.
+						Fleeting thoughts go to <a href="//twitter.com/nelonoel" target="_blank" rel="nofollow">Twitter</a>.
+						Daily notes go to <a href="//github.com/nelonoel/open-notes" target="_blank" rel="nofollow">Github</a>.
 						Worthy topics go here.
           </Description>
 				</Banner>
