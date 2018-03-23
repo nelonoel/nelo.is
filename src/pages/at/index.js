@@ -10,6 +10,14 @@ import Banner, { Title, Description } from '../../components/Banner'
 import TextField, { TextArea } from '../../components/TextField'
 import { subheading } from '../../styles/typography'
 
+const Form = styled.form.attrs({
+	name: 'contact',
+	method: 'post',
+	'data-netlify': true
+}) `
+	margin-top: -1em;
+`
+
 const Field = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -44,7 +52,7 @@ class ContactPage extends PureComponent {
 						Feel free to reach out. Talk to you soon!
 					</Description>
 				</Banner>
-				<form name="contact" method="post" data-netlify="true">
+				<Form>
 					<Field>
 						<Label for="name">Name</Label>
 						<TextField innerRef={nameInput => this.firstField = nameInput} type="text" name="name" />
@@ -60,7 +68,7 @@ class ContactPage extends PureComponent {
 					<Field>
 						<Button wide secondary><Check /> Send message</Button>
 					</Field>
-				</form>
+				</Form>
 			</Wrapper>
 		)
 	}
