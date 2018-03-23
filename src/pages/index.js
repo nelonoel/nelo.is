@@ -8,11 +8,12 @@ import Wrapper from '../components/Wrapper'
 import { Monitor, Mail } from 'react-feather'
 import { ButtonLink } from '../components/Button'
 
-import svgFace from '../../static/img/avatar.svg'
-import svgHand from '../../static/img/hand.svg'
-import jpgCover from '../../static/img/landing-cover.jpg'
-import webmCover from '../../static/vid/landing-cover.webm'
-import mp4Cover from '../../static/vid/landing-cover.mp4'
+import svgFace from '../assets/img/avatar.svg'
+import svgHand from '../assets/img/hand.svg'
+import jpgCover from '../assets/img/landing-cover.jpg'
+
+import webmCover from '../assets/vid/landing-cover.webm'
+import mp4Cover from '../assets/vid/landing-cover.mp4'
 
 const HomeBanner = BannerContainer.extend`
   background: ${props => props.theme.contrast1};

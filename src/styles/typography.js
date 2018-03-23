@@ -1,17 +1,17 @@
 import { css } from 'styled-components'
 
-import woffMontserratBold from '../../static/font/montserrat/montserrat-bold-webfont.woff'
-import woff2MontserratBold from '../../static/font/montserrat/montserrat-bold-webfont.woff2'
+import woffMontserratBold from '../assets/font/montserrat/montserrat-bold-webfont.woff'
+import woff2MontserratBold from '../assets/font/montserrat/montserrat-bold-webfont.woff2'
 
-import woffGravityRegular from '../../static/font/gravity/gravity-regular-webfont.woff'
-import woff2GravityRegular from '../../static/font/gravity/gravity-regular-webfont.woff2'
+import woffGravityRegular from '../assets/font/gravity/gravity-regular-webfont.woff'
+import woff2GravityRegular from '../assets/font/gravity/gravity-regular-webfont.woff2'
 
-import ttfBarlowSemibold from '../../static/font/barlow/barlow-semibold-webfont.ttf'
-import woffBarlowSemibold from '../../static/font/barlow/barlow-semibold-webfont.woff'
-import woff2BarlowSemibold from '../../static/font/barlow/barlow-semibold-webfont.woff2'
+import ttfBarlowSemibold from '../assets/font/barlow/barlow-semibold-webfont.ttf'
+import woffBarlowSemibold from '../assets/font/barlow/barlow-semibold-webfont.woff'
+import woff2BarlowSemibold from '../assets/font/barlow/barlow-semibold-webfont.woff2'
 
-import woffInconsolataRegular from '../../static/font/inconsolata/inconsolata-regular-webfont.woff'
-import woff2InconsolataRegular from '../../static/font/inconsolata/inconsolata-regular-webfont.woff2'
+import woffInconsolataRegular from '../assets/font/inconsolata/inconsolata-regular-webfont.woff'
+import woff2InconsolataRegular from '../assets/font/inconsolata/inconsolata-regular-webfont.woff2'
 
 export const logo = css`
 	font-family: "Montserrat", sans-serif;
