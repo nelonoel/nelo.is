@@ -55,16 +55,19 @@ const NavLink = ButtonLink.extend.attrs({
 	color: ${props => props.theme.text};
   font-size: 1em;
   margin-left: 0.25em;
-  margin-right: 0;
-  padding: 0.75em 1.125em;
+	margin-right: 0;
+	opacity: 0.9;
+  padding: 0.75em 1em;
 	transition: none;
 
   &:hover, &:focus {
-    background: none;
+		background: none;
+		opacity: 1;
 	}
 
   @media (max-width: ${breakpoint}) {
-    margin: auto;
+		margin: auto;
+		padding: 0.25em 0.5em;
     min-width: 8em;
   }
 `
