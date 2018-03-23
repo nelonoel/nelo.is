@@ -78,20 +78,20 @@ const Face = styled.img.attrs({
 `
 
 const wave = keyframes`
+	from {
+		transform: rotate(60deg) translateX(90%) translateY(40%);
+	}
+
 	30%, 50% {
-		transform: rotate(0);
+		transform: rotate(0)  translateX(-15%);
 	}
 
 	40%, 60%, 80% {
-		transform: rotate(-20deg);
+		transform: rotate(-20deg)  translateX(-15%);
 	}
 
 	70% {
-		transform: rotate(-10deg);
-	}
-
-	from {
-		transform: rotate(30deg) translateX(20%) translateY(100%);
+		transform: rotate(-10deg)  translateX(-15%);
 	}
 
 	to {
@@ -105,6 +105,7 @@ const Hand = styled.img.attrs({
 }) `
 	left: 14em;
 	opacity: 0;
+	pointer-events: none;
 	position: absolute;
 	top: 11em;
 	transform: rotate(160deg);
@@ -114,7 +115,7 @@ const Hand = styled.img.attrs({
 
 	&.waving {
 		opacity: 1;
-		animation: ${wave} 1.8s ease;
+		animation: ${wave} 1.6s ease;
 	}
 
 	@media (max-width: 42em) {
