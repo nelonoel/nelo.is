@@ -6,6 +6,7 @@ import { monospace, subheading } from '../../styles/typography'
 const Article = styled.article`
 	${props => require(`../../styles/syntax-${props.theme.name}.css`)}
 	font-size: 1.1em;
+	margin-top: 2em;
 	position: relative;
 
   body > *:first-child {

@@ -34,7 +34,7 @@ export const Cover = styled.div`
 	}
 
 	&:after {
-		background: ${props => rgba(props.theme.base, 0.5)} linear-gradient(transparent, ${props => props.theme.base});
+		background: ${props => rgba(props.theme.base, 0.4)} linear-gradient(transparent, ${props => props.theme.base});
 	}
 
 	&:before {
@@ -43,6 +43,7 @@ export const Cover = styled.div`
 		background-color: ${props => props.theme.base};
 		background-position:	center center;
 		background-size: cover;
+		filter: contrast(1.25);
 		opacity: 0.2;
 	}
 `

@@ -10,7 +10,7 @@ class PostTemplate extends React.Component {
 	render() {
 		const post = this.props.data.markdownRemark
 		const siteTitle = get(this.props, 'data.site.siteMetadata.title')
-		const cover = get(post, 'frontmatter.cover.childImageSharp.resize.src')
+		const cover = get(post, 'frontmatter.cover.childImageSharp.sizes.src')
 
 		return (
 			<Wrapper>
@@ -43,9 +43,9 @@ export const pageQuery = graphql`
         subtitle
         cover {
           childImageSharp {
-            resize {
-              src
-            }
+						sizes(duotone: { highlight: "#f5f8fa", shadow: "#293742" }) {
+							src
+						}
           }
         }
         model
