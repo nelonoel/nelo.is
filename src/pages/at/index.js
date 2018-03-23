@@ -6,7 +6,7 @@ import { Check } from 'react-feather'
 
 import Wrapper from '../../components/Wrapper'
 import Button from '../../components/Button'
-import Banner, { Title, Subtitle } from '../../components/Banner'
+import Banner, { Title, Description } from '../../components/Banner'
 import TextField, { TextArea } from '../../components/TextField'
 import { subheading } from '../../styles/typography'
 
@@ -39,7 +39,10 @@ class ContactPage extends PureComponent {
 				<Helmet title={`${siteTitle} ∙ Contact`} />
 				<Banner>
 					<Title>Contact</Title>
-					<Subtitle>I love e-mail.</Subtitle>
+					<Description>
+						I love receiving messages from real people. <br />
+						Feel free to reach out. Talk to you soon!
+					</Description>
 				</Banner>
 				<form name="contact" method="post" data-netlify="true">
 					<Field>
