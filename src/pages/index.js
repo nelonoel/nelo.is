@@ -2,10 +2,11 @@ import React, { PureComponent } from 'react'
 import styled, { keyframes } from 'styled-components'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
+import { Monitor, Mail } from 'react-feather'
+import { transparentize } from 'polished'
 
 import { BannerContainer } from '../components/Banner'
 import Wrapper from '../components/Wrapper'
-import { Monitor, Mail } from 'react-feather'
 import { ButtonLink } from '../components/Button'
 
 import svgFace from '../assets/img/avatar.svg'
@@ -16,23 +17,32 @@ import webmCover from '../assets/vid/landing-cover.webm'
 import mp4Cover from '../assets/vid/landing-cover.mp4'
 
 const HomeBanner = BannerContainer.extend`
-  background: ${props => props.theme.contrast1};
+  background: ${props => transparentize(0.5, props.theme.contrast1)};
 	margin-top: -8em;
 	opacity: 1;
 	overflow: hidden;
 	position: relative;
+
+	@media (max-width: 42em) {
+		background: ${props => props.theme.base};
+	}
 `
 
 const Video = styled.video`
 	left: 50%;
 	min-height: 100%;
 	min-width: 100%;
-	opacity: ${props => props.theme.name === 'dark' ? 0.0325 : 0.075};
+	mix-blend-mode: soft-light;
+	opacity: ${props => props.theme.name === 'dark' ? 0.0612 : 0.125};
 	pointer-events: none;
 	position: absolute;
 	top: 50%;
 	transform: translateX(-50%) translateY(-50%);
 	z-index: -1;
+
+	@media (max-width: 42em) {
+		display: none;
+	}
 `
 
 const Hero = styled.section`
@@ -81,11 +91,11 @@ const wave = keyframes`
 	}
 
 	from {
-		 transform: rotate(30deg) translateX(20%) translateY(100%);
+		transform: rotate(30deg) translateX(20%) translateY(100%);
 	}
 
 	to {
-		 transform: rotate(45deg) translateX(150%) translateY(100%);
+		transform: rotate(45deg) translateX(150%) translateY(100%);
 	}
 `
 
@@ -94,6 +104,7 @@ const Hand = styled.img.attrs({
 	src: svgHand
 }) `
 	left: 14em;
+	opacity: 0;
 	position: absolute;
 	top: 11em;
 	transform: rotate(160deg);
@@ -102,6 +113,7 @@ const Hand = styled.img.attrs({
 	z-index: 2;
 
 	&.waving {
+		opacity: 1;
 		animation: ${wave} 1.8s ease;
 	}
 
@@ -178,44 +190,46 @@ class Home extends PureComponent {
 	render() {
 		const siteTitle = get(this, 'props.data.site.siteMetadata.title')
 		return (
-			<HomeBanner>
-				<Helmet title={`${siteTitle} ∙ Digital Craftsman`} />
-				<Wrapper>
-					<Hero>
-						<Avatar onClick={this.startAnimation}>
-							<Face />
-							<Hand
-								innerRef={hand => this.hand = hand}
-								className={this.state.waving && 'waving'}
-								onAnimationEnd={this.endAnimation}
-							/>
-						</Avatar>
-						<Copy>
-							<h1>Hello there!</h1>
-							<p>
-								I'm Nelo — a digital craftsman focusing on front-end development and UI design.
+			<div>
+				<HomeBanner>
+					<Helmet title={`${siteTitle} ∙ Digital Craftsman`} />
+					<Wrapper>
+						<Hero>
+							<Avatar onClick={this.startAnimation}>
+								<Face />
+								<Hand
+									innerRef={hand => this.hand = hand}
+									className={this.state.waving && 'waving'}
+									onAnimationEnd={this.endAnimation}
+								/>
+							</Avatar>
+							<Copy>
+								<h1>Hello there!</h1>
+								<p>
+									I'm Nelo — a digital craftsman focusing on front-end development and UI design.
               </p>
-							<p>
-								I work with companies around the world to make delightful digital products.
+								<p>
+									I work with companies around the world to make delightful digital products.
               </p>
-							<Actions>
-								<ButtonLink to="/making">
-									<Monitor />
-									View works
+								<Actions>
+									<ButtonLink to="/making">
+										<Monitor />
+										View works
                 </ButtonLink>
-								<ButtonLink to="/at" inverted>
-									<Mail />
-									Contact me
+									<ButtonLink to="/at" inverted>
+										<Mail />
+										Contact me
                 </ButtonLink>
-							</Actions>
-						</Copy>
-						<Video innerRef={video => { this.video = video }} poster={jpgCover} autoplay muted loop>
-							<source src={webmCover} type="video/webm" />
-							<source src={mp4Cover} type="video/mp4" />
-						</Video>
-					</Hero>
-				</Wrapper>
-			</HomeBanner >
+								</Actions>
+							</Copy>
+							<Video innerRef={video => { this.video = video }} poster={jpgCover} autoplay muted loop>
+								<source src={webmCover} type="video/webm" />
+								<source src={mp4Cover} type="video/mp4" />
+							</Video>
+						</Hero>
+					</Wrapper>
+				</HomeBanner>
+			</div>
 		)
 	}
 }
