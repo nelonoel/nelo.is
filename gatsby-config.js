@@ -49,6 +49,13 @@ module.exports = {
 		`gatsby-plugin-feed`,
 		`gatsby-plugin-offline`,
 		`gatsby-plugin-react-helmet`,
-		`gatsby-plugin-styled-components`
+		`gatsby-plugin-styled-components`,
+		{
+			resolve: `gatsby-plugin-nprogress`,
+			options: {
+				color: '#43bf4d',
+				showSpinner: false
+			},
+		},
 	],
 }
