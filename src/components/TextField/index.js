@@ -17,7 +17,8 @@ const TextField = styled.input`
 `
 
 export const TextArea = TextField.withComponent('textarea').extend`
-	height: ${props => props.height || '9em'};
+	height: ${props => props.height || '7.25em'};
+	line-height: 1.4;
 	resize: none;
 `
 
