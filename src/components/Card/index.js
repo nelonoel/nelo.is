@@ -52,12 +52,12 @@ const Subtitle = styled.h2`
 `
 
 const Date = styled.div`
-	${subheading}
 	color: ${props => props.theme.contrast2};
-  font-size: 0.85em;
+  font-size: 0.75em;
+	font-weight: bold;
   letter-spacing: 0.0612em;
   text-transform: uppercase;
-  margin-top: 0.4em;
+  margin-top: 0.45em;
 `
 
 const Category = styled.div`
