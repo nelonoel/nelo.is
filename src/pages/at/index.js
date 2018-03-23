@@ -28,6 +28,10 @@ const Label = styled.label`
 `
 
 class ContactPage extends PureComponent {
+	componentDidMount() {
+		this.firstField.focus()
+	}
+
 	render() {
 		const siteTitle = get(this, 'props.data.site.siteMetadata.title')
 		return (
@@ -40,7 +44,7 @@ class ContactPage extends PureComponent {
 				<form name="contact" method="post" data-netlify="true">
 					<Field>
 						<Label for="name">Name</Label>
-						<TextField type="text" name="name" />
+						<TextField innerRef={nameInput => this.firstField = nameInput} type="text" name="name" />
 					</Field>
 					<Field>
 						<Label for="email">E-mail</Label>
