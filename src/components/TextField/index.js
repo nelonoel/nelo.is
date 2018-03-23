@@ -6,6 +6,7 @@ const TextField = styled.input`
   border: none;
   border-radius: ${props => props.theme.borderRadius};
   color: ${props => props.theme.text};
+	font-family: inherit;
 	font-size: 1.25em;
 	padding: 0.75em;
 
