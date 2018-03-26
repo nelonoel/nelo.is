@@ -5,15 +5,16 @@ import { lighten, transparentize } from 'polished'
 
 import Wrapper from '../Wrapper'
 import Logo from '../Logo'
-import Menu from './Menu'
-
-const breakpoint = '38em'
+import Menu, { breakpoint } from './Menu'
 
 const HeaderWrapper = Wrapper.withComponent('header').extend`
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 0.75em 0.25em;
+
+	@media (max-width: ${breakpoint}) {
+		padding: 0.75em 1em;
+	}
 `
 
 const HeaderContainer = styled(Headroom) `

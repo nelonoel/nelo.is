@@ -24,9 +24,9 @@ const Button = styled.button`
   font-size: 0.95em;
 	font-weight: normal;
 	justify-content: ${props => props.wide ? 'center' : null};
-  line-height: 1.2;
+  line-height: ${props => props.wide ? 3 : 2.5};
 	margin-right: ${props => props.wide ? null : '0.5em'};
-  padding: ${props => (props.icon ? '1em' : props.wide ? '0.9em 1.25em' : '0.55em 1.25em')};
+  padding: ${props => (props.icon ? '1em' : props.wide ? '0 1.25em' : '0 1.25em')};
 	text-decoration: none;
 	transform: translateY(0);
   transition: all 0.2s ease;
