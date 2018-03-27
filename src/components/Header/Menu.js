@@ -6,7 +6,7 @@ import { rgba } from 'polished'
 import { ButtonLink } from '../Button'
 import Hamburger from './Hamburger'
 
-const breakpoint = '38em'
+export const breakpoint = '35em'
 
 const Container = styled.nav`
   display: flex;
@@ -74,10 +74,11 @@ const NavLink = ButtonLink.extend.attrs({
 
 const ButtonToggle = NavLink.withComponent('button').extend`
 	color: ${props => props.theme.text};
-  margin-right: 0;
+	margin-right: -0.75em;
   z-index: 1;
 
   @media (max-width: ${breakpoint}) {
+		margin-right: 0;
 		min-width: 0;
 		transform: scale(1.25);
 
