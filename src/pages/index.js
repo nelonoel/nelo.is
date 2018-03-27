@@ -24,7 +24,21 @@ const HomeBanner = BannerContainer.extend`
 	position: relative;
 
 	@media (max-width: 42em) {
-		background: ${props => props.theme.base};
+		background: ${props => props.theme.contrast1};
+		background-blend-mode: luminosity;
+
+		&:before {
+			background: url(${jpgCover});
+			background-size: cover;
+			mix-blend-mode: soft-light;
+			content: '';
+			opacity: ${props => props.theme.name === 'dark' ? 0.125 : 0.25};
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
 	}
 `
 
