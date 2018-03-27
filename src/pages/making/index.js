@@ -17,12 +17,11 @@ class ProjectsIndex extends React.Component {
 				<Banner>
 					<Title>Projects</Title>
 					<Description>
-						Here are some of my finest work. <br />
-						Tools used to build these are listed <a href="/using">here</a>.
+						Here's some of my design and development work through the years.
 					</Description>
 				</Banner>
-				<Wrapper>
-					<Grid itemMinWidth={'13em'}>
+				<Wrapper wide>
+					<Grid itemMinWidth={'16em'}>
 						{posts.map(({ node }) => {
 							return <Card
 								half={true}
