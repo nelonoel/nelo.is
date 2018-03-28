@@ -7,7 +7,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 	const { createPage } = boundActionCreators
 
 	return new Promise((resolve, reject) => {
-		const blogPost = path.resolve('./src/templates/post.js')
+		const post = path.resolve('./src/templates/post.js')
 		resolve(
 			graphql(
 				`
@@ -32,11 +32,11 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 					reject(result.errors)
 				}
 
-				// Create blog posts pages.
+				// Create pages
 				_.each(result.data.allMarkdownRemark.edges, edge => {
 					createPage({
 						path: edge.node.fields.slug,
-						component: blogPost,
+						component: post,
 						context: {
 							slug: edge.node.fields.slug,
 						},

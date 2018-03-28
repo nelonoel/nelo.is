@@ -4,13 +4,21 @@ import Wrapper from '../Wrapper'
 import { rgba } from 'polished'
 
 export const BannerContainer = styled.div`
+	align-items: center;
   color: ${props => props.theme.text};
   display: flex;
+	min-height: 8.5em;
   margin-top: -7em;
   opacity: 0.9;
   padding-top: 8em;
   text-align: center;
   z-index: 0;
+`
+
+export const Content = Wrapper.extend`
+	@media(max-width: 42em) {
+		padding: 0;
+	}
 `
 
 export const Cover = styled.div`
@@ -51,7 +59,7 @@ export const Cover = styled.div`
 export const Title = styled.h1`
   font-size: 2.25em;
   line-height: 1.25;
-  margin: 0;
+  margin: -0.25em 0 0;
 `
 
 export const Subtitle = styled.h2`
@@ -87,9 +95,9 @@ class Banner extends PureComponent {
 		return (
 			<BannerContainer>
 				{cover && <Cover src={cover} />}
-				<Wrapper>
+				<Content>
 					{children}
-				</Wrapper>
+				</Content>
 			</BannerContainer>
 		)
 	}
