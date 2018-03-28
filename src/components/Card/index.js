@@ -104,14 +104,14 @@ const Item = styled(Link).attrs({
 		writing-mode: ${props => props.half ? 'lr' : 'tb-rl'};
 	}
 
-	@media (min-width: 27em) {
+	@media (min-width: 30em) {
 		&:hover, &:focus {
 			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 			transform: translate3d(0, -2px, 0);
 		}
 	}
 
-  @media (max-width: 27em) {
+  @media (max-width: 30em) {
     grid-template-columns: 1fr;
 		grid-template-rows: 6em 1fr 1.5em;
 
