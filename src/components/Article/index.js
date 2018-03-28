@@ -411,7 +411,50 @@ const Article = styled.article`
 		${monospace}
     border: ${props => lighten(0.03, props.theme.dark3)} solid 2px;
     overflow: auto;
-  }
+	}
+
+	.ui-screenshot .gatsby-resp-image-wrapper {
+		border-radius: ${props => props.theme.borderRadius};
+		box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.025),
+								0 1px 3px rgba(0, 0, 0, 0.05),
+								0 2px 6px rgba(0, 0, 0, 0.1);
+		overflow: hidden;
+	}
+
+	.gatsby-resp-image-wrapper {
+		margin: 2rem auto;
+	}
+
+	figcaption {
+		color: ${props => props.theme.contrast4};
+		font-size: 0.8em;
+		margin: -1.25rem auto 2rem;
+		padding: 0 1em;
+		text-align: center;
+
+		* {
+			color: ${props => props.theme.contrast4};
+		}
+	}
+
+	.grid {
+		display: grid;
+		margin: 2rem auto;
+
+		.gatsby-resp-image-wrapper {
+			margin: 0;
+		}
+
+		&.two-column {
+			grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+			grid-gap: 1em;
+		}
+
+		&.three-column {
+			grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+			grid-gap: 1em;
+		}
+	}
 
   pre {
 		background-color: ${props => props.theme.white};
@@ -458,7 +501,7 @@ const Article = styled.article`
     pre {
       word-wrap: break-word;
     }
-  }
+	}
 `
 
 export default Article
