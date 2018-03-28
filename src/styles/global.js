@@ -18,7 +18,11 @@ injectGlobal`
 		&:focus {
 			outline: none;
 		}
-  }
+	}
+
+	b, strong {
+		font-weight: bold;
+	}
 
   body {
     font-size: ${theme.baseFontSize};
