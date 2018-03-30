@@ -421,6 +421,11 @@ const Article = styled.article`
 		overflow: hidden;
 	}
 
+
+	.transparent .gatsby-resp-image-background-image {
+		background-image: none !important;
+	}
+
 	.gatsby-resp-image-wrapper {
 		margin: 2rem auto;
 	}
