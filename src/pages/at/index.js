@@ -43,33 +43,35 @@ class ContactPage extends PureComponent {
 	render() {
 		const siteTitle = get(this, 'props.data.site.siteMetadata.title')
 		return (
-			<Wrapper>
+			<div>
 				<Helmet title={`${siteTitle} ∙ Contact`} />
 				<Banner>
 					<Title>Contact</Title>
 					<Description>
-						I love receiving messages from real people. <br />
+						I love receiving messages from real people.
 						Feel free to reach out. Talk to you soon!
 					</Description>
 				</Banner>
-				<Form>
-					<Field>
-						<Label for="name">Name</Label>
-						<TextField innerRef={nameInput => this.firstField = nameInput} type="text" name="name" />
-					</Field>
-					<Field>
-						<Label for="email">E-mail</Label>
-						<TextField type="text" name="email" />
-					</Field>
-					<Field>
-						<Label for="message">Message</Label>
-						<TextArea name="message" />
-					</Field>
-					<Field>
-						<Button wide secondary><Check /> Send message</Button>
-					</Field>
-				</Form>
-			</Wrapper>
+				<Wrapper>
+					<Form>
+						<Field>
+							<Label for="name">Name</Label>
+							<TextField innerRef={nameInput => this.firstField = nameInput} type="text" name="name" />
+						</Field>
+						<Field>
+							<Label for="email">E-mail</Label>
+							<TextField type="text" name="email" />
+						</Field>
+						<Field>
+							<Label for="message">Message</Label>
+							<TextArea name="message" />
+						</Field>
+						<Field>
+							<Button wide secondary><Check /> Send message</Button>
+						</Field>
+					</Form>
+				</Wrapper>
+			</div>
 		)
 	}
 }

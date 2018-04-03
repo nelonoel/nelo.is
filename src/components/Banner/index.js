@@ -15,11 +15,7 @@ export const BannerContainer = styled.div`
   z-index: 0;
 `
 
-export const Content = Wrapper.extend`
-	@media(max-width: 42em) {
-		padding: 0;
-	}
-`
+export const Content = Wrapper.extend``
 
 export const Cover = styled.div`
 	height: 16em;
