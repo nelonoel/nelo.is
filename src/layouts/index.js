@@ -44,7 +44,7 @@ class Template extends Component {
 		return (
 			<ThemeProvider theme={isDarkMode ? dark : light}>
 				<Twemoji>
-					<Page>
+					<Page isNavOpen={isNavOpen}>
 						<Header
 							toggleNav={this.toggleNav}
 							toggleDarkMode={this.toggleDarkMode}

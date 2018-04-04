@@ -33,18 +33,39 @@ const Navigation = styled.ul`
     justify-content: center;
     left: 0;
     opacity: 0;
-    pointer-events: 0;
+    pointer-events: none;
     position: fixed;
     right: 0;
     top: 0;
 
     & > li {
-      margin: 0.25em auto;
+      margin: 0 auto;
+			opacity: 0;
+			transform: translateY(20%);
     }
 
     ${props => props.isNavOpen ? `
       opacity: 1;
-      pointer-events: normal;
+      pointer-events: initial;
+
+			& > li {
+				opacity: 1;
+				transform: none;
+				transition: opacity .2s ease,
+										transform .2s ease;
+
+				&:nth-child(1) {
+					transition-delay: .1s;
+				}
+
+				&:nth-child(2) {
+					transition-delay: .2s;
+				}
+
+				&:nth-child(3) {
+					transition-delay: .3s;
+				}
+			}
     ` : null}
   }
 `
@@ -68,7 +89,7 @@ const NavLink = ButtonLink.extend.attrs({
   @media (max-width: ${breakpoint}) {
 		margin: auto;
 		padding: 0.25em 0.5em;
-    min-width: 8em;
+    min-width: 7.25em;
   }
 `
 
@@ -111,19 +132,19 @@ class Menu extends PureComponent {
 			<Container>
 				<Navigation isNavOpen={isNavOpen}>
 					<li>
-						<NavLink to="/making">
+						<NavLink to="/making" onClick={toggleNav}>
 							<Monitor />
 							Projects
             </NavLink>
 					</li>
 					<li>
-						<NavLink to="/writing">
+						<NavLink to="/writing" onClick={toggleNav}>
 							<Book />
 							Journal
             </NavLink>
 					</li>
 					<li>
-						<NavLink to="/at">
+						<NavLink to="/at" onClick={toggleNav}>
 							<Mail />
 							Contact
             </NavLink>
