@@ -10,7 +10,6 @@ import Wrapper from '../components/Wrapper'
 import { ButtonLink } from '../components/Button'
 
 import svgFace from '../assets/img/avatar.svg'
-import svgHand from '../assets/img/hand.svg'
 import jpgCover from '../assets/img/landing-cover.jpg'
 
 import webmCover from '../assets/vid/landing-cover.webm'
@@ -91,52 +90,6 @@ const Face = styled.img.attrs({
 	}
 `
 
-const wave = keyframes`
-	from {
-		transform: rotate(60deg) translateX(90%) translateY(40%);
-	}
-
-	30%, 50% {
-		transform: rotate(0)  translateX(-15%);
-	}
-
-	40%, 60%, 80% {
-		transform: rotate(-20deg)  translateX(-15%);
-	}
-
-	70% {
-		transform: rotate(-10deg)  translateX(-15%);
-	}
-
-	to {
-		transform: rotate(45deg) translateX(150%) translateY(100%);
-	}
-`
-
-const Hand = styled.img.attrs({
-	draggable: false,
-	src: svgHand
-}) `
-	left: 14em;
-	opacity: 0;
-	pointer-events: none;
-	position: absolute;
-	top: 11em;
-	transform: rotate(160deg);
-	transform-origin: 10% 100%;
-	width: 5.5em;
-	z-index: 2;
-
-	&.waving {
-		opacity: 1;
-		animation: ${wave} 1.6s ease;
-	}
-
-	@media (max-width: 42em) {
-		z-index: 0;
-	}
-`
-
 const Copy = styled.div`
 	align-self: center;
 	padding: 2em 0;
@@ -178,25 +131,8 @@ const Actions = styled.div`
 `
 
 class Home extends PureComponent {
-	constructor(props) {
-		super(props)
-		this.startAnimation = this.startAnimation.bind(this)
-		this.endAnimation = this.endAnimation.bind(this)
-		this.state = {
-			waving: false
-		}
-	}
-
-	startAnimation() {
-		this.setState({ waving: true })
-	}
-
-	endAnimation() {
-		this.setState({ waving: false })
-	}
-
 	componentDidMount() {
-		if (this.video) {
+		if (this.video && window.getComputedStyle(this.video, null).display === 'block') {
 			this.video.playbackRate = 0.75
 			this.video.play()
 		}
@@ -204,28 +140,25 @@ class Home extends PureComponent {
 
 	render() {
 		const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+		const posts = get(this, 'props.data.allMarkdownRemark.edges')
+
 		return (
 			<div>
 				<HomeBanner>
 					<Helmet title={`${siteTitle} ∙ Digital Craftsman`} />
 					<Wrapper>
 						<Hero>
-							<Avatar onClick={this.startAnimation}>
+							<Avatar>
 								<Face />
-								<Hand
-									innerRef={hand => this.hand = hand}
-									className={this.state.waving && 'waving'}
-									onAnimationEnd={this.endAnimation}
-								/>
 							</Avatar>
 							<Copy>
 								<h1>Hello there!</h1>
 								<p>
 									I'm Nelo — a digital craftsman focusing on front-end development and UI design.
-              </p>
+								</p>
 								<p>
 									I work with companies around the world to make delightful digital products.
-              </p>
+								</p>
 								<Actions>
 									<ButtonLink to="/making">
 										<Monitor />
@@ -257,6 +190,6 @@ export const pageQuery = graphql`
       siteMetadata {
         title
       }
-    }
+		}
   }
 `
