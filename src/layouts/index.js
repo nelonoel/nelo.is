@@ -38,7 +38,6 @@ class Template extends Component {
 	render() {
 		const { location, children } = this.props
 		const { isNavOpen, isDarkMode } = this.state
-		const lastUpdate = get(this, 'props.data.site.buildTime')
 		const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
 		return (
@@ -53,7 +52,7 @@ class Template extends Component {
 						<Content>
 							{children()}
 						</Content>
-						<Footer lastUpdate={lastUpdate} recent={posts} />
+						<Footer recent={posts} />
 					</Page>
 				</Twemoji>
 			</ThemeProvider>

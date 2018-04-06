@@ -51,16 +51,6 @@ const FooterLink = ButtonLink.extend.attrs({
   }
 `
 
-const LastUpdate = FooterLink.extend`
-	color: ${props => props.theme.contrast2};
-	cursor: default;
-	padding: 0;
-
-	&:hover {
-		color: ${props => props.theme.contrast2};
-	}
-`.withComponent('span')
-
 const LogoBox = Box.extend`
   display: flex;
   flex-direction: column;
@@ -73,6 +63,10 @@ const LogoBox = Box.extend`
 		& > a {
 			color: ${props => props.theme.contrast3};
 		}
+	}
+
+	${FooterLink} {
+		margin-top: -0.6em;
 	}
 
   ${Dot} {
@@ -121,15 +115,12 @@ const ExternalLink = FooterLink.withComponent('a')
 class Footer extends PureComponent {
 	render() {
 		const posts = this.props.recent
-		const { lastUpdate } = this.props
 
 		return (
 			<FooterContainer>
 				<LogoBox>
 					<Logo />
-					<LastUpdate>
-						Updated {lastUpdate}
-					</LastUpdate>
+					<FooterLink to="/">www.nelo.is</FooterLink>
 				</LogoBox>
 				<LatestArticles>
 					<h5>Latest</h5>
