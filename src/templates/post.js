@@ -63,7 +63,7 @@ export const pageQuery = graphql`
         category
         type
 				date(formatString: "MMMM DD, YYYY")
-				month: date(formatString: "MMM YYYY")
+				month: date(formatString: "MMMM YYYY")
 
 				client
 				description
