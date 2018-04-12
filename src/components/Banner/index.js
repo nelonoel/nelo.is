@@ -43,6 +43,7 @@ export const Cover = styled.div`
 
 	&:before {
 		${props => props.src ? `background-image: url(${props.src});` : null}
+		background-attachment: fixed;
 		background-blend-mode: luminosity;
 		background-color: ${props => props.theme.base};
 		background-position:	center center;
