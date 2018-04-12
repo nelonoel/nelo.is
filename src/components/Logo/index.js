@@ -116,6 +116,7 @@ class Logo extends PureComponent {
 		super(props)
 		this.addAnimation = this.addAnimation.bind(this)
 		this.removeAnimation = this.removeAnimation.bind(this)
+		this.handleLogoClick = this.handleLogoClick.bind(this)
 		this.state = {
 			isAnimating: false
 		}
@@ -131,10 +132,18 @@ class Logo extends PureComponent {
 		}
 	}
 
+	handleLogoClick() {
+		const { toggleNav, isNavOpen } = this.props
+
+		if (isNavOpen) {
+			toggleNav()
+		}
+	}
+
 	render() {
 		return (
 			<Title onClick={this.addAnimation}>
-				<Link to="/" className={this.state.isAnimating ? 'bouncing' : ''}>
+				<Link to="/" className={this.state.isAnimating ? 'bouncing' : ''} onMouseUp={this.handleLogoClick}>
 					Nelo
           <Dot onAnimationEnd={this.removeAnimation} />
 				</Link>

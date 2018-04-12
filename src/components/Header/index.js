@@ -44,7 +44,7 @@ class Header extends PureComponent {
 		return (
 			<HeaderContainer isNavOpen={isNavOpen}>
 				<HeaderWrapper>
-					<Logo />
+					<Logo toggleNav={toggleNav} isNavOpen={isNavOpen} />
 					<Menu
 						toggleNav={toggleNav}
 						toggleDarkMode={toggleDarkMode}
