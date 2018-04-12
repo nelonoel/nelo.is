@@ -421,7 +421,6 @@ const Article = styled.article`
 		overflow: hidden;
 	}
 
-
 	.transparent .gatsby-resp-image-background-image {
 		background-image: none !important;
 	}
@@ -448,6 +447,10 @@ const Article = styled.article`
 
 		.gatsby-resp-image-wrapper {
 			margin: 0;
+		}
+
+		.ui-screenshot + figcaption {
+			margin-top: 1em
 		}
 
 		&.two-column {
