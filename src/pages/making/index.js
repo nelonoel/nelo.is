@@ -21,7 +21,7 @@ class ProjectsIndex extends React.Component {
 					</Description>
 				</Banner>
 				<Wrapper wide>
-					<Grid itemMinWidth={'16em'}>
+					<Grid itemMinWidth="16em">
 						{posts.map(({ node }) => {
 							return <Card
 								half={true}

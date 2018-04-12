@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
-import { darken } from 'polished'
+import { darken, rgba } from 'polished'
 import { subheading } from '../../styles/typography'
 
 const card = {
@@ -67,7 +67,7 @@ const Category = styled.div`
 	border: ${props => darken(0.0306, props.theme.name === 'dark' ? props.theme.contrast1 : props.theme.white)} solid 0;
   color: ${props => darken(0.125, props.theme.name === 'dark' ? props.theme.contrast1 : props.theme.white)};
   font-size: 0.75em;
-	line-height: 1.9;
+	line-height: 2;
   letter-spacing: 0.2em;
   padding: 0.25em;
   text-align: center;
@@ -83,7 +83,7 @@ const Item = styled(Link).attrs({
   align-items: center;
   background: ${props => props.theme.name === 'dark' ? props.theme.contrast1 : props.theme.white};
   border-radius: ${props => props.theme.borderRadius};
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px ${props => rgba(0, 0, 0, 0.125)};
   box-sizing: border-box;
   color: ${props => props.theme.text};
   cursor: pointer;
@@ -106,8 +106,8 @@ const Item = styled(Link).attrs({
 
 	@media (min-width: 30em) {
 		&:hover, &:focus {
-			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-			transform: translate3d(0, -2px, 0);
+			box-shadow: 0 3px 9px ${props => rgba(0, 0, 0, 0.0625)};
+			transform: translate3d(0, -3px, 0);
 		}
 	}
 
@@ -131,6 +131,10 @@ export const Grid = styled.section`
     minmax(${props => props.itemMinWidth || '1fr'}, 1fr)
   );
   grid-gap: 0.85em;
+
+	& ${Item} {
+		min-height: ${props => props.itemMinHeight || null};
+	}
 
   @media (max-width: 42em) {
     grid-gap: 0.5em;
