@@ -124,27 +124,37 @@ const NavToggle = ButtonToggle.extend`
 `
 
 class Menu extends PureComponent {
+	constructor(props) {
+		super(props)
+		this.toggleNav = this.toggleNav.bind(this)
+	}
+
+	toggleNav() {
+		if (this.toggle && window.getComputedStyle(this.toggle, null).display !== 'none') {
+			this.props.toggleNav()
+		}
+	}
 
 	render() {
-		const { toggleNav, toggleDarkMode, isNavOpen, isDarkMode } = this.props
+		const { toggleDarkMode, isNavOpen, isDarkMode } = this.props
 
 		return (
 			<Container>
 				<Navigation isNavOpen={isNavOpen}>
 					<li>
-						<NavLink to="/making" onClick={toggleNav}>
+						<NavLink to="/making" onMouseUp={this.toggleNav}>
 							<Monitor />
 							Projects
             </NavLink>
 					</li>
 					<li>
-						<NavLink to="/writing" onClick={toggleNav}>
+						<NavLink to="/writing" onMouseUp={this.toggleNav}>
 							<Book />
 							Journal
             </NavLink>
 					</li>
 					<li>
-						<NavLink to="/at" onClick={toggleNav}>
+						<NavLink to="/at" onMouseUp={this.toggleNav}>
 							<Mail />
 							Contact
             </NavLink>
@@ -153,7 +163,7 @@ class Menu extends PureComponent {
 				<ButtonToggle onClick={toggleDarkMode} icon>
 					{isDarkMode ? <Sun /> : <Moon />}
 				</ButtonToggle>
-				<NavToggle onClick={toggleNav} icon>
+				<NavToggle onClick={this.toggleNav} icon innerRef={toggle => { this.toggle = toggle }}>
 					<Hamburger isNavOpen={isNavOpen} />
 				</NavToggle>
 			</Container>
