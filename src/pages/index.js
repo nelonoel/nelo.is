@@ -132,7 +132,7 @@ const Actions = styled.div`
 
 class Home extends PureComponent {
 	componentDidMount() {
-		if (this.video && window.getComputedStyle(this.video, null).display === 'block') {
+		if (this.video && window.getComputedStyle(this.video, null).display !== 'none') {
 			this.video.playbackRate = 0.75
 			this.video.play()
 		}
