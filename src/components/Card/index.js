@@ -2,17 +2,15 @@ import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
 import { darken, rgba } from 'polished'
+import Img from 'gatsby-image'
+
 import { subheading } from '../../styles/typography'
 
 const card = {
 	height: 15,
 }
 
-const Cover = styled.div`
-  background-color: ${props => darken(0.025, props.theme.name === 'dark' ? props.theme.contrast1 : props.theme.white)};
-  ${props => props.src ? `background-image: url(${props.src});` : null}
-  background-position: center;
-  background-size: cover;
+const Cover = styled(Img) `
   height: 100%;
 `
 
@@ -111,9 +109,21 @@ const Item = styled(Link).attrs({
 		}
 	}
 
+	${props => props.half ? `
+		& > .cover {
+			height: 6em;
+			overflow: hidden;
+		}
+	` : null}
+
   @media (max-width: 30em) {
     grid-template-columns: 1fr;
 		grid-template-rows: 6em 1fr 1.5em;
+
+		& > .cover {
+			height: 6em;
+			overflow: hidden;
+		}
 
     & > ${Category} {
 			border-left-width: 0;
@@ -156,7 +166,7 @@ class Card extends PureComponent {
 
 		return (
 			<Item slug={slug} half={half}>
-				<Cover src={cover} />
+				<Cover sizes={cover} outerWrapperClassName="cover" />
 				<Content>
 					{type && <Type>{type}</Type>}
 					<Title>{title}</Title>

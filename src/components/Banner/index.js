@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
-import Wrapper from '../Wrapper'
 import { rgba } from 'polished'
+import Img from 'gatsby-image'
+import Wrapper from '../Wrapper'
 
 export const BannerContainer = styled.div`
 	align-items: center;
@@ -13,28 +14,36 @@ export const BannerContainer = styled.div`
   padding-top: 8em;
   text-align: center;
   z-index: 0;
+
+	.cover {
+		left: 0;
+		pointer-events: none;
+		position: absolute !important;
+		top: 0;
+		width: 100%;
+		z-index: -1;
+	}
 `
 
 export const Content = Wrapper.extend``
 
-export const Cover = styled.div`
+export const Cover = styled(Img) `
 	height: 16em;
-	left: 0;
-	pointer-events: none;
-	position: absolute;
-	top: 0;
-	width: 100%;
-	z-index: -1;
+
+	img {
+		z-index: -1;
+	}
 
 	&:before,
 	&:after {
 		content: '';
 		display: block;
 		position: absolute;
-		bottom: 0;
+		bottom: -1px;
 		left: 0;
 		width: 100%;
 		height: 100%;
+		z-index: 0;
 	}
 
 	&:after {
@@ -42,14 +51,9 @@ export const Cover = styled.div`
 	}
 
 	&:before {
-		${props => props.src ? `background-image: url(${props.src});` : null}
-		background-attachment: fixed;
-		background-blend-mode: luminosity;
 		background-color: ${props => props.theme.base};
-		background-position:	center center;
-		background-size: cover;
-		filter: contrast(1.25);
-		opacity: 0.2;
+		mix-blend-mode: luminosity;
+		opacity: 0.6;
 	}
 `
 
@@ -91,7 +95,7 @@ class Banner extends PureComponent {
 
 		return (
 			<BannerContainer>
-				{cover && <Cover src={cover} />}
+				{cover && <Cover sizes={cover} outerWrapperClassName="cover" />}
 				<Content>
 					{children}
 				</Content>
