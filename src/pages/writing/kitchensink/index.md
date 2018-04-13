@@ -1,8 +1,8 @@
 ---
-cover: ./mountains.jpg
+cover: ./cover.jpg
 title: Kitchensink
 subtitle: Testing everything
-date: "2012-01-03T22:12:03.284Z"
+date: "2011-01-03T22:12:03.284Z"
 category: engineering
 draft: true
 model: post
@@ -91,7 +91,7 @@ image:
 #### Content Block Image
 This is the default styling for embedded images. It stretches to the width of the content area. Simply add the HTML tag.
 
-<img src="./mountains.jpg" alt="Pitch" />
+<img src="./cover.jpg" alt="Pitch" />
 
 *Add `em` right after the embedded object to add caption.*
 
