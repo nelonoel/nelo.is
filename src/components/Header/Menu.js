@@ -87,6 +87,8 @@ const NavLink = ButtonLink.extend.attrs({
 	}
 
   @media (max-width: ${breakpoint}) {
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		-webkit-tap-highlight-color: transparent;
 		margin: auto;
 		padding: 0.25em 0.5em;
     min-width: 7.25em;
