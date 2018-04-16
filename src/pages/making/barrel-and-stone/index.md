@@ -18,17 +18,17 @@ stack:
 ---
 
 <div class="ui-screenshot">
-	<img alt="Landing Page" src="./landing.png" title="Landing Page" />
+	<img alt="Landing Page" src="./landing.jpg" title="Landing Page" />
 </div>
 
 <div class="ui-screenshot">
-	<img alt="Menu" src="./menu.png" title="Menu" />
+	<img alt="Menu" src="./menu.jpg" title="Menu" />
 </div>
 
 <div class="ui-screenshot">
-	<img alt="Story" src="./story.png" title="Story" />
+	<img alt="Story" src="./story.jpg" title="Story" />
 </div>
 
 <div class="ui-screenshot">
-	<img alt="Partners" src="./partners.png" title="Partners" />
+	<img alt="Partners" src="./partners.jpg" title="Partners" />
 </div>

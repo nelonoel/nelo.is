@@ -21,26 +21,26 @@ stack:
 ---
 
 <div class="ui-screenshot">
-	<img alt="Slide 1" src="./1.png" title="Slide 1" />
+	<img alt="Slide 1" src="./1.jpg" title="Slide 1" />
 </div>
 <figcaption>
 	Full-screen pages direct the user's focus to product photos and features.
 </figcaption>
 
 <div class="ui-screenshot">
-	<img alt="Slide 2" src="./2.png" title="Slide 2" />
+	<img alt="Slide 2" src="./2.jpg" title="Slide 2" />
 </div>
 
 <div class="ui-screenshot">
-	<img alt="Slide 3" src="./3.png" title="Slide 3" />
+	<img alt="Slide 3" src="./3.jpg" title="Slide 3" />
 </div>
 
 <div class="ui-screenshot">
-	<img alt="Slide 4" src="./4.png" title="Slide 4" />
+	<img alt="Slide 4" src="./4.jpg" title="Slide 4" />
 </div>
 
 <div class="ui-screenshot">
-	<img alt="Order Form" src="./shop.png" title="Order Form" />
+	<img alt="Order Form" src="./shop.jpg" title="Order Form" />
 </div>
 <figcaption>
 	Order details go to a private Google spreadsheet for further processing.
@@ -48,10 +48,10 @@ stack:
 
 <div class="grid two-column">
 	<div class="ui-screenshot">
-		<img alt="Mobile Slide" src="./mobile-slide.png" title="Mobile Slide" />
+		<img alt="Mobile Slide" src="./mobile-slide.jpg" title="Mobile Slide" />
 	</div>
 	<div class="ui-screenshot">
-		<img alt="Mobile Order Form" src="./mobile-shop.png" title="Mobile Order Form" />
+		<img alt="Mobile Order Form" src="./mobile-shop.jpg" title="Mobile Order Form" />
 	</div>
 </div>
 <figcaption>
