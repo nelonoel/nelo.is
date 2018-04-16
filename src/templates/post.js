@@ -54,8 +54,8 @@ export const pageQuery = graphql`
         subtitle
         cover {
           childImageSharp {
-						sizes(duotone: { highlight: "#f5f8fa", shadow: "#293742" }, traceSVG: { background: "#ced9e0", color: "#738694" }) {
-							...GatsbyImageSharpSizes_withWebp_tracedSVG
+						sizes(duotone: { highlight: "#f5f8fa", shadow: "#293742" }) {
+							...GatsbyImageSharpSizes_withWebp
 						}
           }
 				}
