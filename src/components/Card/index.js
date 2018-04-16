@@ -145,10 +145,6 @@ export const Grid = styled.section`
 	& ${Item} {
 		min-height: ${props => props.itemMinHeight || null};
 	}
-
-  @media (max-width: 42em) {
-    grid-gap: 0.5em;
-  }
 `
 
 class Card extends PureComponent {
