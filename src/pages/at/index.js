@@ -1,14 +1,14 @@
 import React, { PureComponent } from 'react'
-import styled from 'styled-components'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import { Check } from 'react-feather'
+import styled from 'styled-components'
 
 import Wrapper from '../../components/Wrapper'
 import Button from '../../components/Button'
 import Banner, { Title, Description } from '../../components/Banner'
+import Subheading from '../../components/Subheading'
 import TextField, { TextArea } from '../../components/TextField'
-import { subheading } from '../../styles/typography'
 
 const Form = styled.form.attrs({
 	name: 'contact',
@@ -25,15 +25,11 @@ const Field = styled.div`
 	max-width: 25em;
 `
 
-const Label = styled.label`
-	${subheading}
+const Label = Subheading.extend`
 	color: ${props => props.theme.contrast5};
 	display: flex;
-	font-size: 0.85em;
-	letter-spacing: 0.125em;
 	margin-bottom: 0.25em;
-	text-transform: uppercase;
-`
+`.withComponent('label')
 
 class ContactPage extends PureComponent {
 	componentDidMount() {
@@ -48,7 +44,6 @@ class ContactPage extends PureComponent {
 				<Banner>
 					<Title>Contact</Title>
 					<Description>
-						I love receiving messages from real people.
 						Feel free to reach out. Talk to you soon!
 					</Description>
 				</Banner>

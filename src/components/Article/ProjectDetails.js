@@ -1,24 +1,24 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import { transparentize } from 'polished'
-import { subheading } from '../../styles/typography'
 import { fullWidth } from '../../styles/mixins'
 
 import List from '../List'
 import Wrapper from '../Wrapper'
+import Subheading from '../Subheading'
 
 const Container = styled.section`
 	${fullWidth}
-	background: ${props => props.theme.name === 'dark' ? props.theme.dark1 : props.theme.light1};
+	border-bottom: ${props => props.theme.dark1} solid 1px;
+	margin-bottom: 3em;
 	position: relative;
 `
 
 const Content = styled.div`
 	display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-gap: 2.5em;
-	margin: 2.5em auto;
-	padding: 1em 0;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 2em;
+	padding-bottom: 1.5em;
 
   @media (max-width: 36em) {
 		grid-template-columns: 1fr;
@@ -36,11 +36,7 @@ const Item = styled.div`
 		margin: 1.5em auto 0;
 	}
 
-	& > h6 {
-		${subheading}
-		color: ${props => props.theme.contrast3};
-		font-size: 0.85em;
-		letter-spacing: 0.125em;
+	& > ${Subheading} {
 		margin: 0;
 	}
 
@@ -71,13 +67,7 @@ const Description = styled.p`
 	}
 `
 
-const Column = styled.div`
-	@media (max-width: 36em) {
-		&:last-child {
-			grid-row: 1;
-		}
-	}
-`
+const Column = styled.div``
 
 export class Detail extends PureComponent {
 	render() {
@@ -85,7 +75,7 @@ export class Detail extends PureComponent {
 
 		return shouldRender ? (
 			<Item>
-				<h6>{label}</h6>
+				<Subheading>{label}</Subheading>
 				{children}
 			</Item>
 		) : null
@@ -101,19 +91,19 @@ export default class ProjectDetails extends PureComponent {
 				<Wrapper>
 					<Content>
 						<Column>
-							<Detail shouldRender={client} label="Client">{client}</Detail>
-							<Detail shouldRender={roles instanceof Array} label="Roles">
-								<List items={roles} />
-							</Detail>
-							<Detail shouldRender={month} label="Month">{month}</Detail>
-						</Column>
-						<Column>
 							<Detail shouldRender={description} label="Description">
 								<Description>{description}</Description>
 							</Detail>
 							<Detail shouldRender={stack instanceof Array} label="Stack">
 								<List items={stack} />
 							</Detail>
+						</Column>
+						<Column>
+							<Detail shouldRender={client} label="Client">{client}</Detail>
+							<Detail shouldRender={roles instanceof Array} label="Roles">
+								<List items={roles} />
+							</Detail>
+							<Detail shouldRender={month} label="Month">{month}</Detail>
 						</Column>
 					</Content>
 				</Wrapper>

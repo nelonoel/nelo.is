@@ -6,16 +6,7 @@ import { monospace, subheading } from '../../styles/typography'
 const Article = styled.article`
 	${props => require(`../../styles/syntax-${props.theme.name}.css`)}
 	font-size: 1.1em;
-	margin-top: 2em;
 	position: relative;
-
-  body > *:first-child {
-    margin-top: 0 !important;
-  }
-
-  body > *:last-child {
-    margin-bottom: 0 !important;
-  }
 
   a {
     border-bottom: ${props => props.theme.contrast1} solid 2px;
@@ -120,7 +111,7 @@ const Article = styled.article`
 
   h6 {
 		${subheading}
-		color: ${props => lighten(0.35, props.theme.text)};
+		color: ${props => props.theme.contrast3};
 		font-size: 0.85em;
 		letter-spacing: 0.0612em;
   }
@@ -137,8 +128,8 @@ const Article = styled.article`
   }
 
   hr {
+		background: ${props => props.theme.dark1};
     border: 0 none;
-    color: #cccccc;
     height: 4px;
     padding: 0;
   }
@@ -488,11 +479,6 @@ const Article = styled.article`
     font-size: 0.83em;
     vertical-align: super;
     line-height: 0;
-  }
-
-  * {
-    color: ${props => props.theme.text};
-    -webkit-print-color-adjust: exact;
   }
 
   @media screen and (min-width: 914px) {

@@ -4,7 +4,7 @@ import Link from 'gatsby-link'
 import { darken, rgba } from 'polished'
 import Img from 'gatsby-image'
 
-import { subheading } from '../../styles/typography'
+import Subheading from '../Subheading'
 
 const card = {
 	height: 15,
@@ -14,19 +14,23 @@ const Cover = styled(Img) `
   height: 100%;
 `
 
+const Placeholder = styled.div`
+	background: ${props => props.theme.name === 'dark' ? props.theme.light2 : props.theme.base};
+	height: 100%;
+	width: 100%;
+`
+
 const Content = styled.div`
   padding: 1.5em;
 `
 
-const Type = styled.div`
-	${subheading}
+const Type = Subheading.extend`
   align-items: center;
   color: ${props => props.theme.contrast5};
   display: flex;
   font-size: 0.75em;
   letter-spacing: 0.0612em;
-  margin-bottom: -0.25em;
-  text-transform: uppercase;
+  margin: 0 0 -0.25em;
 
   & > svg {
     height: 1.15em;
@@ -55,21 +59,19 @@ const Date = styled.div`
 	font-weight: bold;
   letter-spacing: 0.0612em;
   text-transform: uppercase;
-  margin-top: 0.45em;
+  margin: 0.45em 0 -0.45em;
 `
 
-const Category = styled.div`
-	${subheading}
+const Category = Subheading.extend`
   align-self: stretch;
   box-sizing: border-box;
 	border: ${props => darken(0.0306, props.theme.name === 'dark' ? props.theme.contrast1 : props.theme.white)} solid 0;
   color: ${props => darken(0.125, props.theme.name === 'dark' ? props.theme.contrast1 : props.theme.white)};
   font-size: 0.75em;
 	line-height: 2;
-  letter-spacing: 0.2em;
+	margin: 0;
   padding: 0.25em;
   text-align: center;
-  text-transform: uppercase;
   width: 100%;
 	writing-mode: lr;
 `
@@ -81,7 +83,7 @@ const Item = styled(Link).attrs({
   align-items: center;
   background: ${props => props.theme.name === 'dark' ? props.theme.contrast1 : props.theme.white};
   border-radius: ${props => props.theme.borderRadius};
-  box-shadow: 0 1px 3px ${props => rgba(0, 0, 0, 0.125)};
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.01), 0 1px 3px rgba(0, 0, 0, 0.0833);
   box-sizing: border-box;
   color: ${props => props.theme.text};
   cursor: pointer;
@@ -104,7 +106,7 @@ const Item = styled(Link).attrs({
 
 	@media (min-width: 30em) {
 		&:hover, &:focus {
-			box-shadow: 0 3px 9px ${props => rgba(0, 0, 0, 0.0625)};
+			box-shadow: 0 0 1px rgba(0, 0, 0, 0.015), 0 3px 12px ${props => rgba(0, 0, 0, 0.0612)};
 			transform: translate3d(0, -3px, 0);
 		}
 	}
@@ -140,7 +142,7 @@ export const Grid = styled.section`
     auto-fit,
     minmax(${props => props.itemMinWidth || '1fr'}, 1fr)
   );
-  grid-gap: 0.85em;
+  grid-gap: 1rem;
 
 	& ${Item} {
 		min-height: ${props => props.itemMinHeight || null};
@@ -162,7 +164,7 @@ class Card extends PureComponent {
 
 		return (
 			<Item slug={slug} half={half}>
-				<Cover sizes={cover} outerWrapperClassName="cover" />
+				{cover ? <Cover sizes={cover} outerWrapperClassName="cover" /> : <Placeholder />}
 				<Content>
 					{type && <Type>{type}</Type>}
 					<Title>{title}</Title>
