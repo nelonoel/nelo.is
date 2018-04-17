@@ -27,6 +27,7 @@ class BlogIndex extends React.Component {
 						{posts.map(({ node }) => {
 							return (
 								<Card
+									key={node.id}
 									slug={node.fields.slug}
 									cover={get(node, 'frontmatter.cover.childImageSharp.sizes')}
 									title={get(node, 'frontmatter.title') || node.fields.slug}
@@ -59,6 +60,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
+					id
           fields {
             slug
           }

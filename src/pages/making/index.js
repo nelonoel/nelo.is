@@ -17,13 +17,14 @@ class ProjectsIndex extends React.Component {
 				<Banner>
 					<Title>Projects</Title>
 					<Description>
-						Here's some of my design and development work through the years.
+						Here's some of my work.
 					</Description>
 				</Banner>
 				<Wrapper wide>
-					<Grid itemMinWidth="16em">
+					<Grid itemMinWidth="16.5em">
 						{posts.map(({ node }) => {
 							return <Card
+								key={node.id}
 								half={true}
 								slug={node.fields.slug}
 								cover={get(node, 'frontmatter.cover.childImageSharp.sizes')}
@@ -56,6 +57,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
+					id
           fields {
             slug
           }
