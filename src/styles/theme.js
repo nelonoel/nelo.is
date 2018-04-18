@@ -22,7 +22,7 @@ const defaults = {
 
 	baseFontSize: '18px',
 	borderRadius: '5px',
-	containerWidth: '38em'
+	containerWidth: '51rem'
 }
 
 const breakpoints = {

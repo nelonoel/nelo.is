@@ -9,11 +9,11 @@ injectGlobal`
 
   * {
 		${body}
-
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
 		-webkit-font-smoothing: antialiased;
+		-webkit-print-color-adjust: exact;
+    -webkit-text-size-adjust: 100%;
 
 		&:focus {
 			outline: none;
@@ -26,7 +26,6 @@ injectGlobal`
 
   body {
     font-size: ${theme.baseFontSize};
-    font-size: calc(0.18vw + 16px);
     line-height: 1.6;
     margin: 0;
     padding: 0;
