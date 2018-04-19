@@ -111,6 +111,29 @@ const Title = styled.h1`
   }
 `
 
+export const LogoIcon = styled.div`
+	${logo}
+	align-items: center;
+	background: ${props => props.theme.text};
+	border-radius: 0.2em;
+	color: ${props => props.theme.base};
+	display: inline-flex;
+	font-size: 4em;
+	height: 1.25em;
+	justify-content: center;
+	letter-spacing: -0.0612em;
+	width: 1.25em;
+
+	&:before {
+		content: 'n';
+	}
+
+	&:after {
+		color: ${props => props.available ? props.theme.secondary : props.theme.primary};
+		content: '.';
+	}
+`
+
 class Logo extends PureComponent {
 	constructor(props) {
 		super(props)
@@ -142,7 +165,7 @@ class Logo extends PureComponent {
 
 	render() {
 		return (
-			<Title onClick={this.addAnimation}>
+			<Title onMouseDown={this.addAnimation}>
 				<Link to="/" className={this.state.isAnimating ? 'bouncing' : ''} onMouseUp={this.handleLogoClick}>
 					Nelo
           <Dot onAnimationEnd={this.removeAnimation} />
