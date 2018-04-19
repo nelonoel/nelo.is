@@ -26,6 +26,7 @@ export const body = css`
 export const subheading = css`
 	font-family: "Barlow", sans-serif;
 	font-weight: 600;
+	letter-spacing: 0.125em;
 	text-transform: uppercase;
 `
 
