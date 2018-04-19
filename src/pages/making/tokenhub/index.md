@@ -19,16 +19,17 @@ stack:
 	<img alt="Landing Page" src="./landing.png" title="Landing Page" />
 </div>
 
-<div class="ui-screenshot">
-	<img alt="Sign In" src="./login.png" title="Sign In" />
+<div class="grid two-column">
+	<div class="ui-screenshot">
+		<img alt="Sign In" src="./login.png" title="Sign In" />
+	</div>
+	<div class="ui-screenshot">
+		<img alt="Verification" src="./verification-form.png" title="Verification" />
+	</div>
 </div>
 
 <div class="ui-screenshot">
 	<img alt="ICO Overview" src="./overview.png" title="ICO Overview" />
-</div>
-
-<div class="ui-screenshot">
-	<img alt="Verification" src="./verification.png" title="Verification" />
 </div>
 
 <div class="ui-screenshot">
