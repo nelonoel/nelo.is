@@ -36,18 +36,19 @@ export const Cover = styled(Img) `
 
 	&:before,
 	&:after {
-		content: '';
-		display: block;
-		position: absolute;
-		bottom: -1px;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 0;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
 	}
 
 	&:after {
-		background: ${props => rgba(props.theme.base, 0.4)} linear-gradient(transparent, ${props => props.theme.base});
+		background: ${props => props.theme.name === 'dark' ? rgba(props.theme.base, 0.75) : rgba(props.theme.base, 0.375)} linear-gradient(transparent, ${props => props.theme.base});
 	}
 
 	&:before {
