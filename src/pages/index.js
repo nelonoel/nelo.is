@@ -1,182 +1,107 @@
 import React, { PureComponent } from 'react'
 import styled, { keyframes } from 'styled-components'
-import Helmet from 'react-helmet'
 import get from 'lodash/get'
-import { Monitor, Mail } from 'react-feather'
-import { transparentize } from 'polished'
+import Helmet from 'react-helmet'
+import { Code } from 'react-feather'
 
-import { BannerContainer } from '../components/Banner'
-import Wrapper from '../components/Wrapper'
+import Banner from '../sections/home/Banner'
+import LatestPost from '../sections/home/LatestPost'
+import Services from '../sections/home/Services'
+import RecentWork from '../sections/home/RecentWork'
+import Clients from '../sections/home/Clients'
+import ForHire from '../sections/home/ForHire'
+
+import Article from '../components/Article'
+import { Flex, Box } from '../components/Box'
 import { ButtonLink } from '../components/Button'
+import Card, { Grid } from '../components/Card'
+import IconContainer from '../components/IconContainer'
+import Subheading from '../components/Subheading'
+import Wrapper from '../components/Wrapper'
 
-import svgFace from '../assets/img/avatar.svg'
-import jpgCover from '../assets/img/landing-cover.jpg'
+import svgGatsby from '../assets/img/stack/gatsby.svg'
+import svgGraphQL from '../assets/img/stack/graphql.svg'
+import svgReact from '../assets/img/stack/react.svg'
+import svgJavascript from '../assets/img/stack/javascript.svg'
+import svgSketch from '../assets/img/stack/sketch.svg'
+import svgInvision from '../assets/img/stack/Invision.svg'
 
-import webmCover from '../assets/vid/landing-cover.webm'
-import mp4Cover from '../assets/vid/landing-cover.mp4'
-
-const HomeBanner = BannerContainer.extend`
-  background: ${props => transparentize(0.5, props.theme.contrast1)};
-	margin-top: -8em;
-	opacity: 1;
-	overflow: hidden;
-	position: relative;
-
-	@media (max-width: 42em) {
-		background: ${props => props.theme.contrast1};
-		background-blend-mode: luminosity;
-
-		&:before {
-			background: url(${jpgCover});
-			background-size: cover;
-			mix-blend-mode: soft-light;
-			content: '';
-			opacity: ${props => props.theme.name === 'dark' ? 0.125 : 0.25};
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-		}
-	}
-`
-
-const Video = styled.video`
-	left: 50%;
-	min-height: 100%;
-	min-width: 100%;
-	mix-blend-mode: soft-light;
-	opacity: ${props => props.theme.name === 'dark' ? 0.0612 : 0.125};
-	pointer-events: none;
-	position: absolute;
-	top: 50%;
-	transform: translateX(-50%) translateY(-50%);
-	z-index: -1;
-
-	@media (max-width: 42em) {
-		display: none;
-	}
-`
-
-const Hero = styled.section`
-	display: flex;
-
-	@media (max-width: 42em) {
-		flex-direction: column;
-	}
-`
-
-const Avatar = styled.div`
-  align-self: flex-end;
-	flex: 1;
-	position: relative;
-
-	@media (max-width: 42em) {
-		align-self: center;
-		height: 20em;
-	}
-`
-
-const Face = styled.img.attrs({
-	draggable: false,
-	src: svgFace
-}) `
-	display: flex;
-	width: 15em;
-	margin-right: 3em;
-
-	@media (max-width: 42em) {
-		margin: 0;
-	}
-`
-
-const Copy = styled.div`
-	align-self: center;
-	padding: 2em 0;
-	position: relative;
-  text-align: left;
-
-  & > h1 {
-    font-size: 1.85em;
-		font-weight: bold;
-		line-height: 1;
-		margin: 0 auto 0.5em;
-		opacity: 0.95;
-  }
-
-  & > p {
-    font-size: 1em;
-    line-height: 1.5;
-		margin: 0 auto 0.6em;
-		max-width: 20em;
-		opacity: 0.95;
-	}
-
-	@media (max-width: 42em) {
-		background: ${props => props.theme.dark1};
-		box-sizing: border-box;
-		padding: 2em 1em;
-		text-align: center;
-		width: 100vw;
-	}
-`
-
-const Actions = styled.div`
-  margin-top: 1.5em;
-
-  & > ${ButtonLink} {
-    margin: 0.25em 0.5em 0.25em 0;
-    min-width: 6em;
-  }
-`
+const Section = Article.extend`
+	margin: 0;
+`.withComponent('section')
 
 class Home extends PureComponent {
-	componentDidMount() {
-		if (this.video && window.getComputedStyle(this.video, null).display !== 'none') {
-			this.video.playbackRate = 0.75
-			this.video.play()
-		}
-	}
-
 	render() {
 		const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-		const posts = get(this, 'props.data.allMarkdownRemark.edges')
+		const posts = get(this, 'props.data.recentWork.edges')
+		const latestPost = get(this, 'props.data.latestPost.edges[0].node')
 
 		return (
 			<div>
-				<HomeBanner>
-					<Helmet title={`${siteTitle} ∙ Digital Craftsman`} />
+				<Helmet title={`${siteTitle} ∙ Digital Craftsman`} />
+				<Banner />
+				<LatestPost post={latestPost} />
+				<Services />
+				<Section>
 					<Wrapper>
-						<Hero>
-							<Avatar>
-								<Face />
-							</Avatar>
-							<Copy>
-								<h1>Hello there!</h1>
-								<p>
-									I'm Nelo — a digital craftsman focusing on front-end development and UI design.
-								</p>
-								<p>
-									I work with companies around the world to make delightful digital products.
-								</p>
-								<Actions>
-									<ButtonLink to="/making">
-										<Monitor />
-										View works
-                </ButtonLink>
-									<ButtonLink to="/at" inverted>
-										<Mail />
-										Contact me
-                </ButtonLink>
-								</Actions>
-							</Copy>
-							<Video innerRef={video => { this.video = video }} poster={jpgCover} autoplay muted loop>
-								<source src={webmCover} type="video/webm" />
-								<source src={mp4Cover} type="video/mp4" />
-							</Video>
-						</Hero>
+						<p><strong>Constantly learning.</strong>I'm currently working on publishing my notes. For now, here are the tools I'm actively mastering at the moment.</p>
+						<Flex justifyContent="space-between">
+							<Box textAlign="center">
+								<IconContainer>
+									<img draggable="false" src={svgJavascript} alt="ES6" />
+								</IconContainer>
+								<h5>ES6+</h5>
+							</Box>
+							<Box textAlign="center">
+								<IconContainer>
+									<img draggable="false" src={svgReact} alt="ReactJS" />
+								</IconContainer>
+								<h5>ReactJS</h5>
+							</Box>
+							<Box textAlign="center">
+								<IconContainer>
+									<img draggable="false" src={svgGraphQL} alt="GraphQL" />
+								</IconContainer>
+								<h5>GraphQL</h5>
+							</Box>
+							<Box textAlign="center">
+								<IconContainer>
+									<img draggable="false" src={svgGatsby} alt="Gatsby" />
+								</IconContainer>
+								<h5>Gatsby</h5>
+							</Box>
+							<Box textAlign="center">
+								<IconContainer>
+									<img draggable="false" src={svgSketch} alt="Sketch" />
+								</IconContainer>
+								<h5>Sketch</h5>
+							</Box>
+							<Box textAlign="center">
+								<IconContainer>
+									<img draggable="false" src={svgInvision} alt="Invision" />
+								</IconContainer>
+								<h5>Invision</h5>
+							</Box>
+						</Flex>
 					</Wrapper>
-				</HomeBanner>
+				</Section>
+				<Section>
+					<Wrapper>
+						<div>
+							Screenshot
+					</div>
+						<div>
+							<h6>Featured Project</h6>
+							<h2>Phaxio</h2>
+							<h4>A developer-friendly API that enables sending and receiving of faxes.</h4>
+							<p>Designed and developed Phaxio's brand identity, website, and app. Crafted a responsive UI from the ground up while preserving established user flows.</p>
+							<p>Optimized search engine rankings by keeping the same URL routes to match previous search engine indices and making the content accessible across all devices.</p>
+						</div>
+					</Wrapper>
+				</Section>
+				<RecentWork posts={posts} />
+				<Clients />
+				<ForHire />
 			</div>
 		)
 	}
@@ -188,8 +113,54 @@ export const pageQuery = graphql`
   query HomeQuery {
     site {
       siteMetadata {
-        title
+				title
       }
 		}
+		recentWork: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC },
+			filter: { frontmatter: { title: { ne: "Phaxio" },  model: { eq: "project" }, draft: { ne: true } } }
+			limit: 7
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            subtitle
+            cover {
+              childImageSharp {
+								sizes (traceSVG: { background: "#ced9e0", color: "#738694" }) {
+									...GatsbyImageSharpSizes_withWebp_tracedSVG
+								}
+              }
+            }
+            model
+            category
+            type
+            date(formatString: "MMM YYYY")
+          }
+        }
+      }
+		}
+    latestPost: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC },
+      filter: { frontmatter: { model: { ne: "project" }, draft: { ne: true } } }
+      limit: 1
+    ) {
+      edges {
+        node {
+					id
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            category
+          }
+        }
+      }
+    }
   }
 `
