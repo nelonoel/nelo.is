@@ -61,13 +61,3 @@ export default class ForHire extends PureComponent {
 		)
 	}
 }
-
-export const pageQuery = graphql`
-	query ForHireQuery {
-    site {
-      siteMetadata {
-				forHire
-      }
-		}
-	}
-`
