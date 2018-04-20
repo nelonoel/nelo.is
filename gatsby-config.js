@@ -4,7 +4,8 @@ module.exports = {
 		author: 'Aaron Noel De Leon',
 		description: 'Personal website',
 		siteUrl: 'https://nelo.is',
-		email: 'hello@nelo.ph'
+		email: 'hello@nelo.ph',
+		forHire: true
 	},
 	pathPrefix: '/',
 	plugins: [
