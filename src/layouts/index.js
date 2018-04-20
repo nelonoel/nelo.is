@@ -23,9 +23,7 @@ class Template extends Component {
 	}
 
 	toggleNav() {
-		this.setState({
-			isNavOpen: !this.state.isNavOpen
-		})
+		this.setState({ isNavOpen: !this.state.isNavOpen })
 	}
 
 	toggleDarkMode() {
@@ -64,16 +62,14 @@ export default Template
 
 export const pageQuery = graphql`
   query FooterQuery {
-		site {
-			buildTime(fromNow: true)
-		}
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC },
-      limit: 6,
-      filter: { frontmatter: { model: { ne: "project" } } }
+      limit: 5,
+      filter: { frontmatter: { model: { ne: "project" }, draft: { ne: true } } }
     ) {
       edges {
         node {
+					id
           fields {
             slug
           }
