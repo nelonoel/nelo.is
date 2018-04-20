@@ -24,7 +24,7 @@ import svgGraphQL from '../assets/img/stack/graphql.svg'
 import svgReact from '../assets/img/stack/react.svg'
 import svgJavascript from '../assets/img/stack/javascript.svg'
 import svgSketch from '../assets/img/stack/sketch.svg'
-import svgInvision from '../assets/img/stack/Invision.svg'
+import svgInvision from '../assets/img/stack/invision.svg'
 
 const Section = Article.extend`
 	margin: 0;
