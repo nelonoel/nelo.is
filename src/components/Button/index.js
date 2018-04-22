@@ -1,6 +1,10 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
+import {
+	space,
+	minWidth
+} from 'styled-system'
 
 const Button = styled.button`
   align-items: center;
@@ -23,13 +27,16 @@ const Button = styled.button`
   display: inline-flex;
   font-size: 0.95em;
 	font-weight: normal;
-	justify-content: ${props => props.wide ? 'center' : null};
+	justify-content: center;
   line-height: ${props => props.wide ? 3 : 2.4};
 	margin-right: ${props => props.wide ? null : '0.5em'};
   padding: ${props => (props.icon ? '1em' : props.wide ? '0 1.25em' : '0 1.25em')};
 	text-decoration: none;
 	transform: translateY(0);
   transition: all 0.2s ease;
+
+	${space}
+	${minWidth}
 
   & > svg {
     margin-left: ${props => (props.icon ? '0' : '-0.125em')};
