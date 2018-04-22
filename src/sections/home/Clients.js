@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { theme } from 'styled-system'
 
 import Subheading from '../../components/Subheading'
-import { Flex, Box } from '../../components/Box'
+import Grid from '../../components/Grid'
 import Wrapper from '../../components/Wrapper'
 
 import svgBugwolf from '../../assets/img/clients/bugwolf.svg'
@@ -19,16 +19,12 @@ const Container = styled.div`
 	position: relative;
 `
 
-const Logos = Flex.extend`
-	overflow: hidden;
-`
-
 const Logo = styled.img.attrs({
 	draggable: false,
 	alt: props => props.company,
 	title: props => props.company
 }) `
-	margin: 0 1em;
+	margin: 0 auto;
 	max-height: 3em;
 	width: 7em;
 `
@@ -39,15 +35,15 @@ export default class Services extends PureComponent {
 			<Container>
 				<Wrapper wide>
 					<Subheading color="contrast.3" mt="0" mb={4} textAlign="center"> I had the opportunity to work with these companies:</Subheading>
-					<Logos justifyContent="space-between">
+					<Grid align="center" gap="2em 0.5em" width="8em">
 						<Logo src={svgBugwolf} company="Bugwolf" />
 						<Logo src={svgXTeam} company="X-Team" />
 						<Logo src={svgPhaxio} company="Phaxio" />
 						<Logo src={svgMana} company="MANA" />
 						<Logo src={svgVyllage} company="Vyllage" />
-					</Logos>
+					</Grid>
 				</Wrapper>
-			</Container >
+			</Container>
 		)
 	}
 }
