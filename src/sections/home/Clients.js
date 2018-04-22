@@ -7,6 +7,7 @@ import Grid from '../../components/Grid'
 import Wrapper from '../../components/Wrapper'
 
 import svgBugwolf from '../../assets/img/clients/bugwolf.svg'
+import svgCarful from '../../assets/img/clients/carful.svg'
 import svgMana from '../../assets/img/clients/mana.svg'
 import svgPhaxio from '../../assets/img/clients/phaxio.svg'
 import svgVyllage from '../../assets/img/clients/vyllage.svg'
@@ -41,6 +42,7 @@ export default class Services extends PureComponent {
 						<Logo src={svgPhaxio} company="Phaxio" />
 						<Logo src={svgMana} company="MANA" />
 						<Logo src={svgVyllage} company="Vyllage" />
+						<Logo src={svgCarful} company="Carful" />
 					</Grid>
 				</Wrapper>
 			</Container>
