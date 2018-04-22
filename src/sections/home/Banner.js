@@ -15,14 +15,14 @@ import svgSilhouette from '../../assets/img/silhouette.svg'
 import svgFace from '../../assets/img/avatar.svg'
 
 const Container = BannerContainer.extend`
-  background: ${props => transparentize(0.5, props.theme.contrast1)};
+  background: ${props => transparentize(0.5, props.theme.colors.contrast[0])};
   margin-top: -8em;
   opacity: 1;
   overflow: hidden;
   position: relative;
 
   @media (max-width: 46rem) {
-    background: ${props => props.theme.contrast1};
+    background: ${props => props.theme.colors.contrast[0]};
     background-blend-mode: luminosity;
 
     &:before {
@@ -127,7 +127,7 @@ const Copy = styled.div`
   }
 
   @media (max-width: 46rem) {
-    background: ${props => props.theme.dark1};
+    background: ${props => props.theme.colors.dark[0]};
     box-sizing: border-box;
     display: flex;
     flex-direction: column;

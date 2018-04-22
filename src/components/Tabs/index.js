@@ -4,7 +4,7 @@ import Wrapper from '../Wrapper'
 
 const TabContainer = styled.div`
   background: rgba(0, 0, 0, 0.025);
-  color: color: ${props => props.theme.text};
+  color: color: ${props => props.theme.colors.text};
   display: flex;
   padding-bottom: 3em;
   padding-top: 8em;

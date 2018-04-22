@@ -8,8 +8,8 @@ import { Flex, Box } from '../../components/Box'
 import Wrapper from '../../components/Wrapper'
 
 const Container = Article.extend`
-  background: ${props => props.theme.light3};
-	border-bottom: ${props => props.theme.dark1} solid 1px;
+  background: ${props => props.theme.colors.light[2]};
+	border-bottom: ${props => props.theme.colors.dark[0]} solid 1px;
   margin: 0;
 
   ${Badge} {
@@ -26,7 +26,7 @@ const Container = Article.extend`
   }
 
   h5 {
-    color: ${props => props.theme.contrast5};
+    color: ${props => props.theme.colors.contrast[4]};
     font-size: 1em;
     font-weight: 400;
     line-height: 1.25;
@@ -41,7 +41,7 @@ const Container = Article.extend`
   }
 
   ${ButtonLink} {
-    color:  ${props => props.theme.contrast4};
+    color:  ${props => props.theme.colors.contrast[3]};
     font-size: 0.85em;
     padding: 0.6em 1.2em;
 
@@ -58,26 +58,26 @@ const Content = Wrapper.extend`
 `
 
 export default class LatestPost extends PureComponent {
-	render() {
-		const { post } = this.props
-		const slug = post.fields.slug
-		const { title, category } = post.frontmatter
+  render() {
+    const { post } = this.props
+    const slug = post.fields.slug
+    const { title, category } = post.frontmatter
 
-		return (
-			<Container>
-				<Content>
-					<Box>
-						<Badge>New!</Badge>
-					</Box>
-					<Box style={{ lineHeight: 1 }}>
-						<h6>{category}</h6>
-						<h5>{title}</h5>
-					</Box>
-					<ButtonLink to={slug} transparent sharp>
-						<ArrowRight /> Read more
+    return (
+      <Container>
+        <Content>
+          <Box>
+            <Badge>New!</Badge>
+          </Box>
+          <Box style={{ lineHeight: 1 }}>
+            <h6>{category}</h6>
+            <h5>{title}</h5>
+          </Box>
+          <ButtonLink to={slug} transparent sharp>
+            <ArrowRight /> Read more
           </ButtonLink>
-				</Content>
-			</Container>
-		)
-	}
+        </Content>
+      </Container>
+    )
+  }
 }

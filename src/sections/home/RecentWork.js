@@ -6,7 +6,7 @@ import Card, { Grid } from '../../components/Card'
 import Wrapper from '../../components/Wrapper'
 
 const Container = styled.section`
-  background: ${props => props.theme.dark1};
+  background: ${props => props.theme.colors.dark[0]};
 
   & > ${Wrapper} {
     padding-top: 1.5em;
@@ -34,38 +34,38 @@ const Container = styled.section`
     }
 
     & > a {
-      font-size: calc(0.1vw + ${props => props.theme.baseFontSize});
+      font-size: calc(0.1vw + ${props => props.theme.colors.baseFontSize});
       min-width: 16.5em;
     }
   }
 `
 
 export default class RecentWork extends PureComponent {
-	render() {
-		const { posts } = this.props
+  render() {
+    const { posts } = this.props
 
-		return (
-			<Container>
-				<Wrapper>
-					<h2>Latest Work</h2>
-					<p>Yess</p>
-				</Wrapper>
-				<Grid itemMinWidth="16em">
-					{posts.map(({ node }) => {
-						return <Card
-							key={node.id}
-							half={true}
-							slug={node.fields.slug}
-							cover={get(node, 'frontmatter.cover.childImageSharp.sizes')}
-							title={get(node, 'frontmatter.title') || node.fields.slug}
-							subtitle={get(node, 'frontmatter.subtitle')}
-							category={get(node, 'frontmatter.category')}
-							type={get(node, 'frontmatter.type')}
-							date={get(node, 'frontmatter.date')}
-						/>
-					})}
-				</Grid>
-			</Container>
-		)
-	}
+    return (
+      <Container>
+        <Wrapper>
+          <h2>Latest Work</h2>
+          <p>Yess</p>
+        </Wrapper>
+        <Grid itemMinWidth="16em">
+          {posts.map(({ node }) => {
+            return <Card
+              key={node.id}
+              half={true}
+              slug={node.fields.slug}
+              cover={get(node, 'frontmatter.cover.childImageSharp.sizes')}
+              title={get(node, 'frontmatter.title') || node.fields.slug}
+              subtitle={get(node, 'frontmatter.subtitle')}
+              category={get(node, 'frontmatter.category')}
+              type={get(node, 'frontmatter.type')}
+              date={get(node, 'frontmatter.date')}
+            />
+          })}
+        </Grid>
+      </Container>
+    )
+  }
 }

@@ -9,7 +9,7 @@ import { Flex, Box } from '../../components/Box'
 import Wrapper from '../../components/Wrapper'
 
 const Container = styled.div`
-  border-bottom: ${props => props.theme.dark2} solid 1px;
+  border-bottom: ${props => props.theme.colors.dark[1]} solid 1px;
 	padding: 2em 0;
 	position: relative;
 `
@@ -28,7 +28,6 @@ const Copy = Box.extend`
 export default class ForHire extends PureComponent {
 	render() {
 		const forHire = get(this, 'props.data.site.siteMetadata.forHire')
-		console.log(this.props)
 
 		return (
 			<Container>

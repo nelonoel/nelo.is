@@ -26,7 +26,7 @@ const Field = styled.div`
 `
 
 const Label = Subheading.extend`
-	color: ${props => props.theme.contrast5};
+	color: ${props => props.theme.colors.contrast[4]};
 	display: flex;
 	margin-bottom: 0.25em;
 `.withComponent('label')

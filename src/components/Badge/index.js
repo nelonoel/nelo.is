@@ -2,9 +2,9 @@ import styled from 'styled-components'
 import Button from '../Button'
 
 const Badge = styled.span`
-	border: ${props => props.theme.secondary} solid 2px;
-	border-radius: ${props => props.theme.borderRadius};
-	color: ${props => props.theme.secondary};
+	border: ${props => props.theme.colors.secondary} solid 2px;
+	border-radius: ${props => props.theme.radii[2]};
+	color: ${props => props.theme.colors.secondary};
 	display: inline-block;
 	font-size: 0.5em;
 	font-weight: bold;

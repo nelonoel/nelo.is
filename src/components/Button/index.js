@@ -8,17 +8,17 @@ const Button = styled.button`
 		props.transparent
 			? 'none'
 			: props.inverted
-				? props.theme.white
-				: props.secondary ? props.theme.secondary : props.theme.primary};
+				? props.theme.colors.white
+				: props.secondary ? props.theme.colors.secondary : props.theme.colors.primary};
   border: none;
-  border-radius: ${props => (props.sharp ? 0 : props.theme.borderRadius)};
+  border-radius: ${props => props.sharp ? props.theme.radii[0] : props.theme.radii[2]};
   box-shadow: ${props =>
 		props.transparent ? 'none' : '0 1px 1px rgba(0, 0, 0, 0.1)'};
   box-sizing: border-box;
   color: ${props =>
 		props.transparent || props.inverted
-			? props.secondary ? props.theme.secondary : props.theme.primary
-			: props.theme.white};
+			? props.secondary ? props.theme.colors.secondary : props.theme.colors.primary
+			: props.theme.colors.white};
   cursor: pointer;
   display: inline-flex;
   font-size: 0.95em;

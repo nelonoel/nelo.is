@@ -26,7 +26,7 @@ const Navigation = styled.ul`
   }
 
   @media (max-width: ${breakpoint}) {
-    background: ${props => rgba(props.theme.base, 0.99)};
+    background: ${props => rgba(props.theme.colors.base, 0.99)};
     bottom: 0;
     flex-direction: column;
     font-size: 1.5em;
@@ -73,7 +73,7 @@ const Navigation = styled.ul`
 const NavLink = ButtonLink.extend.attrs({
 	transparent: true
 }) `
-	color: ${props => props.theme.text};
+	color: ${props => props.theme.colors.text};
   font-size: 1em;
   margin-left: 0.25em;
 	margin-right: 0;
@@ -96,7 +96,7 @@ const NavLink = ButtonLink.extend.attrs({
 `
 
 const ButtonToggle = NavLink.withComponent('button').extend`
-	color: ${props => props.theme.text};
+	color: ${props => props.theme.colors.text};
 	margin-right: -0.75em;
   z-index: 1;
 

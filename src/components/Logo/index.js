@@ -70,7 +70,7 @@ export const Dot = styled.span`
 	}
 
 	&:before {
-		color: ${props => props.theme.primary};
+		color: ${props => props.theme.colors.primary};
 		position: absolute;
 	}
 
@@ -93,7 +93,7 @@ const Title = styled.h1`
   }
 
   a {
-    color: ${props => props.theme.text};
+    color: ${props => props.theme.colors.text};
     font-size: 0.8em;
     letter-spacing: -0.0362em;
     text-decoration: none;
@@ -114,9 +114,9 @@ const Title = styled.h1`
 export const LogoIcon = styled.div`
 	${logo}
 	align-items: center;
-	background: ${props => props.theme.text};
+	background: ${props => props.theme.colors.text};
 	border-radius: 0.2em;
-	color: ${props => props.theme.base};
+	color: ${props => props.theme.colors.base};
 	display: inline-flex;
 	font-size: 4em;
 	height: 1.25em;
@@ -129,7 +129,7 @@ export const LogoIcon = styled.div`
 	}
 
 	&:after {
-		color: ${props => props.available ? props.theme.secondary : props.theme.primary};
+		color: ${props => props.available ? props.theme.colors.secondary : props.theme.colors.primary};
 		content: '.';
 	}
 `

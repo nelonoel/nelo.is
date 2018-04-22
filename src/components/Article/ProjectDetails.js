@@ -9,7 +9,7 @@ import Subheading from '../Subheading'
 
 const Container = styled.section`
 	${fullWidth}
-	border-bottom: ${props => props.theme.dark1} solid 1px;
+	border-bottom: ${props => props.theme.colors.dark[0]} solid 1px;
 	margin-bottom: 3em;
 	position: relative;
 `
@@ -28,7 +28,7 @@ const Content = styled.div`
 `
 
 const Item = styled.div`
-	color: ${props => props.theme.contrast5};
+	color: ${props => props.theme.colors.contrast[4]};
 	line-height: 1.4;
 	margin: 1.5em auto;
 
@@ -46,7 +46,7 @@ const Item = styled.div`
 		padding: 0;
 
 		& > li {
-			background: ${props => props.theme.contrast1};
+			background: ${props => props.theme.colors.contrast[0]};
 			border-radius: 3px;
 			display: inline-block;
 			font-size: 1rem;
@@ -58,7 +58,7 @@ const Item = styled.div`
 `
 
 const Description = styled.p`
-	color: ${props => props.theme.text};
+	color: ${props => props.theme.colors.text};
 	font-size: 1.25em;
 	margin: 0.125em 0;
 

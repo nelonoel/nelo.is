@@ -9,12 +9,12 @@ const Article = styled.article`
 	position: relative;
 
   a {
-    border-bottom: ${props => props.theme.contrast1} solid 2px;
-    color: ${props => props.theme.text};
+    border-bottom: ${props => props.theme.colors.contrast[0]} solid 2px;
+    color: ${props => props.theme.colors.text};
 		text-decoration: none;
 
     &:hover, &:focus {
-			border-bottom-color: ${props => props.theme.primary};
+			border-bottom-color: ${props => props.theme.colors.primary};
 			transition: border-color .1s ease;
     }
   }
@@ -89,12 +89,12 @@ const Article = styled.article`
 
   h1 {
     font-size: 2em;
-    color: ${props => props.theme.text};
+    color: ${props => props.theme.colors.text};
   }
 
   h2 {
     font-size: 1.75em;
-    color: ${props => props.theme.text};
+    color: ${props => props.theme.colors.text};
   }
 
   h3 {
@@ -111,7 +111,7 @@ const Article = styled.article`
 
   h6 {
 		${subheading}
-		color: ${props => props.theme.contrast3};
+		color: ${props => props.theme.colors.contrast[2]};
 		font-size: 0.85em;
 		letter-spacing: 0.0612em;
   }
@@ -128,7 +128,7 @@ const Article = styled.article`
   }
 
   hr {
-		background: ${props => props.theme.dark1};
+		background: ${props => props.theme.colors.dark[0]};
     border: 0 none;
     height: 4px;
     padding: 0;
@@ -231,12 +231,12 @@ const Article = styled.article`
   }
 
   blockquote {
-    border-left: 4px solid ${props => props.theme.primary};
+    border-left: 4px solid ${props => props.theme.colors.primary};
     font-size: 1.15em;
     padding: 0.25em 1em;
 
     & > p {
-      color: ${props => lighten(0.25, props.theme.text)};
+      color: ${props => lighten(0.25, props.theme.colors.text)};
     }
   }
 
@@ -385,8 +385,8 @@ const Article = styled.article`
     margin: 0 2px;
     padding: 0 5px;
     white-space: nowrap;
-    background: ${props => darken(0.075, props.theme.base)};
-    color: ${props => props.theme.text};
+    background: ${props => darken(0.075, props.theme.colors.base)};
+    color: ${props => props.theme.colors.text};
   }
 
   pre code {
@@ -400,12 +400,12 @@ const Article = styled.article`
 
   .gatsby-highlight pre {
 		${monospace}
-    border: ${props => lighten(0.03, props.theme.dark3)} solid 2px;
+    border: ${props => lighten(0.03, props.theme.colors.dark[2])} solid 2px;
     overflow: auto;
 	}
 
 	.ui-screenshot .gatsby-resp-image-wrapper {
-		border-radius: ${props => props.theme.borderRadius};
+		border-radius: ${props => props.theme.radii[1]};
 		box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.025),
 								0 1px 3px rgba(0, 0, 0, 0.05),
 								0 2px 6px rgba(0, 0, 0, 0.1);
@@ -421,14 +421,14 @@ const Article = styled.article`
 	}
 
 	figcaption {
-		color: ${props => props.theme.contrast4};
+		color: ${props => props.theme.colors.contrast[3]};
 		font-size: 0.8em;
 		margin: -1.25rem auto 2rem;
 		padding: 0 1em;
 		text-align: center;
 
 		* {
-			color: ${props => props.theme.contrast4};
+			color: ${props => props.theme.colors.contrast[3]};
 		}
 	}
 
@@ -456,7 +456,7 @@ const Article = styled.article`
 	}
 
   pre {
-		background-color: ${props => props.theme.white};
+		background-color: ${props => props.theme.colors.white};
     line-height: 1.4;
     overflow: auto;
     padding: 0.75em 1em;

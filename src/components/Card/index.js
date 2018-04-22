@@ -15,7 +15,7 @@ const Cover = styled(Img) `
 `
 
 const Placeholder = styled.div`
-	background: ${props => props.theme.name === 'dark' ? props.theme.light2 : props.theme.base};
+	background: ${props => props.theme.name === 'dark' ? props.theme.colors.light[1] : props.theme.colors.base};
 	height: 100%;
 	width: 100%;
 `
@@ -26,7 +26,7 @@ const Content = styled.div`
 
 const Type = Subheading.extend`
   align-items: center;
-  color: ${props => props.theme.contrast5};
+  color: ${props => props.theme.colors.contrast[4]};
   display: flex;
   font-size: 0.75em;
   letter-spacing: 0.0612em;
@@ -46,7 +46,7 @@ const Title = styled.h1`
 `
 
 const Subtitle = styled.h2`
-  color: ${props => props.theme.contrast4};
+  color: ${props => props.theme.colors.contrast[3]};
   font-size: 1em;
   font-weight: normal;
   line-height: 1.35;
@@ -54,7 +54,7 @@ const Subtitle = styled.h2`
 `
 
 const Date = styled.div`
-	color: ${props => props.theme.contrast2};
+	color: ${props => props.theme.colors.contrast[1]};
   font-size: 0.75em;
 	font-weight: bold;
   letter-spacing: 0.0612em;
@@ -65,8 +65,8 @@ const Date = styled.div`
 const Category = Subheading.extend`
   align-self: stretch;
   box-sizing: border-box;
-	border: ${props => darken(0.0306, props.theme.name === 'dark' ? props.theme.contrast1 : props.theme.white)} solid 0;
-  color: ${props => darken(0.125, props.theme.name === 'dark' ? props.theme.contrast1 : props.theme.white)};
+	border: ${props => darken(0.0306, props.theme.name === 'dark' ? props.theme.colors.contrast[0] : props.theme.colors.white)} solid 0;
+  color: ${props => darken(0.125, props.theme.name === 'dark' ? props.theme.colors.contrast[0] : props.theme.colors.white)};
   font-size: 0.75em;
 	line-height: 2;
 	margin: 0;
@@ -81,11 +81,11 @@ const Item = styled(Link).attrs({
 	to: props => props.slug,
 }) `
   align-items: center;
-  background: ${props => props.theme.name === 'dark' ? props.theme.contrast1 : props.theme.white};
-  border-radius: ${props => props.theme.borderRadius};
+  background: ${props => props.theme.name === 'dark' ? props.theme.colors.contrast[0] : props.theme.colors.white};
+  border-radius: ${props => props.theme.radii[2]};
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.01), 0 1px 3px rgba(0, 0, 0, 0.0833);
   box-sizing: border-box;
-  color: ${props => props.theme.text};
+  color: ${props => props.theme.colors.text};
   cursor: pointer;
   display: grid;
   grid-template-columns: ${props => (props.half ? '1fr' : '8.25em 1fr 1.5em')};

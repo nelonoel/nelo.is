@@ -12,8 +12,8 @@ import svgVyllage from '../../assets/img/clients/vyllage.svg'
 import svgXTeam from '../../assets/img/clients/x-team.svg'
 
 const Container = styled.div`
-	background: ${props => props.theme.name === 'dark' ? props.theme.light3 : props.theme.light1};
-  border-bottom: ${props => props.theme.dark1} solid 1px;
+	background: ${props => props.theme.name === 'dark' ? props.theme.colors.light[2] : props.theme.colors.light[0]};
+  border-bottom: ${props => props.theme.colors.dark[0]} solid 1px;
 	padding: 2em 0;
 	position: relative;
 `
