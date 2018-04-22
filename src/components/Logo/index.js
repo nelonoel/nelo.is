@@ -130,7 +130,7 @@ export const LogoIcon = styled.div`
 	}
 
 	&:after {
-		color: ${props => props.available ? props.theme.colors.secondary : props.theme.colors.primary};
+		color: ${props => props.forHire ? props.theme.colors.secondary : props.theme.colors.primary};
 		content: '.';
 	}
 `

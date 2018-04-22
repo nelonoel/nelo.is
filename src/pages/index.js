@@ -12,7 +12,7 @@ import Clients from '../sections/home/Clients'
 import ForHire from '../sections/home/ForHire'
 
 import Article from '../components/Article'
-import { Flex, Box } from '../components/Box'
+import Box from '../components/Box'
 import { ButtonLink } from '../components/Button'
 import Card from '../components/Card'
 import Grid from '../components/Grid'
@@ -36,6 +36,7 @@ class Home extends PureComponent {
 		const siteTitle = get(this, 'props.data.site.siteMetadata.title')
 		const posts = get(this, 'props.data.recentWork.edges')
 		const latestPost = get(this, 'props.data.latestPost.edges[0].node')
+		const forHire = get(this, 'props.data.site.siteMetadata.forHire')
 
 		return (
 			<div>
@@ -106,7 +107,7 @@ class Home extends PureComponent {
 				</Section>
 				<RecentWork posts={posts} />
 				<Clients />
-				<ForHire />
+				<ForHire forHire={forHire} />
 			</div>
 		)
 	}
@@ -119,6 +120,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
 				title
+				forHire
       }
 		}
 		recentWork: allMarkdownRemark(
