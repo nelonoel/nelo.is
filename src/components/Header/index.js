@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
+import { theme } from 'styled-system'
 import Headroom from 'react-headroom'
 import { lighten, transparentize } from 'polished'
 
@@ -19,7 +20,7 @@ const HeaderWrapper = Wrapper.withComponent('header').extend`
 
 const HeaderContainer = styled(Headroom) `
   & > .headroom {
-    background: radial-gradient(farthest-side at bottom center, ${props => transparentize(0.025, lighten(0.025, props.theme.colors.base))}, ${props => props.theme.colors.base});
+    background: radial-gradient(farthest-side at bottom center, ${props => transparentize(0.025, lighten(0.025, props.theme.colors.base))}, ${theme('colors.base')});
   }
 
   & > .headroom--unfixed {

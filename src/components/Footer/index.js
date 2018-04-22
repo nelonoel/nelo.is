@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
+import { theme } from 'styled-system'
 import { Mail, Phone, Github, Twitter, Instagram, FileText } from 'react-feather'
 import { darken, transparentize } from 'polished'
 
@@ -22,7 +23,7 @@ const FooterContainer = Wrapper.withComponent('footer').extend`
 const Box = styled.div`
   & > h5 {
 		${subheading}
-		color: ${props => props.theme.colors.contrast[2]};
+		color: ${theme('colors.contrast.2')};
 		letter-spacing: 0.125em;
     margin: 0 0 0.35em;
 	}
@@ -31,7 +32,7 @@ const Box = styled.div`
 const FooterLink = ButtonLink.extend.attrs({
 	transparent: true,
 }) `
-	color: ${props => props.theme.colors.contrast[2]};
+	color: ${theme('colors.contrast.2')};
 	display: flex;
 	font-size: 0.85em;
   line-height: 1.3;
@@ -46,7 +47,7 @@ const FooterLink = ButtonLink.extend.attrs({
 
   &:hover, &:focus {
 		background: none;
-		color: ${props => transparentize(0.1, props.theme.colors.contrast[2])};
+		color: ${theme('colors.contrast.3')};
 		transition: color .2s ease;
   }
 `
@@ -61,7 +62,7 @@ const LogoBox = Box.extend`
 		z-index: 0;
 
 		& > a {
-			color: ${props => props.theme.colors.contrast[2]};
+			color: ${theme('colors.contrast.2')};
 		}
 	}
 
@@ -71,7 +72,7 @@ const LogoBox = Box.extend`
 
   ${Dot} {
 		&:before {
-			color: ${props => props.theme.colors.contrast[2]};
+			color: ${theme('colors.contrast.2')};
 		}
   }
 

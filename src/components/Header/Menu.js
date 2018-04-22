@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
+import { theme } from 'styled-system'
 import { Monitor, Book, Mail, Sun, Moon } from 'react-feather'
 import { rgba } from 'polished'
 
@@ -73,7 +74,7 @@ const Navigation = styled.ul`
 const NavLink = ButtonLink.extend.attrs({
 	transparent: true
 }) `
-	color: ${props => props.theme.colors.text};
+	color: ${theme('colors.text')};
   font-size: 1em;
   margin-left: 0.25em;
 	margin-right: 0;
@@ -96,7 +97,7 @@ const NavLink = ButtonLink.extend.attrs({
 `
 
 const ButtonToggle = NavLink.withComponent('button').extend`
-	color: ${props => props.theme.colors.text};
+	color: ${theme('colors.text')};
 	margin-right: -0.75em;
   z-index: 1;
 

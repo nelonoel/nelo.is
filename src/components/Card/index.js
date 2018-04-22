@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
+import { theme } from 'styled-system'
 import Link from 'gatsby-link'
 import { darken, rgba } from 'polished'
 import Img from 'gatsby-image'
@@ -26,7 +27,7 @@ const Content = styled.div`
 
 const Type = Subheading.extend`
   align-items: center;
-  color: ${props => props.theme.colors.contrast[4]};
+  color: ${theme('colors.contrast.4')};
   display: flex;
   font-size: 0.75em;
   letter-spacing: 0.0612em;
@@ -46,7 +47,7 @@ const Title = styled.h1`
 `
 
 const Subtitle = styled.h2`
-  color: ${props => props.theme.colors.contrast[3]};
+  color: ${theme('colors.contrast.3')};
   font-size: 1em;
   font-weight: normal;
   line-height: 1.35;
@@ -54,7 +55,7 @@ const Subtitle = styled.h2`
 `
 
 const Date = styled.div`
-	color: ${props => props.theme.colors.contrast[1]};
+	color: ${theme('colors.contrast.1')};
   font-size: 0.75em;
 	font-weight: bold;
   letter-spacing: 0.0612em;
@@ -82,10 +83,10 @@ const Item = styled(Link).attrs({
 }) `
   align-items: center;
   background: ${props => props.theme.name === 'dark' ? props.theme.colors.contrast[0] : props.theme.colors.white};
-  border-radius: ${props => props.theme.radii[2]};
+  border-radius: ${theme('radii.2')};
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.01), 0 1px 3px rgba(0, 0, 0, 0.0833);
   box-sizing: border-box;
-  color: ${props => props.theme.colors.text};
+  color: ${theme('colors.text')};
   cursor: pointer;
   display: grid;
   grid-template-columns: ${props => (props.half ? '1fr' : '8.25em 1fr 1.5em')};

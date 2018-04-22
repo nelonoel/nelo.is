@@ -1,15 +1,17 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
+import { theme } from 'styled-system'
 import { Monitor, Mail } from 'react-feather'
 import get from 'lodash/get'
 
+import Text from '../../components/Text'
 import { ButtonLink } from '../../components/Button'
 import { LogoIcon } from '../../components/Logo'
 import { Flex, Box } from '../../components/Box'
 import Wrapper from '../../components/Wrapper'
 
 const Container = styled.div`
-  border-bottom: ${props => props.theme.colors.dark[2]} solid 1px;
+  border-bottom: ${theme('colors.dark.2')} solid 1px;
 	padding: 2em 0;
 	position: relative;
 `
@@ -39,8 +41,8 @@ export default class ForHire extends PureComponent {
 									<Logo forHire={forHire} />
 								</Box>
 								<Copy>
-									<h3>I am currently available for hire.</h3>
-									<p>Feel free to reach out!</p>
+									<Text fontWeight="bold" fontSize="2" color="contrast.4">I am currently available for hire.</Text>
+									<Text color="contrast.3">Did you like my work? Feel free to reach out!</Text>
 								</Copy>
 							</Flex>
 						</Box>

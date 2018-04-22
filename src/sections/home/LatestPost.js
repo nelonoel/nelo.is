@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import { theme } from 'styled-system'
 import { ArrowRight } from 'react-feather'
 
 import Article from '../../components/Article'
@@ -8,8 +9,8 @@ import { Flex, Box } from '../../components/Box'
 import Wrapper from '../../components/Wrapper'
 
 const Container = Article.extend`
-  background: ${props => props.theme.colors.light[2]};
-	border-bottom: ${props => props.theme.colors.dark[2]} solid 1px;
+  background: ${theme('colors.light.2')};
+	border-bottom: ${theme('colors.dark.2')} solid 1px;
   margin: 0;
 
   ${Badge} {
@@ -26,7 +27,7 @@ const Container = Article.extend`
   }
 
   h5 {
-    color: ${props => props.theme.colors.contrast[4]};
+    color: ${theme('colors.contrast.4')};
     font-size: 1em;
     font-weight: 400;
     line-height: 1.25;
@@ -41,7 +42,7 @@ const Container = Article.extend`
   }
 
   ${ButtonLink} {
-    color:  ${props => props.theme.colors.contrast[3]};
+    color:  ${theme('colors.contrast.3')};
     font-size: 0.85em;
     padding: 0.6em 1.2em;
 

@@ -1,10 +1,11 @@
 import styled from 'styled-components'
+import { theme } from 'styled-system'
 
 const IconContainer = styled.div`
   align-items: center;
   justify-content: center;
-  background: ${props => props.theme.colors.contrast[0]};
-  color: ${props => props.theme.colors.contrast[3]};
+  background: ${theme('colors.contrast.0')};
+  color: ${theme('colors.contrast.3')};
 	border-radius: 40%;
 	display: inline-flex;
   height: 3.5em;

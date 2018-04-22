@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
+import { theme } from 'styled-system'
 
 import Subheading from '../../components/Subheading'
 import { Flex, Box } from '../../components/Box'
@@ -13,7 +14,7 @@ import svgXTeam from '../../assets/img/clients/x-team.svg'
 
 const Container = styled.div`
 	background: ${props => props.theme.name === 'dark' ? props.theme.colors.light[2] : props.theme.colors.light[0]};
-  border-bottom: ${props => props.theme.colors.dark[2]} solid 1px;
+  border-bottom: ${theme('colors.dark.2')} solid 1px;
 	padding: 2em 0;
 	position: relative;
 `
@@ -32,16 +33,12 @@ const Logo = styled.img.attrs({
 	width: 7em;
 `
 
-const Copy = Subheading.extend`
-	margin: 0 auto 1.25em;
-`
-
 export default class Services extends PureComponent {
 	render() {
 		return (
 			<Container>
 				<Wrapper wide>
-					<Copy textAlign="center"> I had the opportunity to work with these companies:</Copy>
+					<Subheading color="contrast.3" mt="0" mb={4} textAlign="center"> I had the opportunity to work with these companies:</Subheading>
 					<Logos justifyContent="space-between">
 						<Logo src={svgBugwolf} company="Bugwolf" />
 						<Logo src={svgXTeam} company="X-Team" />

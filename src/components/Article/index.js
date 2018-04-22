@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { darken, lighten, selection } from 'polished'
+import { theme } from 'styled-system'
+import { darken, lighten } from 'polished'
 import { monospace, subheading } from '../../styles/typography'
 
 const Article = styled.article`
@@ -9,12 +10,12 @@ const Article = styled.article`
 	position: relative;
 
   a {
-    border-bottom: ${props => props.theme.colors.contrast[0]} solid 2px;
-    color: ${props => props.theme.colors.text};
+    border-bottom: ${theme('colors.contrast.0')} solid 2px;
+    color: ${theme('colors.text')};
 		text-decoration: none;
 
     &:hover, &:focus {
-			border-bottom-color: ${props => props.theme.colors.primary};
+			border-bottom-color: ${theme('colors.primary')};
 			transition: border-color .1s ease;
     }
   }
@@ -89,12 +90,12 @@ const Article = styled.article`
 
   h1 {
     font-size: 2em;
-    color: ${props => props.theme.colors.text};
+    color: ${theme('colors.text')};
   }
 
   h2 {
     font-size: 1.75em;
-    color: ${props => props.theme.colors.text};
+    color: ${theme('colors.text')};
   }
 
   h3 {
@@ -111,7 +112,7 @@ const Article = styled.article`
 
   h6 {
 		${subheading}
-		color: ${props => props.theme.colors.contrast[2]};
+		color: ${theme('colors.contrast.2')};
 		font-size: 0.85em;
 		letter-spacing: 0.0612em;
   }
@@ -128,7 +129,7 @@ const Article = styled.article`
   }
 
   hr {
-		background: ${props => props.theme.colors.dark[0]};
+		background: ${theme('colors.dark.0')};
     border: 0 none;
     height: 4px;
     padding: 0;
@@ -231,7 +232,7 @@ const Article = styled.article`
   }
 
   blockquote {
-    border-left: 4px solid ${props => props.theme.colors.primary};
+    border-left: 4px solid ${theme('colors.primary')};
     font-size: 1.15em;
     padding: 0.25em 1em;
 
@@ -386,7 +387,7 @@ const Article = styled.article`
     padding: 0 5px;
     white-space: nowrap;
     background: ${props => darken(0.075, props.theme.colors.base)};
-    color: ${props => props.theme.colors.text};
+    color: ${theme('colors.text')};
   }
 
   pre code {
@@ -405,7 +406,7 @@ const Article = styled.article`
 	}
 
 	.ui-screenshot .gatsby-resp-image-wrapper {
-		border-radius: ${props => props.theme.radii[1]};
+		border-radius: ${theme('radii.1')};
 		box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.025),
 								0 1px 3px rgba(0, 0, 0, 0.05),
 								0 2px 6px rgba(0, 0, 0, 0.1);
@@ -421,14 +422,14 @@ const Article = styled.article`
 	}
 
 	figcaption {
-		color: ${props => props.theme.colors.contrast[3]};
+		color: ${theme('colors.contrast.3')};
 		font-size: 0.8em;
 		margin: -1.25rem auto 2rem;
 		padding: 0 1em;
 		text-align: center;
 
 		* {
-			color: ${props => props.theme.colors.contrast[3]};
+			color: ${theme('colors.contrast.3')};
 		}
 	}
 
@@ -456,7 +457,7 @@ const Article = styled.article`
 	}
 
   pre {
-		background-color: ${props => props.theme.colors.white};
+		background-color: ${theme('colors.white')};
     line-height: 1.4;
     overflow: auto;
     padding: 0.75em 1em;

@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
+import { theme } from 'styled-system'
 import { transparentize } from 'polished'
 import { Monitor, Mail } from 'react-feather'
 
-import { BannerContainer } from '../../components/Banner'
+import { Container as BannerContainer } from '../../components/Banner'
 import { ButtonLink } from '../../components/Button'
 import Wrapper from '../../components/Wrapper'
 
@@ -22,7 +23,7 @@ const Container = BannerContainer.extend`
   position: relative;
 
   @media (max-width: 46rem) {
-    background: ${props => props.theme.colors.contrast[0]};
+    background: ${theme('colors.contrast.0')};
     background-blend-mode: luminosity;
 
     &:before {
@@ -41,7 +42,6 @@ const Container = BannerContainer.extend`
 `
 
 const Video = styled.video.attrs({
-	autoplay: true,
 	loop: true,
 	muted: true,
 	poster: jpgCover
@@ -127,7 +127,7 @@ const Copy = styled.div`
   }
 
   @media (max-width: 46rem) {
-    background: ${props => props.theme.colors.dark[0]};
+    background: ${theme('colors.dark.2')};
     box-sizing: border-box;
     display: flex;
     flex-direction: column;

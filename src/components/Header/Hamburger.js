@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
+import { theme } from 'styled-system'
 
 const bar = {
-  thickness: '2px'
+	thickness: '2px'
 }
 
 const Icon = styled.div`
@@ -11,7 +12,7 @@ const Icon = styled.div`
   width: 1.15em;
 
   & > span {
-    background: ${props => props.theme.colors.text};
+    background: ${theme('colors.text')};
     display: block;
     height: ${bar.thickness};
     left: 0;
@@ -59,17 +60,17 @@ const Icon = styled.div`
 `
 
 class Hamburger extends PureComponent {
-  render() {
-    const { isNavOpen } = this.props
-    return (
-      <Icon isNavOpen={isNavOpen}>
-        <span />
-        <span />
-        <span />
-        <span />
-      </Icon>
-    )
-  }
+	render() {
+		const { isNavOpen } = this.props
+		return (
+			<Icon isNavOpen={isNavOpen}>
+				<span />
+				<span />
+				<span />
+				<span />
+			</Icon>
+		)
+	}
 }
 
 export default Hamburger

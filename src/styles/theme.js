@@ -6,16 +6,18 @@ const deriveColors = base => {
 		dark: [
 			darken(0.1, base),
 			darken(0.05, base),
-			darken(0.025, base),
-			darken(0.0125, base)
+			darken(0.025, base)
 		],
 		light: [
 			lighten(0.1, base),
 			lighten(0.05, base),
-			lighten(0.025, base),
-			lighten(0.0125, base)
+			lighten(0.025, base)
 		]
 	}
+}
+
+const variables = {
+	baseFontSize: '18px'
 }
 
 const defaults = {
@@ -23,7 +25,7 @@ const defaults = {
 	black: '#10161a',
 	primary: '#eb532d',
 	secondary: '#43bf4d',
-	selection: '#ffe200'
+	selection: '#ffd700'
 }
 
 const contrast = [
@@ -59,11 +61,11 @@ const space = [
 ]
 
 const fontSizes = [
-	16, 20, 24, 32, 48, 64, 96, 128
+	'0.8em', '1em', '1.25em', '1.563em', '1.953em', '2.441em'
 ]
 
 const lineHeights = [
-	1, 1.125, 1.25, 1.5
+	1, 1.25, 1.6, 2, 2.4
 ]
 
 const fontWeights = {
@@ -95,6 +97,7 @@ const wrapper = {
 }
 
 const theme = {
+	...variables,
 	borderWidths,
 	breakpoints,
 	fontSizes,

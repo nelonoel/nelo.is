@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react'
+import styled from 'styled-components'
+import { theme } from 'styled-system'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import { Check } from 'react-feather'
-import styled from 'styled-components'
 
 import Wrapper from '../../components/Wrapper'
 import Button from '../../components/Button'
@@ -26,7 +27,7 @@ const Field = styled.div`
 `
 
 const Label = Subheading.extend`
-	color: ${props => props.theme.colors.contrast[4]};
+	color: ${theme('colors.contrast.4')};
 	display: flex;
 	margin-bottom: 0.25em;
 `.withComponent('label')

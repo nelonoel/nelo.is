@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import { theme } from 'styled-system'
 import { Terminal, Feather, ArrowRight } from 'react-feather'
 
 import Article from '../../components/Article'
@@ -9,7 +10,7 @@ import Wrapper from '../../components/Wrapper'
 import { cover } from '../../styles/mixins'
 
 const Container = Article.extend`
-  border-bottom: ${props => props.theme.colors.dark[2]} solid 1px;
+  border-bottom: ${theme('colors.dark.2')} solid 1px;
 	position: relative;
 
   ${Box} {
@@ -18,7 +19,7 @@ const Container = Article.extend`
 		width: fit-content;
 
     &:first-child {
-      box-shadow: inset -1px 0 0 ${props => props.theme.colors.dark[2]};
+      box-shadow: inset -1px 0 0 ${theme('colors.dark.2')};
       padding-right: 2em;
     }
 
@@ -32,7 +33,7 @@ const Container = Article.extend`
   }
 
   h4 {
-    color: ${props => props.theme.colors.contrast[4]};
+    color: ${theme('colors.contrast.4')};
     margin: 0.35em 0 0;
   }
 
