@@ -53,7 +53,7 @@ const darkColors = {
 }
 
 const breakpoints = [
-	'21em', '32em', '48em'
+	'21em', '32em', '48em', '51rem', '64rem'
 ]
 
 const space = [
