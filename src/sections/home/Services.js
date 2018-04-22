@@ -9,7 +9,7 @@ import Wrapper from '../../components/Wrapper'
 import { cover } from '../../styles/mixins'
 
 const Container = Article.extend`
-  border-bottom: ${props => props.theme.colors.dark[0]} solid 1px;
+  border-bottom: ${props => props.theme.colors.dark[2]} solid 1px;
 	position: relative;
 
   ${Box} {
@@ -18,7 +18,7 @@ const Container = Article.extend`
 		width: fit-content;
 
     &:first-child {
-      box-shadow: inset -1px 0 0 ${props => props.theme.colors.dark[0]};
+      box-shadow: inset -1px 0 0 ${props => props.theme.colors.dark[2]};
       padding-right: 2em;
     }
 
