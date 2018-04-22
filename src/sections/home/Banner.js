@@ -5,6 +5,7 @@ import { transparentize } from 'polished'
 import { Monitor, Mail } from 'react-feather'
 
 import { Container as BannerContainer } from '../../components/Banner'
+import Box from '../../components/Box'
 import { ButtonLink } from '../../components/Button'
 import Wrapper from '../../components/Wrapper'
 
@@ -139,15 +140,6 @@ const Copy = styled.div`
   }
 `
 
-const Actions = styled.div`
-  margin-top: 1.25em;
-
-  & > ${ButtonLink} {
-    margin: 0.25em 0.5em 0.25em 0;
-    min-width: 6em;
-  }
-`
-
 export default class Banner extends PureComponent {
 	componentDidMount() {
 		if (this.video && window.getComputedStyle(this.video, null).display !== 'none') {
@@ -173,16 +165,16 @@ export default class Banner extends PureComponent {
 							<p>
 								I work with companies around the world to make delightful digital products.
               </p>
-							<Actions>
-								<ButtonLink to="/making" inverted>
+							<Box mt="1.25em">
+								<ButtonLink m="0.25em 0.5em 0.25em 0" minWidth="10em" to="/making" inverted>
 									<Monitor />
 									View works
 								</ButtonLink>
-								<ButtonLink to="/at">
+								<ButtonLink m="0.25em 0.5em 0.25em 0" minWidth="10em" to="/at">
 									<Mail />
 									Get in touch
 								</ButtonLink>
-							</Actions>
+							</Box>
 						</Copy>
 						<Video innerRef={video => { this.video = video }}>
 							<source src={webmCover} type="video/webm" />

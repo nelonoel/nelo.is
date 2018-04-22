@@ -3,7 +3,7 @@ import { theme } from 'styled-system'
 import { Terminal, Feather, ArrowRight } from 'react-feather'
 
 import Article from '../../components/Article'
-import { Box } from '../../components/Box'
+import Box from '../../components/Box'
 import Grid from '../../components/Grid'
 import IconContainer from '../../components/IconContainer'
 import Wrapper from '../../components/Wrapper'

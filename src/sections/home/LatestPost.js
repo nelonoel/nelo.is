@@ -5,7 +5,8 @@ import { ArrowRight } from 'react-feather'
 import Article from '../../components/Article'
 import Badge from '../../components/Badge'
 import { ButtonLink } from '../../components/Button'
-import { Flex, Box } from '../../components/Box'
+import Flex from '../../components/Flex'
+import Box from '../../components/Box'
 import Wrapper from '../../components/Wrapper'
 
 const Container = Article.extend`
