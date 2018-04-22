@@ -99,7 +99,7 @@ const Face = Silhouette.extend.attrs({
 	src: svgFace
 }) `
   position: absolute;
-  left: -0.5px;
+  left: -1px;
   top: 0;
   z-index: 1;
 `
