@@ -3,7 +3,8 @@ import { theme } from 'styled-system'
 import { Terminal, Feather, ArrowRight } from 'react-feather'
 
 import Article from '../../components/Article'
-import { Flex, Box } from '../../components/Box'
+import { Box } from '../../components/Box'
+import Grid from '../../components/Grid'
 import IconContainer from '../../components/IconContainer'
 import Wrapper from '../../components/Wrapper'
 
@@ -47,7 +48,7 @@ export default class Services extends PureComponent {
 		return (
 			<Container>
 				<Wrapper>
-					<Flex>
+					<Grid width="18em" gap="0">
 						<Box>
 							<div>
 								<IconContainer><Terminal /></IconContainer>
@@ -64,7 +65,7 @@ export default class Services extends PureComponent {
 							<p>I create app and website prototypes using <a href="//sketchapp.com" target="blank">Sketch</a> and <a href="//invisionapp.com" target="blank">Invision</a>; crafting the tiniest details to provide a delightful user experience.</p>
 							<p>We're a match if you love clean, minimal, and modern UI with subtle touches of creativity.</p>
 						</Box>
-					</Flex>
+					</Grid>
 				</Wrapper>
 			</Container>
 		)

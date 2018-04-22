@@ -93,6 +93,7 @@ const Item = styled(Link).attrs({
   grid-template-rows: ${props => (props.half ? '6em 1fr 1.5em;' : null)};
   justify-content: start;
   overflow: hidden;
+	min-height: 8.5em;
   position: relative;
 	text-decoration: none;
 	transform: translate3d(0, 0, 0);
@@ -135,19 +136,6 @@ const Item = styled(Link).attrs({
       writing-mode: lr;
     }
   }
-`
-
-export const Grid = styled.section`
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(${props => props.itemMinWidth || '1fr'}, 1fr)
-  );
-  grid-gap: 1rem;
-
-	& ${Item} {
-		min-height: ${props => props.itemMinHeight || null};
-	}
 `
 
 class Card extends PureComponent {

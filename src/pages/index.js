@@ -14,7 +14,8 @@ import ForHire from '../sections/home/ForHire'
 import Article from '../components/Article'
 import { Flex, Box } from '../components/Box'
 import { ButtonLink } from '../components/Button'
-import Card, { Grid } from '../components/Card'
+import Card from '../components/Card'
+import Grid from '../components/Grid'
 import IconContainer from '../components/IconContainer'
 import Subheading from '../components/Subheading'
 import Wrapper from '../components/Wrapper'
@@ -45,44 +46,48 @@ class Home extends PureComponent {
 				<Section>
 					<Wrapper>
 						<p><strong>Constantly learning.</strong>I'm currently working on publishing my notes. For now, here are the tools I'm actively mastering at the moment.</p>
-						<Flex justifyContent="space-between">
-							<Box textAlign="center">
-								<IconContainer>
-									<img draggable="false" src={svgJavascript} alt="ES6" />
-								</IconContainer>
-								<h5>ES6+</h5>
-							</Box>
-							<Box textAlign="center">
-								<IconContainer>
-									<img draggable="false" src={svgReact} alt="ReactJS" />
-								</IconContainer>
-								<h5>ReactJS</h5>
-							</Box>
-							<Box textAlign="center">
-								<IconContainer>
-									<img draggable="false" src={svgGraphQL} alt="GraphQL" />
-								</IconContainer>
-								<h5>GraphQL</h5>
-							</Box>
-							<Box textAlign="center">
-								<IconContainer>
-									<img draggable="false" src={svgGatsby} alt="Gatsby" />
-								</IconContainer>
-								<h5>Gatsby</h5>
-							</Box>
-							<Box textAlign="center">
-								<IconContainer>
-									<img draggable="false" src={svgSketch} alt="Sketch" />
-								</IconContainer>
-								<h5>Sketch</h5>
-							</Box>
-							<Box textAlign="center">
-								<IconContainer>
-									<img draggable="false" src={svgInvision} alt="Invision" />
-								</IconContainer>
-								<h5>Invision</h5>
-							</Box>
-						</Flex>
+						<Grid width="18em" gap="1em 0" py={4}>
+							<Grid width="33%" gap="0">
+								<Box textAlign="center">
+									<IconContainer>
+										<img draggable="false" src={svgJavascript} alt="ES6" />
+									</IconContainer>
+									<h5>ES6+</h5>
+								</Box>
+								<Box textAlign="center">
+									<IconContainer>
+										<img draggable="false" src={svgReact} alt="ReactJS" />
+									</IconContainer>
+									<h5>ReactJS</h5>
+								</Box>
+								<Box textAlign="center">
+									<IconContainer>
+										<img draggable="false" src={svgGraphQL} alt="GraphQL" />
+									</IconContainer>
+									<h5>GraphQL</h5>
+								</Box>
+							</Grid>
+							<Grid width="33%" gap="0">
+								<Box textAlign="center">
+									<IconContainer>
+										<img draggable="false" src={svgGatsby} alt="Gatsby" />
+									</IconContainer>
+									<h5>Gatsby</h5>
+								</Box>
+								<Box textAlign="center">
+									<IconContainer>
+										<img draggable="false" src={svgSketch} alt="Sketch" />
+									</IconContainer>
+									<h5>Sketch</h5>
+								</Box>
+								<Box textAlign="center">
+									<IconContainer>
+										<img draggable="false" src={svgInvision} alt="Invision" />
+									</IconContainer>
+									<h5>Invision</h5>
+								</Box>
+							</Grid>
+						</Grid>
 					</Wrapper>
 				</Section>
 				<Section>

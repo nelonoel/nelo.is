@@ -4,7 +4,8 @@ import Helmet from 'react-helmet'
 
 import Wrapper from '../../components/Wrapper'
 import Banner, { Title, Description } from '../../components/Banner'
-import Card, { Grid } from '../../components/Card'
+import Grid from 'react-css-grid'
+import Card from '../../components/Card'
 
 class ProjectsIndex extends React.Component {
 	render() {
@@ -21,7 +22,7 @@ class ProjectsIndex extends React.Component {
 					</Description>
 				</Banner>
 				<Wrapper wide>
-					<Grid itemMinWidth="16.5em">
+					<Grid width="16em" gap="1em">
 						{posts.map(({ node }) => {
 							return <Card
 								key={node.id}

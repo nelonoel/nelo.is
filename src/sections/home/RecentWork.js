@@ -3,7 +3,8 @@ import styled from 'styled-components'
 import { theme } from 'styled-system'
 import get from 'lodash/get'
 
-import Card, { Grid } from '../../components/Card'
+import Grid from '../../components/Grid'
+import Card from '../../components/Card'
 import Wrapper from '../../components/Wrapper'
 
 const Container = styled.section`
@@ -20,10 +21,10 @@ const Container = styled.section`
   }
 
   ${Grid} {
-    grid-template-columns: repeat(7, 1fr);
-    grid-gap: 0 2rem;
+		grid-auto-flow: column;
     overflow-x: auto;
-    padding: 1.5rem 3rem 3rem;
+    padding-bottom: 3rem;
+    padding-top: 1.5rem;
 
     &::-webkit-scrollbar {
       display: none;
@@ -31,7 +32,7 @@ const Container = styled.section`
 
     &:after {
       content: '';
-      width: 1vw;
+      width: 1.5rem;
     }
 
     & > a {
@@ -50,7 +51,7 @@ export default class RecentWork extends PureComponent {
 					<h2>Latest Work</h2>
 					<p>Yess</p>
 				</Wrapper>
-				<Grid itemMinWidth="16em">
+				<Grid width="1fr" gap="0 1.5rem" px={['1.5rem', '1.5rem', '1.5rem', '1.5rem', '3rem']}>
 					{posts.map(({ node }) => {
 						return <Card
 							key={node.id}
