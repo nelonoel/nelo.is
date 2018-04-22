@@ -3,13 +3,18 @@ import assign from 'lodash/assign'
 
 const deriveColors = base => {
 	return {
-		dark3: darken(0.1, base),
-		dark2: darken(0.05, base),
-		dark1: darken(0.025, base),
-
-		light3: lighten(0.1, base),
-		light2: lighten(0.05, base),
-		light1: lighten(0.025, base)
+		dark: [
+			darken(0.1, base),
+			darken(0.05, base),
+			darken(0.025, base),
+			darken(0.0125, base)
+		],
+		light: [
+			lighten(0.1, base),
+			lighten(0.05, base),
+			lighten(0.025, base),
+			lighten(0.0125, base)
+		]
 	}
 }
 
@@ -18,53 +23,99 @@ const defaults = {
 	black: '#10161a',
 	primary: '#eb532d',
 	secondary: '#43bf4d',
-	selection: '#ffe200',
-
-	baseFontSize: '18px',
-	borderRadius: '5px',
-	containerWidth: '51rem'
+	selection: '#ffe200'
 }
 
-const breakpoints = {
-	mobile: '21em',
-	tablet: '27em',
-	container: '38em'
+const contrast = [
+	'#e1e8ed',
+	'#ced9e0',
+	'#a7b6c2',
+	'#738694',
+	'#394b59'
+]
+
+const lightColors = assign(
+	defaults,
+	deriveColors('#f5f8fa'), {
+		base: '#f5f8fa',
+		text: '#293742',
+		contrast
+	}
+)
+
+const darkColors = assign(
+	defaults,
+	deriveColors('#293742'), {
+		base: '#293742',
+		text: '#fff',
+		contrast: contrast.reverse()
+	}
+)
+
+const breakpoints = [
+	'21em', '32em', '48em'
+]
+
+const space = [
+	0, 4, 8, 16, 32, 64, 128, 256, 512
+]
+
+const fontSizes = [
+	16, 20, 24, 32, 48, 64, 96, 128
+]
+
+const lineHeights = [
+	1, 1.125, 1.25, 1.5
+]
+
+const fontWeights = {
+	normal: 400,
+	bold: 700
 }
 
-const lightColors = {
-	name: 'light',
-
-	base: '#f5f8fa',
-	contrast1: '#e1e8ed',
-	contrast2: '#ced9e0',
-	contrast3: '#a7b6c2',
-	contrast4: '#738694',
-	contrast5: '#394b59',
-	text: '#293742',
+const letterSpacings = {
+	normal: 'normal',
+	caps: '0.125em'
 }
 
-const darkColors = {
-	name: 'dark',
+// border-radius
+const radii = [
+	0, 4, 6, '40%', '50%'
+]
 
-	base: '#293742',
-	contrast1: '#394b59',
-	contrast2: '#738694',
-	contrast3: '#a7b6c2',
-	contrast4: '#ced9e0',
-	contrast5: '#e1e8ed',
-	text: '#fff',
+const borderWidths = [
+	0, 1, 2
+]
+
+const shadows = [
+	`0 1px 2px 0 rgba(0, 0, 0, 0.1)`,
+	`0 1px 4px 0 rgba(0, 0, 0, 0.1)`
+]
+
+const theme = {
+	borderWidths,
+	breakpoints,
+	fontSizes,
+	fontWeights,
+	letterSpacings,
+	lineHeights,
+	radii,
+	shadows,
+	space
 }
 
 export const light = assign(
-	lightColors,
-	deriveColors(lightColors.base),
-	defaults,
-	{ breakpoints }
+	{
+		name: 'light',
+		colors: lightColors
+	},
+	theme
 )
 
 export const dark = assign(
-	darkColors,
-	deriveColors(darkColors.base),
-	defaults,
-	{ breakpoints }
+	{
+		name: 'dark',
+		colors: darkColors
+	},
+	theme
 )
