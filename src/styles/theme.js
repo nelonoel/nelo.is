@@ -34,23 +34,21 @@ const contrast = [
 	'#394b59'
 ]
 
-const lightColors = assign(
-	defaults,
-	deriveColors('#f5f8fa'), {
-		base: '#f5f8fa',
-		text: '#293742',
-		contrast
-	}
-)
+const lightColors = {
+	...defaults,
+	...deriveColors('#f5f8fa'),
+	base: '#f5f8fa',
+	text: '#293742',
+	contrast: contrast
+}
 
-const darkColors = assign(
-	defaults,
-	deriveColors('#293742'), {
-		base: '#293742',
-		text: '#fff',
-		contrast: contrast.reverse()
-	}
-)
+const darkColors = {
+	...defaults,
+	...deriveColors('#293742'),
+	base: '#293742',
+	text: '#fff',
+	contrast: contrast.slice(0).reverse()
+}
 
 const breakpoints = [
 	'21em', '32em', '48em'
@@ -78,9 +76,8 @@ const letterSpacings = {
 	caps: '0.125em'
 }
 
-// border-radius
 const radii = [
-	0, 4, 6, '40%', '50%'
+	'0', '3px', '5px', '40%', '50%'
 ]
 
 const borderWidths = [
@@ -88,9 +85,14 @@ const borderWidths = [
 ]
 
 const shadows = [
-	`0 1px 2px 0 rgba(0, 0, 0, 0.1)`,
-	`0 1px 4px 0 rgba(0, 0, 0, 0.1)`
+	'0 1px 2px 0 rgba(0, 0, 0, 0.1)',
+	'0 1px 4px 0 rgba(0, 0, 0, 0.1)'
 ]
+
+const wrapper = {
+	'normal': '51rem',
+	'wide': '64rem'
+}
 
 const theme = {
 	borderWidths,
@@ -101,21 +103,16 @@ const theme = {
 	lineHeights,
 	radii,
 	shadows,
-	space
+	space,
+	wrapper
 }
 
-export const light = assign(
-	{
-		name: 'light',
-		colors: lightColors
-	},
-	theme
-)
+export const light = assign({
+	name: 'light',
+	colors: lightColors
+}, theme)
 
-export const dark = assign(
-	{
-		name: 'dark',
-		colors: darkColors
-	},
-	theme
-)
+export const dark = assign({
+	name: 'dark',
+	colors: darkColors
+}, theme)
