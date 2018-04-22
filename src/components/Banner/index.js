@@ -75,7 +75,7 @@ export const Description = styled.p`
   font-size: 1.15em;
   line-height: 1.5;
   margin: 0.125em auto 1.25em;
-  max-width: 480px;
+  max-width: ${theme('wrapper.normal')}em;
 
   & > a {
     border-bottom: ${theme('colors.contrast.0')} solid 2px;
