@@ -16,7 +16,7 @@ const FooterContainer = Wrapper.withComponent('footer').extend`
   display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	margin: 0.5em auto 0;
-	padding: 1.5rem;
+	padding: 2rem 1.5rem;
 	position: relative;
 `
 
