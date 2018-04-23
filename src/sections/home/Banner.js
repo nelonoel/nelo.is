@@ -78,7 +78,7 @@ const Avatar = styled.div`
 
   @media (max-width: 46rem) {
     align-self: center;
-    height: 20em;
+    height: 24em;
     min-height: 50vh;
   }
 `
@@ -90,6 +90,7 @@ const Silhouette = styled.img.attrs({
   display: flex;
   height: 24em;
   margin: 0;
+	opacity: 0.5;
 
   @media (max-width: 46rem) {
     height: 100%;
@@ -99,6 +100,7 @@ const Silhouette = styled.img.attrs({
 const Face = Silhouette.extend.attrs({
 	src: svgFace
 }) `
+	opacity: 1;
   position: absolute;
   left: -1px;
   top: 0;
