@@ -2,34 +2,14 @@ import React, { PureComponent } from 'react'
 import styled, { keyframes } from 'styled-components'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-import { Code } from 'react-feather'
 
 import Banner from '../sections/home/Banner'
 import LatestPost from '../sections/home/LatestPost'
 import Services from '../sections/home/Services'
+import FeaturedProject from '../sections/home/FeaturedProject'
 import RecentWork from '../sections/home/RecentWork'
 import Clients from '../sections/home/Clients'
 import ForHire from '../sections/home/ForHire'
-
-import Article from '../components/Article'
-import Box from '../components/Box'
-import { ButtonLink } from '../components/Button'
-import Card from '../components/Card'
-import Grid from '../components/Grid'
-import IconContainer from '../components/IconContainer'
-import Subheading from '../components/Subheading'
-import Wrapper from '../components/Wrapper'
-
-import svgGatsby from '../assets/img/stack/gatsby.svg'
-import svgGraphQL from '../assets/img/stack/graphql.svg'
-import svgReact from '../assets/img/stack/react.svg'
-import svgJavascript from '../assets/img/stack/javascript.svg'
-import svgSketch from '../assets/img/stack/sketch.svg'
-import svgInvision from '../assets/img/stack/invision.svg'
-
-const Section = Article.extend`
-	margin: 0;
-`.withComponent('section')
 
 class Home extends PureComponent {
 	render() {
@@ -37,6 +17,10 @@ class Home extends PureComponent {
 		const posts = get(this, 'props.data.recentWork.edges')
 		const latestPost = get(this, 'props.data.latestPost.edges[0].node')
 		const forHire = get(this, 'props.data.site.siteMetadata.forHire')
+		const screens = {
+			desktop: get(this, 'props.data.featuredDesktopScreen.childImageSharp.sizes'),
+			mobile: get(this, 'props.data.featuredMobileScreen.childImageSharp.sizes')
+		}
 
 		return (
 			<div>
@@ -44,67 +28,7 @@ class Home extends PureComponent {
 				<Banner />
 				<LatestPost post={latestPost} />
 				<Services />
-				<Section>
-					<Wrapper>
-						<p><strong>Constantly learning.</strong>I'm currently working on publishing my notes. For now, here are the tools I'm actively mastering at the moment.</p>
-						<Grid width="18em" gap="1em 0" py={4}>
-							<Grid width="33%" gap="0">
-								<Box textAlign="center">
-									<IconContainer>
-										<img draggable="false" src={svgJavascript} alt="ES6" />
-									</IconContainer>
-									<h5>ES6+</h5>
-								</Box>
-								<Box textAlign="center">
-									<IconContainer>
-										<img draggable="false" src={svgReact} alt="ReactJS" />
-									</IconContainer>
-									<h5>ReactJS</h5>
-								</Box>
-								<Box textAlign="center">
-									<IconContainer>
-										<img draggable="false" src={svgGraphQL} alt="GraphQL" />
-									</IconContainer>
-									<h5>GraphQL</h5>
-								</Box>
-							</Grid>
-							<Grid width="33%" gap="0">
-								<Box textAlign="center">
-									<IconContainer>
-										<img draggable="false" src={svgGatsby} alt="Gatsby" />
-									</IconContainer>
-									<h5>Gatsby</h5>
-								</Box>
-								<Box textAlign="center">
-									<IconContainer>
-										<img draggable="false" src={svgSketch} alt="Sketch" />
-									</IconContainer>
-									<h5>Sketch</h5>
-								</Box>
-								<Box textAlign="center">
-									<IconContainer>
-										<img draggable="false" src={svgInvision} alt="Invision" />
-									</IconContainer>
-									<h5>Invision</h5>
-								</Box>
-							</Grid>
-						</Grid>
-					</Wrapper>
-				</Section>
-				<Section>
-					<Wrapper>
-						<div>
-							Screenshot
-					</div>
-						<div>
-							<h6>Featured Project</h6>
-							<h2>Phaxio</h2>
-							<h4>A developer-friendly API that enables sending and receiving of faxes.</h4>
-							<p>Designed and developed Phaxio's brand identity, website, and app. Crafted a responsive UI from the ground up while preserving established user flows.</p>
-							<p>Optimized search engine rankings by keeping the same URL routes to match previous search engine indices and making the content accessible across all devices.</p>
-						</div>
-					</Wrapper>
-				</Section>
+				<FeaturedProject screens={screens} />
 				<RecentWork posts={posts} />
 				<Clients />
 				<ForHire forHire={forHire} />
@@ -166,6 +90,20 @@ export const pageQuery = graphql`
             title
             category
           }
+        }
+      }
+		}
+		featuredDesktopScreen: file(relativePath: { eq: "img/featured/desktop.png" }) {
+      childImageSharp {
+        sizes {
+          ...GatsbyImageSharpSizes_withWebp
+        }
+      }
+		}
+		featuredMobileScreen: file(relativePath: { eq: "img/featured/mobile.png" }) {
+      childImageSharp {
+        sizes {
+          ...GatsbyImageSharpSizes_withWebp
         }
       }
     }
