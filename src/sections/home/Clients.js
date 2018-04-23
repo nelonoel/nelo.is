@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import { theme } from 'styled-system'
 
-import Subheading from '../../components/Subheading'
-import Grid from '../../components/Grid'
+import Text from '../../components/Text'
+import Flex from '../../components/Flex'
 import Wrapper from '../../components/Wrapper'
 
 import svgBugwolf from '../../assets/img/clients/bugwolf.svg'
@@ -12,6 +12,7 @@ import svgMana from '../../assets/img/clients/mana.svg'
 import svgPhaxio from '../../assets/img/clients/phaxio.svg'
 import svgVyllage from '../../assets/img/clients/vyllage.svg'
 import svgXTeam from '../../assets/img/clients/x-team.svg'
+import { flex } from 'styled-system/dist/styles';
 
 const Container = styled.div`
 	background: ${props => props.theme.name === 'dark' ? props.theme.colors.light[2] : props.theme.colors.light[0]};
@@ -25,7 +26,6 @@ const Logo = styled.img.attrs({
 	alt: props => props.company,
 	title: props => props.company
 }) `
-	margin: 0 auto;
 	max-height: 3em;
 	width: 7em;
 `
@@ -35,15 +35,27 @@ export default class Services extends PureComponent {
 		return (
 			<Container>
 				<Wrapper wide>
-					<Subheading color="contrast.3" mt="0" mb={4} textAlign="center"> I had the opportunity to work with these companies:</Subheading>
-					<Grid align="center" gap="2em 0.5em" width="8em">
-						<Logo src={svgBugwolf} company="Bugwolf" />
-						<Logo src={svgXTeam} company="X-Team" />
-						<Logo src={svgPhaxio} company="Phaxio" />
-						<Logo src={svgMana} company="MANA" />
-						<Logo src={svgVyllage} company="Vyllage" />
-						<Logo src={svgCarful} company="Carful" />
-					</Grid>
+					<Text color="contrast.3" fontSize={2} mb={3} mt={2} textAlign="center">Trusted by awesome companies worldwide.</Text>
+					<Flex flexWrap="wrap">
+						<Flex justifyContent="center" my={3} w={[1, 1 / 2, 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
+							<Logo src={svgBugwolf} company="Bugwolf" />
+						</Flex>
+						<Flex justifyContent={['center', 'flex-end', 'center']} my={[1, 3]} w={[1, 1 / 2, 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
+							<Logo src={svgXTeam} company="X-Team" />
+						</Flex>
+						<Flex justifyContent="center" my={3} w={[1, 1 / 2, 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
+							<Logo src={svgPhaxio} company="Phaxio" />
+						</Flex>
+						<Flex justifyContent={['center', 'flex-end', 'center']} my={[1, 3]} w={[1, 1 / 2, 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
+							<Logo src={svgMana} company="MANA" />
+						</Flex>
+						<Flex justifyContent="center" my={3} w={[1, 1 / 2, 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
+							<Logo src={svgVyllage} company="Vyllage" />
+						</Flex>
+						<Flex justifyContent={['center', 'flex-end', 'center']} my={[1, 3]} w={[1, 1 / 2, 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
+							<Logo src={svgCarful} company="Carful" />
+						</Flex>
+					</Flex>
 				</Wrapper>
 			</Container>
 		)
