@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { space } from 'styled-system'
+import { space, textAlign } from 'styled-system'
 
 const Wrapper = styled.div`
   box-sizing: border-box;
@@ -10,6 +10,7 @@ const Wrapper = styled.div`
 	width: 100%;
 
 	${space}
+	${textAlign}
 `
 
 export default Wrapper

@@ -5,6 +5,7 @@ import {
 	fontSize,
 	fontWeight,
 	lineHeight,
+	maxWidth,
 	space,
 	textAlign,
 	width
@@ -16,6 +17,7 @@ const Text = styled.div`
 	${fontSize}
 	${fontWeight}
 	${lineHeight}
+	${maxWidth}
 	${space}
 	${textAlign}
 	${width}
