@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { space } from 'styled-system'
 
 const Wrapper = styled.div`
   box-sizing: border-box;
@@ -7,6 +8,8 @@ const Wrapper = styled.div`
   max-width: ${props => props.wide ? props.theme.wrapper.wide : props.theme.wrapper.normal};
 	padding: 0 1.5rem;
 	width: 100%;
+
+	${space}
 `
 
 export default Wrapper
