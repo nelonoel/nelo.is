@@ -39,7 +39,7 @@ const Container = Article.extend`
   }
 
   h6 {
-    margin-top: 0.125em;
+    margin-top: 0.4em;
   }
 
   ${ButtonLink} {
@@ -75,7 +75,7 @@ export default class LatestPost extends PureComponent {
 						<h6>{category}</h6>
 						<h5>{title}</h5>
 					</Box>
-					<ButtonLink to={slug} transparent sharp>
+					<ButtonLink to={slug} mr={0} transparent sharp>
 						<ArrowRight /> Read more
           </ButtonLink>
 				</Content>
