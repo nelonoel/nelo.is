@@ -7,7 +7,7 @@ export default class List extends PureComponent {
 
 		return items instanceof Array ? (
 			<ListType>
-				{items.map(item => <li>{item}</li>)}
+				{items.map(item => <li key={item}>{item}</li>)}
 			</ListType>
 		) : null
 	}
