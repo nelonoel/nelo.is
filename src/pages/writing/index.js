@@ -1,10 +1,10 @@
 import React from 'react'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-import Grid from 'react-css-grid'
 
 import Wrapper from '../../components/Wrapper'
 import Banner, { Title, Description } from '../../components/Banner'
+import Grid from '../../components/Grid'
 import Card from '../../components/Card'
 
 class BlogIndex extends React.Component {
@@ -23,7 +23,7 @@ class BlogIndex extends React.Component {
           </Description>
 				</Banner>
 				<Wrapper>
-					<Grid width="1fr" gap="1em">
+					<Grid width="16em" gap="1em">
 						{posts.map(({ node }) => {
 							return (
 								<Card

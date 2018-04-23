@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 
 import Wrapper from '../../components/Wrapper'
 import Banner, { Title, Description } from '../../components/Banner'
-import Grid from 'react-css-grid'
+import Grid from '../../components/Grid'
 import Card from '../../components/Card'
 
 class ProjectsIndex extends React.Component {
