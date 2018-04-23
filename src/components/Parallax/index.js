@@ -20,11 +20,17 @@ export default class Parallax extends PureComponent {
 		return (
 			<div
 				className={className}
-				data-rellax-speed={speed}
 				ref={el => { this.el = el }}
+				data-rellax-percentage={0.0125}
+				data-rellax-speed={speed}
 			>
 				{children}
 			</div>
 		)
 	}
+}
+
+Parallax.defaultProps = {
+	speed: 0,
+	children: null
 }
