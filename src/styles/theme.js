@@ -79,7 +79,7 @@ const letterSpacings = {
 }
 
 const radii = [
-	'0', '3px', '5px', '40%', '50%'
+	'0', '3px', '5px', '18px', '40%', '50%'
 ]
 
 const borderWidths = [
