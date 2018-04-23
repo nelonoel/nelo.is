@@ -78,7 +78,6 @@ const Category = Subheading.extend`
 `
 
 const Item = styled(Link).attrs({
-	key: props => props.slug,
 	to: props => props.slug,
 }) `
   align-items: center;
@@ -141,6 +140,7 @@ const Item = styled(Link).attrs({
 class Card extends PureComponent {
 	render() {
 		const {
+			id,
 			half,
 			slug,
 			cover,
@@ -150,6 +150,7 @@ class Card extends PureComponent {
 			date,
 			category,
 		} = this.props
+
 
 		return (
 			<Item slug={slug} half={half}>
