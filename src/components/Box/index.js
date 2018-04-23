@@ -1,8 +1,12 @@
 import styled from 'styled-components'
 import {
+	borders,
+	borderColor,
+	color,
 	display,
 	flexDirection,
 	flexWrap,
+	height,
 	lineHeight,
 	position,
 	space,
@@ -11,14 +15,20 @@ import {
 } from 'styled-system'
 
 const Box = styled.div`
+	${borders}
+	${borderColor}
+	${color}
 	${display}
 	${flexDirection}
 	${flexWrap}
+	${height}
 	${lineHeight}
 	${position}
 	${space}
 	${textAlign}
 	${width}
+
+	box-sizing: border-box;
 `
 
 export default Box
