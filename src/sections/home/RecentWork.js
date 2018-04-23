@@ -2,9 +2,14 @@ import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import { theme } from 'styled-system'
 import get from 'lodash/get'
+import { ArrowRight } from 'react-feather'
 
-import Grid from '../../components/Grid'
+import Box from '../../components/Box'
+import { ButtonLink } from '../../components/Button'
 import Card from '../../components/Card'
+import Flex from '../../components/Flex'
+import Grid from '../../components/Grid'
+import Text from '../../components/Text'
 import Wrapper from '../../components/Wrapper'
 
 const Container = styled.section`
@@ -12,12 +17,6 @@ const Container = styled.section`
 
   & > ${Wrapper} {
     padding-top: 1.5em;
-
-    & > h2,
-    & > p {
-      line-height: 1.4;
-      margin: 0;
-    }
   }
 
   ${Grid} {
@@ -28,11 +27,6 @@ const Container = styled.section`
 
     &::-webkit-scrollbar {
       display: none;
-    }
-
-    &:after {
-      content: '';
-      width: 1.5rem;
     }
 
     & > a {
@@ -48,8 +42,18 @@ export default class RecentWork extends PureComponent {
 		return (
 			<Container>
 				<Wrapper>
-					<h2>Latest Work</h2>
-					<p>Yess</p>
+					<Flex alignItems="center" justifyContent="space-between">
+						<Box>
+							<Text fontSize="2" fontWeight="bold" color="contrast.4" mb={-1}>Recent Work</Text>
+							<Text color="contrast.3">A good mix of UI development and design.</Text>
+						</Box>
+						<Box>
+							<ButtonLink to="/making" mr={0} inverted>
+								<ArrowRight />
+								See all
+							</ButtonLink>
+						</Box>
+					</Flex>
 				</Wrapper>
 				<Grid width="1fr" gap="0 1.5rem" px={['1.5rem', '1.5rem', '1.5rem', '1.5rem', '3rem']}>
 					{posts.map(({ node }) => {
@@ -65,6 +69,7 @@ export default class RecentWork extends PureComponent {
 							date={get(node, 'frontmatter.date')}
 						/>
 					})}
+					<Box w={['1px', '1px', '1px', '1px', '1.5rem']} mr={['-1px', '-1px', '-1px', '-1px', '0']} />
 				</Grid>
 			</Container>
 		)
