@@ -16,17 +16,6 @@ const Container = Article.extend`
 
   ${Box} {
     font-size: 0.9em;
-    padding: 4em 0;
-		width: fit-content;
-
-    &:first-child {
-      box-shadow: inset -1px 0 0 ${theme('colors.dark.2')};
-      padding-right: 2em;
-    }
-
-    &:last-child {
-      padding-left: 2em;
-    }
 
     & > div {
       text-align: center;
@@ -38,8 +27,14 @@ const Container = Article.extend`
     margin: 0.35em 0 0;
   }
 
-	p:last-child {
-		margin-bottom: 0;
+	p {
+		color: ${theme('colors.contrast.4')};
+		margin: 1em auto;
+		max-width: 21em;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 `
 
@@ -48,7 +43,7 @@ export default class Services extends PureComponent {
 		return (
 			<Container>
 				<Wrapper>
-					<Grid width="18em" gap="0">
+					<Grid width="12em" gap="2em" py={5}>
 						<Box>
 							<div>
 								<IconContainer><Terminal /></IconContainer>
