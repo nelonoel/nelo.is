@@ -10,7 +10,7 @@ const Badge = styled.span`
 	font-weight: bold;
 	letter-spacing: 0.125em;
 	line-height: 2;
-	padding: 0.125em 0.625em 0 0.75em;
+	padding: 0 0.625em 0 0.75em;
 	text-transform: uppercase;
 `
 

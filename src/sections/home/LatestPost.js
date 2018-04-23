@@ -35,28 +35,33 @@ const Container = Article.extend`
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    max-width: 22em;
+		margin-right: 0;
+		max-width: 50vw;
   }
 
   h6 {
+		display: inline-block;
     margin-top: 0.4em;
   }
 
   ${ButtonLink} {
     color:  ${theme('colors.contrast.3')};
     font-size: 0.85em;
+		min-height: 3.6em;
     padding: 0.6em 1.2em;
 
     &:hover {
+			color:  ${theme('colors.contrast.4')};
     }
-  }
-`
 
-const Content = Wrapper.extend`
-  align-items: center;
-  line-height: 1;
-  display: grid;
-  grid-template-columns: max-content 1fr max-content;
+		& > svg {
+			margin-right: 0;
+		}
+
+		& > ${Box} {
+			margin-left: 0.75em;
+		}
+  }
 `
 
 export default class LatestPost extends PureComponent {
@@ -67,18 +72,23 @@ export default class LatestPost extends PureComponent {
 
 		return (
 			<Container>
-				<Content>
-					<Box>
-						<Badge>New!</Badge>
-					</Box>
-					<Box style={{ lineHeight: 1 }}>
-						<h6>{category}</h6>
-						<h5>{title}</h5>
-					</Box>
-					<ButtonLink to={slug} mr={0} transparent sharp>
-						<ArrowRight /> Read more
-          </ButtonLink>
-				</Content>
+				<Wrapper>
+					<Flex alignItems="center" justifyContent="space-between">
+						<Flex alignItems="center">
+							<Box lineHeight={0} display={['none', 'block']}>
+								<Badge>New!</Badge>
+							</Box>
+							<Box lineHeight={0}>
+								<h6>{category}</h6>
+								<h5>{title}</h5>
+							</Box>
+						</Flex>
+						<ButtonLink to={slug} mr={['-1.5rem', '-1.5rem', '-1.5rem', '-1.5rem', 0]} transparent sharp>
+							<ArrowRight />
+							<Box display={['none', 'none', 'inline']}>Read more</Box>
+						</ButtonLink>
+					</Flex>
+				</Wrapper>
 			</Container>
 		)
 	}
