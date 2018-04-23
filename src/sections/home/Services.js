@@ -43,7 +43,7 @@ export default class Services extends PureComponent {
 		return (
 			<Container>
 				<Wrapper>
-					<Grid width="12em" gap="2em" py={5}>
+					<Grid py={[4, 4, 5]}>
 						<Box>
 							<div>
 								<IconContainer><Terminal /></IconContainer>

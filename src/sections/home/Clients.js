@@ -27,7 +27,7 @@ const Logo = styled.img.attrs({
 	title: props => props.company
 }) `
 	max-height: 3em;
-	width: 7em;
+	max-width: 7em;
 `
 
 export default class Services extends PureComponent {
@@ -35,24 +35,24 @@ export default class Services extends PureComponent {
 		return (
 			<Container>
 				<Wrapper wide>
-					<Text color="contrast.3" fontSize={2} mb={3} mt={2} textAlign="center">Trusted by awesome companies worldwide.</Text>
-					<Flex flexWrap="wrap">
-						<Flex justifyContent="center" my={3} w={[1, 1 / 2, 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
+					<Text color="contrast.2" fontSize={2} lineHeight={2} mb={3} mt={2} textAlign="center">Trusted by awesome companies, worldwide.</Text>
+					<Flex flexWrap="wrap" justifyContent="space-evenly">
+						<Flex alignItems="center" justifyContent="center" minWidth={[0, '25%', 0]} my={3} w={['auto', 'auto', 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
 							<Logo src={svgBugwolf} company="Bugwolf" />
 						</Flex>
-						<Flex justifyContent={['center', 'flex-end', 'center']} my={[1, 3]} w={[1, 1 / 2, 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
+						<Flex alignItems="center" justifyContent="center" minWidth={[0, '25%', 0]} my={3} w={['auto', 'auto', 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
 							<Logo src={svgXTeam} company="X-Team" />
 						</Flex>
-						<Flex justifyContent="center" my={3} w={[1, 1 / 2, 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
+						<Flex alignItems="center" justifyContent="center" minWidth={[0, '25%', 0]} my={3} w={['auto', 'auto', 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
 							<Logo src={svgPhaxio} company="Phaxio" />
 						</Flex>
-						<Flex justifyContent={['center', 'flex-end', 'center']} my={[1, 3]} w={[1, 1 / 2, 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
+						<Flex alignItems="center" justifyContent="center" minWidth={[0, '25%', 0]} my={3} w={['auto', 'auto', 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
 							<Logo src={svgMana} company="MANA" />
 						</Flex>
-						<Flex justifyContent="center" my={3} w={[1, 1 / 2, 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
+						<Flex alignItems="center" justifyContent="center" minWidth={[0, '25%', 0]} my={3} w={['auto', 'auto', 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
 							<Logo src={svgVyllage} company="Vyllage" />
 						</Flex>
-						<Flex justifyContent={['center', 'flex-end', 'center']} my={[1, 3]} w={[1, 1 / 2, 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
+						<Flex alignItems="center" justifyContent="center" minWidth={[0, '25%', 0]} my={3} w={['auto', 'auto', 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
 							<Logo src={svgCarful} company="Carful" />
 						</Flex>
 					</Flex>
