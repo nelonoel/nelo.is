@@ -9,7 +9,8 @@ import {
 	lineHeight,
 	position,
 	space,
-	textAlign
+	textAlign,
+	width
 } from 'styled-system'
 
 const Flex = styled.div`
@@ -25,6 +26,7 @@ const Flex = styled.div`
 	${position}
 	${space}
 	${textAlign}
+	${width}
 `
 
 export default Flex
