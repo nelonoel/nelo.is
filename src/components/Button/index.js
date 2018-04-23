@@ -61,5 +61,6 @@ const Button = styled.button`
 `
 
 export const ButtonLink = Button.withComponent(Link)
+export const ExternalButtonLink = Button.withComponent('a')
 
 export default Button
