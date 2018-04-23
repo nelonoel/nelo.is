@@ -134,30 +134,30 @@ class Footer extends PureComponent {
 				<Links>
 					<h5>Connect</h5>
 					<ExternalLink href="mailto:hello@nelo.ph">
-						<Mail />hello@nelo.ph
+						<Mail /> E-mail
           </ExternalLink>
 					<ExternalLink href="tel:+639168375550">
-						<Phone />916 837 5550
+						<Phone /> Mobile
           </ExternalLink>
 					<FooterLink to="//github.com/nelonoel" target="_blank" rel="nofollow">
-						<Github />Github
+						<Github /> Github
           </FooterLink>
 					<FooterLink
 						to="//twitter.com/nelonoel"
 						target="_blank"
 						rel="nofollow"
 					>
-						<Twitter />Twitter
+						<Twitter /> Twitter
           </FooterLink>
 					<FooterLink
 						to="//instagram.com/nelonoel"
 						target="_blank"
 						rel="nofollow"
 					>
-						<Instagram />Instagram
+						<Instagram /> Instagram
           </FooterLink>
 					<FooterLink to="/cv.pdf" target="_blank" rel="nofollow">
-						<FileText />Resumé
+						<FileText /> Resumé
           </FooterLink>
 				</Links>
 			</FooterContainer>
