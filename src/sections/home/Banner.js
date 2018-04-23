@@ -160,7 +160,7 @@ export default class Banner extends PureComponent {
 						<Copy>
 							<h1>Hello there!</h1>
 							<p>
-								I'm Nelo — a digital craftsman focusing on front-end development and UI design.
+								I'm Nelo — a digital craftsman focusing on front-end development & UI design.
               </p>
 							<p>
 								I work with companies around the world to make delightful digital products.
