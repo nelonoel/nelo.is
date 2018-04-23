@@ -6,7 +6,8 @@ import {
 	lineHeight,
 	position,
 	space,
-	textAlign
+	textAlign,
+	width
 } from 'styled-system'
 
 const Box = styled.div`
@@ -17,6 +18,7 @@ const Box = styled.div`
 	${position}
 	${space}
 	${textAlign}
+	${width}
 `
 
 export default Box
