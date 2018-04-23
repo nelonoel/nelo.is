@@ -34,6 +34,7 @@ const Button = styled.button`
 	text-decoration: none;
 	transform: translateY(0);
   transition: all 0.2s ease;
+	white-space: nowrap;
 
 	${space}
 	${minWidth}
@@ -49,8 +50,7 @@ const Button = styled.button`
 
   &:hover, &:focus {
     background: ${props => (props.transparent ? 'rgba(0, 0, 0, 0.025)' : null)};
-    box-shadow: ${props =>
-		props.transparent ? null : '0 2px 4px rgba(0, 0, 0, 0.075)'};
+    box-shadow: ${props => props.transparent ? null : '0 2px 4px rgba(0, 0, 0, 0.075)'};
     transform: ${props => (props.transparent ? null : props.wide ? 'translateY(-2px)' : 'translateY(-1px)')};
 	}
 
