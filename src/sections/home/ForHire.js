@@ -37,11 +37,11 @@ export default class ForHire extends PureComponent {
 							</Flex>
 						</Box>
 						<Box my={2} textAlign="center">
-							<ButtonLink m="0.25em" minWidth="10em" to="/making" inverted>
+							<ButtonLink m="0.25em" minWidth="10.25em" to="/making" inverted>
 								<Monitor />
 								View works
 								</ButtonLink>
-							<ButtonLink m="0.25em" minWidth="10em" to="/at">
+							<ButtonLink m="0.25em" minWidth="10.25em" to="/at">
 								<Mail />
 								Get in touch
 								</ButtonLink>
