@@ -59,7 +59,7 @@ const Button = styled.button`
 	}
 
 	&.focus-visible {
-		box-shadow: 0 0 0 2px ${props => props.transparent ? 'none' : props.secondary ? rgba(lighten(0.2, props.theme.colors.secondary), 0.9) : rgba(lighten(0.2, props.theme.colors.primary), 0.9)};
+		box-shadow: 0 0 0 2px ${props => props.transparent ? 'none' : props.secondary ? rgba(lighten(0.15, props.theme.colors.secondary), 0.95) : rgba(lighten(0.15, props.theme.colors.primary), 0.95)};
 	}
 
   &:hover {
