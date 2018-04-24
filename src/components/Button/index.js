@@ -5,7 +5,7 @@ import {
 	space,
 	minWidth
 } from 'styled-system'
-import { rgba } from 'polished'
+import { lighten, rgba } from 'polished'
 
 const Button = styled.button`
   align-items: center;
@@ -59,7 +59,7 @@ const Button = styled.button`
 	}
 
 	&.focus-visible {
-		box-shadow: 0 0 0 2px ${props => props.transparent ? 'none' : props.secondary ? rgba(props.theme.colors.secondary, 0.5) : rgba(props.theme.colors.primary, 0.5)};
+		box-shadow: 0 0 0 2px ${props => props.transparent ? 'none' : props.secondary ? rgba(lighten(0.2, props.theme.colors.secondary), 0.9) : rgba(lighten(0.2, props.theme.colors.primary), 0.9)};
 	}
 
   &:hover {
