@@ -130,7 +130,7 @@ const Copy = styled.div`
   }
 
   @media (max-width: 46rem) {
-    background: ${theme('colors.dark.2')};
+    background: ${theme('colors.dark.1')};
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
