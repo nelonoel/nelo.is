@@ -14,16 +14,10 @@ import Footer from '../components/Footer'
 class Template extends Component {
 	constructor(props) {
 		super(props)
-		this.toggleNav = this.toggleNav.bind(this)
 		this.toggleDarkMode = this.toggleDarkMode.bind(this)
 		this.state = {
-			isNavOpen: false,
 			isDarkMode: store.get('dark_mode')
 		}
-	}
-
-	toggleNav() {
-		this.setState({ isNavOpen: !this.state.isNavOpen })
 	}
 
 	toggleDarkMode() {
@@ -35,17 +29,15 @@ class Template extends Component {
 
 	render() {
 		const { location, children } = this.props
-		const { isNavOpen, isDarkMode } = this.state
+		const { isDarkMode } = this.state
 		const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
 		return (
 			<ThemeProvider theme={isDarkMode ? dark : light}>
 				<Twemoji>
-					<Page isNavOpen={isNavOpen}>
+					<Page>
 						<Header
-							toggleNav={this.toggleNav}
 							toggleDarkMode={this.toggleDarkMode}
-							isNavOpen={isNavOpen}
 							isDarkMode={isDarkMode} />
 						<Content>
 							{children()}

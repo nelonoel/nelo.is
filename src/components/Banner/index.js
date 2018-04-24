@@ -24,6 +24,10 @@ export const Container = styled.div`
 		width: 100%;
 		z-index: -1;
 	}
+
+	@media (max-width: ${theme('breakpoints.1')}) {
+		padding-top: 6em;
+	}
 `
 
 export const Cover = styled(Img) `

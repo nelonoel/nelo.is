@@ -1,13 +1,10 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
-import { theme } from 'styled-system'
-import { Monitor, Book, Mail, Sun, Moon } from 'react-feather'
+import { display, space, theme } from 'styled-system'
+import { Home, Monitor, Book, Mail, Sun, Moon } from 'react-feather'
 import { rgba } from 'polished'
 
 import { ButtonLink } from '../Button'
-import Hamburger from './Hamburger'
-
-export const breakpoint = '35em'
 
 const Container = styled.nav`
   display: flex;
@@ -21,154 +18,90 @@ const Navigation = styled.ul`
   list-style-type: none;
   margin: 0;
   padding: 0;
+`
 
-  li {
-    display: inline-flex;
-  }
-
-  @media (max-width: ${breakpoint}) {
-    background: ${props => rgba(props.theme.colors.base, 0.99)};
-    bottom: 0;
-    flex-direction: column;
-    font-size: 1.5em;
-    justify-content: center;
-    left: 0;
-    opacity: 0;
-    pointer-events: none;
-    position: fixed;
-    right: 0;
-    top: 0;
-
-    & > li {
-      margin: 0 auto;
-			opacity: 0;
-			transform: translateY(20%);
-    }
-
-    ${props => props.isNavOpen ? `
-      opacity: 1;
-      pointer-events: initial;
-
-			& > li {
-				opacity: 1;
-				transform: none;
-				transition: opacity .2s ease,
-										transform .2s ease;
-
-				&:nth-child(1) {
-					transition-delay: .1s;
-				}
-
-				&:nth-child(2) {
-					transition-delay: .2s;
-				}
-
-				&:nth-child(3) {
-					transition-delay: .3s;
-				}
-			}
-    ` : null}
-  }
+const NavItem = styled.li`
+	${display}
+	${space}
 `
 
 const NavLink = ButtonLink.extend.attrs({
-	transparent: true
+	transparent: true,
+	sharp: true
 }) `
 	color: ${theme('colors.text')};
-  font-size: 1em;
-  margin-left: 0.25em;
-	margin-right: 0;
-	opacity: 0.9;
-  padding: 0.75em 1em;
+	font-size: 1em;
+	line-height: 1;
+	margin: 0;
+  padding: 1.5em 0.75em;
 	transition: none;
 
-  &:hover, &:focus {
-		background: none;
-		opacity: 1;
-	}
-
-  @media (max-width: ${breakpoint}) {
-		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-		-webkit-tap-highlight-color: transparent;
-		margin: auto;
-		padding: 0.25em 0.5em;
-    min-width: 7.25em;
-  }
-`
-
-const ButtonToggle = NavLink.withComponent('button').extend`
-	color: ${theme('colors.text')};
-	margin-right: -0.75em;
-  z-index: 1;
-
-  @media (max-width: ${breakpoint}) {
-		margin-right: 0;
-		min-width: 0;
-		transform: scale(1.25);
-
-		&:active {
-			transform: scale(1.25);
-		}
-  }
-`
-
-const NavToggle = ButtonToggle.extend`
-  display: none;
-	height: 2.5em;
-
-  @media (max-width: ${breakpoint}) {
+  @media (max-width: ${theme('breakpoints.1')}) {
+		box-shadow: inset -1px 0 0 ${theme('colors.dark.0')};
 		display: inline-flex;
-		transform: none;
+		flex-direction: column;
+		font-size: ${theme('fontSizes.0')};
+		line-height: 1;
+		padding: 0.5em;
+		width: 20vw;
+    height: 5em;
 
-		&:active {
-			transform: none;
+		& > svg {
+			height: 1.75em;
+			margin: 0 0 0.5em;
 		}
   }
 `
+
+const ButtonToggle = NavLink.withComponent('button')
 
 class Menu extends PureComponent {
 	constructor(props) {
 		super(props)
-		this.toggleNav = this.toggleNav.bind(this)
-	}
-
-	toggleNav() {
-		if (this.toggle && window.getComputedStyle(this.toggle, null).display !== 'none') {
-			this.props.toggleNav()
-		}
 	}
 
 	render() {
-		const { toggleDarkMode, isNavOpen, isDarkMode } = this.props
+		const { toggleDarkMode, isDarkMode } = this.props
 
 		return (
 			<Container>
-				<Navigation isNavOpen={isNavOpen}>
-					<li>
-						<NavLink to="/making" onMouseUp={this.toggleNav}>
+				<Navigation>
+					<NavItem display={['list-item', 'list-item', 'none']}>
+						<NavLink to="/">
+							<Home />
+							Home
+            </NavLink>
+					</NavItem>
+					<NavItem>
+						<NavLink to="/making">
 							<Monitor />
 							Projects
             </NavLink>
-					</li>
-					<li>
-						<NavLink to="/writing" onMouseUp={this.toggleNav}>
+					</NavItem>
+					<NavItem>
+						<NavLink to="/writing">
 							<Book />
 							Journal
             </NavLink>
-					</li>
-					<li>
-						<NavLink to="/at" onMouseUp={this.toggleNav}>
+					</NavItem>
+					<NavItem>
+						<NavLink to="/at">
 							<Mail />
 							Contact
             </NavLink>
-					</li>
+					</NavItem>
+					<NavItem display={['none', 'none', 'list-item']} mr="-1.4em">
+						<ButtonToggle onClick={toggleDarkMode} icon px="1.4em">
+							{isDarkMode ? <Sun /> : <Moon />}
+						</ButtonToggle>
+					</NavItem>
+					<NavItem display={['list-item', 'list-item', 'none']}>
+						<ButtonToggle onClick={toggleDarkMode}>
+							{isDarkMode ? <Sun /> : <Moon />}
+							{isDarkMode ? 'Day' : 'Night'}
+						</ButtonToggle>
+					</NavItem>
 				</Navigation>
-				<ButtonToggle onClick={toggleDarkMode} icon>
-					{isDarkMode ? <Sun /> : <Moon />}
-				</ButtonToggle>
-				<NavToggle onClick={this.toggleNav} icon innerRef={toggle => { this.toggle = toggle }}>
-					<Hamburger isNavOpen={isNavOpen} />
-				</NavToggle>
 			</Container>
 		)
 	}
