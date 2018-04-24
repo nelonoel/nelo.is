@@ -1,22 +1,22 @@
 import styled from 'styled-components'
 import { theme } from 'styled-system'
+import Box from '../Box'
 
-const IconContainer = styled.div`
+const IconContainer = Box.extend`
   align-items: center;
   justify-content: center;
   background: ${theme('colors.contrast.0')};
   color: ${theme('colors.contrast.3')};
-	border-radius: 40%;
+	border-radius: ${theme('radii.4')};
 	display: inline-flex;
-  height: 3.5em;
-  width: 3.5em;
+	font-size: 1em;
 
 	& > svg {
-		font-size: 2em;
+		width: 60%;
 	}
 
   & > img {
-    height: 2em;
+    width: 60%;
   }
 `
 
