@@ -106,7 +106,7 @@ const Item = styled(Link).attrs({
 		writing-mode: ${props => props.half ? 'lr' : 'tb-rl'};
 	}
 
-	@media (min-width: 30em) {
+	@media (min-width: ${theme('breakpoints.1')}) {
 		&.focus-visible {
 			box-shadow: 0 0 0 3px ${props => rgba(props.theme.colors.contrast[2], 0.6)};
 		}
@@ -124,7 +124,7 @@ const Item = styled(Link).attrs({
 		}
 	` : null}
 
-  @media (max-width: 30em) {
+  @media (max-width: ${theme('breakpoints.1')}) {
     grid-template-columns: 1fr;
 		grid-template-rows: 6em 1fr 1.5em;
 

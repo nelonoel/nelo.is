@@ -21,9 +21,11 @@ const Content = styled.div`
   grid-gap: 2em;
 	padding-bottom: 1.5em;
 
-  @media (max-width: 36em) {
+  @media (max-width: ${theme('breakpoints.2')}) {
 		grid-template-columns: 1fr;
     grid-gap: 0.5em;
+		margin: auto;
+		max-width: ${theme('breakpoints.1')};
 		padding: 0 0 1.5em;
   }
 `
@@ -33,7 +35,7 @@ const Item = styled.div`
 	line-height: 1.4;
 	margin: 1.5em auto;
 
-	@media (max-width: 36em) {
+	@media (max-width: ${theme('breakpoints.2')}) {
 		margin: 1.5em auto 0;
 	}
 
@@ -63,7 +65,7 @@ const Description = styled.p`
 	font-size: 1.25em;
 	margin: 0.125em 0;
 
-	@media (max-width: 36em) {
+	@media (max-width: ${theme('breakpoints.2')}) {
 		font-size: 1.15em;
 	}
 `

@@ -9,8 +9,6 @@ import { ButtonLink } from '../Button'
 import Wrapper from '../Wrapper'
 import Logo, { Dot } from '../Logo'
 
-const breakpoint = '32em'
-
 const FooterContainer = Wrapper.withComponent('footer').extend`
   align-items: flex-start;
   display: grid;
@@ -82,7 +80,7 @@ const LogoBox = Box.extend`
 		}
   }
 
-  @media (max-width: ${breakpoint}) {
+  @media (max-width: ${theme('breakpoints.1')}) {
     grid-column: span 12;
 		grid-row: 3;
     margin-top: 0.75em;
@@ -93,11 +91,11 @@ const LogoBox = Box.extend`
 const LatestArticles = Box.extend`
   grid-column: span 6;
 
-  @media (max-width: ${breakpoint}) {
+  @media (max-width: ${theme('breakpoints.1')}) {
 		grid-column: span 7;
   }
 
-  @media (max-width: 21.75em) {
+  @media (max-width: ${theme('breakpoints.0')}) {
 		grid-column: span 12;
   }
 `
@@ -105,12 +103,12 @@ const LatestArticles = Box.extend`
 const Links = Box.extend`
   grid-column: span 3;
 
-  @media (max-width: ${breakpoint}) {
+  @media (max-width: ${theme('breakpoints.1')}) {
 		grid-column: span 5;
 		margin-left: 0.75em;
   }
 
-  @media (max-width: 21.75em) {
+  @media (max-width: ${theme('breakpoints.0')}) {
 		grid-column: span 12;
 		margin-left: 0;
 		margin-top: 1em;
