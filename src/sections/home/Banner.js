@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import { theme } from 'styled-system'
 import { transparentize } from 'polished'
-import { Monitor, Mail } from 'react-feather'
+import { Folder, Mail } from 'react-feather'
 
 import { Container as BannerContainer } from '../../components/Banner'
 import Box from '../../components/Box'
@@ -43,9 +43,9 @@ const Container = BannerContainer.extend`
 `
 
 const Video = styled.video.attrs({
-  loop: true,
-  muted: true,
-  poster: jpgCover
+	loop: true,
+	muted: true,
+	poster: jpgCover
 }) `
   left: 50%;
   min-height: 100%;
@@ -84,8 +84,8 @@ const Avatar = styled.div`
 `
 
 const Silhouette = styled.img.attrs({
-  draggable: false,
-  src: svgSilhouette
+	draggable: false,
+	src: svgSilhouette
 }) `
   display: flex;
   height: 24em;
@@ -98,7 +98,7 @@ const Silhouette = styled.img.attrs({
 `
 
 const Face = Silhouette.extend.attrs({
-  src: svgFace
+	src: svgFace
 }) `
 	opacity: 1;
   position: absolute;
@@ -143,48 +143,48 @@ const Copy = styled.div`
 `
 
 export default class Banner extends PureComponent {
-  componentDidMount() {
-    if (this.video && window.getComputedStyle(this.video, null).display !== 'none') {
-      this.video.playbackRate = 0.75
-      this.video.play()
-    }
-  }
+	componentDidMount() {
+		if (this.video && window.getComputedStyle(this.video, null).display !== 'none') {
+			this.video.playbackRate = 0.75
+			this.video.play()
+		}
+	}
 
-  render() {
-    return (
-      <Container>
-        <Wrapper>
-          <Hero>
-            <Avatar>
-              <Silhouette />
-              <Face />
-            </Avatar>
-            <Copy>
-              <h1>Hello there!</h1>
-              <p>
-                I'm Nelo — a digital craftsman focusing on front-end development & UI design.
+	render() {
+		return (
+			<Container>
+				<Wrapper>
+					<Hero>
+						<Avatar>
+							<Silhouette />
+							<Face />
+						</Avatar>
+						<Copy>
+							<h1>Hello there!</h1>
+							<p>
+								I'm Nelo — a digital craftsman focusing on front-end development & UI design.
               </p>
-              <p>
-                I work with companies around the world to make delightful digital products.
+							<p>
+								I work with companies around the world to make delightful digital products.
               </p>
-              <Box mt="1.25em">
-                <ButtonLink m="0.25em 0.5em 0.25em 0" minWidth="10.25em" to="/making" inverted>
-                  <Monitor />
-                  View works
+							<Box mt="1.25em">
+								<ButtonLink m="0.25em 0.5em 0.25em 0" minWidth="10.25em" to="/making" inverted>
+									<Folder />
+									View works
 								</ButtonLink>
-                <ButtonLink m="0.25em 0.5em 0.25em 0" minWidth="10.25em" to="/at">
-                  <Mail />
-                  Get in touch
+								<ButtonLink m="0.25em 0.5em 0.25em 0" minWidth="10.25em" to="/at">
+									<Mail />
+									Get in touch
 								</ButtonLink>
-              </Box>
-            </Copy>
-            <Video innerRef={video => { this.video = video }}>
-              <source src={webmCover} type="video/webm" />
-              <source src={mp4Cover} type="video/mp4" />
-            </Video>
-          </Hero>
-        </Wrapper>
-      </Container>
-    )
-  }
+							</Box>
+						</Copy>
+						<Video innerRef={video => { this.video = video }}>
+							<source src={webmCover} type="video/webm" />
+							<source src={mp4Cover} type="video/mp4" />
+						</Video>
+					</Hero>
+				</Wrapper>
+			</Container>
+		)
+	}
 }

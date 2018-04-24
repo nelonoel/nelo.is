@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import { theme, boxShadow } from 'styled-system'
-import { Monitor, Mail } from 'react-feather'
+import { Folder, Mail } from 'react-feather'
 import get from 'lodash/get'
 
 import Text from '../../components/Text'
@@ -38,7 +38,7 @@ export default class ForHire extends PureComponent {
 						</Box>
 						<Box my={2} textAlign="center">
 							<ButtonLink m="0.25em" minWidth="10.25em" to="/making" inverted>
-								<Monitor />
+								<Folder />
 								View works
 								</ButtonLink>
 							<ButtonLink m="0.25em" minWidth="10.25em" to="/at">

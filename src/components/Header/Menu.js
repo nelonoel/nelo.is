@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import { display, space, theme } from 'styled-system'
-import { Home, Monitor, Book, Mail, Sun, Moon } from 'react-feather'
+import { Home, Folder, Book, Mail, Sun, Moon } from 'react-feather'
 import { rgba } from 'polished'
 
 import { ButtonLink } from '../Button'
@@ -74,7 +74,7 @@ class Menu extends PureComponent {
 					</NavItem>
 					<NavItem>
 						<NavLink to="/making">
-							<Monitor />
+							<Folder />
 							Projects
             </NavLink>
 					</NavItem>
