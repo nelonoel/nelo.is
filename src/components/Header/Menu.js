@@ -98,7 +98,7 @@ class Menu extends PureComponent {
 					<NavItem display={['list-item', 'list-item', 'none']}>
 						<ButtonToggle onClick={toggleDarkMode}>
 							{isDarkMode ? <Sun /> : <Moon />}
-							{isDarkMode ? 'Day' : 'Night'}
+							{isDarkMode ? 'Light' : 'Dark'}
 						</ButtonToggle>
 					</NavItem>
 				</Navigation>
