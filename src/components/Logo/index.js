@@ -111,7 +111,7 @@ const Title = styled.h1`
     }
 
 		&.focus-visible {
-			text-shadow: -3px 3px 0 ${theme('colors.contrast.0')};
+			text-shadow: -3px 3px 0 rgba(0, 0, 0, 0.075);
 		}
   }
 `
