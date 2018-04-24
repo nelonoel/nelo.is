@@ -17,17 +17,17 @@ export default class FeaturedProject extends PureComponent {
 
 		return (
 			<section>
-				<Box bg="light.2">
+				<Box bg="dark.0">
 					<Wrapper pt={5} textAlign="center">
 						<Subheading mt={0} mb={2}>Featured Project</Subheading>
 						<Text color="contrast.4" fontSize={4} fontWeight="bold" lineHeight={1}>Phaxio</Text>
 						<Text color="contrast.3" fontSize={2} lineHeight={1} mt={1} mx="auto" maxWidth="20em">A developer-friendly API that enables sending and receiving of faxes.</Text>
 						<Box my={3} textAlign="center">
-							<ExternalButtonLink m="0.25em 0.5em 0.25em 0" minWidth="10em" href="//phaxio.com" target="_blank" rel="nofollow" transparent secondary>
+							<ExternalButtonLink m="0.25em" minWidth="10em" href="//phaxio.com" target="_blank" rel="nofollow" inverted secondary>
 								<ExternalLink />
 								Visit website
 							</ExternalButtonLink>
-							<ButtonLink m="0.25em 0" minWidth="10em" to="/making/phaxio" secondary>
+							<ButtonLink m="0.25em" minWidth="10em" to="/making/phaxio" secondary>
 								<ArrowRight />
 								View project
 							</ButtonLink>
@@ -37,7 +37,7 @@ export default class FeaturedProject extends PureComponent {
 						</Box>
 					</Wrapper>
 				</Box>
-				<Box borderTop={1} borderColor="dark.2" bg="light.2">
+				<Box boxShadow="0 -1px 3px rgba(0, 0, 0, 0.025)" bg="base" position="relative">
 					<Wrapper>
 						<Grid py={[4, 4, 5]} gap="1em 2em">
 							<Text color="contrast.4" maxWidth="20em" mx="auto">Designed and developed Phaxio's brand identity, website, and app. Crafted a responsive UI from the ground up while preserving established user flows.</Text>

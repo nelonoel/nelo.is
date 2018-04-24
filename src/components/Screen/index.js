@@ -24,8 +24,8 @@ const Window = styled(Box) `
 `
 
 const Frame = Box.extend.attrs({
-	bg: 'light.1',
-	color: 'contrast.0',
+	bg: 'light.3',
+	color: 'contrast.1',
 	height: '1.75em',
 	px: 2,
 	textAlign: 'left',

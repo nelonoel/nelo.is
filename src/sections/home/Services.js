@@ -11,7 +11,7 @@ import Wrapper from '../../components/Wrapper'
 import { cover } from '../../styles/mixins'
 
 const Container = Article.extend`
-  border-bottom: ${theme('colors.dark.2')} solid 1px;
+  border-bottom: ${theme('colors.dark.0')} solid 1px;
 	position: relative;
 
   ${Box} {

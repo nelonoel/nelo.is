@@ -45,7 +45,7 @@ export default class RecentWork extends PureComponent {
 					<Flex alignItems={['start', 'start', 'center']} flexDirection={['column', 'column', 'row']} justifyContent="space-between">
 						<Box>
 							<Text fontSize={3} fontWeight="bold" color="contrast.4" lineHeight={0}>Recent Work</Text>
-							<Text color="contrast.3" fontSize={2} lineHeight={2}>A mix of UI development & design.</Text>
+							<Text color="contrast.3" fontSize={2} lineHeight={1} my={[2, 2, 1]}>A mix of UI development & design.</Text>
 						</Box>
 						<Box pt={[2, 2, 0]}>
 							<ButtonLink to="/making" mr={0} inverted>

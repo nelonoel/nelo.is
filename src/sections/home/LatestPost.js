@@ -11,7 +11,7 @@ import Wrapper from '../../components/Wrapper'
 
 const Container = Article.extend`
   background: ${theme('colors.light.2')};
-	border-bottom: ${theme('colors.dark.2')} solid 1px;
+	border-bottom: ${theme('colors.dark.0')} solid 1px;
   margin: 0;
 
   ${Badge} {

@@ -12,7 +12,7 @@ import Box from '../../components/Box'
 import Wrapper from '../../components/Wrapper'
 
 const Container = styled.div`
-  border-bottom: ${theme('colors.dark.2')} solid 1px;
+  border-bottom: ${theme('colors.dark.1')} solid 1px;
 	padding: 2em 0;
 	position: relative;
 `
@@ -37,11 +37,11 @@ export default class ForHire extends PureComponent {
 							</Flex>
 						</Box>
 						<Box my={2} textAlign="center">
-							<ButtonLink m="0.25em 0.5em 0.25em 0" minWidth="10em" to="/making" inverted>
+							<ButtonLink m="0.25em" minWidth="10em" to="/making" inverted>
 								<Monitor />
 								View works
 								</ButtonLink>
-							<ButtonLink m="0.25em 0" minWidth="10em" to="/at">
+							<ButtonLink m="0.25em" minWidth="10em" to="/at">
 								<Mail />
 								Get in touch
 								</ButtonLink>
