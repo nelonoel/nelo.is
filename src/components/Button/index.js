@@ -49,13 +49,20 @@ const Button = styled.button`
     position: relative;
   }
 
+	&.focus-visible,
+	&:hover {
+		${props => props.transparent
+		? props.theme.name === 'dark'
+			? `background: ${rgba(props.theme.colors.dark[0], 0.35)}`
+			: `background: ${rgba(props.theme.colors.dark[4], 0.35)}`
+		: null}
+	}
+
 	&.focus-visible {
 		box-shadow: 0 0 0 2px ${props => props.transparent ? 'none' : props.secondary ? rgba(props.theme.colors.secondary, 0.5) : rgba(props.theme.colors.primary, 0.5)};
-		${props => props.transparent ? `background: ${rgba(props.theme.colors.dark[2], 0.25)}` : null}
 	}
 
   &:hover {
-    background: ${props => (props.transparent ? rgba(props.theme.colors.dark[2], 0.35) : null)};
     box-shadow: ${props => props.transparent ? null : '0 2px 4px rgba(0, 0, 0, 0.075)'};
     transform: ${props => (props.transparent ? null : props.wide ? 'translateY(-2px)' : 'translateY(-1px)')};
 	}
