@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import { theme } from 'styled-system'
-import { Mail, Phone, Github, Twitter, Instagram, FileText } from 'react-feather'
+import { Inbox, Smartphone, Github, Twitter, Instagram, FileText } from 'react-feather'
 import { darken, transparentize } from 'polished'
 
 import { subheading } from '../../styles/typography'
@@ -138,10 +138,10 @@ class Footer extends PureComponent {
 				<Links>
 					<h5>Connect</h5>
 					<ExternalLink href="mailto:hello@nelo.ph">
-						<Mail /> E-mail
+						<Inbox /> E-mail
           </ExternalLink>
 					<ExternalLink href="tel:+639168375550">
-						<Phone /> Mobile
+						<Smartphone /> Mobile
           </ExternalLink>
 					<FooterLink to="//github.com/nelonoel" target="_blank" rel="nofollow">
 						<Github /> Github
