@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import {
 	borders,
 	borderColor,
+	boxShadow,
 	color,
 	display,
 	flexDirection,
@@ -17,6 +18,7 @@ import {
 const Box = styled.div`
 	${borders}
 	${borderColor}
+	${boxShadow}
 	${color}
 	${display}
 	${flexDirection}
