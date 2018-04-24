@@ -7,6 +7,7 @@ import {
 	flexWrap,
 	justifyContent,
 	lineHeight,
+	maxWidth,
 	minWidth,
 	position,
 	space,
@@ -24,6 +25,7 @@ const Flex = styled.div`
 	${flexWrap}
 	${justifyContent}
 	${lineHeight}
+	${maxWidth}
 	${minWidth}
 	${position}
 	${space}
