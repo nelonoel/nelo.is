@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import { theme } from 'styled-system'
-import { rgba } from 'polished'
+import { rgba, darken } from 'polished'
 import Img from 'gatsby-image'
 
 import Box from '../Box'
@@ -9,6 +9,8 @@ import Parallax from '../Parallax'
 
 const Window = styled(Box) `
 	background: #EBECEB;
+	border: ${props => darken(0.03, props.theme.colors.light[4])} solid 0.2em;
+	border-bottom: none;
 	border-top-left-radius: ${theme('radii.2')};
 	border-top-right-radius: ${theme('radii.2')};
 	box-shadow: 0 1px 3px ${props => rgba(props.theme.colors.black, 0.0306)},
@@ -24,16 +26,14 @@ const Window = styled(Box) `
 `
 
 const Frame = Box.extend.attrs({
-	bg: 'light.3',
+	bg: 'light.4',
 	color: 'contrast.1',
 	height: '1.75em',
 	px: 2,
 	textAlign: 'left',
 	width: '100%'
 }) `
-	border-top-left-radius: ${theme('radii.2')};
-	border-top-right-radius: ${theme('radii.2')};
-	box-shadow: inset 0 -1em 2em rgba(0, 0, 0, 0.03), 0 1px 1px rgba(0, 0, 0, 0.125);
+	box-shadow: inset 0 -1em 2em ${props => darken(0.03, props.theme.colors.light[4])}, 0 1px 1px rgba(0, 0, 0, 0.125);
 	position: relative;
 	z-index: 1;
 
@@ -44,8 +44,6 @@ const Frame = Box.extend.attrs({
 	}
 
 	@media (max-width: ${theme('breakpoints.1')}) {
-		border-top-left-radius: ${theme('radii.3')};
-		border-top-right-radius: ${theme('radii.3')};
 		color: ${theme('colors.dark.2')};
 		text-align: center;
 		
