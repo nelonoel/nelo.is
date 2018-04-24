@@ -10,7 +10,7 @@ import Subheading from '../Subheading'
 
 const Container = styled.section`
 	${fullWidth}
-	border-bottom: ${theme('colors.dark.2')} solid 1px;
+	border-bottom: ${theme('colors.dark.1')} solid 1px;
 	margin-bottom: 3em;
 	position: relative;
 `
