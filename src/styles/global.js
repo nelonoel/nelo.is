@@ -1,7 +1,8 @@
 import { injectGlobal } from 'styled-components'
-import { normalize } from 'polished'
+import { normalize, rgba } from 'polished'
 import { light as theme } from '../styles/theme'
 import { fontFaces, body } from '../styles/typography'
+require('focus-visible')
 
 injectGlobal`
 	${normalize()}
@@ -9,15 +10,12 @@ injectGlobal`
 
   * {
 		${body}
+		outline: none;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
 		-webkit-font-smoothing: antialiased;
 		-webkit-print-color-adjust: exact;
     -webkit-text-size-adjust: 100%;
-
-		&:focus {
-			outline: none;
-		}
 	}
 
 	b, strong {

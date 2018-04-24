@@ -30,8 +30,9 @@ const Type = Subheading.extend`
   color: ${theme('colors.contrast.4')};
   display: flex;
   font-size: 0.75em;
+	line-height: 1;
   letter-spacing: 0.0612em;
-  margin: 0 0 -0.25em;
+	margin: 0;
 
   & > svg {
     height: 1.15em;
@@ -69,9 +70,9 @@ const Category = Subheading.extend`
 	border: ${props => darken(0.0306, props.theme.name === 'dark' ? props.theme.colors.contrast[0] : props.theme.colors.white)} solid 0;
   color: ${props => darken(0.125, props.theme.name === 'dark' ? props.theme.colors.contrast[0] : props.theme.colors.white)};
   font-size: 0.75em;
-	line-height: 2;
+	line-height: 1;
 	margin: 0;
-  padding: 0.25em;
+  padding: 0.75em;
   text-align: center;
   width: 100%;
 	writing-mode: lr;
@@ -101,12 +102,15 @@ const Item = styled(Link).attrs({
 
 	& > ${Category} {
 		${props => props.half ? 'border-top-width: 1px;' : 'border-left-width: 1px;'}
-		line-height: ${props => props.half ? 1.8 : 1.9};
 		writing-mode: ${props => props.half ? 'lr' : 'tb-rl'};
 	}
 
 	@media (min-width: 30em) {
-		&:hover, &:focus {
+		&.focus-visible {
+			box-shadow: 0 0 0 3px ${props => rgba(props.theme.colors.contrast[2], 0.6)};
+		}
+
+		&:hover {
 			box-shadow: 0 0 1px rgba(0, 0, 0, 0.015), 0 3px 12px ${props => rgba(0, 0, 0, 0.0612)};
 			transform: translate3d(0, -3px, 0);
 		}
@@ -131,7 +135,6 @@ const Item = styled(Link).attrs({
     & > ${Category} {
 			border-left-width: 0;
 			border-top-width: 1px;
-			line-height: 1.8;
       writing-mode: lr;
     }
   }

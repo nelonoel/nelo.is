@@ -12,8 +12,8 @@ const TextField = styled.input`
 	padding: 0.75em;
 
 	&:focus {
-		background: ${theme('colors.dark.1')};
-		box-shadow: inset 0 0 0 2px ${theme('colors.dark.1')};
+		background: ${theme('colors.dark.2')};
+		box-shadow: inset 0 0 0 2px ${props => darken(0.025, props.theme.colors.dark[2])};
 	}
 `
 

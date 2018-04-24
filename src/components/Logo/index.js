@@ -109,6 +109,10 @@ const Title = styled.h1`
 				}
       }
     }
+
+		&.focus-visible {
+			text-shadow: -3px 3px 0 ${theme('colors.contrast.0')};
+		}
   }
 `
 
@@ -140,7 +144,6 @@ class Logo extends PureComponent {
 		super(props)
 		this.addAnimation = this.addAnimation.bind(this)
 		this.removeAnimation = this.removeAnimation.bind(this)
-		this.handleLogoClick = this.handleLogoClick.bind(this)
 		this.state = {
 			isAnimating: false
 		}
@@ -156,18 +159,10 @@ class Logo extends PureComponent {
 		}
 	}
 
-	handleLogoClick() {
-		const { toggleNav, isNavOpen } = this.props
-
-		if (isNavOpen) {
-			toggleNav()
-		}
-	}
-
 	render() {
 		return (
 			<Title onMouseDown={this.addAnimation}>
-				<Link to="/" className={this.state.isAnimating ? 'bouncing' : ''} onMouseUp={this.handleLogoClick}>
+				<Link to="/" className={this.state.isAnimating ? 'bouncing' : ''}>
 					Nelo
           <Dot onAnimationEnd={this.removeAnimation} />
 				</Link>
