@@ -29,7 +29,7 @@ const NavLink = ButtonLink.extend.attrs({
 	transparent: true,
 	sharp: true
 }) `
-	color: ${theme('colors.text')};
+	color: ${theme('colors.contrast.4')};
 	font-size: 1em;
 	line-height: 1;
 	margin: 0;
