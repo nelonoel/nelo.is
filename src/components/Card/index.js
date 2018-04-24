@@ -73,7 +73,7 @@ const Category = Subheading.extend`
 	height: 100%;
 	line-height: 1;
 	margin: 0;
-  padding: 0.75em;
+  padding: 0.6rem;
   text-align: center;
   width: 100%;
 	writing-mode: lr;
