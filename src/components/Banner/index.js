@@ -26,7 +26,8 @@ export const Container = styled.div`
 	}
 
 	@media (max-width: ${theme('breakpoints.1')}) {
-		padding-top: 6em;
+		margin-top: 0;
+		padding-top: 2.5em;
 	}
 `
 

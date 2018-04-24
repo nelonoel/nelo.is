@@ -23,7 +23,7 @@ const Container = BannerContainer.extend`
   overflow: hidden;
   position: relative;
 
-  @media (max-width: 46rem) {
+  @media (max-width: ${theme('breakpoints.2')}) {
     background: ${theme('colors.contrast.0')};
     background-blend-mode: luminosity;
 
@@ -40,6 +40,10 @@ const Container = BannerContainer.extend`
       height: 100%;
     }
   }
+
+	@media (max-width: ${theme('breakpoints.1')}) {
+		margin-top: 0;
+	}
 `
 
 const Video = styled.video.attrs({
@@ -58,7 +62,7 @@ const Video = styled.video.attrs({
   transform: translateX(-50%) translateY(-50%);
   z-index: -1;
 
-  @media (max-width: 46rem) {
+  @media (max-width: ${theme('breakpoints.2')}) {
     display: none;
   }
 `
@@ -67,7 +71,7 @@ const Hero = styled.section`
   display: flex;
 	justify-content: space-evenly;
 
-  @media (max-width: 46rem) {
+  @media (max-width: ${theme('breakpoints.2')}) {
     flex-direction: column;
   }
 `
@@ -76,7 +80,7 @@ const Avatar = styled.div`
   align-self: flex-end;
   position: relative;
 
-  @media (max-width: 46rem) {
+  @media (max-width: ${theme('breakpoints.2')}) {
     align-self: center;
     height: 24em;
     min-height: 50vh;
@@ -92,7 +96,7 @@ const Silhouette = styled.img.attrs({
   margin: 0;
 	opacity: 0.5;
 
-  @media (max-width: 46rem) {
+  @media (max-width: ${theme('breakpoints.2')}) {
     height: 100%;
   }
 `
@@ -129,7 +133,7 @@ const Copy = styled.div`
     opacity: 0.95;
   }
 
-  @media (max-width: 46rem) {
+  @media (max-width: ${theme('breakpoints.2')}) {
     background: ${theme('colors.dark.1')};
     box-sizing: border-box;
     display: flex;

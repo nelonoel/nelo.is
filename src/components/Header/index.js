@@ -20,7 +20,7 @@ const HeaderWrapper = Wrapper.withComponent('header').extend`
 `
 
 const HeaderContainer = styled(Headroom) `
-  & > .headroom {
+	& > .headroom {
     background: radial-gradient(farthest-side at bottom center, ${props => transparentize(0.025, lighten(0.025, props.theme.colors.base))}, ${theme('colors.base')});
 		z-index: 2 !important;
   }
@@ -30,6 +30,8 @@ const HeaderContainer = styled(Headroom) `
   }
 
 	@media (max-width: ${theme('breakpoints.1')}) {
+		height: 0 !important;
+
 		& > .headroom {
 			background: radial-gradient(farthest-side at top center, ${props => transparentize(0.025, lighten(0.025, props.theme.colors.base))}, ${theme('colors.base')}) !important;
 			box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.025);
