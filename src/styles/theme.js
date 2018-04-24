@@ -4,14 +4,18 @@ import assign from 'lodash/assign'
 const deriveColors = base => {
 	return {
 		dark: [
-			darken(0.1, base),
+			darken(0.025, base),
 			darken(0.05, base),
-			darken(0.025, base)
+			darken(0.075, base),
+			darken(0.1, base),
+			darken(0.125, base)
 		],
 		light: [
-			lighten(0.1, base),
+			lighten(0.025, base),
 			lighten(0.05, base),
-			lighten(0.025, base)
+			lighten(0.075, base),
+			lighten(0.1, base),
+			lighten(0.125, base)
 		]
 	}
 }
