@@ -67,9 +67,10 @@ const Date = styled.div`
 const Category = Subheading.extend`
   align-self: stretch;
   box-sizing: border-box;
-	border: ${props => darken(0.0306, props.theme.name === 'dark' ? props.theme.colors.contrast[0] : props.theme.colors.white)} solid 0;
-  color: ${props => darken(0.125, props.theme.name === 'dark' ? props.theme.colors.contrast[0] : props.theme.colors.white)};
+	border: ${props => props.theme.name === 'dark' ? props.theme.colors.light[0] : props.theme.colors.dark[0]} solid 0;
+  color: ${props => props.theme.name === 'dark' ? props.theme.colors.dark[1] : props.theme.colors.dark[4]};
   font-size: 0.75em;
+	height: 100%;
 	line-height: 1;
 	margin: 0;
   padding: 0.75em;
