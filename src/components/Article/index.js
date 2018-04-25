@@ -2,12 +2,16 @@ import React from 'react'
 import styled from 'styled-components'
 import { theme } from 'styled-system'
 import { darken, lighten } from 'polished'
-import { monospace, subheading } from '../../styles/typography'
+import { monospace, subheading, link } from '../../styles/typography'
 
 const Article = styled.article`
 	${props => require(`../../styles/syntax-${props.theme.name}.css`)}
 	font-size: 1.1em;
 	position: relative;
+
+	a {
+		${link}
+	}
 
   a.absent {
     color: #cc0000;

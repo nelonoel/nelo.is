@@ -1,4 +1,5 @@
 import { css } from 'styled-components'
+import { theme } from 'styled-system'
 
 import woffMontserratBold from '../assets/font/montserrat/montserrat-bold-webfont.woff'
 import woff2MontserratBold from '../assets/font/montserrat/montserrat-bold-webfont.woff2'
@@ -35,6 +36,17 @@ export const subheading = css`
 
 export const monospace = css`
 	font-family: "Inconsolata", monospace;
+`
+
+export const link = css`
+	border-bottom: ${theme('colors.contrast.0')} solid 2px;
+	color: inherit;
+	text-decoration: none;
+
+	&:hover, &:focus {
+		border-bottom-color: ${theme('colors.primary')};
+		transition: border-color .1s ease;
+	}
 `
 
 export const fontFaces = `
