@@ -23,7 +23,7 @@ export default class FeaturedProject extends PureComponent {
 						<Text color="contrast.4" fontSize={4} fontWeight="bold" lineHeight={1}>Phaxio</Text>
 						<Text color="contrast.3" fontSize={2} lineHeight={1} mt={1} mx="auto" maxWidth="20em">A developer-friendly API that enables processing of faxes.</Text>
 						<Box my={3} textAlign="center">
-							<ExternalButtonLink m="0.25em" minWidth="10.25em" href="//phaxio.com" target="_blank" rel="nofollow" inverted secondary>
+							<ExternalButtonLink m="0.25em" minWidth="10.25em" href="//www.phaxio.com" target="_blank" rel="nofollow" inverted secondary>
 								<ExternalLink />
 								Visit website
 							</ExternalButtonLink>
