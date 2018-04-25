@@ -9,8 +9,6 @@ import Grid from '../../components/Grid'
 import IconContainer from '../../components/IconContainer'
 import Wrapper from '../../components/Wrapper'
 
-import { cover } from '../../styles/mixins'
-
 const Container = Article.extend`
   border-bottom: ${theme('colors.dark.0')} solid 1px;
 	font-size: ${theme('fontSizes.1')};
