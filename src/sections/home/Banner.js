@@ -16,11 +16,15 @@ import svgSilhouette from '../../assets/img/silhouette.svg'
 import svgFace from '../../assets/img/avatar.svg'
 
 const Container = BannerContainer.extend`
-  background: ${props => transparentize(0.5, props.theme.colors.contrast[0])};
+  background: ${theme('colors.base')};
   margin-top: -8em;
   opacity: 1;
   overflow: hidden;
   position: relative;
+
+	@media (max-width: ${theme('breakpoints.2')}) {
+		background: ${props => props.theme.name === 'dark' ? props.theme.colors.dark[0] : props.theme.colors.dark[3]};
+  }
 
 	@media (max-width: ${theme('breakpoints.1')}) {
 		margin-top: 0;
@@ -34,7 +38,6 @@ const Video = styled.video.attrs({
   left: 50%;
   min-height: 100%;
   min-width: 100%;
-  mix-blend-mode: soft-light;
   opacity: ${props => props.theme.name === 'dark' ? 0.0612 : 0.125};
   pointer-events: none;
   position: absolute;
