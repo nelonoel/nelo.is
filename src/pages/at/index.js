@@ -33,10 +33,6 @@ const Label = Subheading.extend`
 `.withComponent('label')
 
 class ContactPage extends PureComponent {
-	componentDidMount() {
-		this.firstField.focus()
-	}
-
 	render() {
 		const siteTitle = get(this, 'props.data.site.siteMetadata.title')
 		return (
@@ -52,7 +48,7 @@ class ContactPage extends PureComponent {
 					<Form>
 						<Field>
 							<Label for="name">Name</Label>
-							<TextField innerRef={nameInput => this.firstField = nameInput} type="text" name="name" />
+							<TextField type="text" name="name" />
 						</Field>
 						<Field>
 							<Label for="email">E-mail</Label>
