@@ -129,7 +129,7 @@ const Copy = styled.div`
     font-size: 1em;
     line-height: 1.5;
     margin: 0 auto 0.6em;
-    max-width: 20em;
+    max-width: 21em;
     opacity: 0.95;
   }
 

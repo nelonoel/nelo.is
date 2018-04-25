@@ -13,15 +13,8 @@ import { cover } from '../../styles/mixins'
 
 const Container = Article.extend`
   border-bottom: ${theme('colors.dark.0')} solid 1px;
+	font-size: ${theme('fontSizes.1')};
 	position: relative;
-
-  ${Box} {
-    font-size: 0.9em;
-
-    & > div {
-      text-align: center;
-    }
-  }
 
 	h4 {
 		margin: 0;
