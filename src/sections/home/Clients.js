@@ -36,23 +36,23 @@ export default class Services extends PureComponent {
 			<Container>
 				<Wrapper wide>
 					<Text color="contrast.2" fontSize={2} lineHeight={2} mb={3} mt={2} textAlign="center">Trusted by awesome companies, worldwide.</Text>
-					<Flex flexWrap="wrap" justifyContent="space-evenly">
-						<Flex alignItems="center" justifyContent="center" minWidth={[0, '25%', 0]} my={3} w={['auto', 'auto', 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
+					<Flex flexWrap="wrap" justifyContent="center">
+						<Flex alignItems="center" justifyContent="center" my={3} w={[1, 1 / 2, 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
 							<Logo src={svgBugwolf} company="Bugwolf" />
 						</Flex>
-						<Flex alignItems="center" justifyContent="center" minWidth={[0, '25%', 0]} my={3} w={['auto', 'auto', 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
+						<Flex alignItems="center" justifyContent="center" ml={['auto', 3, 'auto']} mr={['auto', '10%', 'auto']} my={3} w={[1, 'auto', 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
 							<Logo src={svgXTeam} company="X-Team" />
 						</Flex>
-						<Flex alignItems="center" justifyContent="center" minWidth={[0, '25%', 0]} my={3} w={['auto', 'auto', 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
+						<Flex alignItems="center" justifyContent="center" my={3} w={[1, 1 / 2, 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
 							<Logo src={svgPhaxio} company="Phaxio" />
 						</Flex>
-						<Flex alignItems="center" justifyContent="center" minWidth={[0, '25%', 0]} my={3} w={['auto', 'auto', 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
+						<Flex alignItems="center" justifyContent="center" ml={['auto', 3, 'auto']} mr={['auto', '10%', 'auto']} my={3} w={[1, 'auto', 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
 							<Logo src={svgMana} company="MANA" />
 						</Flex>
-						<Flex alignItems="center" justifyContent="center" minWidth={[0, '25%', 0]} my={3} w={['auto', 'auto', 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
+						<Flex alignItems="center" justifyContent="center" my={3} w={[1, 1 / 2, 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
 							<Logo src={svgVyllage} company="Vyllage" />
 						</Flex>
-						<Flex alignItems="center" justifyContent="center" minWidth={[0, '25%', 0]} my={3} w={['auto', 'auto', 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
+						<Flex alignItems="center" justifyContent="center" ml={['auto', 3, 'auto']} mr={['auto', '10%', 'auto']} my={3} w={[1, 'auto', 1 / 3, 1 / 3, 1 / 6, 1 / 6]}>
 							<Logo src={svgCarful} company="Carful" />
 						</Flex>
 					</Flex>
