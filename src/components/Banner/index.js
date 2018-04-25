@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import { theme } from 'styled-system'
 import { rgba } from 'polished'
 import Img from 'gatsby-image'
+
+import { cover } from '../../styles/mixins'
 import Wrapper from '../Wrapper'
 
 export const Container = styled.div`
@@ -40,15 +42,12 @@ export const Cover = styled(Img) `
 
 	&:before,
 	&:after {
-    bottom: 0;
+		${cover}
     height: 100%;
-    left: 0;
     width: 100%;
     z-index: 0;
     content: '';
     display: block;
-    position: absolute;
-    top: 0;
 	}
 
 	&:after {
@@ -57,8 +56,7 @@ export const Cover = styled(Img) `
 
 	&:before {
 		background-color: ${theme('colors.base')};
-		mix-blend-mode: luminosity;
-		opacity: 0.6;
+		opacity: 0.65;
 	}
 `
 

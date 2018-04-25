@@ -17,6 +17,7 @@ class Home extends PureComponent {
 		const posts = get(this, 'props.data.recentWork.edges')
 		const latestPost = get(this, 'props.data.latestPost.edges[0].node')
 		const forHire = get(this, 'props.data.site.siteMetadata.forHire')
+		const landingCover = get(this, 'props.data.landingCover.childImageSharp.resolutions.src')
 		const screens = {
 			desktop: get(this, 'props.data.featuredDesktopScreen.childImageSharp.sizes'),
 			mobile: get(this, 'props.data.featuredMobileScreen.childImageSharp.sizes')
@@ -25,7 +26,7 @@ class Home extends PureComponent {
 		return (
 			<div>
 				<Helmet title={`${siteTitle} ∙ Digital Craftsman`} />
-				<Banner />
+				<Banner cover={landingCover} />
 				<LatestPost post={latestPost} />
 				<Services />
 				<FeaturedProject screens={screens} />
@@ -90,6 +91,13 @@ export const pageQuery = graphql`
             title
             category
           }
+        }
+      }
+		}
+		landingCover: file(relativePath: { eq: "img/landing-cover.jpg" }) {
+      childImageSharp {
+        resolutions {
+          ...GatsbyImageSharpResolutions_withWebp
         }
       }
 		}

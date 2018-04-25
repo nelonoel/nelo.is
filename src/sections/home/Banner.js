@@ -9,7 +9,6 @@ import Box from '../../components/Box'
 import { ButtonLink } from '../../components/Button'
 import Wrapper from '../../components/Wrapper'
 
-import jpgCover from '../../assets/img/landing-cover.jpg'
 import webmCover from '../../assets/vid/landing-cover.webm'
 import mp4Cover from '../../assets/vid/landing-cover.mp4'
 
@@ -23,24 +22,6 @@ const Container = BannerContainer.extend`
   overflow: hidden;
   position: relative;
 
-  @media (max-width: ${theme('breakpoints.2')}) {
-    background: ${theme('colors.contrast.0')};
-    background-blend-mode: luminosity;
-
-    &:before {
-      background: url(${jpgCover});
-      background-size: cover;
-      mix-blend-mode: soft-light;
-      content: '';
-      opacity: ${props => props.theme.name === 'dark' ? 0.125 : 0.25};
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-  }
-
 	@media (max-width: ${theme('breakpoints.1')}) {
 		margin-top: 0;
 	}
@@ -48,8 +29,7 @@ const Container = BannerContainer.extend`
 
 const Video = styled.video.attrs({
 	loop: true,
-	muted: true,
-	poster: jpgCover
+	muted: true
 }) `
   left: 50%;
   min-height: 100%;
@@ -155,8 +135,14 @@ export default class Banner extends PureComponent {
 	}
 
 	render() {
+		const { cover } = this.props
+
 		return (
 			<Container>
+				<Video innerRef={video => { this.video = video }} poster={cover}>
+					<source src={webmCover} type="video/webm" />
+					<source src={mp4Cover} type="video/mp4" />
+				</Video>
 				<Wrapper>
 					<Hero>
 						<Avatar>
@@ -182,10 +168,6 @@ export default class Banner extends PureComponent {
 								</ButtonLink>
 							</Box>
 						</Copy>
-						<Video innerRef={video => { this.video = video }}>
-							<source src={webmCover} type="video/webm" />
-							<source src={mp4Cover} type="video/mp4" />
-						</Video>
 					</Hero>
 				</Wrapper>
 			</Container>
