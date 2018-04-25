@@ -13,8 +13,9 @@ import TextField, { TextArea } from '../../components/TextField'
 
 const Form = styled.form.attrs({
 	name: 'contact',
-	method: 'post',
-	'data-netlify': true
+	method: 'POST',
+	'data-netlify': true,
+	'data-netlify-honeypot': 'bot-field'
 }) `
 	margin-top: -1em;
 `
@@ -62,6 +63,7 @@ class ContactPage extends PureComponent {
 							<Button wide secondary><Check /> Send message</Button>
 						</Field>
 					</Form>
+					<input type="hidden" name="form-name" value="contact" />
 				</Wrapper>
 			</div>
 		)
