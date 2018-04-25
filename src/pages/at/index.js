@@ -62,8 +62,8 @@ class ContactPage extends PureComponent {
 						<Field>
 							<Button wide secondary><Check /> Send message</Button>
 						</Field>
+						<input type="hidden" name="form-name" value="contact" />
 					</Form>
-					<input type="hidden" name="form-name" value="contact" />
 				</Wrapper>
 			</div>
 		)
