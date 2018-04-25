@@ -6,6 +6,9 @@ import woff2MontserratBold from '../assets/font/montserrat/montserrat-bold-webfo
 import woffGravityRegular from '../assets/font/gravity/gravity-regular-webfont.woff'
 import woff2GravityRegular from '../assets/font/gravity/gravity-regular-webfont.woff2'
 
+import woffGravityBold from '../assets/font/gravity/gravity-bold-webfont.woff'
+import woff2GravityBold from '../assets/font/gravity/gravity-bold-webfont.woff2'
+
 import ttfBarlowSemibold from '../assets/font/barlow/barlow-semibold-webfont.ttf'
 import woffBarlowSemibold from '../assets/font/barlow/barlow-semibold-webfont.woff'
 import woff2BarlowSemibold from '../assets/font/barlow/barlow-semibold-webfont.woff2'
@@ -47,6 +50,13 @@ export const fontFaces = `
 		font-weight: normal;
 		src: url(${woffGravityRegular}),
 			url(${woff2GravityRegular});
+	}
+
+	@font-face {
+		font-family: "Gravity";
+		font-weight: bold;
+		src: url(${woffGravityBold}),
+			url(${woff2GravityBold});
 	}
 
 	@font-face {
