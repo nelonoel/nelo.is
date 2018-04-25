@@ -15,6 +15,7 @@ const Container = Box.extend`
 
 	h4 {
 		margin: 0;
+		font-size: ${theme('fontSizes.2')};
 	}
 
 	p {
@@ -35,7 +36,7 @@ export default class Services extends PureComponent {
 				<Wrapper>
 					<Grid py={[4, 4, 5]}>
 						<Box>
-							<Flex alignItems="center" flexDirection={['row', 'row', 'row', 'column']} justifyContent={['start', 'start', 'start', 'center']} mb={[-2, -2, -2, 0]} mx="auto" maxWidth="24rem">
+							<Flex alignItems="center" flexDirection={['row', 'row', 'row', 'column']} justifyContent={['start', 'start', 'start', 'center']} mb={[-2, -2, -2, 0]} mx="auto" lineHeight={0} maxWidth="24rem">
 								<IconContainer mb={[0, 0, 0, 2]} mr={[2, 2, 2, 0]} height={['1.75em', '1.75em', '1.75em', '3.5em']} width={['1.75em', '1.75em', '1.75em', '3.5em']}><Terminal /></IconContainer>
 								<h4>Code</h4>
 							</Flex>
@@ -43,7 +44,7 @@ export default class Services extends PureComponent {
 							<p>I have an extensive experience building apps from scratch up to deployment and maintenance.</p>
 						</Box>
 						<Box>
-							<Flex alignItems="center" flexDirection={['row', 'row', 'row', 'column']} justifyContent={['start', 'start', 'start', 'center']} mb={[-2, -2, -2, 0]} mx="auto" maxWidth="24rem">
+							<Flex alignItems="center" flexDirection={['row', 'row', 'row', 'column']} justifyContent={['start', 'start', 'start', 'center']} mb={[-2, -2, -2, 0]} mx="auto" lineHeight={0} maxWidth="24rem">
 								<IconContainer mb={[0, 0, 0, 2]} mr={[2, 2, 2, 0]} height={['1.75em', '1.75em', '1.75em', '3.5em']} width={['1.75em', '1.75em', '1.75em', '3.5em']}><Feather /></IconContainer>
 								<h4>Design</h4>
 							</Flex>
