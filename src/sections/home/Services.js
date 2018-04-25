@@ -2,14 +2,13 @@ import React, { PureComponent } from 'react'
 import { theme } from 'styled-system'
 import { Terminal, Feather, ArrowRight } from 'react-feather'
 
-import Article from '../../components/Article'
 import Box from '../../components/Box'
 import Flex from '../../components/Flex'
 import Grid from '../../components/Grid'
 import IconContainer from '../../components/IconContainer'
 import Wrapper from '../../components/Wrapper'
 
-const Container = Article.extend`
+const Container = Box.extend`
   border-bottom: ${theme('colors.dark.0')} solid 1px;
 	font-size: ${theme('fontSizes.1')};
 	position: relative;

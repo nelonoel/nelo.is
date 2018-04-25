@@ -2,14 +2,14 @@ import React, { PureComponent } from 'react'
 import { theme } from 'styled-system'
 import { ArrowRight } from 'react-feather'
 
-import Article from '../../components/Article'
+import Subheading from '../../components/Subheading'
 import Badge from '../../components/Badge'
 import { ButtonLink } from '../../components/Button'
 import Flex from '../../components/Flex'
 import Box from '../../components/Box'
 import Wrapper from '../../components/Wrapper'
 
-const Container = Article.extend`
+const Container = Box.extend`
   background: ${theme('colors.light.2')};
 	border-bottom: ${theme('colors.dark.0')} solid 1px;
   margin: 0;
@@ -37,11 +37,6 @@ const Container = Article.extend`
     white-space: nowrap;
 		margin-right: 0;
 		max-width: 50vw;
-  }
-
-  h6 {
-		display: inline-block;
-    margin-top: 0.4em;
   }
 
   ${ButtonLink} {
@@ -79,7 +74,7 @@ export default class LatestPost extends PureComponent {
 								<Badge>New!</Badge>
 							</Box>
 							<Box lineHeight={0}>
-								<h6>{category}</h6>
+								<Subheading>{category}</Subheading>
 								<h5>{title}</h5>
 							</Box>
 						</Flex>

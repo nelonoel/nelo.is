@@ -79,17 +79,6 @@ export const Description = styled.p`
   line-height: 1.5;
   margin: 0.125em auto 1.25em;
   max-width: ${theme('wrapper.normal')}em;
-
-  & > a {
-    border-bottom: ${theme('colors.contrast.0')} solid 2px;
-    color: inherit;
-    text-decoration: none;
-
-    &:hover, &:focus {
-      border-color: ${theme('colors.primary')};
-			transition: border-color .1s ease;
-    }
-  }
 `
 
 class Banner extends PureComponent {

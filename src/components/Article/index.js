@@ -9,17 +9,6 @@ const Article = styled.article`
 	font-size: 1.1em;
 	position: relative;
 
-  a {
-    border-bottom: ${theme('colors.contrast.0')} solid 2px;
-    color: ${theme('colors.text')};
-		text-decoration: none;
-
-    &:hover, &:focus {
-			border-bottom-color: ${theme('colors.primary')};
-			transition: border-color .1s ease;
-    }
-  }
-
   a.absent {
     color: #cc0000;
   }
