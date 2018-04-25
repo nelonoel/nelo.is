@@ -30,9 +30,9 @@ export default class ForHire extends PureComponent {
 								<Box>
 									<LogoIcon forHire={forHire} />
 								</Box>
-								<Box textAlign={['center', 'center', 'left']} mt={[3, 3, 0]} pl="1.5rem" pr="0.5rem">
-									<Text fontWeight="bold" fontSize="2" color="contrast.4" mb={-1}>I am {!forHire && 'un'}available for new work.</Text>
-									<Text color="contrast.3">Interested? Feel free to reach out!</Text>
+								<Box textAlign={['center', 'center', 'left']} mt={[3, 3, 0]} pl={[0, 0, '1.5rem']} pr={[0, 0, '0.5rem']}>
+									<Text fontWeight="bold" fontSize="2" color="contrast.4" lineHeight={1}>I am {!forHire && 'un'}available for new work.</Text>
+									<Text color="contrast.3" lineHeight={1}>{forHire ? 'I' : 'Still i'}nterested? Feel free to reach out!</Text>
 								</Box>
 							</Flex>
 						</Box>
