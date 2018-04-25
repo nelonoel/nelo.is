@@ -112,7 +112,7 @@ const Copy = styled.div`
     font-size: 1em;
     line-height: 1.5;
     margin: 0 auto 0.6em;
-    max-width: 21rem;
+    max-width: ${theme('breakpoints.0')};
     opacity: 0.95;
   }
 
