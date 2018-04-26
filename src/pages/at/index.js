@@ -49,15 +49,15 @@ class ContactPage extends PureComponent {
 					<Form>
 						<Field>
 							<Label for="name">Name</Label>
-							<TextField type="text" name="name" />
+							<TextField type="text" name="name" required />
 						</Field>
 						<Field>
 							<Label for="email">E-mail</Label>
-							<TextField type="text" name="email" />
+							<TextField type="email" name="email" required />
 						</Field>
 						<Field>
 							<Label for="message">Message</Label>
-							<TextArea name="message" />
+							<TextArea name="message" required />
 						</Field>
 						<Field>
 							<Button wide secondary><Check /> Send message</Button>
