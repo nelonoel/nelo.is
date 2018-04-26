@@ -17,24 +17,24 @@ import woff2BarlowSemibold from '../assets/font/barlow/barlow-semibold-webfont.w
 import woffInconsolataRegular from '../assets/font/inconsolata/inconsolata-regular-webfont.woff'
 import woff2InconsolataRegular from '../assets/font/inconsolata/inconsolata-regular-webfont.woff2'
 
-export const logo = css`
+export const logo = `
 	font-family: "Montserrat", sans-serif;
 	font-weight: 700;
 	text-transform: lowercase;
 `
 
-export const body = css`
+export const body = `
 	font-family: "Gravity", sans-serif;
 `
 
-export const subheading = css`
+export const subheading = `
 	font-family: "Barlow", sans-serif;
 	font-weight: 600;
 	letter-spacing: 0.125em;
 	text-transform: uppercase;
 `
 
-export const monospace = css`
+export const monospace = `
 	font-family: "Inconsolata", monospace;
 `
 
