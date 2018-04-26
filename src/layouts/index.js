@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Twemoji from 'react-twemoji'
@@ -31,10 +32,14 @@ class Template extends Component {
 		const { location, children } = this.props
 		const { isDarkMode } = this.state
 		const posts = get(this, 'props.data.allMarkdownRemark.edges')
+		const theme = isDarkMode ? dark : light
 
 		return (
-			<ThemeProvider theme={isDarkMode ? dark : light}>
+			<ThemeProvider theme={theme}>
 				<Twemoji>
+					<Helmet>
+						<meta name="theme-color" content={theme.colors.base} />
+					</Helmet>
 					<Page>
 						<Header
 							toggleDarkMode={this.toggleDarkMode}
