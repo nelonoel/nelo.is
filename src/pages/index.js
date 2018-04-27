@@ -25,7 +25,9 @@ class Home extends PureComponent {
 
 		return (
 			<div>
-				<Helmet title={`${siteTitle} ∙ Digital Craftsman`} />
+				<Helmet title={`${siteTitle} ∙ Digital Craftsman`}>
+					<meta name="google-site-verification" content="1oslh92jui11Q8t62gK2Sya7BMjBbwCAPIRkkDFeorw" />
+				</Helmet>
 				<Banner cover={landingCover} />
 				<LatestPost post={latestPost} />
 				<Services />
