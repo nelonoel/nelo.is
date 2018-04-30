@@ -2,9 +2,9 @@
 	"name": "nelo.is",
 	"description": "Nelo's Personal Website",
 	"version": "1.0.0",
-	"author": "Aaron Noel De Leon <hello@nelo.ph>",
+	"author": "Aaron Noel De Leon <here@nelo.is>",
 	"bugs": {
-		"url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
+		"url": "https://github.com/nelonoel/nelo.is/issues"
 	},
 	"dependencies": {
 		"focus-visible": "^4.1.4",
@@ -27,16 +27,19 @@
 		"gatsby-source-filesystem": "^1.5.11",
 		"gatsby-transformer-remark": "^1.7.25",
 		"gatsby-transformer-sharp": "^1.6.16",
+		"install": "^0.11.0",
 		"lodash": "^4.17.4",
 		"polished": "^1.9.0",
 		"react-css-grid": "^2.0.0-0",
 		"react-feather": "^1.0.8",
 		"react-headroom": "^2.2.2",
+		"react-rellax": "^1.0.0",
 		"react-twemoji": "^0.0.8",
 		"rellax": "^1.6.2",
 		"store": "^2.0.12",
 		"styled-components": "^2.4.0",
-		"styled-system": "^2.2.1"
+		"styled-system": "^2.2.1",
+		"uninstall": "0.0.0"
 	},
 	"devDependencies": {
 		"eslint": "^4.13.1",

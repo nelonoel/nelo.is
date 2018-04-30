@@ -5,7 +5,7 @@ import { rgba, darken } from 'polished'
 import Img from 'gatsby-image'
 
 import Box from '../Box'
-import Parallax from '../Parallax'
+import Parallax from 'react-rellax'
 
 const Window = styled(Box) `
 	background: #EBECEB;
@@ -46,7 +46,7 @@ const Frame = Box.extend.attrs({
 	@media (max-width: ${theme('breakpoints.1')}) {
 		color: ${theme('colors.dark.2')};
 		text-align: center;
-		
+
 		&:before {
 			content: '–––';
 			letter-spacing: -0.25em;
