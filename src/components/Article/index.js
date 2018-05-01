@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { theme } from 'styled-system'
 import { darken, lighten } from 'polished'
 import { monospace, subheading, link } from '../../styles/typography'
+import { fullWidth } from '../../styles/mixins'
 
 const Article = styled.article`
 	${props => require(`../../styles/syntax-${props.theme.name}.css`)}
@@ -34,6 +35,7 @@ const Article = styled.article`
   h4,
   h5,
   h6 {
+		line-height: 1.25;
     margin: 20px 0 10px;
     padding: 0;
     font-weight: bold;
@@ -121,10 +123,17 @@ const Article = styled.article`
     margin: 15px 0;
   }
 
+	p.p--lead {
+		font-size: 1.15em;
+	}
+
   hr {
+		${fullWidth}
 		background: ${theme('colors.dark.0')};
     border: 0 none;
     height: 4px;
+		margin-bottom: 2em;
+		margin-top: 2em;
     padding: 0;
   }
 
@@ -475,11 +484,22 @@ const Article = styled.article`
     line-height: 0;
   }
 
-  @media screen and (min-width: 914px) {
-    body {
-      margin: 0 auto;
-    }
-  }
+	@media  screen and (max-width: ${theme('breakpoints.1')}) {
+		blockquote,
+		.gatsby-highlight {
+			${fullWidth}
+			padding: inherit 1.5rem;
+		}
+
+		blockquote {
+			padding-left: calc(1.5rem - 4px);
+		}
+
+		.gatsby-highlight {
+			border-left: none;
+			border-right: none;
+		}
+	}
 
   @media print {
     table,
