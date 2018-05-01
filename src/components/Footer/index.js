@@ -120,6 +120,7 @@ const ExternalLink = FooterLink.withComponent('a')
 class Footer extends PureComponent {
 	render() {
 		const posts = this.props.recent
+		const { email } = this.props
 
 		return (
 			<FooterContainer>
@@ -137,7 +138,7 @@ class Footer extends PureComponent {
 				</LatestArticles>
 				<Links>
 					<h5>Connect</h5>
-					<ExternalLink href="mailto:hello@nelo.ph">
+					<ExternalLink href={`mailto:${email}`}>
 						<Inbox /> E-mail
           </ExternalLink>
 					<ExternalLink href="tel:+639168375550">

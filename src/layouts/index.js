@@ -32,6 +32,7 @@ class Template extends Component {
 		const { location, children } = this.props
 		const { isDarkMode } = this.state
 		const posts = get(this, 'props.data.allMarkdownRemark.edges')
+		const email = get(this, 'props.data.site.siteMetadata.email')
 		const theme = isDarkMode ? dark : light
 
 		return (
@@ -47,7 +48,7 @@ class Template extends Component {
 						<Content>
 							{children()}
 						</Content>
-						<Footer recent={posts} />
+						<Footer email={email} recent={posts} />
 					</Page>
 				</Twemoji>
 			</ThemeProvider>
@@ -59,6 +60,11 @@ export default Template
 
 export const pageQuery = graphql`
   query FooterQuery {
+		site {
+			siteMetadata {
+				email
+			}
+		}
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC },
       limit: 5,
