@@ -49,26 +49,23 @@ const Button = styled.button`
     position: relative;
   }
 
-	&.focus-visible,
-	&:hover {
+	&.focus-visible {
 		${props => props.transparent
 		? props.theme.name === 'dark'
-			? `background: ${rgba(props.theme.colors.dark[0], 0.35)}`
-			: `background: ${rgba(props.theme.colors.dark[4], 0.35)}`
+			? `background: ${rgba(props.theme.colors.dark[0], 0.35)};`
+			: `background: ${rgba(props.theme.colors.dark[4], 0.35)};`
 		: null}
-	}
-
-	&.focus-visible {
 		box-shadow: 0 0 0 2px ${props => props.transparent ? 'none' : props.secondary ? rgba(lighten(0.15, props.theme.colors.secondary), 0.95) : rgba(lighten(0.15, props.theme.colors.primary), 0.95)};
 	}
 
   &:hover {
-    box-shadow: ${props => props.transparent ? null : '0 2px 4px rgba(0, 0, 0, 0.075)'};
+    ${props => !props.transparent ? 'box-shadow: 0 2px 4px rgba(0, 0, 0, 0.075);' : null};
+		${props => props.transparent ? `color: ${props.theme.colors.text};` : null}
     transform: ${props => (props.transparent ? null : props.wide ? 'translateY(-2px)' : 'translateY(-1px)')};
 	}
 
   &:active {
-    box-shadow: none;
+		${props => !props.transparent ? 'box-shadow: none;' : null}
     transform: none;
   }
 `
