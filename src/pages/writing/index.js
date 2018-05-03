@@ -23,7 +23,7 @@ class BlogIndex extends React.Component {
           </Description>
 				</Banner>
 				<Wrapper>
-					<Grid width="16em" gap="1em">
+					<Grid width="32em" gap="1em">
 						{posts.map(({ node }) => {
 							return (
 								<Card
