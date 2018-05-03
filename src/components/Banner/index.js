@@ -5,6 +5,7 @@ import { rgba } from 'polished'
 import Img from 'gatsby-image'
 
 import { cover } from '../../styles/mixins'
+import Subheading from '../Subheading'
 import Wrapper from '../Wrapper'
 
 export const Container = styled.div`
@@ -31,6 +32,12 @@ export const Container = styled.div`
 		margin-top: 0;
 		padding-top: 2.5em;
 	}
+`
+
+export const Type = Subheading.extend`
+	color: ${theme('colors.contrast.1')};
+	line-height: 3;
+	margin: 0;
 `
 
 export const Cover = styled(Img) `
@@ -68,18 +75,15 @@ export const Title = styled.h1`
 
 export const Subtitle = styled.h2`
 	color: ${theme('colors.contrast.3')};
+	font-size: ${theme('fontSizes.2')};
 	font-weight: normal;
-  line-height: 1.25;
-  margin: 0;
+  line-height: ${theme('lineHeights.1')};
+  margin: 0.125em auto 1.25em;
 `
 
-export const Description = styled.p`
-	color: ${theme('colors.contrast.4')};
-  font-size: 1.15em;
-  line-height: 1.5;
-  margin: 0.125em auto 1.25em;
+export const Description = Subtitle.extend`
   max-width: ${theme('wrapper.normal')}em;
-`
+`.withComponent('p')
 
 class Banner extends PureComponent {
 	render() {

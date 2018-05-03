@@ -2,10 +2,10 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
-import Banner, { Title, Subtitle } from '../components/Banner'
+import Banner, { Type, Title, Subtitle } from '../components/Banner'
 import Article from '../components/Article'
-import Wrapper from '../components/Wrapper'
 import ProjectDetails from '../components/Article/ProjectDetails'
+import Wrapper from '../components/Wrapper'
 
 class PostTemplate extends React.Component {
 	render() {
@@ -20,6 +20,7 @@ class PostTemplate extends React.Component {
 					<meta name="description" content={post.frontmatter.subtitle ? post.frontmatter.subtitle : post.excerpt} />
 				</Helmet>
 				<Banner cover={cover}>
+					<Type>{post.frontmatter.type}</Type>
 					<Title>{post.frontmatter.title}</Title>
 					<Subtitle>{post.frontmatter.subtitle}</Subtitle>
 				</Banner>
