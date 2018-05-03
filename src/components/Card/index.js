@@ -85,7 +85,7 @@ const Item = styled(Link).attrs({
   align-items: center;
   background: ${props => props.theme.name === 'dark' ? props.theme.colors.contrast[0] : props.theme.colors.white};
   border-radius: ${theme('radii.2')};
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.015),
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.01),
 							0 1px 4px rgba(0, 0, 0, 0.09);
   box-sizing: border-box;
   color: ${theme('colors.text')};
@@ -117,9 +117,14 @@ const Item = styled(Link).attrs({
 		}
 
 		&:hover {
-			box-shadow: 0 0 1px rgba(0, 0, 0, 0.015),
-									0 3px 12px rgba(0, 0, 0, 0.045);
+			box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.02),
+									0 3px 9px rgba(0, 0, 0, 0.045);
 			transform: translate3d(0, -3px, 0);
+		}
+
+		&:active {
+			box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.03);
+			transform: none;
 		}
 	}
 

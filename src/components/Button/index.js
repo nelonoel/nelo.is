@@ -71,7 +71,7 @@ const Button = styled.button`
 	}
 
   &:active {
-		${props => !props.transparent ? 'box-shadow: none;' : null}
+		${props => !props.transparent ? 'box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.01);' : null}
     transform: none;
   }
 `
