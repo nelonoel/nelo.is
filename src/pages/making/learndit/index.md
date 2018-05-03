@@ -5,7 +5,7 @@ subtitle: Community of Learners
 date: 2015-02
 category: consulting
 model: project
-type: UI Design
+type: Prototype
 
 description: Designed an interactive prototype for a learning community website.
 roles:

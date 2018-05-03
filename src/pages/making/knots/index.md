@@ -5,7 +5,7 @@ subtitle: Timeline for Keeping Memories
 date: 2015-02
 category: consulting
 model: project
-type: UI Design
+type: Prototype
 
 description: Crafted a prototype for a personal timeline web app.
 roles:

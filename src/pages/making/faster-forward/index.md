@@ -5,7 +5,7 @@ subtitle: Technical Whitepapers Platform
 date: 2015-04
 category: consulting
 model: project
-type: UI Design
+type: Style Guide
 
 client: Faster Forward
 description: Crafted modular, themable Sketch mockups.

@@ -5,7 +5,7 @@ subtitle: On-demand Auto Services
 date: 2016-02
 category: consulting
 model: project
-type: UI Design
+type: Prototype
 
 client: Carful LLC
 description: Crafted an interactive prototype for an on-demand auto services mobile app.

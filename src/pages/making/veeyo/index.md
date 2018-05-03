@@ -5,7 +5,7 @@ subtitle: Local Business Messenger
 date: 2013-10
 category: competition
 model: project
-type: UI Design
+type: Prototype
 
 description: Designed a mobile app that would let consumers chat with local shops and services around them.
 roles:

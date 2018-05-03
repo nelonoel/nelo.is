@@ -5,7 +5,7 @@ subtitle: On-demand Entertainment
 date: 2017-01
 category: consulting
 model: project
-type: UI Design
+type: Mockup
 
 description: Created a design study for an on-demand entertainment website.
 roles:
