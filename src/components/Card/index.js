@@ -85,7 +85,8 @@ const Item = styled(Link).attrs({
   align-items: center;
   background: ${props => props.theme.name === 'dark' ? props.theme.colors.contrast[0] : props.theme.colors.white};
   border-radius: ${theme('radii.2')};
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.01), 0 1px 3px rgba(0, 0, 0, 0.0833);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.015),
+							0 1px 4px rgba(0, 0, 0, 0.09);
   box-sizing: border-box;
   color: ${theme('colors.text')};
   cursor: pointer;
@@ -101,6 +102,10 @@ const Item = styled(Link).attrs({
   transition: box-shadow 0.2s ease,
   						transform 0.2s ease;
 
+	& > .cover {
+		background-color: ${props => props.theme.name === 'dark' ? props.theme.colors.light[1] : props.theme.colors.base};
+	}
+
 	& > ${Category} {
 		${props => props.half ? 'border-top-width: 1px;' : 'border-left-width: 1px;'}
 		writing-mode: ${props => props.half ? 'lr' : 'tb-rl'};
@@ -112,7 +117,8 @@ const Item = styled(Link).attrs({
 		}
 
 		&:hover {
-			box-shadow: 0 0 1px rgba(0, 0, 0, 0.015), 0 3px 12px ${props => rgba(0, 0, 0, 0.0612)};
+			box-shadow: 0 0 1px rgba(0, 0, 0, 0.015),
+									0 3px 12px rgba(0, 0, 0, 0.045);
 			transform: translate3d(0, -3px, 0);
 		}
 	}
