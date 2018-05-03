@@ -23,7 +23,7 @@ const Container = BannerContainer.extend`
   position: relative;
 
 	@media (max-width: ${theme('breakpoints.2')}) {
-		background: ${props => props.theme.name === 'dark' ? props.theme.colors.dark[0] : props.theme.colors.dark[3]};
+		background: ${props => props.theme.name === 'dark' ? props.theme.colors.dark[2] : props.theme.colors.dark[3]};
   }
 
 	@media (max-width: ${theme('breakpoints.1')}) {
