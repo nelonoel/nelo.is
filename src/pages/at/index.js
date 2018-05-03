@@ -42,7 +42,7 @@ class ContactPage extends PureComponent {
 				<Banner>
 					<Title>Contact</Title>
 					<Description>
-						Feel free to reach out. Talk to you soon!
+						Feel free to reach out!
 					</Description>
 				</Banner>
 				<Wrapper>
