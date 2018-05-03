@@ -18,7 +18,10 @@ const Button = styled.button`
   border: none;
   border-radius: ${props => props.sharp ? props.theme.radii[0] : props.theme.radii[2]};
   box-shadow: ${props =>
-		props.transparent ? 'none' : '0 1px 1px rgba(0, 0, 0, 0.1)'};
+		props.transparent ? 'none' :
+			`0 0 0 1px rgba(0, 0, 0, 0.01),
+			 0 1px 3px rgba(0, 0, 0, 0.09);`
+	};
   box-sizing: border-box;
   color: ${props =>
 		props.transparent || props.inverted
@@ -59,7 +62,10 @@ const Button = styled.button`
 	}
 
   &:hover {
-    ${props => !props.transparent ? 'box-shadow: 0 2px 4px rgba(0, 0, 0, 0.075);' : null};
+    ${props => !props.transparent ?
+		`box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.01),
+								 0 2px 6px rgba(0, 0, 0, 0.09);`
+		: null};
 		${props => props.transparent ? `color: ${props.theme.colors.text};` : null}
     transform: ${props => (props.transparent ? null : props.wide ? 'translateY(-2px)' : 'translateY(-1px)')};
 	}
