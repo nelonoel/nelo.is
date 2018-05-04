@@ -2,7 +2,7 @@
 cover: ./cover.png
 title: Styling better focus states
 subtitle: Keyboard-only focus using :focus-visible
-date: "2018-05-04 14:56:52"
+date: "2018-05-04"
 category: code
 draft: false
 model: post
