@@ -13,7 +13,7 @@ const TextField = styled.input`
 
 	&:focus {
 		background: ${theme('colors.dark.2')};
-		box-shadow: inset 0 0 0 2px ${props => darken(0.0125, props.theme.colors.dark[2])};
+		box-shadow: inset 0 0 0 2px ${props => darken(0.015, props.theme.colors.dark[2])};
 	}
 `
 
