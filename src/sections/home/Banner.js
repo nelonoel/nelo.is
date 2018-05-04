@@ -38,7 +38,7 @@ const Video = styled.video.attrs({
   left: 50%;
   min-height: 100%;
   min-width: 100%;
-  opacity: ${props => props.theme.name === 'dark' ? 0.0612 : 0.125};
+  opacity: ${props => props.theme.name === 'dark' ? 0.0612 : 0.0816};
   pointer-events: none;
   position: absolute;
   top: 50%;
