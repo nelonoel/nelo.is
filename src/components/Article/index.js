@@ -188,8 +188,12 @@ const Article = styled.article`
 
   ul,
   ol {
-    padding-left: 30px;
+    padding-left: 1.25rem;
   }
+
+	ul {
+		list-style-type: square;
+	}
 
   ul :first-child,
   ol :first-child {
