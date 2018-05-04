@@ -43,9 +43,13 @@ export const link = css`
 	color: inherit;
 	text-decoration: none;
 
-	&:hover, &:focus {
+	&:hover, &.focus-visible {
 		border-bottom-color: ${theme('colors.primary')};
 		transition: border-color .1s ease;
+	}
+
+	&:active {
+		border-bottom-color: ${theme('colors.dark.2')};
 	}
 `
 
