@@ -35,9 +35,10 @@ export const Container = styled.div`
 `
 
 export const Type = Subheading.extend`
-	color: ${theme('colors.contrast.1')};
+	color: ${theme('colors.contrast.3')};
 	line-height: 3;
 	margin: 0;
+	opacity: 0.75;
 `
 
 export const Cover = styled(Img) `
