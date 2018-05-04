@@ -14,7 +14,6 @@ const FooterContainer = Wrapper.withComponent('footer').extend`
   display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	margin: 0.5em auto 0;
-	padding: 2rem 1.5rem;
 	position: relative;
 `
 
@@ -123,7 +122,7 @@ class Footer extends PureComponent {
 		const { email } = this.props
 
 		return (
-			<FooterContainer>
+			<FooterContainer px="1.5em" py={['2rem', '2rem', '3rem']}>
 				<LogoBox>
 					<Logo />
 					<FooterLink to="/">www.nelo.is</FooterLink>
