@@ -104,6 +104,7 @@ const Item = styled(Link).attrs({
 
 	& > .cover {
 		background-color: ${props => props.theme.name === 'dark' ? props.theme.colors.light[1] : props.theme.colors.base};
+		height: 100%;
 	}
 
 	& > ${Category} {
@@ -130,7 +131,7 @@ const Item = styled(Link).attrs({
 
 	${props => props.half ? `
 		& > .cover {
-			height: 6em;
+			height: 100%;
 			overflow: hidden;
 		}
 	` : null}

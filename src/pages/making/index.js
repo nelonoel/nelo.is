@@ -22,7 +22,7 @@ class ProjectsIndex extends React.Component {
 					</Description>
 				</Banner>
 				<Wrapper wide>
-					<Grid width="16em" gap="1em">
+					<Grid width="16em" mb={3} gap="1em">
 						{posts.map(({ node }) => {
 							return <Card
 								key={node.id}
