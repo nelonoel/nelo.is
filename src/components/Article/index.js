@@ -6,8 +6,9 @@ import { monospace, subheading, link } from '../../styles/typography'
 import { fullWidth } from '../../styles/mixins'
 
 const Article = styled.article`
-	${props => require(`../../styles/syntax-${props.theme.name}.css`)}
 	font-size: 1.1em;
+	margin: auto;
+	max-width: 36rem;
 	position: relative;
 
 	a {
@@ -19,14 +20,9 @@ const Article = styled.article`
   }
 
   a.anchor {
-    display: block;
-    padding-left: 30px;
-    margin-left: -30px;
-    cursor: pointer;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
+		border: none;
+		line-height: 1.25;
+		opacity: 0.25;
   }
 
   h1,
@@ -35,22 +31,13 @@ const Article = styled.article`
   h4,
   h5,
   h6 {
-		line-height: 1.25;
+		line-height: ${theme('lineHeight.1')};
+    color: ${theme('colors.contrast.4')};
+    cursor: text;
+    font-weight: bold;
     margin: 20px 0 10px;
     padding: 0;
-    font-weight: bold;
-    -webkit-font-smoothing: antialiased;
-    cursor: text;
     position: relative;
-  }
-
-  h1:hover a.anchor,
-  h2:hover a.anchor,
-  h3:hover a.anchor,
-  h4:hover a.anchor,
-  h5:hover a.anchor,
-  h6:hover a.anchor {
-    text-decoration: none;
   }
 
   h1 tt,
@@ -85,23 +72,23 @@ const Article = styled.article`
 
   h1 {
     font-size: 2em;
-    color: ${theme('colors.text')};
   }
 
   h2 {
-    font-size: 1.75em;
-    color: ${theme('colors.text')};
-  }
-
-  h3 {
     font-size: 1.5em;
   }
 
-  h4 {
+  h3 {
     font-size: 1.25em;
   }
 
+  h4 {
+    color: ${theme('colors.contrast.3')};
+    font-size: 1.15em;
+  }
+
   h5 {
+		color: ${theme('colors.contrast.3')};
     font-size: 1em;
   }
 
@@ -112,6 +99,18 @@ const Article = styled.article`
 		letter-spacing: 0.0612em;
   }
 
+	h1, h2, h3, h4, h5, h6 {
+		margin: 0.125em 0;
+	}
+
+	* + h1, * + h2, * + h3, * + h4, * + h5, * + h6 {
+		margin-top: 1.5em;
+	}
+
+	h1 + *, h2 + *, h3 + *, h4 + *, h5 + *, h6 + * {
+		margin-top: 0.125em;
+	}
+
   p,
   blockquote,
   ul,
@@ -120,7 +119,7 @@ const Article = styled.article`
   li,
   table,
   pre {
-    margin: 15px 0;
+    margin: 0.25em 0 0.75em;
   }
 
 	p.p--lead {
@@ -250,6 +249,18 @@ const Article = styled.article`
   blockquote > :last-child {
     margin-bottom: 0;
   }
+
+	cite {
+		color: ${theme('colors.contrast.3')};
+		font-size: 0.85em;
+		display: block;
+		margin-top: -0.85em;
+		text-align: right;
+
+		&:before {
+			content: '— ';
+		}
+	}
 
   table {
     padding: 0;
@@ -403,7 +414,9 @@ const Article = styled.article`
 
   .gatsby-highlight pre {
 		${monospace}
-    border: ${props => lighten(0.03, props.theme.colors.dark[2])} solid 2px;
+		border-radius: 3px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.0125),
+								0 1px 1px rgba(0, 0, 0, 0.05);
     overflow: auto;
 	}
 
@@ -495,9 +508,10 @@ const Article = styled.article`
 			padding-left: calc(1.5rem - 4px);
 		}
 
-		.gatsby-highlight {
-			border-left: none;
-			border-right: none;
+		.gatsby-highlight > pre {
+			border-radius: 0;
+			padding-left: 1.5rem;
+			padding-right: 1.5rem;
 		}
 	}
 

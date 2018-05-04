@@ -40,6 +40,7 @@ class Template extends Component {
 				<Twemoji>
 					<Helmet>
 						<meta name="theme-color" content={theme.colors.base} />
+						<link rel="stylesheet" href={`/css/syntax-${theme.name}.css`} />
 					</Helmet>
 					<Page>
 						<Header
