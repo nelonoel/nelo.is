@@ -183,7 +183,7 @@ const Article = styled.article`
   }
 
   li {
-    margin: 0;
+    margin: 0.625rem 0;
   }
 
   ul,
