@@ -25,13 +25,13 @@ model: post
 	color: #43bf4d;
 	font-family: "Gravity", sans-serif;
 	padding: 0.75rem 1.5rem;
+	transition: all .2s ease;
 }
 
 .btn:hover {
 	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.01),
 							0 2px 6px rgba(0, 0, 0, 0.09);
 	transform: translateY(-2px);
-	transition: all .2s ease;
 }
 
 .btn:active {
@@ -82,12 +82,12 @@ We need a better default browser behavior. In cases like this, it's always a goo
 
 Luckily for us, there's one: **Introducing** `:focus-visible` 🎉.
 
-### Spec
-`:focus-visible` is the keyboard-only version of `:focus`.
+### Specification
+**TLDR;** `:focus-visible` is the keyboard-only version of `:focus`.
 
-The [W3C proposal](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo) also mentions that `:focus-visible` should be preffered over `:focus` except on elements that expect a keyboard input (e.g. text field, contenteditable).
+Also, the [W3C proposal](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo) mentions that `:focus-visible` should be preffered over `:focus` except on elements that expect a keyboard input (e.g. text field, contenteditable).
 
-### Usage
+### Browser Support
 At the time of writing, only Firefox [supports](https://caniuse.com/#search=focus-visible) `:focus-visible` natively. But the good news is that there's an excellent [polyfill](https://github.com/WICG/focus-visible) available for us. Here's a [demo](https://wicg.github.io/focus-visible/demo/) if you'd like to see it for yourself before we dive into the actual implementation details.
 
 ### Implementation
@@ -122,7 +122,7 @@ The [polyfill](https://github.com/WICG/focus-visible) adds a `.focus-visible` cl
 <div class="demo">
 	<button class="btn btn--focus-visible">Click and focus me!</button>
 </div>
-<figcaption>Try clicking and tabbing to see improved behavior.</figcaption>
+<figcaption>Try clicking, then tabbing (or hitting the Shift key) to see improved behavior.</figcaption>
 
 #### ⭐️ Bonus tip: a better alternative to `outline`
 ```css
@@ -143,4 +143,4 @@ The [polyfill](https://github.com/WICG/focus-visible) adds a `.focus-visible` cl
 
 
 ---
-Noticed how I used `:focus-visible` on this site's [homepage](/)? Hit me up on [Twitter](https://twitter.com/nelonoel) if you find this useful! 😁
+Noticed how I used `:focus-visible` on this [site](/)? Hit me up on [Twitter](https://twitter.com/nelonoel) if you find this useful! 😁
