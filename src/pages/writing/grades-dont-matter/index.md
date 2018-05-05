@@ -11,7 +11,7 @@ model: post
 ### Background
 You often hear a similar sentiment from rich, and successful people, some of which didn't even finish college. But, they're probably outliers.
 
-#### An alwternate perspective
+#### An alternate perspective
 Four years ago today, I graduated BS in Computer Science with the highest honor (_summa cum laude_). As someone who achieved high grades, I thought I could provide a unique perspective to hammer down the fact that grades don't really matter.
 
 It _feels_ so significant while you're in college. Because it is. The educational system is rigged to work that way. But stil, it probably doesn't matter as much as you think it does.
