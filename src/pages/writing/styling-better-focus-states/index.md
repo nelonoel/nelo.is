@@ -85,7 +85,7 @@ Luckily for us, there's one: **Introducing** `:focus-visible` 🎉.
 ### Specification
 **TLDR;** `:focus-visible` is the keyboard-only version of `:focus`.
 
-Also, the [W3C proposal](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo) mentions that `:focus-visible` should be preffered over `:focus` except on elements that expect a keyboard input (e.g. text field, contenteditable).
+Also, the [W3C proposal](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo) mentions that `:focus-visible` should be preferred over `:focus` except on elements that expect a keyboard input (e.g. text field, contenteditable).
 
 ### Browser Support
 At the time of writing, only Firefox [supports](https://caniuse.com/#search=focus-visible) `:focus-visible` natively. But the good news is that there's an excellent [polyfill](https://github.com/WICG/focus-visible) available for us. Here's a [demo](https://wicg.github.io/focus-visible/demo/) if you'd like to see it for yourself before we dive into the actual implementation details.
