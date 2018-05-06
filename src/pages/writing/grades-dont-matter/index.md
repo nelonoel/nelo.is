@@ -64,7 +64,7 @@ This is a good time to practice discipline and form good habits that you'll hope
 You'd be surprised how effortlessly you'll continue your habits way after these formative years.
 
 ### Conclusion
-Enjoy college what you're at it! It's easy to get caught up with all the requirements and deadlines, but please don't lose sight of the things that actually matter.
+Enjoy college while you're at it! It's easy to get caught up with all the requirements and deadlines, but please don't lose sight of the things that actually matter.
 
 I wish I could tell all of this to my college self. If you're still studying, please keep these things at the back of your head.. while reviewing for the upcoming exams, of course. 😉
 

@@ -69,6 +69,6 @@ module.exports = {
 				showSpinner: false
 			},
 		},
-		`gatsby-plugin-netlify`,
+		`gatsby-plugin-netlify`
 	],
 }
