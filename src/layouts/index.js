@@ -14,6 +14,12 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { LogoLoader } from '../components/Logo'
 
+const defaultMeta = {
+	title: 'Digital Craftsman',
+	description: 'I\'m Nelo — a digital craftsman focusing on front - end development & UI design.I work with companies around the world to make delightful digital products.',
+	type: 'page'
+}
+
 class Template extends Component {
 	constructor(props) {
 		super(props)
@@ -22,10 +28,10 @@ class Template extends Component {
 		const siteUrl = get(props, 'data.site.siteMetadata.siteUrl')
 		const defaultCover = siteUrl + get(props, 'data.defaultCover.childImageSharp.resolutions.src')
 
-		this.state = {
+		this.state = Object.assign(defaultMeta, {
 			isDarkMode: store.get('dark_mode'),
 			cover: defaultCover
-		}
+		})
 	}
 
 	toggleDarkMode() {
@@ -36,13 +42,7 @@ class Template extends Component {
 	}
 
 	setMeta(data) {
-		const defaults = {
-			title: 'Digital Craftsman',
-			description: 'I\'m Nelo — a digital craftsman focusing on front - end development & UI design.I work with companies around the world to make delightful digital products.',
-			type: 'page'
-		}
-
-		this.setState(Object.assign(defaults, data))
+		this.setState(Object.assign(defaultMeta, data))
 	}
 
 	render() {
