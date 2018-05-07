@@ -24,10 +24,7 @@ class Template extends Component {
 
 		this.state = {
 			isDarkMode: store.get('dark_mode'),
-			cover: defaultCover,
-			title: 'Digital Craftsman',
-			description: 'I\'m Nelo — a digital craftsman focusing on front - end development & UI design.I work with companies around the world to make delightful digital products.',
-			type: 'page'
+			cover: defaultCover
 		}
 	}
 
@@ -39,7 +36,13 @@ class Template extends Component {
 	}
 
 	setMeta(data) {
-		this.setState(data)
+		const defaults = {
+			title: 'Digital Craftsman',
+			description: 'I\'m Nelo — a digital craftsman focusing on front - end development & UI design.I work with companies around the world to make delightful digital products.',
+			type: 'page'
+		}
+
+		this.setState(Object.assign(defaults, data))
 	}
 
 	render() {

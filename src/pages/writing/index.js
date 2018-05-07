@@ -9,8 +9,7 @@ import Card from '../../components/Card'
 class BlogIndex extends React.Component {
 	componentWillMount() {
 		this.props.setMeta({
-			title: 'Journal',
-			type: 'page'
+			title: 'Journal'
 		})
 	}
 

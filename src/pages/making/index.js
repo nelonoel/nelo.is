@@ -9,8 +9,7 @@ import Card from '../../components/Card'
 class ProjectsIndex extends React.Component {
 	componentWillMount() {
 		this.props.setMeta({
-			title: 'Projects',
-			type: 'page'
+			title: 'Projects'
 		})
 	}
 

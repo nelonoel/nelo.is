@@ -11,12 +11,12 @@ class PostTemplate extends React.Component {
 		const siteUrl = get(this.props, 'data.site.siteMetadata.siteUrl')
 		const post = this.props.data.markdownRemark
 		const cover = siteUrl + get(post, 'frontmatter.cover.childImageSharp.sizes.src')
-		const { title, subtitle } = post.frontmatter
+		const { model, title, subtitle, description } = post.frontmatter
 
 		this.props.setMeta({
 			cover: cover,
-			title: title,
-			description: subtitle ? subtitle : post.excerpt,
+			title: title + (model === 'project' ? ` – ${subtitle}` : ''),
+			description: model === 'project' ? description : subtitle,
 			type: 'post'
 		})
 	}

@@ -34,8 +34,7 @@ const Label = Subheading.extend`
 class ContactPage extends PureComponent {
 	componentWillMount() {
 		this.props.setMeta({
-			title: 'Contact',
-			type: 'page'
+			title: 'Contact'
 		})
 	}
 

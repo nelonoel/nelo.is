@@ -13,8 +13,7 @@ import ForHire from '../sections/home/ForHire'
 class Home extends PureComponent {
 	componentWillMount() {
 		this.props.setMeta({
-			title: 'Digital Craftsman',
-			type: 'page'
+			title: 'Digital Craftsman'
 		})
 	}
 
