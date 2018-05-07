@@ -36,7 +36,7 @@ The news feed is arguably the most addictive social media feature. Here are a co
 The following are some tips and ideas to help you control the feed on each platform.
 
 ###### Facebook
- - Install [News Feed Eradicator](https://chrome.google.com/webstore/detail/news-feed-eradicator-for/fjcldmjmjhkklehbacihaiopjklihlggs) on your browser.
+ - Install [News Feed Eradicator](https://chrome.google.com/webstore/detail/news-feed-eradicator-for/fjcldmjmjhkklehbacihaiopjklihlgg) on your browser.
  - Use [Messenger Lite](https://play.google.com/store/apps/details?id=com.facebook.mlite&hl=en) - it includes the essential features minus _My Day_.
 
 **Bonus:** You can visit `Your Profile` → `Friends` → `New Posts` to see if there are any updates from people you care about.
