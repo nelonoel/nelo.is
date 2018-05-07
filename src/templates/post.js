@@ -11,6 +11,7 @@ class PostTemplate extends React.Component {
 	render() {
 		const post = this.props.data.markdownRemark
 		const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+		const siteUrl = get(this.props, 'data.site.siteMetadata.siteUrl')
 		const cover = get(post, 'frontmatter.cover.childImageSharp.sizes')
 		const model = get(post, 'frontmatter.model')
 
@@ -18,7 +19,7 @@ class PostTemplate extends React.Component {
 			<Wrapper>
 				<Helmet title={`${post.frontmatter.title} ∙ ${siteTitle}`}>
 					<meta property="og:description" content={post.frontmatter.subtitle ? post.frontmatter.subtitle : post.excerpt} />
-					<meta property="og:image" content={cover.src} />
+					<meta property="og:image" content={siteUrl + cover.src} />
 
 					<meta name="description" content={post.frontmatter.subtitle ? post.frontmatter.subtitle : post.excerpt} />
 				</Helmet>
@@ -48,7 +49,8 @@ export const pageQuery = graphql`
   query PostBySlug($slug: String!) {
     site {
       siteMetadata {
-        title
+				title
+				siteUrl
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {

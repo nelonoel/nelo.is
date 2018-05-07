@@ -34,7 +34,8 @@ class Template extends Component {
 		const { location, children } = this.props
 		const { isDarkMode } = this.state
 		const posts = get(this, 'props.data.allMarkdownRemark.edges')
-		const pageCover = get(this, 'props.data.pageCover.childImageSharp.resolutions.src')
+		const siteUrl = get(this, 'props.data.site.siteMetadata.siteUrl')
+		const pageCover = siteUrl + get(this, 'props.data.pageCover.childImageSharp.resolutions.src')
 		const author = get(this, 'props.data.site.siteMetadata.author')
 		const email = get(this, 'props.data.site.siteMetadata.email')
 		const theme = isDarkMode ? dark : light
@@ -48,6 +49,7 @@ class Template extends Component {
 						<meta name="theme-color" content={theme.colors.base} />
 						<meta name="author" content={`${author}, ${email}`} />
 
+						<meta property="twitter:card" content="summary" />
 						<meta property="twitter:site" content="@nelonoel" />
 						<meta property="og:image" content={pageCover} />
 						<meta property="og:type" content="website" />
@@ -77,8 +79,9 @@ export const pageQuery = graphql`
   query LayoutQuery {
 		site {
 			siteMetadata {
-				author,
+				author
 				email
+				siteUrl
 			}
 		}
 		pageCover: file(relativePath: { eq: "img/default-cover.jpg" }) {
