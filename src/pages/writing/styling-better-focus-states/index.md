@@ -40,7 +40,7 @@ model: post
 }
 
 .btn:focus {
-	outline: #6cce75 solid 2px;
+	outline: lightgreen solid 2px;
 }
 
 .btn--focus-visible:focus:not(.focus-visible) {
@@ -52,7 +52,7 @@ model: post
 }
 
 .btn--shadow.focus-visible {
-	box-shadow: 0 0 0 2px #6cce75;
+	box-shadow: 0 0 0 2px lightgreen;
 }
 
 </style>
@@ -115,7 +115,7 @@ The [polyfill](https://github.com/WICG/focus-visible) adds a `.focus-visible` cl
 
 /* Optional: Customize .focus-visible */
 .focus-visible {
-	outline-color: skyblue;
+  outline-color: lightgreen;
 }
 ```
 
@@ -132,7 +132,7 @@ The [polyfill](https://github.com/WICG/focus-visible) adds a `.focus-visible` cl
 
 /* box-shadow outlines rounded corners! */
 .focus-visible {
-  box-shadow: 0 0 0 2px skyblue;
+  box-shadow: 0 0 0 2px lightgreen;
 }
 ```
 
