@@ -9,8 +9,10 @@ import styled, { ThemeProvider } from 'styled-components'
 import { dark, light } from '../styles/theme'
 
 import Page, { Content } from '../components/Page'
+import Flex from '../components/Flex'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import { LogoLoader } from '../components/Logo'
 
 class Template extends Component {
 	constructor(props) {
@@ -34,6 +36,8 @@ class Template extends Component {
 		const posts = get(this, 'props.data.allMarkdownRemark.edges')
 		const email = get(this, 'props.data.site.siteMetadata.email')
 		const theme = isDarkMode ? dark : light
+		const content = children()
+		const isLoading = typeof store.storage.name !== 'string' || typeof content !== 'object'
 
 		return (
 			<ThemeProvider theme={theme}>
@@ -45,10 +49,12 @@ class Template extends Component {
 					<Page>
 						<Header
 							toggleDarkMode={this.toggleDarkMode}
-							isDarkMode={isDarkMode} />
-						<Content>
-							{children()}
-						</Content>
+							isDarkMode={isDarkMode}
+						/>
+						{isLoading
+							? <Flex alignItems="center" flex="1 1 auto" justifyContent="center"><LogoLoader /></Flex>
+							: <Content>{content}</Content>
+						}
 						<Footer email={email} recent={posts} />
 					</Page>
 				</Twemoji>

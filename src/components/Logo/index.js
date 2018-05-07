@@ -139,6 +139,18 @@ export const LogoIcon = styled.div`
 	}
 `
 
+export const LogoLoader = LogoIcon.extend`
+	background: none;
+	color: ${theme('colors.dark.2')};
+
+	&:after {
+		animation: ${bounce}  1.8s infinite;
+		color: ${theme('colors.dark.2')};
+		margin-bottom: 0.25em;
+		transform-origin: bottom;
+	}
+`
+
 class Logo extends PureComponent {
 	constructor(props) {
 		super(props)
