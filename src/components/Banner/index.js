@@ -83,7 +83,7 @@ export const Subtitle = styled.h2`
 `
 
 export const Description = Subtitle.extend`
-  max-width: ${theme('wrapper.normal')}em;
+  max-width: ${theme('wrapper.normal')};
 `.withComponent('p')
 
 class Banner extends PureComponent {

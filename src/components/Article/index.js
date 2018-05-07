@@ -8,7 +8,7 @@ import { fullWidth } from '../../styles/mixins'
 const Article = styled.article`
 	font-size: 1.1em;
 	margin: auto;
-	max-width: 36rem;
+	max-width: ${props => props.theme.wrapper[props.wrapper]};
 	position: relative;
 
 	a {
@@ -430,6 +430,7 @@ const Article = styled.article`
 								0 1px 3px rgba(0, 0, 0, 0.05),
 								0 2px 6px rgba(0, 0, 0, 0.1);
 		overflow: hidden;
+		max-width: unset !important;
 	}
 
 	.transparent .gatsby-resp-image-background-image {

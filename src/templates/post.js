@@ -42,7 +42,7 @@ class PostTemplate extends React.Component {
 						stack={post.frontmatter.stack}
 					/>
 				}
-				<Article dangerouslySetInnerHTML={{ __html: post.html }} />
+				<Article wrapper={model === 'project' ? 'normal' : 'narrow'} dangerouslySetInnerHTML={{ __html: post.html }} />
 			</Wrapper>
 		)
 	}

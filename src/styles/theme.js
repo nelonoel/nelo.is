@@ -96,8 +96,9 @@ const shadows = [
 ]
 
 const wrapper = {
-	'normal': '51rem',
-	'wide': '64rem'
+	narrow: '36rem',
+	normal: '51rem',
+	wide: '64rem'
 }
 
 const theme = {
