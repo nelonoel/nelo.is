@@ -31,7 +31,8 @@ const Container = styled(Link) `
 	overflow: hidden;
 	text-decoration: none;
 
-	&:hover ${ReadMore} {
+	&:hover ${ReadMore},
+	&.focus-visible ${ReadMore} {
 		background: ${props => rgba(props.theme.colors.dark[4], 0.1)};
 	}
 
@@ -63,7 +64,7 @@ const Container = styled(Link) `
   }
 
 	h6 {
-		margin-top: 0.25rem;
+		margin-top: 0.015rem;
 	}
 `
 
