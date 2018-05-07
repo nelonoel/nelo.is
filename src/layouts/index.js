@@ -40,7 +40,7 @@ class Template extends Component {
 		const email = get(this, 'props.data.site.siteMetadata.email')
 		const theme = isDarkMode ? dark : light
 		const content = children()
-		const isLoading = typeof store.storage.name !== 'string' || typeof content !== 'object'
+		const isLoading = typeof store.storage.name !== 'string' || content
 
 		return (
 			<ThemeProvider theme={theme}>
@@ -48,25 +48,23 @@ class Template extends Component {
 					<Helmet>
 						<meta name="theme-color" content={theme.colors.base} />
 						<meta name="author" content={`${author}, ${email}`} />
-
 						<meta property="twitter:card" content="summary" />
 						<meta property="twitter:site" content="@nelonoel" />
 						<meta property="og:image" content={pageCover} />
 						<meta property="og:type" content="website" />
-
 						<link rel="stylesheet" href={`/css/syntax-${theme.name}.css`} />
 					</Helmet>
-					<Page>
-						<Header
-							toggleDarkMode={this.toggleDarkMode}
-							isDarkMode={isDarkMode}
-						/>
-						{isLoading
-							? <Flex alignItems="center" flex="1 1 auto" justifyContent="center"><LogoLoader /></Flex>
-							: <Content>{content}</Content>
-						}
-						<Footer email={email} recent={posts} />
-					</Page>
+					{isLoading
+						? <Flex alignItems="center" flex="1 1 auto" justifyContent="center"><LogoLoader /></Flex>
+						: <Page>
+							<Header
+								toggleDarkMode={this.toggleDarkMode}
+								isDarkMode={isDarkMode}
+							/>
+							<Content>{content}</Content>
+							<Footer email={email} recent={posts} />
+						</Page>
+					}
 				</Twemoji>
 			</ThemeProvider>
 		)
