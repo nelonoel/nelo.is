@@ -40,7 +40,7 @@ class Template extends Component {
 		const email = get(this, 'props.data.site.siteMetadata.email')
 		const theme = isDarkMode ? dark : light
 		const content = children()
-		const isLoading = typeof store.storage.name !== 'string'
+		const isLoaded = typeof store.storage.name === 'string' && store.storage.name.length > 0 && content
 
 		return (
 			<ThemeProvider theme={theme}>
@@ -54,9 +54,8 @@ class Template extends Component {
 						<meta property="og:type" content="website" />
 						<link rel="stylesheet" href={`/css/syntax-${theme.name}.css`} />
 					</Helmet>
-					{isLoading
-						? <Flex alignItems="center" flex="1 1 auto" justifyContent="center"><LogoLoader /></Flex>
-						: <Page>
+					{isLoaded
+						? <Page>
 							<Header
 								toggleDarkMode={this.toggleDarkMode}
 								isDarkMode={isDarkMode}
@@ -64,6 +63,7 @@ class Template extends Component {
 							<Content>{content}</Content>
 							<Footer email={email} recent={posts} />
 						</Page>
+						: <Page><Flex alignItems="center" flex="1 1 auto" justifyContent="center"><LogoLoader /></Flex></Page>
 					}
 				</Twemoji>
 			</ThemeProvider>
