@@ -17,6 +17,9 @@ class PostTemplate extends React.Component {
 		return (
 			<Wrapper>
 				<Helmet title={`${post.frontmatter.title} ∙ ${siteTitle}`}>
+					<meta property="og:description" content={post.frontmatter.subtitle ? post.frontmatter.subtitle : post.excerpt} />
+					<meta property="og:image" content={cover.src} />
+
 					<meta name="description" content={post.frontmatter.subtitle ? post.frontmatter.subtitle : post.excerpt} />
 				</Helmet>
 				<Banner cover={cover}>
@@ -46,7 +49,6 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        author
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {

@@ -34,6 +34,8 @@ class Template extends Component {
 		const { location, children } = this.props
 		const { isDarkMode } = this.state
 		const posts = get(this, 'props.data.allMarkdownRemark.edges')
+		const pageCover = get(this, 'props.data.pageCover.childImageSharp.resolutions.src')
+		const author = get(this, 'props.data.site.siteMetadata.author')
 		const email = get(this, 'props.data.site.siteMetadata.email')
 		const theme = isDarkMode ? dark : light
 		const content = children()
@@ -44,6 +46,12 @@ class Template extends Component {
 				<Twemoji>
 					<Helmet>
 						<meta name="theme-color" content={theme.colors.base} />
+						<meta name="author" content={`${author}, ${email}`} />
+
+						<meta property="twitter:site" content="@nelonoel" />
+						<meta property="og:image" content={pageCover} />
+						<meta property="og:type" content="website" />
+
 						<link rel="stylesheet" href={`/css/syntax-${theme.name}.css`} />
 					</Helmet>
 					<Page>
@@ -66,11 +74,19 @@ class Template extends Component {
 export default Template
 
 export const pageQuery = graphql`
-  query FooterQuery {
+  query LayoutQuery {
 		site {
 			siteMetadata {
+				author,
 				email
 			}
+		}
+		pageCover: file(relativePath: { eq: "img/default-cover.jpg" }) {
+      childImageSharp {
+        resolutions {
+          ...GatsbyImageSharpResolutions_noBase64
+        }
+      }
 		}
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC },
