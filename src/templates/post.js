@@ -18,8 +18,8 @@ class PostTemplate extends React.Component {
 		return (
 			<Wrapper>
 				<Helmet title={`${post.frontmatter.title} ∙ ${siteTitle}`}>
-					<meta property="og:description" content={post.frontmatter.subtitle ? post.frontmatter.subtitle : post.excerpt} />
-					<meta property="og:image" content={siteUrl + cover.src} />
+					<meta name="og:description" content={post.frontmatter.subtitle ? post.frontmatter.subtitle : post.excerpt} />
+					<meta name="og:image" content={siteUrl + cover.src} />
 
 					<meta name="description" content={post.frontmatter.subtitle ? post.frontmatter.subtitle : post.excerpt} />
 				</Helmet>

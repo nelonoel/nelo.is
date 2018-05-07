@@ -48,10 +48,10 @@ class Template extends Component {
 					<Helmet>
 						<meta name="theme-color" content={theme.colors.base} />
 						<meta name="author" content={`${author}, ${email}`} />
-						<meta property="twitter:card" content="summary" />
-						<meta property="twitter:site" content="@nelonoel" />
-						<meta property="og:image" content={pageCover} />
-						<meta property="og:type" content="website" />
+						<meta name="twitter:card" content="summary" />
+						<meta name="twitter:site" content="@nelonoel" />
+						<meta name="og:image" content={pageCover} />
+						<meta name="og:type" content="website" />
 						<link rel="stylesheet" href={`/css/syntax-${theme.name}.css`} />
 					</Helmet>
 					{isLoaded
