@@ -73,10 +73,14 @@ const Category = Subheading.extend`
 	height: 100%;
 	line-height: 1;
 	margin: 0;
-  padding: 0.6rem;
+  padding: 0.7em;
   text-align: center;
   width: 100%;
 	writing-mode: lr;
+
+	@media(max-width: ${theme('breakpoints.1')}) {
+		padding: 0.5em;
+	}
 `
 
 const Item = styled(Link).attrs({
