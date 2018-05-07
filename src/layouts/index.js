@@ -14,12 +14,6 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { LogoLoader } from '../components/Logo'
 
-const defaultMeta = {
-	title: 'Digital Craftsman',
-	description: 'I\'m Nelo — a digital craftsman focusing on front - end development & UI design.I work with companies around the world to make delightful digital products.',
-	type: 'page'
-}
-
 class Template extends Component {
 	constructor(props) {
 		super(props)
@@ -30,7 +24,8 @@ class Template extends Component {
 
 		this.state = Object.assign(defaultMeta, {
 			isDarkMode: store.get('dark_mode'),
-			cover: defaultCover
+			cover: defaultCover,
+			title: 'Loading..'
 		})
 	}
 
@@ -42,6 +37,12 @@ class Template extends Component {
 	}
 
 	setMeta(data) {
+		const defaultMeta = {
+			title: 'Digital Craftsman',
+			description: 'I\'m Nelo — a digital craftsman focusing on front - end development & UI design.I work with companies around the world to make delightful digital products.',
+			type: 'page'
+		}
+
 		this.setState(Object.assign(defaultMeta, data))
 	}
 
