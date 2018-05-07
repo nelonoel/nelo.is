@@ -1,18 +1,39 @@
 import React, { PureComponent } from 'react'
+import styled from 'styled-components'
+import { rgba } from 'polished'
+import Link from 'gatsby-link'
 import { theme } from 'styled-system'
 import { ArrowRight } from 'react-feather'
 
 import Subheading from '../../components/Subheading'
 import Badge from '../../components/Badge'
-import { ButtonLink } from '../../components/Button'
 import Flex from '../../components/Flex'
 import Box from '../../components/Box'
 import Wrapper from '../../components/Wrapper'
 
-const Container = Box.extend`
+const ReadMore = styled(Box).attrs({
+	color: 'contrast.2',
+	display: 'flex',
+	lineHeight: '1.4',
+	p: '1rem 1.5rem',
+	mr: ['-1.5rem', '-1.5rem', '-1.5rem', '-1.5rem', 0],
+}) `
+	box-shadow: 0 0 0 1px ${props => rgba(props.theme.colors.dark[4], 0.1)};
+	white-space: nowrap2;
+	transition: background .2s ease;
+`
+
+const Container = styled(Link) `
   background: ${theme('colors.light.2')};
 	border-bottom: ${theme('colors.dark.0')} solid 1px;
+	display: flex;
   margin: 0;
+	overflow: hidden;
+	text-decoration: none;
+
+	&:hover ${ReadMore} {
+		background: ${props => rgba(props.theme.colors.dark[4], 0.1)};
+	}
 
   ${Badge} {
     margin-right: 1.75em;
@@ -28,6 +49,10 @@ const Container = Box.extend`
   }
 
   h5 {
+		left: 0;
+		margin-right: 0;
+		position: absolute;
+		right: 0.75rem;
     color: ${theme('colors.contrast.4')};
     font-size: 1em;
     font-weight: 400;
@@ -35,28 +60,11 @@ const Container = Box.extend`
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-		margin-right: 0;
-		max-width: 50vw;
   }
 
-  ${ButtonLink} {
-    color:  ${theme('colors.contrast.3')};
-    font-size: 0.85em;
-		min-height: 3.6em;
-    padding: 0.6em 1.2em;
-
-    &:hover {
-			color:  ${theme('colors.contrast.4')};
-    }
-
-		& > svg {
-			margin-right: 0;
-		}
-
-		& > ${Box} {
-			margin-left: 0.75em;
-		}
-  }
+	h6 {
+		margin-top: 0.25rem;
+	}
 `
 
 export default class LatestPost extends PureComponent {
@@ -66,22 +74,23 @@ export default class LatestPost extends PureComponent {
 		const { title, category } = post.frontmatter
 
 		return (
-			<Container>
+			<Container to={slug}>
 				<Wrapper>
-					<Flex alignItems="center" justifyContent="space-between">
-						<Flex alignItems="center">
-							<Box lineHeight={0} display={['none', 'block']}>
+					<Flex alignItems="center" justifyContent="space-between" maxWidth="100%">
+						<Flex flex="1 0 auto" alignItems="center">
+							<Box lineHeight={0} display={['none', 'none', 'block']}>
 								<Badge>New!</Badge>
 							</Box>
-							<Box lineHeight={0}>
-								<Subheading>{category}</Subheading>
-								<h5>{title}</h5>
-							</Box>
+							<Flex flex="1 0 auto" flexDirection="column" lineHeight={0} maxWidth="100%">
+								<Subheading display={['none', 'none', 'inline']}>{category}</Subheading>
+								<Subheading display={['inline', 'inline', 'none']}>Latest Post</Subheading>
+								<Flex flex="1 0 auto" position="relative" height="1.25rem"><h5>{title}</h5></Flex>
+							</Flex>
 						</Flex>
-						<ButtonLink to={slug} mr={['-1.5rem', '-1.5rem', '-1.5rem', '-1.5rem', 0]} transparent sharp>
+						<ReadMore>
 							<ArrowRight />
-							<Box display={['none', 'none', 'inline']}>Read more</Box>
-						</ButtonLink>
+							<Box display={['none', 'none', 'inline']} ml={3}>Read more</Box>
+						</ReadMore>
 					</Flex>
 				</Wrapper>
 			</Container>
