@@ -67,6 +67,7 @@ class Template extends Component {
 						<meta name="twitter:card" content="summary" />
 						<meta name="twitter:site" content="@nelonoel" />
 						<meta name="og:image" content={cover} />
+						<meta name="og:site_name" content={siteTitle} />
 						<meta name="og:title" content={title} />
 						<meta name="og:description" content={description} />
 						<meta name="og:type" content="website" />
