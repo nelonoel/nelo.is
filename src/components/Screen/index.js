@@ -72,10 +72,10 @@ export default class Screen extends PureComponent {
 				<Frame />
 				<Parallax speed={10}>
 					<Box display={['none', 'none', 'block']}>
-						<Img sizes={screens.desktop} />
+						<Img sizes={screens.desktop} alt="Desktop Screenshot" title="Desktop Screenshot" />
 					</Box>
 					<Box display={['block', 'block', 'none']}>
-						<Img sizes={screens.mobile} />
+						<Img sizes={screens.mobile} alt="Mobile Screenshot" title="Mobile Screenshot" />
 					</Box>
 				</Parallax>
 			</Window>

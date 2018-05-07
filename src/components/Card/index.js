@@ -174,7 +174,7 @@ class Card extends PureComponent {
 
 		return (
 			<Item slug={slug} half={half}>
-				{cover ? <Cover sizes={cover} outerWrapperClassName="cover" /> : <Placeholder />}
+				{cover ? <Cover sizes={cover} alt={title} title={title} outerWrapperClassName="cover" /> : <Placeholder />}
 				<Content>
 					{type && <Type>{type}</Type>}
 					<Title>{title}</Title>

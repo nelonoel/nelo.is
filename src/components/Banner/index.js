@@ -92,7 +92,7 @@ class Banner extends PureComponent {
 
 		return (
 			<Container>
-				{cover && <Cover sizes={cover} outerWrapperClassName="cover" />}
+				{cover && <Cover sizes={cover} outerWrapperClassName="cover" alt="Cover Image" title="Cover Image" />}
 				<Wrapper>
 					{children}
 				</Wrapper>

@@ -71,8 +71,10 @@ const Avatar = styled.div`
 `
 
 const Silhouette = styled.img.attrs({
+	alt: 'Silhouette',
 	draggable: false,
-	src: svgSilhouette
+	src: svgSilhouette,
+	title: 'Silhouette'
 }) `
   display: flex;
   height: 24em;
@@ -85,7 +87,9 @@ const Silhouette = styled.img.attrs({
 `
 
 const Face = Silhouette.extend.attrs({
-	src: svgFace
+	alt: 'Nelo',
+	src: svgFace,
+	title: 'Nelo'
 }) `
 	opacity: 1;
   position: absolute;
