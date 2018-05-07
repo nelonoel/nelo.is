@@ -3,6 +3,7 @@ module.exports = {
 		title: 'Nelo',
 		author: 'Aaron Noel De Leon',
 		description: 'Personal website',
+		keywords: ['website', 'consulting', 'portfolio', 'blog', 'design', 'development'],
 		siteUrl: 'https://nelo.is',
 		email: 'here@nelo.is',
 		forHire: true
@@ -51,12 +52,6 @@ module.exports = {
 		},
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
-		{
-			resolve: `gatsby-plugin-canonical-urls`,
-			options: {
-				siteUrl: `https://www.example.com`,
-			},
-		},
 		{
 			resolve: `gatsby-plugin-google-analytics`,
 			options: {

@@ -54,7 +54,7 @@ class Template extends Component {
 		const posts = get(this, 'props.data.latestPosts.edges')
 		const siteTitle = get(this, 'props.data.site.siteMetadata.title')
 		const siteUrl = get(this, 'props.data.site.siteMetadata.siteUrl')
-		const defaultCover = siteUrl + get(this, 'props.data.defaultCover.childImageSharp.resolutions.src')
+		const keywords = get(this, 'props.data.site.siteMetadata.keywords')
 		const author = get(this, 'props.data.site.siteMetadata.author')
 		const email = get(this, 'props.data.site.siteMetadata.email')
 		const theme = isDarkMode ? dark : light
@@ -62,6 +62,7 @@ class Template extends Component {
 		const content = children({ ...this.props, setMeta })
 		const isLoaded = typeof store.storage.name === 'string' && store.storage.name.length > 0 && content
 		const pageTitle = type === 'post' ? `${title} • ${siteTitle}` : `${siteTitle} • ${title}`
+		const pageUrl = siteUrl + location.pathname
 
 		return (
 			<ThemeProvider theme={theme}>
@@ -70,6 +71,7 @@ class Template extends Component {
 						<meta name="theme-color" content={theme.colors.base} />
 						<meta name="author" content={`${author}, ${email}`} />
 						<meta name="description" content={description} />
+						<meta name="keywords" content={keywords.join(', ')} />
 						<meta name="twitter:card" content="summary" />
 						<meta name="twitter:site" content="@nelonoel" />
 						<meta name="og:image" content={cover} />
@@ -77,7 +79,10 @@ class Template extends Component {
 						<meta name="og:title" content={title} />
 						<meta name="og:description" content={description} />
 						<meta name="og:type" content="website" />
+						<meta name="og:url" content={pageUrl} />
 						<meta name="google-site-verification" content="1oslh92jui11Q8t62gK2Sya7BMjBbwCAPIRkkDFeorw" />
+
+						<link rel="canonical" href={pageUrl} />
 						<link rel="stylesheet" href={`/css/syntax-${theme.name}.css`} />
 					</Helmet>
 					{isLoaded
@@ -107,6 +112,7 @@ export const pageQuery = graphql`
 				author
 				email
 				siteUrl
+				keywords
 			}
 		}
 		defaultCover: file(relativePath: { eq: "img/default-cover.jpg" }) {
