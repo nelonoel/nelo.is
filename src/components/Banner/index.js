@@ -69,7 +69,7 @@ export const Cover = styled(Img) `
 `
 
 export const Title = styled.h1`
-  font-size: 2.25em;
+  font-size: 2.15em;
   line-height: 1.25;
   margin: -0.25em 0 0;
 `
