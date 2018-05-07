@@ -8,55 +8,6 @@ draft: false
 model: post
 ---
 
-<style>
-.demo {
-	background: rgba(0, 0, 0, 0.05);
-	margin: 1.75rem auto;
-	padding: 1.5rem;
-	text-align: center;
-}
-
-.btn {
-	background: white;
-	border: none;
-	border-radius: 10px;
-	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.01),
-							0 1px 3px rgba(0, 0, 0, 0.09);
-	color: #43bf4d;
-	font-family: "Gravity", sans-serif;
-	padding: 0.75rem 1.5rem;
-	transition: all .2s ease;
-}
-
-.btn:hover {
-	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.01),
-							0 2px 6px rgba(0, 0, 0, 0.09);
-	transform: translateY(-2px);
-}
-
-.btn:active {
-	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.01);
-	transform: none;
-}
-
-.btn:focus {
-	outline: lightgreen solid 2px;
-}
-
-.btn--focus-visible:focus:not(.focus-visible) {
-	outline: none;
-}
-
-.btn--shadow:focus {
-	outline: none;
-}
-
-.btn--shadow.focus-visible {
-	box-shadow: 0 0 0 2px lightgreen;
-}
-
-</style>
-
 ## Problem
 **Default `:focus` behavior is bad.**
 
@@ -144,3 +95,52 @@ The [polyfill](https://github.com/WICG/focus-visible) adds a `.focus-visible` cl
 
 ---
 Noticed how I used `:focus-visible` on this [site](/)? Hit me up on [Twitter](https://twitter.com/nelonoel) if you find this useful! 😁
+
+
+<style>
+.demo {
+	background: rgba(0, 0, 0, 0.05);
+	margin: 1.75rem auto;
+	padding: 1.5rem;
+	text-align: center;
+}
+
+.btn {
+	background: white;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.01),
+							0 1px 3px rgba(0, 0, 0, 0.09);
+	color: #43bf4d;
+	font-family: "Gravity", sans-serif;
+	padding: 0.75rem 1.5rem;
+	transition: all .2s ease;
+}
+
+.btn:hover {
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.01),
+							0 2px 6px rgba(0, 0, 0, 0.09);
+	transform: translateY(-2px);
+}
+
+.btn:active {
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.01);
+	transform: none;
+}
+
+.btn:focus {
+	outline: lightgreen solid 2px;
+}
+
+.btn--focus-visible:focus:not(.focus-visible) {
+	outline: none;
+}
+
+.btn--shadow:focus {
+	outline: none;
+}
+
+.btn--shadow.focus-visible {
+	box-shadow: 0 0 0 2px lightgreen;
+}
+</style>
