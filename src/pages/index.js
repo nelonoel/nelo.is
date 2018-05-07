@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled, { keyframes } from 'styled-components'
 import get from 'lodash/get'
-import Helmet from 'react-helmet'
 
 import Banner from '../sections/home/Banner'
 import LatestPost from '../sections/home/LatestPost'
@@ -12,8 +11,14 @@ import Clients from '../sections/home/Clients'
 import ForHire from '../sections/home/ForHire'
 
 class Home extends PureComponent {
+	componentWillMount() {
+		this.props.setMeta({
+			title: 'Digital Craftsman',
+			type: 'page'
+		})
+	}
+
 	render() {
-		const siteTitle = get(this, 'props.data.site.siteMetadata.title')
 		const posts = get(this, 'props.data.recentWork.edges')
 		const latestPost = get(this, 'props.data.latestPost.edges[0].node')
 		const forHire = get(this, 'props.data.site.siteMetadata.forHire')
@@ -25,10 +30,6 @@ class Home extends PureComponent {
 
 		return (
 			<div>
-				<Helmet title={`${siteTitle} ∙ Digital Craftsman`}>
-					<meta name="google-site-verification" content="1oslh92jui11Q8t62gK2Sya7BMjBbwCAPIRkkDFeorw" />
-					<meta name="description" content="I'm Nelo — a digital craftsman focusing on front-end development & UI design. I work with companies around the world to make delightful digital products." />
-				</Helmet>
 				<Banner cover={landingCover} />
 				<LatestPost post={latestPost} />
 				<Services />
@@ -47,7 +48,6 @@ export const pageQuery = graphql`
   query HomeQuery {
     site {
       siteMetadata {
-				title
 				forHire
       }
 		}

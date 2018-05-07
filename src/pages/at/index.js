@@ -1,8 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import { theme } from 'styled-system'
-import Helmet from 'react-helmet'
-import get from 'lodash/get'
 import { Check } from 'react-feather'
 
 import Wrapper from '../../components/Wrapper'
@@ -34,11 +32,16 @@ const Label = Subheading.extend`
 `.withComponent('label')
 
 class ContactPage extends PureComponent {
+	componentWillMount() {
+		this.props.setMeta({
+			title: 'Contact',
+			type: 'page'
+		})
+	}
+
 	render() {
-		const siteTitle = get(this, 'props.data.site.siteMetadata.title')
 		return (
 			<div>
-				<Helmet title={`${siteTitle} ∙ Contact`} />
 				<Banner>
 					<Title>Contact</Title>
 					<Description>
@@ -71,14 +74,3 @@ class ContactPage extends PureComponent {
 }
 
 export default ContactPage
-
-
-export const pageQuery = graphql`
-  query ContactPageQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`

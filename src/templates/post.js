@@ -1,5 +1,4 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
 import Banner, { Type, Title, Subtitle } from '../components/Banner'
@@ -8,21 +7,27 @@ import ProjectDetails from '../components/Article/ProjectDetails'
 import Wrapper from '../components/Wrapper'
 
 class PostTemplate extends React.Component {
+	componentWillMount() {
+		const siteUrl = get(this.props, 'data.site.siteMetadata.siteUrl')
+		const post = this.props.data.markdownRemark
+		const cover = siteUrl + get(post, 'frontmatter.cover.childImageSharp.sizes.src')
+		const { title, subtitle } = post.frontmatter
+
+		this.props.setMeta({
+			cover: cover,
+			title: title,
+			description: subtitle ? subtitle : post.excerpt,
+			type: 'post'
+		})
+	}
+
 	render() {
 		const post = this.props.data.markdownRemark
-		const siteTitle = get(this.props, 'data.site.siteMetadata.title')
-		const siteUrl = get(this.props, 'data.site.siteMetadata.siteUrl')
 		const cover = get(post, 'frontmatter.cover.childImageSharp.sizes')
 		const model = get(post, 'frontmatter.model')
 
 		return (
 			<Wrapper>
-				<Helmet title={`${post.frontmatter.title} ∙ ${siteTitle}`}>
-					<meta name="og:description" content={post.frontmatter.subtitle ? post.frontmatter.subtitle : post.excerpt} />
-					<meta name="og:image" content={siteUrl + cover.src} />
-
-					<meta name="description" content={post.frontmatter.subtitle ? post.frontmatter.subtitle : post.excerpt} />
-				</Helmet>
 				<Banner cover={cover}>
 					<Type>{post.frontmatter.type}</Type>
 					<Title>{post.frontmatter.title}</Title>

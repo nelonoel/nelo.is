@@ -1,6 +1,5 @@
 import React from 'react'
 import get from 'lodash/get'
-import Helmet from 'react-helmet'
 
 import Wrapper from '../../components/Wrapper'
 import Banner, { Title, Description } from '../../components/Banner'
@@ -8,13 +7,18 @@ import Grid from '../../components/Grid'
 import Card from '../../components/Card'
 
 class ProjectsIndex extends React.Component {
+	componentWillMount() {
+		this.props.setMeta({
+			title: 'Projects',
+			type: 'page'
+		})
+	}
+
 	render() {
-		const siteTitle = get(this, 'props.data.site.siteMetadata.title')
 		const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
 		return (
 			<div>
-				<Helmet title={`${siteTitle} ∙ Projects`} />
 				<Banner>
 					<Title>Projects</Title>
 					<Description>
