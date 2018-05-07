@@ -40,7 +40,7 @@
 		"react-twemoji": "^0.0.8",
 		"rellax": "^1.6.2",
 		"store": "^2.0.12",
-		"styled-components": "^2.4.0",
+		"styled-components": "^3.2.6",
 		"styled-system": "^2.2.1",
 		"uninstall": "0.0.0"
 	},
