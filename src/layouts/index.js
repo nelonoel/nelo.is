@@ -40,7 +40,7 @@ class Template extends Component {
 		const email = get(this, 'props.data.site.siteMetadata.email')
 		const theme = isDarkMode ? dark : light
 		const content = children()
-		const isLoading = typeof store.storage.name !== 'string' || content
+		const isLoading = typeof store.storage.name !== 'string'
 
 		return (
 			<ThemeProvider theme={theme}>
