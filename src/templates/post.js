@@ -1,45 +1,43 @@
 import React from 'react'
 import get from 'lodash/get'
 
+import SEO from '../components/SEO'
 import Banner, { Type, Title, Subtitle } from '../components/Banner'
 import Article from '../components/Article'
 import ProjectDetails from '../components/Article/ProjectDetails'
 import Wrapper from '../components/Wrapper'
 
 class PostTemplate extends React.Component {
-	componentWillMount() {
-		const siteUrl = get(this.props, 'data.site.siteMetadata.siteUrl')
-		const post = this.props.data.markdownRemark
-		const cover = siteUrl + get(post, 'frontmatter.cover.childImageSharp.sizes.src')
-		const { model, title, subtitle, description } = post.frontmatter
-
-		this.props.setMeta({
-			cover: cover,
-			title: title + (model === 'project' ? ` – ${subtitle}` : ''),
-			description: model === 'project' ? description : subtitle,
-			type: 'post'
-		})
-	}
-
 	render() {
 		const post = this.props.data.markdownRemark
 		const cover = get(post, 'frontmatter.cover.childImageSharp.sizes')
-		const model = get(post, 'frontmatter.model')
+		const siteUrl = get(this.props, 'data.site.siteMetadata.siteUrl')
+		const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+		const image = siteUrl + cover.src
+		const { model, title, subtitle, description, type, month, client, roles, stack } = post.frontmatter
+
+		const meta = {
+			image: image,
+			title: title + (model === 'project' ? ` – ${subtitle}` : ''),
+			description: model === 'project' ? description : subtitle,
+			siteTitle: siteTitle
+		}
 
 		return (
 			<Wrapper>
+				<SEO {...meta} />
 				<Banner cover={cover}>
-					<Type>{post.frontmatter.type}</Type>
-					<Title>{post.frontmatter.title}</Title>
-					<Subtitle>{post.frontmatter.subtitle}</Subtitle>
+					<Type>{type}</Type>
+					<Title>{title}</Title>
+					<Subtitle>{subtitle}</Subtitle>
 				</Banner>
 				{model === 'project' &&
 					<ProjectDetails
-						month={post.frontmatter.month}
-						client={post.frontmatter.client}
-						description={post.frontmatter.description}
-						roles={post.frontmatter.roles}
-						stack={post.frontmatter.stack}
+						month={month}
+						client={client}
+						description={description}
+						roles={roles}
+						stack={stack}
 					/>
 				}
 				<Article wrapper={model === 'project' ? 'normal' : 'narrow'} dangerouslySetInnerHTML={{ __html: post.html }} />

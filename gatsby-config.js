@@ -2,7 +2,7 @@ module.exports = {
 	siteMetadata: {
 		title: 'Nelo',
 		author: 'Aaron Noel De Leon',
-		description: 'Personal website',
+		description: 'I\'m Nelo — a digital craftsman focusing on front-end development & UI design. I work with companies around the world to make delightful digital products.',
 		keywords: ['website', 'consulting', 'portfolio', 'blog', 'design', 'development'],
 		siteUrl: 'https://nelo.is',
 		email: 'here@nelo.is',

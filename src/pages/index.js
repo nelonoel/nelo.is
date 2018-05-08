@@ -11,12 +11,6 @@ import Clients from '../sections/home/Clients'
 import ForHire from '../sections/home/ForHire'
 
 class Home extends PureComponent {
-	componentWillMount() {
-		this.props.setMeta({
-			title: 'Digital Craftsman'
-		})
-	}
-
 	render() {
 		const posts = get(this, 'props.data.recentWork.edges')
 		const latestPost = get(this, 'props.data.latestPost.edges[0].node')

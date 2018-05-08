@@ -1,23 +1,19 @@
 import React from 'react'
 import get from 'lodash/get'
 
+import SEO from '../../components/SEO'
 import Wrapper from '../../components/Wrapper'
 import Banner, { Title, Description } from '../../components/Banner'
 import Grid from '../../components/Grid'
 import Card from '../../components/Card'
 
 class BlogIndex extends React.Component {
-	componentWillMount() {
-		this.props.setMeta({
-			title: 'Journal'
-		})
-	}
-
 	render() {
 		const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
 		return (
 			<div>
+				<SEO title="Journal" />
 				<Banner>
 					<Title>Journal</Title>
 					<Description>

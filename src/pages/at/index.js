@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { theme } from 'styled-system'
 import { Check } from 'react-feather'
 
+import SEO from '../../components/SEO'
 import Wrapper from '../../components/Wrapper'
 import Button from '../../components/Button'
 import Banner, { Title, Description } from '../../components/Banner'
@@ -32,15 +33,10 @@ const Label = Subheading.extend`
 `.withComponent('label')
 
 class ContactPage extends PureComponent {
-	componentWillMount() {
-		this.props.setMeta({
-			title: 'Contact'
-		})
-	}
-
 	render() {
 		return (
 			<div>
+				<SEO title="Contact" />
 				<Banner>
 					<Title>Contact</Title>
 					<Description>

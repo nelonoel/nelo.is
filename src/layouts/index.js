@@ -8,6 +8,7 @@ import store from 'store'
 import styled, { ThemeProvider } from 'styled-components'
 import { dark, light } from '../styles/theme'
 
+import SEO from '../components/SEO'
 import Page, { Content } from '../components/Page'
 import Flex from '../components/Flex'
 import Header from '../components/Header'
@@ -19,15 +20,8 @@ class Template extends Component {
 		super(props)
 		this.toggleDarkMode = this.toggleDarkMode.bind(this)
 
-		const siteUrl = get(props, 'data.site.siteMetadata.siteUrl')
-		const defaultCover = siteUrl + get(props, 'data.defaultCover.childImageSharp.resolutions.src')
-
 		this.state = {
-			isDarkMode: store.get('dark_mode'),
-			cover: defaultCover,
-			title: 'Digital Craftsman',
-			description: 'I\'m Nelo — a digital craftsman focusing on front - end development & UI design.I work with companies around the world to make delightful digital products.',
-			type: 'page'
+			isDarkMode: store.get('dark_mode')
 		}
 	}
 
@@ -38,53 +32,46 @@ class Template extends Component {
 		})
 	}
 
-	setMeta(data) {
-		const defaultMeta = {
-			title: 'Digital Craftsman',
-			description: 'I\'m Nelo — a digital craftsman focusing on front - end development & UI design.I work with companies around the world to make delightful digital products.',
-			type: 'page'
-		}
-
-		this.setState(Object.assign(defaultMeta, data))
-	}
-
 	render() {
 		const { location, children } = this.props
-		const { cover, title, description, type, isDarkMode } = this.state
-		const posts = get(this, 'props.data.latestPosts.edges')
-		const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+		const { isDarkMode } = this.state
+
 		const siteUrl = get(this, 'props.data.site.siteMetadata.siteUrl')
-		const keywords = get(this, 'props.data.site.siteMetadata.keywords')
+		const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+		const siteDescription = get(this, 'props.data.site.siteMetadata.siteDescription')
+		const defaultCover = siteUrl + get(this, 'props.data.defaultCover.childImageSharp.resolutions.src')
 		const author = get(this, 'props.data.site.siteMetadata.author')
 		const email = get(this, 'props.data.site.siteMetadata.email')
+		const keywords = get(this, 'props.data.site.siteMetadata.keywords')
+		const posts = get(this, 'props.data.latestPosts.edges')
 		const theme = isDarkMode ? dark : light
-		const setMeta = this.setMeta.bind(this)
-		const content = children({ ...this.props, setMeta })
+		const content = children()
 		const isLoaded = typeof store.storage.name === 'string' && store.storage.name.length > 0 && content
-		const pageTitle = type === 'post' ? `${title} • ${siteTitle}` : `${siteTitle} • ${title}`
-		const pageUrl = siteUrl + location.pathname
+		const url = siteUrl + location.pathname
+		const meta = {
+			title: 'Digital Craftsman',
+			decription: siteDescription,
+			image: defaultCover,
+			siteTitle: siteTitle
+		}
 
 		return (
 			<ThemeProvider theme={theme}>
 				<Twemoji>
-					<Helmet title={pageTitle}>
+					<Helmet>
 						<meta name="theme-color" content={theme.colors.base} />
 						<meta name="author" content={`${author}, ${email}`} />
-						<meta name="description" content={description} />
 						<meta name="keywords" content={keywords.join(', ')} />
 						<meta name="twitter:card" content="summary" />
 						<meta name="twitter:site" content="@nelonoel" />
-						<meta name="og:image" content={cover} />
-						<meta name="og:site_name" content={siteTitle} />
-						<meta name="og:title" content={title} />
-						<meta name="og:description" content={description} />
-						<meta name="og:type" content="website" />
-						<meta name="og:url" content={pageUrl} />
+						<meta property="og:site_name" content={siteTitle} />
+						<meta property="og:type" content="website" />
+						<meta property="og:url" content={url} />
 						<meta name="google-site-verification" content="1oslh92jui11Q8t62gK2Sya7BMjBbwCAPIRkkDFeorw" />
-
-						<link rel="canonical" href={pageUrl} />
+						<link rel="canonical" href={url} />
 						<link rel="stylesheet" href={`/css/syntax-${theme.name}.css`} />
 					</Helmet>
+					<SEO {...meta} />
 					{isLoaded
 						? <Page>
 							<Header
@@ -111,6 +98,7 @@ export const pageQuery = graphql`
 				title
 				author
 				email
+				description
 				siteUrl
 				keywords
 			}
