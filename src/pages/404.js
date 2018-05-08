@@ -4,13 +4,6 @@ import Flex from '../components/Flex'
 import Link from 'gatsby-link'
 
 class NotFoundPage extends PureComponent {
-	componentWillMount() {
-		this.props.setMeta({
-			title: 'Page not found',
-			description: 'You seem lost. Visit https://nelo.is, maybe?'
-		})
-	}
-
 	render() {
 		return (
 			<Flex alignItems="center" flex="1 1 auto" justifyContent="center">
