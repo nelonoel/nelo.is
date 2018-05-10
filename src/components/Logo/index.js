@@ -65,19 +65,19 @@ export const Dot = styled.span`
 	&:before,
 	&:after {
 		animation: none;
+		bottom: 0.1em;
 		content: '.';
 		display: inline-flex;
+		position: absolute;
 		transform-origin: bottom;
 	}
 
 	&:before {
 		color: ${theme('colors.primary')};
-		position: absolute;
 	}
 
 	&:after {
 		color: rgba(0, 0, 0, 0.15);
-		position: relative;
 		z-index: -1;
 	}
 `
