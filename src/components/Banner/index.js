@@ -51,6 +51,7 @@ export const Cover = styled(Img) `
 	&:before,
 	&:after {
 		${cover}
+		background-color: ${theme('colors.base')};
     height: 100%;
     width: 100%;
     z-index: 0;
@@ -59,11 +60,10 @@ export const Cover = styled(Img) `
 	}
 
 	&:after {
-		background: ${props => props.theme.name === 'dark' ? rgba(props.theme.colors.base, 0.75) : rgba(props.theme.colors.base, 0.375)} linear-gradient(transparent, ${theme('colors.base')});
+		background: linear-gradient(${props => props.theme.name === 'dark' ? rgba(props.theme.colors.base, 0.75) : rgba(props.theme.colors.base, 0.375)}, ${theme('colors.base')});
 	}
 
 	&:before {
-		background-color: ${theme('colors.base')};
 		opacity: 0.65;
 	}
 `
