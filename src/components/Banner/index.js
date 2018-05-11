@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { theme } from 'styled-system'
 import { rgba } from 'polished'
 import Img from 'gatsby-image'
+import Twemoji from 'react-twemoji'
 
 import { cover } from '../../styles/mixins'
 import Subheading from '../Subheading'
@@ -65,6 +66,20 @@ export const Cover = styled(Img) `
 
 	&:before {
 		opacity: 0.65;
+	}
+`
+
+export const Emoji = styled(Twemoji).attrs({
+	options: {
+		ext: '.svg',
+		folder: 'svg'
+	}
+}) `
+	font-size: 6em;
+	font-weight: bold;
+
+	& > img {
+		margin: auto;
 	}
 `
 
