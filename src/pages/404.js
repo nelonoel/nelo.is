@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import Banner, { Title, Description } from '../components/Banner'
+import Banner, { Emoji, Title, Description } from '../components/Banner'
 import Flex from '../components/Flex'
 import Link from 'gatsby-link'
 
@@ -8,6 +8,7 @@ class NotFoundPage extends PureComponent {
 		return (
 			<Flex alignItems="center" flex="1 1 auto" justifyContent="center">
 				<Banner>
+					<Emoji>4😱4</Emoji>
 					<Title>Page not found</Title>
 					<Description>
 						You seem lost. Go back <Link href="/">home</Link>, maybe?
