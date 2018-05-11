@@ -11,6 +11,7 @@ import Subheading from '../../components/Subheading'
 import TextField, { TextArea } from '../../components/TextField'
 
 const Form = styled.form.attrs({
+	action: '/receiving-mail',
 	name: 'contact',
 	method: 'POST',
 	'data-netlify': true,
