@@ -11,7 +11,7 @@ class NotFoundPage extends PureComponent {
 					<Emoji>4😱4</Emoji>
 					<Title>Page not found</Title>
 					<Description>
-						You seem lost. Go back <Link href="/">home</Link>, maybe?
+						You seem lost. Go back <Link to="/">home</Link>, maybe?
 					</Description>
 				</Banner>
 			</Flex>
