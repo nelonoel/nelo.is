@@ -12,7 +12,7 @@ roles:
  - UI Design
 stack:
  - Sketch
- - Invision
+ - InVision
 ---
 
 <div class="ui-screenshot">

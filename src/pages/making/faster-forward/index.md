@@ -13,7 +13,7 @@ roles:
  - UI Design
 stack:
  - Sketch
- - Craft by Invision
+ - InVision
 ---
 
 ##### Default

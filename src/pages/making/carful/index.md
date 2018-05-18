@@ -13,7 +13,7 @@ roles:
  - UI Design
 stack:
  - Sketch
- - Invision
+ - InVision
 ---
 <div class="grid three-column">
 	<div>

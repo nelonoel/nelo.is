@@ -48,7 +48,7 @@ export default class Services extends PureComponent {
 								<IconContainer mb={[0, 0, 0, 2]} mr={[2, 2, 2, 0]} height={['1.75em', '1.75em', '1.75em', '3.5em']} width={['1.75em', '1.75em', '1.75em', '3.5em']}><Feather /></IconContainer>
 								<h4>Design</h4>
 							</Flex>
-							<p>I create app and website prototypes using <a href="//sketchapp.com" target="blank" rel="nofollow">Sketch</a> and <a href="//invisionapp.com" target="blank" rel="nofollow">Invision</a>; crafting the tiniest details to provide a delightful user experience.</p>
+							<p>I create app and website prototypes using <a href="//sketchapp.com" target="blank" rel="nofollow">Sketch</a> and <a href="//invisionapp.com" target="blank" rel="nofollow">InVision</a>; crafting the tiniest details to provide a delightful user experience.</p>
 							<p>We're a match if you love clean and minimal UI with subtle touches of creativity.</p>
 						</Box>
 					</Grid>
