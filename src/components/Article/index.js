@@ -7,7 +7,7 @@ import { fullWidth } from '../../styles/mixins'
 
 const Article = styled.article`
 	font-size: 1.1em;
-	margin: auto;
+	margin: 2.5em auto;
 	max-width: ${props => props.theme.wrapper[props.wrapper]};
 	position: relative;
 

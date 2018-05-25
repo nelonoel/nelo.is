@@ -11,7 +11,6 @@ import Subheading from '../Subheading'
 const Container = styled.section`
 	${fullWidth}
 	border-bottom: ${theme('colors.dark.1')} solid 1px;
-	margin-bottom: 3em;
 	position: relative;
 `
 
@@ -19,7 +18,7 @@ const Content = styled.div`
 	display: grid;
   grid-template-columns: 2fr 1fr;
   grid-gap: 2em;
-	padding-bottom: 1.5em;
+	padding-bottom: 1em;
 
   @media (max-width: ${theme('breakpoints.2')}) {
 		grid-template-columns: 1fr;
