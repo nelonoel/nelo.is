@@ -1,18 +1,20 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import get from 'lodash/get'
 
+import ForHire from '../sections/home/ForHire'
 import SEO from '../components/SEO'
 import Banner, { Type, Title, Subtitle } from '../components/Banner'
 import Article from '../components/Article'
 import ProjectDetails from '../components/Article/ProjectDetails'
 import Wrapper from '../components/Wrapper'
 
-class PostTemplate extends React.Component {
+class PostTemplate extends PureComponent {
 	render() {
 		const post = this.props.data.markdownRemark
 		const cover = get(post, 'frontmatter.cover.childImageSharp.sizes')
 		const siteUrl = get(this.props, 'data.site.siteMetadata.siteUrl')
 		const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+		const forHire = get(this, 'props.data.site.siteMetadata.forHire')
 		const image = siteUrl + cover.src
 		const { model, title, subtitle, description, type, month, client, roles, stack } = post.frontmatter
 
@@ -24,24 +26,29 @@ class PostTemplate extends React.Component {
 		}
 
 		return (
-			<Wrapper>
-				<SEO {...meta} />
-				<Banner cover={cover}>
-					<Type>{type}</Type>
-					<Title>{title}</Title>
-					<Subtitle>{subtitle}</Subtitle>
-				</Banner>
+			<div>
+				<Wrapper>
+					<SEO {...meta} />
+					<Banner cover={cover}>
+						<Type>{type}</Type>
+						<Title>{title}</Title>
+						<Subtitle>{subtitle}</Subtitle>
+					</Banner>
+					{model === 'project' &&
+						<ProjectDetails
+							month={month}
+							client={client}
+							description={description}
+							roles={roles}
+							stack={stack}
+						/>
+					}
+					<Article wrapper={model === 'project' ? 'normal' : 'narrow'} dangerouslySetInnerHTML={{ __html: post.html }} />
+				</Wrapper>
 				{model === 'project' &&
-					<ProjectDetails
-						month={month}
-						client={client}
-						description={description}
-						roles={roles}
-						stack={stack}
-					/>
+					<ForHire forHire={forHire} />
 				}
-				<Article wrapper={model === 'project' ? 'normal' : 'narrow'} dangerouslySetInnerHTML={{ __html: post.html }} />
-			</Wrapper>
+			</div>
 		)
 	}
 }
@@ -53,6 +60,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
 				title
+				forHire
 				siteUrl
       }
     }

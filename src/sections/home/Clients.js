@@ -16,7 +16,6 @@ import { flex } from 'styled-system/dist/styles';
 
 const Container = styled.div`
 	background: ${props => props.theme.name === 'dark' ? props.theme.colors.dark[0] : props.theme.colors.light[0]};
-  border-bottom: ${theme('colors.dark.0')} solid 1px;
 	padding: 2em 0;
 	position: relative;
 `

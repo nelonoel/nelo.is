@@ -13,6 +13,7 @@ import Wrapper from '../../components/Wrapper'
 
 const Container = styled.div`
   border-bottom: ${theme('colors.dark.1')} solid 1px;
+  border-top: ${theme('colors.dark.1')} solid 1px;
 	padding: 2em 0;
 	position: relative;
 `
