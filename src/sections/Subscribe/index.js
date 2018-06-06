@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import { theme, boxShadow } from 'styled-system'
-import { Check } from 'react-feather'
+import { Zap } from 'react-feather'
 import get from 'lodash/get'
 import { darken } from 'polished'
 
@@ -76,7 +76,7 @@ export default class ForHire extends PureComponent {
 						</Flex>
 						<Flex px={[0, 0, 2]} py={2} mt={['0.775em', '0.775em', '0.775em', '1.55em']} height={['2.9em', '2.9em', '2.9em', 'auto']} width={['100%', '100%', '100%', 'auto']}>
 							<SubmitButton secondary>
-								<Check />
+								<Zap />
 								Subscribe
 							</SubmitButton>
 						</Flex>

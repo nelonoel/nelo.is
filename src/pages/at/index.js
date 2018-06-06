@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import { theme } from 'styled-system'
-import { Check } from 'react-feather'
+import { Send } from 'react-feather'
 
 import SEO from '../../components/SEO'
 import Wrapper from '../../components/Wrapper'
@@ -59,7 +59,7 @@ class ContactPage extends PureComponent {
 							<TextArea name="message" required />
 						</Field>
 						<Field>
-							<Button wide secondary><Check /> Send message</Button>
+							<Button wide secondary><Send /> Send message</Button>
 						</Field>
 						<input type="hidden" name="form-name" value="contact" />
 					</Form>
