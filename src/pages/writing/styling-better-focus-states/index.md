@@ -1,5 +1,5 @@
 ---
-cover: ./cover.png
+cover: ./cover.jpg
 title: Styling better focus states
 subtitle: Keyboard-only focus using :focus-visible
 date: "2018-05-04"
