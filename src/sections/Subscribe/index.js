@@ -66,16 +66,16 @@ export default class ForHire extends PureComponent {
 					<form action="https://nelo.us7.list-manage.com/subscribe/post?u=5cb918082a39aef5a646dcf3a&amp;id=6ced124e32" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
 						<Flex flexWrap="wrap" justifyContent="center" mt={4}>
 							<Flex flexWrap="wrap" flex={['auto', 'auto', 'auto', 1]} width={['100%', '100%', 'auto']}>
-								<Flex flexDirection="column" px={[0, 0, 2]} py={2} width={['100%', '100%', '35%']}>
+								<Flex flexDirection="column" py={2} mr={[0, 0, 3]} width={['100%', '100%', '35%']}>
 									<Label htmlFor="FNAME">First Name</Label>
 									<Input name="FNAME" id="FNAME" required />
 								</Flex>
-								<Flex flexDirection="column" flex="1" px={[0, 0, 2]} py={2} width={['100%', '100%', 'auto']}>
+								<Flex flexDirection="column" flex="1" py={2} mr={[0, 0, 0, 3]} width={['100%', '100%', 'auto']}>
 									<Label htmlFor="EMAIL">E-mail</Label>
 									<Input name="EMAIL" id="EMAIL" type="email" required />
 								</Flex>
 							</Flex>
-							<Flex px={[0, 0, 2]} py={2} mt={['0.775em', '0.775em', '0.775em', '1.55em']} height={['2.9em', '2.9em', '2.9em', 'auto']} width={['100%', '100%', '100%', 'auto']}>
+							<Flex py={2} mt={['0.775em', '0.775em', '0.775em', '1.55em']} height={['2.9em', '2.9em', '2.9em', 'auto']} width={['100%', '100%', '100%', 'auto']}>
 								<input type="hidden" name="b_5cb918082a39aef5a646dcf3a_6ced124e32" tabindex="-1" value="" />
 								<SubmitButton type="submit" value="Subscribe" name="subscribe" secondary>
 									<Zap />
