@@ -66,7 +66,7 @@ The [polyfill](https://github.com/WICG/focus-visible) adds a `.focus-visible` cl
 
 /* Optional: Customize .focus-visible */
 .focus-visible {
-  outline-color: lightgreen;
+  outline: lightgreen solid 2px;
 }
 ```
 
