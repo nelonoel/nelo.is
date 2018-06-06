@@ -6,8 +6,10 @@ import {
 	minWidth
 } from 'styled-system'
 import { lighten, rgba } from 'polished'
+import { body } from '../../styles/typography'
 
 const Button = styled.button`
+	${body}
   align-items: center;
   background: ${props =>
 		props.transparent
