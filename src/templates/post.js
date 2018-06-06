@@ -17,7 +17,7 @@ class PostTemplate extends PureComponent {
 		const siteUrl = get(this.props, 'data.site.siteMetadata.siteUrl')
 		const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 		const forHire = get(this, 'props.data.site.siteMetadata.forHire')
-		const image = siteUrl + cover.src
+		const image = siteUrl + get(post, 'frontmatter.ogImage.childImageSharp.resolutions.src')
 		const { model, title, subtitle, category, date, description, type, month, client, roles, stack } = post.frontmatter
 
 		const meta = {
@@ -83,10 +83,17 @@ export const pageQuery = graphql`
         subtitle
         cover {
           childImageSharp {
-						sizes(duotone: { highlight: "#f5f8fa", shadow: "#293742" }) {
+						sizes(duotone: { highlight: "#f5f8fa", shadow: "#293742" }, toFormat: JPG, jpegProgressive: true) {
 							...GatsbyImageSharpSizes_withWebp
 						}
           }
+				}
+				ogImage: cover {
+					childImageSharp {
+						resolutions(width: 1200, height: 630, toFormat: JPG, jpegProgressive: true) {
+							src
+						}
+					}
 				}
         model
         category
