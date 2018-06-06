@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import get from 'lodash/get'
 
 import ForHire from '../sections/ForHire'
+import Subscribe from '../sections/Subscribe'
 import SEO from '../components/SEO'
 import Banner, { Type, Title, Subtitle } from '../components/Banner'
 import Article from '../components/Article'
@@ -45,8 +46,9 @@ class PostTemplate extends PureComponent {
 					}
 					<Article wrapper={model === 'project' ? 'normal' : 'narrow'} dangerouslySetInnerHTML={{ __html: post.html }} />
 				</Wrapper>
-				{model === 'project' &&
-					<ForHire forHire={forHire} />
+				{
+					model === 'project' ? <ForHire forHire={forHire} />
+						: <Subscribe />
 				}
 			</div>
 		)
