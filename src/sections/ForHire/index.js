@@ -32,8 +32,8 @@ export default class ForHire extends PureComponent {
 									<LogoIcon forHire={forHire} />
 								</Box>
 								<Box textAlign={['center', 'center', 'left']} mt={[3, 3, 0]} pl={[0, 0, '1.5rem']} pr={[0, 0, '0.5rem']}>
-									<Text fontWeight="bold" fontSize="2" color="contrast.4" lineHeight={1}>I am {!forHire && 'un'}available for new work.</Text>
-									<Text color="contrast.3" lineHeight={1} mt={[2, 1, 0]}>{forHire ? 'I' : 'Still i'}nterested? Feel free to reach out!</Text>
+									<Text fontWeight="bold" fontSize="2" color="contrast.4" lineHeight="2">I am {!forHire && 'un'}available for new work.</Text>
+									<Text color="contrast.3" lineHeight="1" mt={[2, 1, 0]}>{forHire ? 'I' : 'Still i'}nterested? Feel free to reach out!</Text>
 								</Box>
 							</Flex>
 						</Box>
@@ -41,11 +41,11 @@ export default class ForHire extends PureComponent {
 							<ButtonLink m="0.25em" minWidth="10.25em" to="/making" inverted>
 								<Folder />
 								View works
-								</ButtonLink>
+							</ButtonLink>
 							<ButtonLink m="0.25em" minWidth="10.25em" to="/at">
 								<Mail />
 								Get in touch
-								</ButtonLink>
+							</ButtonLink>
 						</Box>
 					</Flex>
 				</Wrapper>
