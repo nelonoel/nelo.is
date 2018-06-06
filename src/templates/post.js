@@ -1,10 +1,11 @@
 import React, { PureComponent } from 'react'
 import get from 'lodash/get'
+import { Calendar, Clock, Tag } from 'react-feather'
 
 import ForHire from '../sections/ForHire'
 import Subscribe from '../sections/Subscribe'
 import SEO from '../components/SEO'
-import Banner, { Type, Title, Subtitle } from '../components/Banner'
+import Banner, { Type, Title, Subtitle, Meta } from '../components/Banner'
 import Article from '../components/Article'
 import ProjectDetails from '../components/Article/ProjectDetails'
 import Wrapper from '../components/Wrapper'
@@ -17,7 +18,7 @@ class PostTemplate extends PureComponent {
 		const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 		const forHire = get(this, 'props.data.site.siteMetadata.forHire')
 		const image = siteUrl + cover.src
-		const { model, title, subtitle, description, type, month, client, roles, stack } = post.frontmatter
+		const { model, title, subtitle, category, date, description, type, month, client, roles, stack } = post.frontmatter
 
 		const meta = {
 			image: image,
@@ -34,6 +35,13 @@ class PostTemplate extends PureComponent {
 						<Type>{type}</Type>
 						<Title>{title}</Title>
 						<Subtitle>{subtitle}</Subtitle>
+						{model !== 'project' &&
+							<Meta>
+								<div><Tag /> {category}</div>
+								<div><Clock />{post.timeToRead} min{post.timeToRead > 1 ? 's' : ''}</div>
+								<div><Calendar />{date}</div>
+							</Meta>
+						}
 					</Banner>
 					{model === 'project' &&
 						<ProjectDetails
@@ -69,6 +77,7 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
 			html
 			excerpt
+			timeToRead
       frontmatter {
         title
         subtitle
@@ -82,7 +91,7 @@ export const pageQuery = graphql`
         model
         category
         type
-				date(formatString: "MMMM DD, YYYY")
+				date(formatString: "MMMM DD YYYY")
 				month: date(formatString: "MMMM YYYY")
 
 				client

@@ -101,6 +101,33 @@ export const Description = Subtitle.extend`
   max-width: ${theme('wrapper.normal')};
 `.withComponent('p')
 
+export const Meta = Subtitle.extend`
+	color: ${theme('colors.contrast.2')};
+	display: flex;
+	font-size: 0.75em;
+	font-weight: bold;
+  letter-spacing: 0.0612em;
+	justify-content: center;
+	text-transform: uppercase;
+  max-width: ${theme('wrapper.normal')};
+
+	& > div:not(:last-child) {
+		margin-right: 0.75em;
+
+		&:after {
+			content: '•';
+			display: inline-block;
+			margin-left: 0.75em;
+			opacity: 0.25;
+		}
+	}
+
+	& svg {
+		height: 1em;
+		margin: 0 0.5em -0.125em 0;
+	}
+`.withComponent('div')
+
 class Banner extends PureComponent {
 	render() {
 		const { children, cover } = this.props
