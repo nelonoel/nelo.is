@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import get from 'lodash/get'
 
-import ForHire from '../sections/home/ForHire'
+import ForHire from '../sections/ForHire'
 import SEO from '../components/SEO'
 import Banner, { Type, Title, Subtitle } from '../components/Banner'
 import Article from '../components/Article'

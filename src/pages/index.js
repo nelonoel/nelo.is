@@ -2,13 +2,13 @@ import React, { PureComponent } from 'react'
 import styled, { keyframes } from 'styled-components'
 import get from 'lodash/get'
 
-import Banner from '../sections/home/Banner'
-import LatestPost from '../sections/home/LatestPost'
-import Services from '../sections/home/Services'
-import FeaturedProject from '../sections/home/FeaturedProject'
-import RecentWork from '../sections/home/RecentWork'
-import Clients from '../sections/home/Clients'
-import ForHire from '../sections/home/ForHire'
+import Banner from '../sections/Home/Banner'
+import LatestPost from '../sections/Home/LatestPost'
+import Services from '../sections/Home/Services'
+import FeaturedProject from '../sections/Home/FeaturedProject'
+import RecentWork from '../sections/Home/RecentWork'
+import Clients from '../sections/Home/Clients'
+import ForHire from '../sections/ForHire'
 
 class Home extends PureComponent {
 	render() {
