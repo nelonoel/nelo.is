@@ -7,7 +7,7 @@ import Twemoji from 'react-twemoji'
 
 import { cover } from '../../styles/mixins'
 import Subheading from '../Subheading'
-import Wrapper from '../Wrapper'
+import Flex from '../Flex'
 
 export const Container = styled.div`
 	align-items: center;
@@ -140,9 +140,9 @@ class Banner extends PureComponent {
 		return (
 			<Container>
 				{cover && <Cover sizes={cover} outerWrapperClassName="cover" alt="Cover Image" title="Cover Image" />}
-				<Wrapper>
+				<Flex flex="1" flexDirection="column">
 					{children}
-				</Wrapper>
+				</Flex>
 			</Container>
 		)
 	}
