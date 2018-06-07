@@ -402,9 +402,9 @@ const Article = styled.article`
 		${monospace}
     margin: 0 2px;
     padding: 0 5px;
-    white-space: nowrap;
     background: ${props => darken(0.075, props.theme.colors.base)};
     color: ${theme('colors.text')};
+		word-break: break-word;
   }
 
   pre code {
