@@ -110,15 +110,20 @@ export const Meta = Subtitle.extend`
 	justify-content: center;
 	text-transform: uppercase;
   max-width: ${theme('wrapper.normal')};
+	overflow: hidden;
 
-	& > div:not(:last-child) {
-		margin-right: 0.75em;
+	& > div {
+		white-space: nowrap;
 
-		&:after {
-			content: '•';
-			display: inline-block;
-			margin-left: 0.75em;
-			opacity: 0.25;
+		&:not(:last-child) {
+			margin-right: 0.75em;
+
+			&:after {
+				content: '•';
+				display: inline-block;
+				margin-left: 0.75em;
+				opacity: 0.25;
+			}
 		}
 	}
 

@@ -71,7 +71,7 @@ export const pageQuery = graphql`
             model
             category
             type
-            date(formatString: "MMM DD, YYYY")
+            date(formatString: "MMM D, YYYY")
           }
         }
       }

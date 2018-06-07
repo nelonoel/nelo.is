@@ -9,6 +9,7 @@ import Banner, { Type, Title, Subtitle, Meta } from '../components/Banner'
 import Article from '../components/Article'
 import ProjectDetails from '../components/Article/ProjectDetails'
 import Wrapper from '../components/Wrapper'
+import Text from '../components/Text'
 
 class PostTemplate extends PureComponent {
 	render() {
@@ -37,9 +38,9 @@ class PostTemplate extends PureComponent {
 						<Subtitle>{subtitle}</Subtitle>
 						{model !== 'project' &&
 							<Meta>
-								<div><Tag /> {category}</div>
-								<div><Clock />{post.timeToRead} min{post.timeToRead > 1 ? 's' : ''}</div>
-								<div><Calendar />{date}</div>
+								<Text display={['none', 'none', 'inline']}><Tag /> {category}</Text>
+								<Text><Clock />{post.timeToRead} m<Text display={['none', 'inline']}>in{post.timeToRead > 1 ? 's' : ''}</Text></Text>
+								<Text><Calendar />{date.substr(0, date.length - 6)}<Text display={['none', 'inline']}>{date.substr(-6)}</Text></Text>
 							</Meta>
 						}
 					</Banner>
@@ -98,7 +99,7 @@ export const pageQuery = graphql`
         model
         category
         type
-				date(formatString: "MMMM DD YYYY")
+				date(formatString: "MMM D, YYYY")
 				month: date(formatString: "MMMM YYYY")
 
 				client
