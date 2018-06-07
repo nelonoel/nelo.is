@@ -8,17 +8,20 @@ import Img from 'gatsby-image'
 import Subheading from '../Subheading'
 
 const card = {
-	height: 15,
+  height: 15,
 }
 
-const Cover = styled(Img) `
+const Cover = styled(Img)`
   height: 100%;
 `
 
 const Placeholder = styled.div`
-	background: ${props => props.theme.name === 'dark' ? props.theme.colors.light[1] : props.theme.colors.base};
-	height: 100%;
-	width: 100%;
+  background: ${props =>
+    props.theme.name === 'dark'
+      ? props.theme.colors.light[1]
+      : props.theme.colors.base};
+  height: 100%;
+  width: 100%;
 `
 
 const Content = styled.div`
@@ -30,9 +33,9 @@ const Type = Subheading.extend`
   color: ${theme('colors.contrast.4')};
   display: flex;
   font-size: 0.75em;
-	line-height: 1;
+  line-height: 1;
   letter-spacing: 0.0612em;
-	margin: 0;
+  margin: 0;
 
   & > svg {
     height: 1.15em;
@@ -56,9 +59,9 @@ const Subtitle = styled.h2`
 `
 
 const Date = styled.div`
-	color: ${theme('colors.contrast.1')};
+  color: ${theme('colors.contrast.1')};
   font-size: 0.75em;
-	font-weight: bold;
+  font-weight: bold;
   letter-spacing: 0.0612em;
   text-transform: uppercase;
   margin: 0.45em 0 -0.45em;
@@ -67,27 +70,37 @@ const Date = styled.div`
 const Category = Subheading.extend`
   align-self: stretch;
   box-sizing: border-box;
-	border: ${props => props.theme.name === 'dark' ? props.theme.colors.light[0] : props.theme.colors.dark[0]} solid 0;
-  color: ${props => props.theme.name === 'dark' ? props.theme.colors.dark[1] : props.theme.colors.dark[4]};
+  border: ${props =>
+      props.theme.name === 'dark'
+        ? props.theme.colors.light[0]
+        : props.theme.colors.dark[0]}
+    solid 0;
+  color: ${props =>
+    props.theme.name === 'dark'
+      ? props.theme.colors.dark[1]
+      : props.theme.colors.dark[4]};
   font-size: 0.75em;
-	height: 100%;
-	line-height: 1;
-	margin: 0;
+  height: 100%;
+  line-height: 1;
+  margin: 0;
   padding: 0.7em;
   text-align: center;
   width: 100%;
-	writing-mode: lr;
+  writing-mode: lr;
 
-	@media(max-width: ${theme('breakpoints.1')}) {
-		padding: 0.5em;
-	}
+  @media (max-width: ${theme('breakpoints.1')}) {
+    padding: 0.5em;
+  }
 `
 
 const Item = styled(Link).attrs({
-	to: props => props.slug,
-}) `
+  to: props => props.slug,
+})`
   align-items: center;
-  background: ${props => props.theme.name === 'dark' ? props.theme.colors.contrast[0] : props.theme.colors.white};
+  background: ${props =>
+    props.theme.name === 'dark'
+      ? props.theme.colors.contrast[0]
+      : props.theme.colors.white};
   border-radius: ${theme('radii.2')};
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.01),
 							0 1px 4px rgba(0, 0, 0, 0.09);
@@ -107,13 +120,16 @@ const Item = styled(Link).attrs({
   						transform 0.2s ease;
 
 	& > .cover {
-		background-color: ${props => props.theme.name === 'dark' ? props.theme.colors.light[1] : props.theme.colors.base};
+		background-color: ${props =>
+      props.theme.name === 'dark'
+        ? props.theme.colors.light[1]
+        : props.theme.colors.base};
 		height: 100%;
 	}
 
 	& > ${Category} {
-		${props => props.half ? 'border-top-width: 1px;' : 'border-left-width: 1px;'}
-		writing-mode: ${props => props.half ? 'lr' : 'tb-rl'};
+		${props => (props.half ? 'border-top-width: 1px;' : 'border-left-width: 1px;')}
+		writing-mode: ${props => (props.half ? 'lr' : 'tb-rl')};
 	}
 
 	@media (min-width: ${theme('breakpoints.1')}) {
@@ -133,12 +149,15 @@ const Item = styled(Link).attrs({
 		}
 	}
 
-	${props => props.half ? `
+	${props =>
+    props.half
+      ? `
 		& > .cover {
 			height: 100%;
 			overflow: hidden;
 		}
-	` : null}
+	`
+      : null}
 
   @media (max-width: ${theme('breakpoints.1')}) {
     grid-template-columns: 1fr;
@@ -158,33 +177,41 @@ const Item = styled(Link).attrs({
 `
 
 class Card extends PureComponent {
-	render() {
-		const {
-			id,
-			half,
-			slug,
-			cover,
-			title,
-			subtitle,
-			type,
-			date,
-			category,
-		} = this.props
+  render() {
+    const {
+      id,
+      half,
+      slug,
+      cover,
+      title,
+      subtitle,
+      type,
+      date,
+      category,
+    } = this.props
 
-
-		return (
-			<Item slug={slug} half={half}>
-				{cover ? <Cover sizes={cover} alt={title} title={title} outerWrapperClassName="cover" /> : <Placeholder />}
-				<Content>
-					{type && <Type>{type}</Type>}
-					<Title>{title}</Title>
-					{subtitle && <Subtitle>{subtitle}</Subtitle>}
-					{date && <Date>{date}</Date>}
-				</Content>
-				{category && <Category>{category}</Category>}
-			</Item>
-		)
-	}
+    return (
+      <Item slug={slug} half={half}>
+        {cover ? (
+          <Cover
+            sizes={cover}
+            alt={title}
+            title={title}
+            outerWrapperClassName="cover"
+          />
+        ) : (
+          <Placeholder />
+        )}
+        <Content>
+          {type && <Type>{type}</Type>}
+          <Title>{title}</Title>
+          {subtitle && <Subtitle>{subtitle}</Subtitle>}
+          {date && <Date>{date}</Date>}
+        </Content>
+        {category && <Category>{category}</Category>}
+      </Item>
+    )
+  }
 }
 
 export default Card

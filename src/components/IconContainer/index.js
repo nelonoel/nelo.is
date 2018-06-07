@@ -7,13 +7,13 @@ const IconContainer = Box.extend`
   justify-content: center;
   background: ${theme('colors.contrast.0')};
   color: ${theme('colors.contrast.3')};
-	border-radius: ${theme('radii.4')};
-	display: inline-flex;
-	font-size: 1em;
+  border-radius: ${theme('radii.4')};
+  display: inline-flex;
+  font-size: 1em;
 
-	& > svg {
-		width: 60%;
-	}
+  & > svg {
+    width: 60%;
+  }
 
   & > img {
     width: 60%;

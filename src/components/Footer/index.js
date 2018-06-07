@@ -1,7 +1,14 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import { theme } from 'styled-system'
-import { Inbox, Smartphone, Github, Twitter, Instagram, FileText } from 'react-feather'
+import {
+  Inbox,
+  Smartphone,
+  Github,
+  Twitter,
+  Instagram,
+  FileText,
+} from 'react-feather'
 import { darken, transparentize } from 'polished'
 
 import { subheading } from '../../styles/typography'
@@ -27,9 +34,9 @@ const Box = styled.div`
 `
 
 const FooterLink = ButtonLink.extend.attrs({
-	transparent: true,
-	sharp: true
-}) `
+  transparent: true,
+  sharp: true,
+})`
 	color: ${theme('colors.contrast.2')};
 	display: flex;
 	font-size: 0.85em;
@@ -57,33 +64,33 @@ const LogoBox = Box.extend`
   grid-column: span 3;
 
   & > h1 {
-		margin-bottom: 0.125em;
-		z-index: 0;
+    margin-bottom: 0.125em;
+    z-index: 0;
 
-		& > a {
-			color: ${theme('colors.contrast.2')};
+    & > a {
+      color: ${theme('colors.contrast.2')};
 
-			&.focus-visible {
-				text-shadow: -2px 2px 0 ${theme('colors.contrast.0')};
-			}
-		}
-	}
+      &.focus-visible {
+        text-shadow: -2px 2px 0 ${theme('colors.contrast.0')};
+      }
+    }
+  }
 
-	${FooterLink} {
-		margin-top: -0.6em;
-	}
+  ${FooterLink} {
+    margin-top: -0.6em;
+  }
 
   ${Dot} {
-		&:before {
-			color: ${theme('colors.contrast.2')};
-		}
+    &:before {
+      color: ${theme('colors.contrast.2')};
+    }
   }
 
   @media (max-width: ${theme('breakpoints.1')}) {
     grid-column: span 12;
-		grid-row: 3;
+    grid-row: 3;
     margin-top: 0.75em;
-		padding-top: 0.75em;
+    padding-top: 0.75em;
   }
 `
 
@@ -91,11 +98,11 @@ const LatestArticles = Box.extend`
   grid-column: span 6;
 
   @media (max-width: ${theme('breakpoints.1')}) {
-		grid-column: span 7;
+    grid-column: span 7;
   }
 
   @media (max-width: ${theme('breakpoints.0')}) {
-		grid-column: span 12;
+    grid-column: span 12;
   }
 `
 
@@ -103,70 +110,70 @@ const Links = Box.extend`
   grid-column: span 3;
 
   @media (max-width: ${theme('breakpoints.1')}) {
-		grid-column: span 5;
-		margin-left: 0.75em;
+    grid-column: span 5;
+    margin-left: 0.75em;
   }
 
   @media (max-width: ${theme('breakpoints.0')}) {
-		grid-column: span 12;
-		margin-left: 0;
-		margin-top: 1em;
+    grid-column: span 12;
+    margin-left: 0;
+    margin-top: 1em;
   }
 `
 
 const ExternalLink = FooterLink.withComponent('a')
 
 class Footer extends PureComponent {
-	render() {
-		const posts = this.props.recent
-		const { email } = this.props
+  render() {
+    const posts = this.props.recent
+    const { email } = this.props
 
-		return (
-			<FooterContainer px="1.5em" py={['2rem', '2rem', '3rem']}>
-				<LogoBox>
-					<Logo />
-					<FooterLink to="/">www.nelo.is</FooterLink>
-				</LogoBox>
-				<LatestArticles>
-					<h5>Latest</h5>
-					{posts.map(({ node }) => (
-						<FooterLink key={node.fields.slug} to={node.fields.slug}>
-							{node.frontmatter.title}
-						</FooterLink>
-					))}
-				</LatestArticles>
-				<Links>
-					<h5>Connect</h5>
-					<ExternalLink href={`mailto:${email}`}>
-						<Inbox /> E-mail
+    return (
+      <FooterContainer px="1.5em" py={['2rem', '2rem', '3rem']}>
+        <LogoBox>
+          <Logo />
+          <FooterLink to="/">www.nelo.is</FooterLink>
+        </LogoBox>
+        <LatestArticles>
+          <h5>Latest</h5>
+          {posts.map(({ node }) => (
+            <FooterLink key={node.fields.slug} to={node.fields.slug}>
+              {node.frontmatter.title}
+            </FooterLink>
+          ))}
+        </LatestArticles>
+        <Links>
+          <h5>Connect</h5>
+          <ExternalLink href={`mailto:${email}`}>
+            <Inbox /> E-mail
           </ExternalLink>
-					<ExternalLink href="tel:+639168375550">
-						<Smartphone /> Mobile
+          <ExternalLink href="tel:+639168375550">
+            <Smartphone /> Mobile
           </ExternalLink>
-					<FooterLink to="//github.com/nelonoel" target="_blank" rel="nofollow">
-						<Github /> Github
+          <FooterLink to="//github.com/nelonoel" target="_blank" rel="nofollow">
+            <Github /> Github
           </FooterLink>
-					<FooterLink
-						to="//twitter.com/nelonoel"
-						target="_blank"
-						rel="nofollow"
-					>
-						<Twitter /> Twitter
+          <FooterLink
+            to="//twitter.com/nelonoel"
+            target="_blank"
+            rel="nofollow"
+          >
+            <Twitter /> Twitter
           </FooterLink>
-					<FooterLink
-						to="//instagram.com/nelonoel"
-						target="_blank"
-						rel="nofollow"
-					>
-						<Instagram /> Instagram
+          <FooterLink
+            to="//instagram.com/nelonoel"
+            target="_blank"
+            rel="nofollow"
+          >
+            <Instagram /> Instagram
           </FooterLink>
-					<FooterLink to="/resume.pdf" target="_blank" rel="nofollow">
-						<FileText /> Resumé
+          <FooterLink to="/resume.pdf" target="_blank" rel="nofollow">
+            <FileText /> Resumé
           </FooterLink>
-				</Links>
-			</FooterContainer>
-		)
-	}
+        </Links>
+      </FooterContainer>
+    )
+  }
 }
 
 export default Footer

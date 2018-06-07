@@ -18,7 +18,8 @@ stack:
 ---
 
 ###### The Problem
-Having access to the global talent pool, X-Team receives hundreds of applications from aspiring developers per day. The company needs a way to weed out *unserious* applicants.
+
+Having access to the global talent pool, X-Team receives hundreds of applications from aspiring developers per day. The company needs a way to weed out _unserious_ applicants.
 
 <div class="ui-screenshot">
 	<img alt="Landing Page" src="./welcome.png" title="Landing Page" />

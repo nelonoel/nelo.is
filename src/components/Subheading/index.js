@@ -15,7 +15,7 @@ const Subheading = styled.h6`
 `
 
 Subheading.defaultProps = {
-	textAlign: 'inherit'
+  textAlign: 'inherit',
 }
 
 export default Subheading

@@ -17,6 +17,7 @@ stack:
 ---
 
 ##### Default
+
 <div class="ui-screenshot">
 	<img alt="Landing Page" src="./default-dark-desktop-landing.png" title="Landing Page" />
 </div>
@@ -38,6 +39,7 @@ stack:
 </div>
 
 ##### Applesque (2015)
+
 <div class="ui-screenshot">
 	<img alt="Landing Page" src="./applesque-light-desktop-landing.png" title="Landing Page" />
 </div>
@@ -59,6 +61,7 @@ stack:
 </div>
 
 ##### Casual
+
 <div class="ui-screenshot">
 	<img alt="Landing Page" src="./casual-dark-desktop-landing.png" title="Landing Page" />
 </div>
@@ -80,6 +83,7 @@ stack:
 </div>
 
 ##### Material
+
 <div class="ui-screenshot">
 	<img alt="Landing Page" src="./material-dark-desktop-landing.png" title="Landing Page" />
 </div>

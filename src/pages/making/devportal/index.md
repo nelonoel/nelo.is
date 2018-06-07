@@ -24,7 +24,6 @@ stack:
 	Voyager Innovation's DevPortal landing page.
 </figcaption>
 
-
 <div class="ui-screenshot">
 	<img alt="Documentation" src="./docs.png" title="Documentation" />
 </div>

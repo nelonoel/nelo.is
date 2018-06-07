@@ -39,18 +39,19 @@ export const monospace = `
 `
 
 export const link = css`
-	border-bottom: ${theme('colors.contrast.0')} solid 2px;
-	color: inherit;
-	text-decoration: none;
+  border-bottom: ${theme('colors.contrast.0')} solid 2px;
+  color: inherit;
+  text-decoration: none;
 
-	&:hover, &.focus-visible {
-		border-bottom-color: ${theme('colors.primary')};
-		transition: border-color .1s ease;
-	}
+  &:hover,
+  &.focus-visible {
+    border-bottom-color: ${theme('colors.primary')};
+    transition: border-color 0.1s ease;
+  }
 
-	&:active {
-		border-bottom-color: ${theme('colors.dark.2')};
-	}
+  &:active {
+    border-bottom-color: ${theme('colors.dark.2')};
+  }
 `
 
 export const fontFaces = `

@@ -1,10 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
-import {
-	space,
-	minWidth
-} from 'styled-system'
+import { space, minWidth } from 'styled-system'
 import { lighten, rgba } from 'polished'
 import { body } from '../../styles/typography'
 
@@ -12,31 +9,37 @@ const Button = styled.button`
 	${body}
   align-items: center;
   background: ${props =>
-		props.transparent
-			? 'none'
-			: props.inverted
-				? props.theme.colors.white
-				: props.secondary ? props.theme.colors.secondary : props.theme.colors.primary};
+    props.transparent
+      ? 'none'
+      : props.inverted
+        ? props.theme.colors.white
+        : props.secondary
+          ? props.theme.colors.secondary
+          : props.theme.colors.primary};
   border: none;
-  border-radius: ${props => props.sharp ? props.theme.radii[0] : props.theme.radii[2]};
+  border-radius: ${props =>
+    props.sharp ? props.theme.radii[0] : props.theme.radii[2]};
   box-shadow: ${props =>
-		props.transparent ? 'none' :
-			`0 0 0 1px rgba(0, 0, 0, 0.01),
-			 0 1px 3px rgba(0, 0, 0, 0.09);`
-	};
+    props.transparent
+      ? 'none'
+      : `0 0 0 1px rgba(0, 0, 0, 0.01),
+			 0 1px 3px rgba(0, 0, 0, 0.09);`};
   box-sizing: border-box;
   color: ${props =>
-		props.transparent || props.inverted
-			? props.secondary ? props.theme.colors.secondary : props.theme.colors.primary
-			: props.theme.colors.white};
+    props.transparent || props.inverted
+      ? props.secondary
+        ? props.theme.colors.secondary
+        : props.theme.colors.primary
+      : props.theme.colors.white};
   cursor: pointer;
   display: inline-flex;
   font-size: 0.95em;
 	font-weight: normal;
 	justify-content: center;
-  line-height: ${props => props.wide ? 3 : 2.4};
-	margin-right: ${props => props.wide ? null : '0.5em'};
-  padding: ${props => (props.icon ? '1em' : props.wide ? '0 1.25em' : '0 1.25em')};
+  line-height: ${props => (props.wide ? 3 : 2.4)};
+	margin-right: ${props => (props.wide ? null : '0.5em')};
+  padding: ${props =>
+    props.icon ? '1em' : props.wide ? '0 1.25em' : '0 1.25em'};
 	text-decoration: none;
 	transform: translateY(0);
   transition: all 0.2s ease;
@@ -55,25 +58,36 @@ const Button = styled.button`
   }
 
 	&.focus-visible {
-		${props => props.transparent
-		? props.theme.name === 'dark'
-			? `background: ${rgba(props.theme.colors.dark[0], 0.35)};`
-			: `background: ${rgba(props.theme.colors.dark[4], 0.35)};`
-		: null}
-		box-shadow: 0 0 0 2px ${props => props.transparent ? 'none' : props.secondary ? rgba(lighten(0.15, props.theme.colors.secondary), 0.95) : rgba(lighten(0.15, props.theme.colors.primary), 0.95)};
+		${props =>
+      props.transparent
+        ? props.theme.name === 'dark'
+          ? `background: ${rgba(props.theme.colors.dark[0], 0.35)};`
+          : `background: ${rgba(props.theme.colors.dark[4], 0.35)};`
+        : null}
+		box-shadow: 0 0 0 2px ${props =>
+      props.transparent
+        ? 'none'
+        : props.secondary
+          ? rgba(lighten(0.15, props.theme.colors.secondary), 0.95)
+          : rgba(lighten(0.15, props.theme.colors.primary), 0.95)};
 	}
 
   &:hover {
-    ${props => !props.transparent ?
-		`box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.01),
+    ${props =>
+      !props.transparent
+        ? `box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.01),
 								 0 2px 6px rgba(0, 0, 0, 0.09);`
-		: null};
-		${props => props.transparent ? `color: ${props.theme.colors.text};` : null}
-    transform: ${props => (props.transparent ? null : props.wide ? 'translateY(-2px)' : 'translateY(-1px)')};
+        : null};
+		${props => (props.transparent ? `color: ${props.theme.colors.text};` : null)}
+    transform: ${props =>
+      props.transparent
+        ? null
+        : props.wide ? 'translateY(-2px)' : 'translateY(-1px)'};
 	}
 
   &:active {
-		${props => !props.transparent ? 'box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.01);' : null}
+		${props =>
+      !props.transparent ? 'box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.01);' : null}
     transform: none;
   }
 `

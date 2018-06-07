@@ -11,28 +11,37 @@ import Clients from '../sections/Home/Clients'
 import ForHire from '../sections/ForHire'
 
 class Home extends PureComponent {
-	render() {
-		const posts = get(this, 'props.data.recentWork.edges')
-		const latestPost = get(this, 'props.data.latestPost.edges[0].node')
-		const forHire = get(this, 'props.data.site.siteMetadata.forHire')
-		const landingCover = get(this, 'props.data.landingCover.childImageSharp.resolutions.src')
-		const screens = {
-			desktop: get(this, 'props.data.featuredDesktopScreen.childImageSharp.sizes'),
-			mobile: get(this, 'props.data.featuredMobileScreen.childImageSharp.sizes')
-		}
+  render() {
+    const posts = get(this, 'props.data.recentWork.edges')
+    const latestPost = get(this, 'props.data.latestPost.edges[0].node')
+    const forHire = get(this, 'props.data.site.siteMetadata.forHire')
+    const landingCover = get(
+      this,
+      'props.data.landingCover.childImageSharp.resolutions.src'
+    )
+    const screens = {
+      desktop: get(
+        this,
+        'props.data.featuredDesktopScreen.childImageSharp.sizes'
+      ),
+      mobile: get(
+        this,
+        'props.data.featuredMobileScreen.childImageSharp.sizes'
+      ),
+    }
 
-		return (
-			<div>
-				<Banner cover={landingCover} />
-				<LatestPost post={latestPost} />
-				<Services />
-				<FeaturedProject screens={screens} />
-				<RecentWork posts={posts} />
-				<Clients />
-				<ForHire forHire={forHire} />
-			</div>
-		)
-	}
+    return (
+      <div>
+        <Banner cover={landingCover} />
+        <LatestPost post={latestPost} />
+        <Services />
+        <FeaturedProject screens={screens} />
+        <RecentWork posts={posts} />
+        <Clients />
+        <ForHire forHire={forHire} />
+      </div>
+    )
+  }
 }
 
 export default Home
@@ -41,13 +50,19 @@ export const pageQuery = graphql`
   query HomeQuery {
     site {
       siteMetadata {
-				forHire
+        forHire
       }
-		}
-		recentWork: allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC },
-			filter: { frontmatter: { title: { ne: "Phaxio" },  model: { eq: "project" }, draft: { ne: true } } }
-			limit: 7
+    }
+    recentWork: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: {
+        frontmatter: {
+          title: { ne: "Phaxio" }
+          model: { eq: "project" }
+          draft: { ne: true }
+        }
+      }
+      limit: 7
     ) {
       edges {
         node {
@@ -59,9 +74,9 @@ export const pageQuery = graphql`
             subtitle
             cover {
               childImageSharp {
-								sizes (traceSVG: { background: "#ced9e0", color: "#738694" }) {
-									...GatsbyImageSharpSizes_withWebp_tracedSVG
-								}
+                sizes(traceSVG: { background: "#ced9e0", color: "#738694" }) {
+                  ...GatsbyImageSharpSizes_withWebp_tracedSVG
+                }
               }
             }
             model
@@ -71,15 +86,15 @@ export const pageQuery = graphql`
           }
         }
       }
-		}
+    }
     latestPost: allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC },
+      sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { model: { ne: "project" }, draft: { ne: true } } }
       limit: 1
     ) {
       edges {
         node {
-					id
+          id
           fields {
             slug
           }
@@ -89,22 +104,26 @@ export const pageQuery = graphql`
           }
         }
       }
-		}
-		landingCover: file(relativePath: { eq: "img/landing-cover.jpg" }) {
+    }
+    landingCover: file(relativePath: { eq: "img/landing-cover.jpg" }) {
       childImageSharp {
         resolutions {
           ...GatsbyImageSharpResolutions_withWebp
         }
       }
-		}
-		featuredDesktopScreen: file(relativePath: { eq: "img/featured/desktop.png" }) {
+    }
+    featuredDesktopScreen: file(
+      relativePath: { eq: "img/featured/desktop.png" }
+    ) {
       childImageSharp {
         sizes {
           ...GatsbyImageSharpSizes_withWebp
         }
       }
-		}
-		featuredMobileScreen: file(relativePath: { eq: "img/featured/mobile.png" }) {
+    }
+    featuredMobileScreen: file(
+      relativePath: { eq: "img/featured/mobile.png" }
+    ) {
       childImageSharp {
         sizes {
           ...GatsbyImageSharpSizes_withWebp

@@ -21,14 +21,13 @@ const Navigation = styled.ul`
 `
 
 const NavItem = styled.li`
-	${display}
-	${space}
+  ${display} ${space};
 `
 
 const NavLink = ButtonLink.extend.attrs({
-	transparent: true,
-	sharp: true
-}) `
+  transparent: true,
+  sharp: true,
+})`
 	color: ${theme('colors.contrast.4')};
 	font-size: 1em;
 	line-height: 1;
@@ -56,55 +55,55 @@ const NavLink = ButtonLink.extend.attrs({
 const ButtonToggle = NavLink.withComponent('button')
 
 class Menu extends PureComponent {
-	constructor(props) {
-		super(props)
-	}
+  constructor(props) {
+    super(props)
+  }
 
-	render() {
-		const { toggleDarkMode, isDarkMode } = this.props
+  render() {
+    const { toggleDarkMode, isDarkMode } = this.props
 
-		return (
-			<Container>
-				<Navigation>
-					<NavItem display={['list-item', 'list-item', 'none']}>
-						<NavLink to="/">
-							<Home />
-							Home
+    return (
+      <Container>
+        <Navigation>
+          <NavItem display={['list-item', 'list-item', 'none']}>
+            <NavLink to="/">
+              <Home />
+              Home
             </NavLink>
-					</NavItem>
-					<NavItem>
-						<NavLink to="/making">
-							<Folder />
-							Projects
+          </NavItem>
+          <NavItem>
+            <NavLink to="/making">
+              <Folder />
+              Projects
             </NavLink>
-					</NavItem>
-					<NavItem>
-						<NavLink to="/writing">
-							<Book />
-							Journal
+          </NavItem>
+          <NavItem>
+            <NavLink to="/writing">
+              <Book />
+              Journal
             </NavLink>
-					</NavItem>
-					<NavItem>
-						<NavLink to="/at">
-							<Mail />
-							Contact
+          </NavItem>
+          <NavItem>
+            <NavLink to="/at">
+              <Mail />
+              Contact
             </NavLink>
-					</NavItem>
-					<NavItem display={['none', 'none', 'list-item']} mr="-1.4em">
-						<ButtonToggle onClick={toggleDarkMode} icon px="1.4em">
-							{isDarkMode ? <Sun /> : <Moon />}
-						</ButtonToggle>
-					</NavItem>
-					<NavItem display={['list-item', 'list-item', 'none']}>
-						<ButtonToggle onClick={toggleDarkMode}>
-							{isDarkMode ? <Sun /> : <Moon />}
-							{isDarkMode ? 'Light' : 'Dark'}
-						</ButtonToggle>
-					</NavItem>
-				</Navigation>
-			</Container>
-		)
-	}
+          </NavItem>
+          <NavItem display={['none', 'none', 'list-item']} mr="-1.4em">
+            <ButtonToggle onClick={toggleDarkMode} icon px="1.4em">
+              {isDarkMode ? <Sun /> : <Moon />}
+            </ButtonToggle>
+          </NavItem>
+          <NavItem display={['list-item', 'list-item', 'none']}>
+            <ButtonToggle onClick={toggleDarkMode}>
+              {isDarkMode ? <Sun /> : <Moon />}
+              {isDarkMode ? 'Light' : 'Dark'}
+            </ButtonToggle>
+          </NavItem>
+        </Navigation>
+      </Container>
+    )
+  }
 }
 
 export default Menu

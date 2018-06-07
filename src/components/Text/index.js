@@ -1,14 +1,14 @@
 import styled from 'styled-components'
 import {
-	color,
-	display,
-	fontSize,
-	fontWeight,
-	lineHeight,
-	maxWidth,
-	space,
-	textAlign,
-	width
+  color,
+  display,
+  fontSize,
+  fontWeight,
+  lineHeight,
+  maxWidth,
+  space,
+  textAlign,
+  width,
 } from 'styled-system'
 
 const Text = styled.div`

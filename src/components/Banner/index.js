@@ -10,39 +10,39 @@ import Subheading from '../Subheading'
 import Flex from '../Flex'
 
 export const Container = styled.div`
-	align-items: center;
+  align-items: center;
   color: ${theme('colors.text')};
   display: flex;
-	min-height: 8.5em;
+  min-height: 8.5em;
   margin-top: -7em;
   opacity: 0.9;
   padding-top: 8em;
   text-align: center;
   z-index: 0;
 
-	.cover {
-		left: 0;
-		pointer-events: none;
-		position: absolute !important;
-		top: 0;
-		width: 100%;
-		z-index: -1;
-	}
+  .cover {
+    left: 0;
+    pointer-events: none;
+    position: absolute !important;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
 
-	@media (max-width: ${theme('breakpoints.1')}) {
-		margin-top: 0;
-		padding-top: 2.5em;
-	}
+  @media (max-width: ${theme('breakpoints.1')}) {
+    margin-top: 0;
+    padding-top: 2.5em;
+  }
 `
 
 export const Type = Subheading.extend`
-	color: ${theme('colors.contrast.3')};
-	line-height: 3;
-	margin: 0;
-	opacity: 0.75;
+  color: ${theme('colors.contrast.3')};
+  line-height: 3;
+  margin: 0;
+  opacity: 0.75;
 `
 
-export const Cover = styled(Img) `
+export const Cover = styled(Img)`
 	height: 16em;
 
 	img {
@@ -61,7 +61,10 @@ export const Cover = styled(Img) `
 	}
 
 	&:after {
-		background: linear-gradient(${props => props.theme.name === 'dark' ? rgba(props.theme.colors.base, 0.75) : rgba(props.theme.colors.base, 0.375)}, ${theme('colors.base')});
+		background: linear-gradient(${props =>
+      props.theme.name === 'dark'
+        ? rgba(props.theme.colors.base, 0.75)
+        : rgba(props.theme.colors.base, 0.375)}, ${theme('colors.base')});
 	}
 
 	&:before {
@@ -70,17 +73,17 @@ export const Cover = styled(Img) `
 `
 
 export const Emoji = styled(Twemoji).attrs({
-	options: {
-		ext: '.svg',
-		folder: 'svg'
-	}
-}) `
-	font-size: 6em;
-	font-weight: bold;
+  options: {
+    ext: '.svg',
+    folder: 'svg',
+  },
+})`
+  font-size: 6em;
+  font-weight: bold;
 
-	& > img {
-		margin: auto;
-	}
+  & > img {
+    margin: auto;
+  }
 `
 
 export const Title = styled.h1`
@@ -90,9 +93,9 @@ export const Title = styled.h1`
 `
 
 export const Subtitle = styled.h2`
-	color: ${theme('colors.contrast.3')};
-	font-size: ${theme('fontSizes.2')};
-	font-weight: normal;
+  color: ${theme('colors.contrast.3')};
+  font-size: ${theme('fontSizes.2')};
+  font-weight: normal;
   line-height: ${theme('lineHeights.1')};
   margin: 0.125em auto 1.25em;
 `
@@ -102,50 +105,57 @@ export const Description = Subtitle.extend`
 `.withComponent('p')
 
 export const Meta = Subtitle.extend`
-	color: ${theme('colors.contrast.2')};
-	display: flex;
-	font-size: 0.75em;
-	font-weight: bold;
+  color: ${theme('colors.contrast.2')};
+  display: flex;
+  font-size: 0.75em;
+  font-weight: bold;
   letter-spacing: 0.0612em;
-	justify-content: center;
-	text-transform: uppercase;
+  justify-content: center;
+  text-transform: uppercase;
   max-width: ${theme('wrapper.normal')};
-	overflow: hidden;
+  overflow: hidden;
 
-	& > div {
-		white-space: nowrap;
+  & > div {
+    white-space: nowrap;
 
-		&:not(:last-child) {
-			margin-right: 0.75em;
+    &:not(:last-child) {
+      margin-right: 0.75em;
 
-			&:after {
-				content: '•';
-				display: inline-block;
-				margin-left: 0.75em;
-				opacity: 0.25;
-			}
-		}
-	}
+      &:after {
+        content: '•';
+        display: inline-block;
+        margin-left: 0.75em;
+        opacity: 0.25;
+      }
+    }
+  }
 
-	& svg {
-		height: 1em;
-		margin: 0 0.5em -0.125em 0;
-	}
+  & svg {
+    height: 1em;
+    margin: 0 0.5em -0.125em 0;
+  }
 `.withComponent('div')
 
 class Banner extends PureComponent {
-	render() {
-		const { children, cover } = this.props
+  render() {
+    const { children, cover } = this.props
 
-		return (
-			<Container>
-				{cover && <Cover sizes={cover} outerWrapperClassName="cover" alt="Cover Image" title="Cover Image" />}
-				<Flex flex="1" flexDirection="column">
-					{children}
-				</Flex>
-			</Container>
-		)
-	}
+    return (
+      <Container>
+        {cover && (
+          <Cover
+            sizes={cover}
+            outerWrapperClassName="cover"
+            alt="Cover Image"
+            title="Cover Image"
+          />
+        )}
+        <Flex flex="1" flexDirection="column">
+          {children}
+        </Flex>
+      </Container>
+    )
+  }
 }
 
 export default Banner

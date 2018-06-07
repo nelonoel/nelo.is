@@ -25,7 +25,6 @@ stack:
 	Landing page.
 </figcaption>
 
-
 <div class="ui-screenshot">
 	<img alt="About the Company" src="./about.png" title="About the Company" />
 </div>

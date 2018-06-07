@@ -14,6 +14,7 @@ stack:
  - Sketch
  - InVision
 ---
+
 <div class="grid three-column">
 	<div>
 		<h6>Overview</h6>

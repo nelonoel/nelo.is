@@ -5,7 +5,7 @@ import globalStyles from '../../styles/global'
 import { link } from '../../styles/typography'
 
 const Page = styled.div`
-	${props => selection({ 'backgroundColor': props.theme.colors.selection }, '*')}
+	${props => selection({ backgroundColor: props.theme.colors.selection }, '*')}
 
 	background: ${theme('colors.base')};
 	color: ${theme('colors.text')};
@@ -25,4 +25,3 @@ export const Content = styled.main`
 `
 
 export default Page
-

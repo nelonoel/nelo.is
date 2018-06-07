@@ -10,22 +10,26 @@ type: open-source
 ---
 
 ### Installation
+
 ```bash
 npm i --save react-rellax
 ```
 
 ### Usage
+
 ```jsx
 import Parallax from 'react-rellax'
 ...
 
 <Parallax speed={-5}>I'm slow and smooth</Parallax>
 ```
+
 ### Links
- - [Docs](https://github.com/nelonoel/react-rellax/blob/master/README.md)
- - [Source](https://github.com/nelonoel/react-rellax)
- - [Live Demo](https://open.nelo.is/react-rellax)
- - [NPM](https://npmjs.com/package/react-rellax)
+
+* [Docs](https://github.com/nelonoel/react-rellax/blob/master/README.md)
+* [Source](https://github.com/nelonoel/react-rellax)
+* [Live Demo](https://open.nelo.is/react-rellax)
+* [NPM](https://npmjs.com/package/react-rellax)
 
 ---
 

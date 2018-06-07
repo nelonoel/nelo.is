@@ -26,15 +26,13 @@ export const Subtitle = styled.p`
 `
 
 class Tabs extends PureComponent {
-	render() {
-		return (
-			<TabContainer>
-				<Wrapper>
-					{this.props.children}
-				</Wrapper>
-			</TabContainer>
-		)
-	}
+  render() {
+    return (
+      <TabContainer>
+        <Wrapper>{this.props.children}</Wrapper>
+      </TabContainer>
+    )
+  }
 }
 
 export default Tab

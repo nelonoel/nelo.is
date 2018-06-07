@@ -9,6 +9,7 @@ model: post
 ---
 
 ## Problem
+
 **Default `:focus` behavior is bad.**
 
 Focus rings can be confusing for users with pointing devices (e.g. mouse, touch screen) because it implies a sense of persistence when showing up **right after a click or a touch event**.
@@ -27,6 +28,7 @@ This usually involves a compromise. Some, even remove the default focusing behav
 <cite>David Gilbertson</cite>
 
 ## Solution
+
 Ideally, the focus ring should only show up **when the user intends to use the keyboard**.
 
 We need a better default browser behavior. In cases like this, it's always a good idea to check if there are existing or upcoming browser specifications that solve our problem.
@@ -34,30 +36,39 @@ We need a better default browser behavior. In cases like this, it's always a goo
 Luckily for us, there's one: **Introducing** `:focus-visible` 🎉.
 
 ### Specification
+
 **TLDR;** `:focus-visible` is the keyboard-only version of `:focus`.
 
 Also, the [W3C proposal](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo) mentions that `:focus-visible` should be preferred over `:focus` except on elements that expect a keyboard input (e.g. text field, contenteditable).
 
 ### Browser Support
+
 At the time of writing, only Firefox [supports](https://caniuse.com/#search=focus-visible) `:focus-visible` natively. But the good news is that there's an excellent [polyfill](https://github.com/WICG/focus-visible) available for us. Here's a [demo](https://wicg.github.io/focus-visible/demo/) if you'd like to see it for yourself before we dive into the actual implementation details.
 
 ### Implementation
+
 #### Installation
+
 ###### via NPM
+
 ```bash
 npm install --save focus-visible
 ```
+
 ```js
 require('focus-visible')
 ```
 
 ###### via UNPKG
+
 ```html
 <script src="https://unpkg.com/focus-visible@latest/dist/focus-visible.min.js"></script>
 ```
 
 #### Styling
+
 The [polyfill](https://github.com/WICG/focus-visible) adds a `.focus-visible` class on elements that match the `:focus-visible` state, so styling is pretty straightforward.
+
 ```css
 /* Remove outline for non-keyboard :focus */
 *:focus:not(.focus-visible) {
@@ -76,6 +87,7 @@ The [polyfill](https://github.com/WICG/focus-visible) adds a `.focus-visible` cl
 <figcaption>Try clicking, then tabbing (or hitting the Shift key) to see improved behavior.</figcaption>
 
 #### ⭐️ Bonus tip: a better alternative to `outline`
+
 ```css
 *:focus {
   outline: none;
@@ -92,10 +104,9 @@ The [polyfill](https://github.com/WICG/focus-visible) adds a `.focus-visible` cl
 </div>
 <figcaption>Ahh, rounded corners.</figcaption>
 
-
 ---
-Noticed how I used `:focus-visible` on this [site](/)? Hit me up on [Twitter](https://twitter.com/nelonoel) if you find this useful! 😁
 
+Noticed how I used `:focus-visible` on this [site](/)? Hit me up on [Twitter](https://twitter.com/nelonoel) if you find this useful! 😁
 
 <style>
 .demo {

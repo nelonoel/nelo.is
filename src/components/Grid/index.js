@@ -2,7 +2,7 @@ import Grid from 'react-css-grid'
 import styled from 'styled-components'
 import { maxWidth, space, theme } from 'styled-system'
 
-export default styled(Grid) `
+export default styled(Grid)`
 	${maxWidth}
 	${space}
 

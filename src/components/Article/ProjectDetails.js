@@ -15,101 +15,105 @@ const Container = styled.section`
 `
 
 const Content = styled.div`
-	display: grid;
+  display: grid;
   grid-template-columns: 2fr 1fr;
   grid-gap: 2em;
-	padding-bottom: 1em;
+  padding-bottom: 1em;
 
   @media (max-width: ${theme('breakpoints.2')}) {
-		grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 0.5em;
-		margin: auto;
-		max-width: ${theme('breakpoints.1')};
-		padding: 0 0 1.5em;
+    margin: auto;
+    max-width: ${theme('breakpoints.1')};
+    padding: 0 0 1.5em;
   }
 `
 
 const Item = styled.div`
-	color: ${theme('colors.contrast.4')};
-	line-height: 1.4;
-	margin: 1.5em auto;
+  color: ${theme('colors.contrast.4')};
+  line-height: 1.4;
+  margin: 1.5em auto;
 
-	@media (max-width: ${theme('breakpoints.2')}) {
-		margin: 1.5em auto 0;
-	}
+  @media (max-width: ${theme('breakpoints.2')}) {
+    margin: 1.5em auto 0;
+  }
 
-	& > ${Subheading} {
-		margin: 0;
-	}
+  & > ${Subheading} {
+    margin: 0;
+  }
 
-	& > ul {
-		list-style-type: none;
-		margin: 0 -0.125em;
-		padding: 0;
+  & > ul {
+    list-style-type: none;
+    margin: 0 -0.125em;
+    padding: 0;
 
-		& > li {
-			background: ${theme('colors.contrast.0')};
-			border-radius: 3px;
-			display: inline-block;
-			font-size: 1rem;
-			margin: 0.125em;
-			padding: 0.25em 0.5em;
-			white-space: nowrap;
-		}
-	}
+    & > li {
+      background: ${theme('colors.contrast.0')};
+      border-radius: 3px;
+      display: inline-block;
+      font-size: 1rem;
+      margin: 0.125em;
+      padding: 0.25em 0.5em;
+      white-space: nowrap;
+    }
+  }
 `
 
 const Description = styled.p`
-	color: ${theme('colors.text')};
-	font-size: 1.25em;
-	margin: 0.125em 0;
+  color: ${theme('colors.text')};
+  font-size: 1.25em;
+  margin: 0.125em 0;
 
-	@media (max-width: ${theme('breakpoints.2')}) {
-		font-size: 1.15em;
-	}
+  @media (max-width: ${theme('breakpoints.2')}) {
+    font-size: 1.15em;
+  }
 `
 
 const Column = styled.div``
 
 export class Detail extends PureComponent {
-	render() {
-		const { shouldRender, label, children } = this.props
+  render() {
+    const { shouldRender, label, children } = this.props
 
-		return shouldRender ? (
-			<Item>
-				<Subheading>{label}</Subheading>
-				{children}
-			</Item>
-		) : null
-	}
+    return shouldRender ? (
+      <Item>
+        <Subheading>{label}</Subheading>
+        {children}
+      </Item>
+    ) : null
+  }
 }
 
 export default class ProjectDetails extends PureComponent {
-	render() {
-		const { client, month, description, roles, stack } = this.props
+  render() {
+    const { client, month, description, roles, stack } = this.props
 
-		return (
-			<Container>
-				<Wrapper>
-					<Content>
-						<Column>
-							<Detail shouldRender={description} label="Description">
-								<Description>{description}</Description>
-							</Detail>
-							<Detail shouldRender={stack instanceof Array} label="Stack">
-								<List items={stack} />
-							</Detail>
-						</Column>
-						<Column>
-							<Detail shouldRender={client} label="Client">{client}</Detail>
-							<Detail shouldRender={roles instanceof Array} label="Roles">
-								<List items={roles} />
-							</Detail>
-							<Detail shouldRender={month} label="Month">{month}</Detail>
-						</Column>
-					</Content>
-				</Wrapper>
-			</Container>
-		)
-	}
+    return (
+      <Container>
+        <Wrapper>
+          <Content>
+            <Column>
+              <Detail shouldRender={description} label="Description">
+                <Description>{description}</Description>
+              </Detail>
+              <Detail shouldRender={stack instanceof Array} label="Stack">
+                <List items={stack} />
+              </Detail>
+            </Column>
+            <Column>
+              <Detail shouldRender={client} label="Client">
+                {client}
+              </Detail>
+              <Detail shouldRender={roles instanceof Array} label="Roles">
+                <List items={roles} />
+              </Detail>
+              <Detail shouldRender={month} label="Month">
+                {month}
+              </Detail>
+            </Column>
+          </Content>
+        </Wrapper>
+      </Container>
+    )
+  }
 }

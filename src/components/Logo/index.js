@@ -59,27 +59,27 @@ const shadow = keyframes`
 `
 
 export const Dot = styled.span`
-	font-size: 1.25em;
-	position: relative;
+  font-size: 1.25em;
+  position: relative;
 
-	&:before,
-	&:after {
-		animation: none;
-		bottom: 0.1em;
-		content: '.';
-		display: inline-flex;
-		position: absolute;
-		transform-origin: bottom;
-	}
+  &:before,
+  &:after {
+    animation: none;
+    bottom: 0.1em;
+    content: '.';
+    display: inline-flex;
+    position: absolute;
+    transform-origin: bottom;
+  }
 
-	&:before {
-		color: ${theme('colors.primary')};
-	}
+  &:before {
+    color: ${theme('colors.primary')};
+  }
 
-	&:after {
-		color: rgba(0, 0, 0, 0.15);
-		z-index: -1;
-	}
+  &:after {
+    color: rgba(0, 0, 0, 0.15);
+    z-index: -1;
+  }
 `
 
 const Title = styled.h1`
@@ -90,7 +90,7 @@ const Title = styled.h1`
   z-index: 1;
 
   * {
-		${logo}
+    ${logo};
   }
 
   a {
@@ -101,86 +101,88 @@ const Title = styled.h1`
 
     &.bouncing {
       & > ${Dot} {
-				&:before {
-					animation: ${bounce} 1.8s 1;
-				}
-				&:after {
-					animation: ${shadow} 1.8s 1;
-				}
+        &:before {
+          animation: ${bounce} 1.8s 1;
+        }
+        &:after {
+          animation: ${shadow} 1.8s 1;
+        }
       }
     }
 
-		&.focus-visible {
-			text-shadow: -3px 3px 0 rgba(0, 0, 0, 0.075);
-		}
+    &.focus-visible {
+      text-shadow: -3px 3px 0 rgba(0, 0, 0, 0.075);
+    }
   }
 `
 
 export const LogoIcon = styled.div`
-	${logo}
-	align-items: center;
-	background: ${theme('colors.text')};
-	border-radius: 0.2em;
-	color: ${theme('colors.base')};
-	display: inline-flex;
-	font-size: 4em;
-	height: 1.25em;
-	justify-content: center;
-	letter-spacing: -0.0612em;
-	width: 1.25em;
+  ${logo} align-items: center;
+  background: ${theme('colors.text')};
+  border-radius: 0.2em;
+  color: ${theme('colors.base')};
+  display: inline-flex;
+  font-size: 4em;
+  height: 1.25em;
+  justify-content: center;
+  letter-spacing: -0.0612em;
+  width: 1.25em;
 
-	&:before {
-		content: 'n';
-	}
+  &:before {
+    content: 'n';
+  }
 
-	&:after {
-		color: ${props => props.forHire ? props.theme.colors.secondary : props.theme.colors.primary};
-		content: '.';
-	}
+  &:after {
+    color: ${props =>
+      props.forHire
+        ? props.theme.colors.secondary
+        : props.theme.colors.primary};
+    content: '.';
+  }
 `
 
 export const LogoLoader = LogoIcon.extend`
-	background: none;
-	color: ${theme('colors.dark.2')};
+  background: none;
+  color: ${theme('colors.dark.2')};
 
-	&:after {
-		animation: ${bounce}  1.8s infinite;
-		color: ${theme('colors.dark.2')};
-		margin-bottom: 0.25em;
-		transform-origin: bottom;
-	}
+  &:after {
+    animation: ${bounce} 1.8s infinite;
+    color: ${theme('colors.dark.2')};
+    margin-bottom: 0.25em;
+    transform-origin: bottom;
+  }
 `
 
 class Logo extends PureComponent {
-	constructor(props) {
-		super(props)
-		this.addAnimation = this.addAnimation.bind(this)
-		this.removeAnimation = this.removeAnimation.bind(this)
-		this.state = {
-			isAnimating: false
-		}
-	}
+  constructor(props) {
+    super(props)
+    this.addAnimation = this.addAnimation.bind(this)
+    this.removeAnimation = this.removeAnimation.bind(this)
+    this.state = {
+      isAnimating: false,
+    }
+  }
 
-	addAnimation() {
-		this.setState({ isAnimating: true })
-	}
+  addAnimation() {
+    this.setState({ isAnimating: true })
+  }
 
-	removeAnimation() {
-		if (this.state.isAnimating) {
-			this.setState({ isAnimating: false })
-		}
-	}
+  removeAnimation() {
+    if (this.state.isAnimating) {
+      this.setState({ isAnimating: false })
+    }
+  }
 
-	render() {
-		return (
-			<Title onMouseDown={this.addAnimation}>
-				<Link to="/" className={this.state.isAnimating ? 'bouncing' : ''}>
-					Nelo
+  render() {
+    return (
+      <Title onMouseDown={this.addAnimation}>
+        <Link to="/" className={this.state.isAnimating ? 'bouncing' : ''}>
+          Nelo
           <Dot onAnimationEnd={this.removeAnimation} />
-				</Link>
-			</Title>
-		)
-	}
+        </Link>
+      </Title>
+    )
+  }
 }
 
 export default Logo
