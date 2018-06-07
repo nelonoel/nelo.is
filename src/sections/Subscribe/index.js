@@ -15,6 +15,7 @@ import TextField from '../../components/TextField'
 
 const Container = styled.div`
 	background: ${theme('colors.light.1')};
+	background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.025' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
   border-bottom: ${theme('colors.dark.0')} solid 1px;
 	padding: 2em 0 2.25em;
 	position: relative;
@@ -60,7 +61,7 @@ export default class ForHire extends PureComponent {
 					<Flex alignItems="center" justifyContent="center">
 						<Box>
 							<Text textAlign="center" fontWeight="bold" color="contrast.4" lineHeight="2" fontSize="2">Want more of this?</Text>
-							<Text textAlign="center" color="contrast.3" lineHeight="1">Code, design, &amp; productivity – no 🐮💩 ever.</Text>
+							<Text textAlign="center" color="contrast.3" lineHeight="1">Code, design, &amp; productivity – no 🐮💩</Text>
 						</Box>
 					</Flex>
 					<form action="https://nelo.us7.list-manage.com/subscribe/post?u=5cb918082a39aef5a646dcf3a&amp;id=6ced124e32" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
