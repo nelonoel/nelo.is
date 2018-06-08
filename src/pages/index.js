@@ -24,10 +24,7 @@ class Home extends PureComponent {
         this,
         'props.data.featuredDesktopScreen.childImageSharp.sizes'
       ),
-      mobile: get(
-        this,
-        'props.data.featuredMobileScreen.childImageSharp.sizes'
-      ),
+      mobile: get(this, 'props.data.featuredMobileScreen.childImageSharp.sizes')
     }
 
     return (

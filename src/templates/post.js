@@ -31,14 +31,14 @@ class PostTemplate extends PureComponent {
       month,
       client,
       roles,
-      stack,
+      stack
     } = post.frontmatter
 
     const meta = {
       image: image,
       title: title + (model === 'project' ? ` – ${subtitle}` : ''),
       description: model === 'project' ? description : subtitle,
-      siteTitle: siteTitle,
+      siteTitle: siteTitle
     }
 
     return (

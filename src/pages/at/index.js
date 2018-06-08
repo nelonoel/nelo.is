@@ -15,7 +15,7 @@ const Form = styled.form.attrs({
   name: 'contact',
   method: 'POST',
   'data-netlify': true,
-  'data-netlify-honeypot': 'bot-field',
+  'data-netlify-honeypot': 'bot-field'
 })`
   margin-top: -1em;
 `

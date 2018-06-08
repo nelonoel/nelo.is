@@ -12,7 +12,7 @@ import {
   position,
   space,
   textAlign,
-  width,
+  width
 } from 'styled-system'
 
 const Box = styled.div`

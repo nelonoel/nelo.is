@@ -20,5 +20,5 @@ export default class SEO extends PureComponent {
 
 SEO.defaultProps = {
   title: 'Digital Craftsman',
-  siteTitle: 'Nelo',
+  siteTitle: 'Nelo'
 }

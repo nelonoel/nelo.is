@@ -31,7 +31,7 @@ const Frame = Box.extend.attrs({
   height: '1.75em',
   px: 2,
   textAlign: 'left',
-  width: '100%',
+  width: '100%'
 })`
 	box-shadow: inset 0 -1em 2em ${props =>
     darken(0.03, props.theme.colors.light[4])}, 0 1px 1px rgba(0, 0, 0, 0.125);
@@ -94,5 +94,5 @@ export default class Screen extends PureComponent {
 
 Screen.defaultProps = {
   height: '24em',
-  width: '100%',
+  width: '100%'
 }

@@ -8,7 +8,7 @@ import {
   maxWidth,
   space,
   textAlign,
-  width,
+  width
 } from 'styled-system'
 
 const Text = styled.div`

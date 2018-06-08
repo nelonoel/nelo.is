@@ -36,7 +36,7 @@ const Container = BannerContainer.extend`
 
 const Video = styled.video.attrs({
   loop: true,
-  muted: true,
+  muted: true
 })`
   left: 50%;
   min-height: 100%;
@@ -77,7 +77,7 @@ const Silhouette = styled.img.attrs({
   alt: 'Silhouette',
   draggable: false,
   src: svgSilhouette,
-  title: 'Silhouette',
+  title: 'Silhouette'
 })`
   display: flex;
   height: 24em;
@@ -92,7 +92,7 @@ const Silhouette = styled.img.attrs({
 const Face = Silhouette.extend.attrs({
   alt: 'Nelo',
   src: svgFace,
-  title: 'Nelo',
+  title: 'Nelo'
 })`
 	opacity: 1;
   position: absolute;

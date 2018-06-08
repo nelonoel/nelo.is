@@ -26,7 +26,7 @@ const Container = styled.div`
 const Logo = styled.img.attrs({
   draggable: false,
   alt: props => props.company,
-  title: props => props.company,
+  title: props => props.company
 })`
   max-height: 3em;
   max-width: 7em;

@@ -159,7 +159,7 @@ class Logo extends PureComponent {
     this.addAnimation = this.addAnimation.bind(this)
     this.removeAnimation = this.removeAnimation.bind(this)
     this.state = {
-      isAnimating: false,
+      isAnimating: false
     }
   }
 

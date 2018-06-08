@@ -77,5 +77,5 @@ export default class ForHire extends PureComponent {
 }
 
 ForHire.defaultProps = {
-  forHire: false,
+  forHire: false
 }

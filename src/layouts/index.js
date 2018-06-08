@@ -20,14 +20,14 @@ class Template extends Component {
     this.toggleDarkMode = this.toggleDarkMode.bind(this)
 
     this.state = {
-      isDarkMode: store.get('dark_mode'),
+      isDarkMode: store.get('dark_mode')
     }
   }
 
   toggleDarkMode() {
     store.set('dark_mode', !this.state.isDarkMode)
     this.setState({
-      isDarkMode: !this.state.isDarkMode,
+      isDarkMode: !this.state.isDarkMode
     })
   }
 
@@ -59,7 +59,7 @@ class Template extends Component {
       title: 'Digital Craftsman',
       decription: siteDescription,
       image: defaultCover,
-      siteTitle: siteTitle,
+      siteTitle: siteTitle
     }
 
     return (

@@ -13,7 +13,7 @@ import {
   position,
   space,
   textAlign,
-  width,
+  width
 } from 'styled-system'
 
 const Flex = styled.div`

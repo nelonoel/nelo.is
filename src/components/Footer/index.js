@@ -7,7 +7,7 @@ import {
   Github,
   Twitter,
   Instagram,
-  FileText,
+  FileText
 } from 'react-feather'
 import { darken, transparentize } from 'polished'
 
@@ -35,7 +35,7 @@ const Box = styled.div`
 
 const FooterLink = ButtonLink.extend.attrs({
   transparent: true,
-  sharp: true,
+  sharp: true
 })`
 	color: ${theme('colors.contrast.2')};
 	display: flex;

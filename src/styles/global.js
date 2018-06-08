@@ -1,7 +1,7 @@
 import { injectGlobal } from 'styled-components'
-import { normalize, rgba } from 'polished'
-import { light as theme } from '../styles/theme'
-import { fontFaces, body } from '../styles/typography'
+import { normalize } from 'polished'
+import { light as theme } from './theme'
+import { fontFaces, body } from './typography'
 require('focus-visible')
 
 injectGlobal`

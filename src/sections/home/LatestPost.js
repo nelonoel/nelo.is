@@ -16,7 +16,7 @@ const ReadMore = styled(Box).attrs({
   display: 'flex',
   lineHeight: '1.4',
   p: '1rem 1.5rem',
-  mr: ['-1.5rem', '-1.5rem', '-1.5rem', '-1.5rem', 0],
+  mr: ['-1.5rem', '-1.5rem', '-1.5rem', '-1.5rem', 0]
 })`
   box-shadow: 0 0 0 1px ${props => rgba(props.theme.colors.dark[4], 0.1)};
   white-space: nowrap2;

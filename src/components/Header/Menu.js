@@ -26,7 +26,7 @@ const NavItem = styled.li`
 
 const NavLink = ButtonLink.extend.attrs({
   transparent: true,
-  sharp: true,
+  sharp: true
 })`
 	color: ${theme('colors.contrast.4')};
 	font-size: 1em;

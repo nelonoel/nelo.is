@@ -75,8 +75,8 @@ export const Cover = styled(Img)`
 export const Emoji = styled(Twemoji).attrs({
   options: {
     ext: '.svg',
-    folder: 'svg',
-  },
+    folder: 'svg'
+  }
 })`
   font-size: 6em;
   font-weight: bold;

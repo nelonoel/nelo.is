@@ -8,7 +8,7 @@ import Img from 'gatsby-image'
 import Subheading from '../Subheading'
 
 const card = {
-  height: 15,
+  height: 15
 }
 
 const Cover = styled(Img)`
@@ -94,7 +94,7 @@ const Category = Subheading.extend`
 `
 
 const Item = styled(Link).attrs({
-  to: props => props.slug,
+  to: props => props.slug
 })`
   align-items: center;
   background: ${props =>
@@ -187,7 +187,7 @@ class Card extends PureComponent {
       subtitle,
       type,
       date,
-      category,
+      category
     } = this.props
 
     return (
