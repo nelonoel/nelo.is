@@ -36,35 +36,33 @@ const Label = Subheading.extend`
 class ContactPage extends PureComponent {
   render() {
     return (
-      <div>
+      <Wrapper>
         <SEO title="Contact" />
         <Banner>
           <Title>Contact</Title>
           <Description>Feel free to reach out!</Description>
         </Banner>
-        <Wrapper>
-          <Form>
-            <Field>
-              <Label htmlFor="name">Name</Label>
-              <TextField type="text" name="name" required />
-            </Field>
-            <Field>
-              <Label htmlFor="email">E-mail</Label>
-              <TextField type="email" name="email" required />
-            </Field>
-            <Field>
-              <Label htmlFor="message">Message</Label>
-              <TextArea name="message" required />
-            </Field>
-            <Field>
-              <Button wide secondary>
-                <Send /> Send message
-              </Button>
-            </Field>
-            <input type="hidden" name="form-name" value="contact" />
-          </Form>
-        </Wrapper>
-      </div>
+        <Form>
+          <Field>
+            <Label htmlFor="name">Name</Label>
+            <TextField type="text" name="name" required />
+          </Field>
+          <Field>
+            <Label htmlFor="email">E-mail</Label>
+            <TextField type="email" name="email" required />
+          </Field>
+          <Field>
+            <Label htmlFor="message">Message</Label>
+            <TextArea name="message" required />
+          </Field>
+          <Field>
+            <Button wide secondary>
+              <Send /> Send message
+            </Button>
+          </Field>
+          <input type="hidden" name="form-name" value="contact" />
+        </Form>
+      </Wrapper>
     )
   }
 }

@@ -12,7 +12,7 @@ class BlogIndex extends React.Component {
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
     return (
-      <div>
+      <Wrapper>
         <SEO title="Journal" />
         <Banner>
           <Title>Journal</Title>
@@ -23,25 +23,23 @@ class BlogIndex extends React.Component {
             </a>. Worthy topics go here.
           </Description>
         </Banner>
-        <Wrapper>
-          <Grid maxWidth="33em" mx="auto" mb={3} width="100%" gap="1em">
-            {posts.map(({ node }) => {
-              return (
-                <Card
-                  key={node.id}
-                  slug={node.fields.slug}
-                  cover={get(node, 'frontmatter.cover.childImageSharp.sizes')}
-                  title={get(node, 'frontmatter.title') || node.fields.slug}
-                  subtitle={get(node, 'frontmatter.subtitle')}
-                  category={get(node, 'frontmatter.category')}
-                  type={get(node, 'frontmatter.type')}
-                  date={get(node, 'frontmatter.date')}
-                />
-              )
-            })}
-          </Grid>
-        </Wrapper>
-      </div>
+        <Grid maxWidth="33em" mx="auto" mb={3} width="100%" gap="1em">
+          {posts.map(({ node }) => {
+            return (
+              <Card
+                key={node.id}
+                slug={node.fields.slug}
+                cover={get(node, 'frontmatter.cover.childImageSharp.sizes')}
+                title={get(node, 'frontmatter.title') || node.fields.slug}
+                subtitle={get(node, 'frontmatter.subtitle')}
+                category={get(node, 'frontmatter.category')}
+                type={get(node, 'frontmatter.type')}
+                date={get(node, 'frontmatter.date')}
+              />
+            )
+          })}
+        </Grid>
+      </Wrapper>
     )
   }
 }
