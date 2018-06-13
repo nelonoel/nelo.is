@@ -1,8 +1,24 @@
-# gatsby-starter-blog
-Gatsby starter for creating a blog
+# Nelo
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-`gatsby new gatsby-blog https://github.com/gatsbyjs/gatsby-starter-blog`
+Source code for my personal website, portfolio, and blog.
 
-## Running in development
-`gatsby develop`
+### TLDR;
+[View live website](https://nelo.is)
+
+### Stack
+ - GatsbyJS
+ - ReactJS
+ - GraphQL
+ - webpack
+ - styled-components
+ - styled-system
+ - Netlify Hosting
+ 
+### Features
+ - SEO: Open Graph tags, sitemap
+ - Syntax highlighting via PrismJS
+ - Constraint-based design via styled-system
+ - Dark mode
+ - Traced SVG image preloaders
+ - Emojis by Twemoji
+ - RSS Feed Generation
