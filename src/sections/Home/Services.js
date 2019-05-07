@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
-import { theme } from 'styled-system'
+import styled from 'styled-components'
+import { themeGet } from 'styled-system'
 import { Terminal, Feather, ArrowRight } from 'react-feather'
 
 import Box from '../../components/Box'
@@ -8,18 +9,18 @@ import Grid from '../../components/Grid'
 import IconContainer from '../../components/IconContainer'
 import Wrapper from '../../components/Wrapper'
 
-const Container = Box.extend`
-  border-bottom: ${theme('colors.dark.0')} solid 1px;
-  font-size: ${theme('fontSizes.1')};
+const Container = styled(Box)`
+  border-bottom: ${themeGet('colors.dark.0')} solid 1px;
+  font-size: ${themeGet('fontSizes.1')};
   position: relative;
 
   h4 {
     margin: 0;
-    font-size: ${theme('fontSizes.2')};
+    font-size: ${themeGet('fontSizes.2')};
   }
 
   p {
-    color: ${theme('colors.contrast.4')};
+    color: ${themeGet('colors.contrast.4')};
     margin: 1em auto;
     max-width: 24rem;
 
@@ -34,7 +35,7 @@ export default class Services extends PureComponent {
     return (
       <Container>
         <Wrapper>
-          <Grid py={[4, 4, 5]}>
+          <Grid gap="2em" py={[4, 4, 5]} width={320}>
             <Box>
               <Flex
                 alignItems="center"

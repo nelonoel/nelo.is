@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
-import { theme } from 'styled-system'
+import { themeGet } from 'styled-system'
 import { rgba } from 'polished'
 import Img from 'gatsby-image'
 import Twemoji from 'react-twemoji'
@@ -11,7 +11,7 @@ import Flex from '../Flex'
 
 export const Container = styled.div`
   align-items: center;
-  color: ${theme('colors.text')};
+  color: ${themeGet('colors.text')};
   display: flex;
   min-height: 8.5em;
   margin-top: -7em;
@@ -29,14 +29,14 @@ export const Container = styled.div`
     z-index: -1;
   }
 
-  @media (max-width: ${theme('breakpoints.1')}) {
+  @media (max-width: ${themeGet('breakpoints.1')}) {
     margin-top: 0;
     padding-top: 2.5em;
   }
 `
 
-export const Type = Subheading.extend`
-  color: ${theme('colors.contrast.3')};
+export const Type = styled(Subheading)`
+  color: ${themeGet('colors.contrast.3')};
   line-height: 3;
   margin: 0;
   opacity: 0.75;
@@ -52,7 +52,7 @@ export const Cover = styled(Img)`
 	&:before,
 	&:after {
 		${cover}
-		background-color: ${theme('colors.base')};
+		background-color: ${themeGet('colors.base')};
     height: 100%;
     width: 100%;
     z-index: 0;
@@ -64,7 +64,7 @@ export const Cover = styled(Img)`
 		background: linear-gradient(${props =>
       props.theme.name === 'dark'
         ? rgba(props.theme.colors.base, 0.75)
-        : rgba(props.theme.colors.base, 0.375)}, ${theme('colors.base')});
+        : rgba(props.theme.colors.base, 0.375)}, ${themeGet('colors.base')});
 	}
 
 	&:before {
@@ -93,26 +93,28 @@ export const Title = styled.h1`
 `
 
 export const Subtitle = styled.h2`
-  color: ${theme('colors.contrast.3')};
-  font-size: ${theme('fontSizes.2')};
+  color: ${themeGet('colors.contrast.3')};
+  font-size: ${themeGet('fontSizes.2')};
   font-weight: normal;
-  line-height: ${theme('lineHeights.1')};
-  margin: 0.125em auto 1.25em;
+  line-height: ${themeGet('lineHeights.1')};
+	margin: 0.125em auto 1.25em;
 `
 
-export const Description = Subtitle.extend`
-  max-width: ${theme('wrapper.normal')};
-`.withComponent('p')
+export const Description = styled(Subtitle).attrs(() => ({ as: 'p' }))`
+	margin: auto;
+	max-width: ${themeGet('wrapper.normal')};
+	width: 100%;
+`
 
-export const Meta = Subtitle.extend`
-  color: ${theme('colors.contrast.2')};
+export const Meta = styled(Subtitle)`
+  color: ${themeGet('colors.contrast.2')};
   display: flex;
   font-size: 0.75em;
   font-weight: bold;
   letter-spacing: 0.0612em;
   justify-content: center;
   text-transform: uppercase;
-  max-width: ${theme('wrapper.normal')};
+  max-width: ${themeGet('wrapper.normal')};
   overflow: hidden;
 
   & > div {

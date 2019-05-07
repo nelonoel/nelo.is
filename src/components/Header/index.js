@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
-import { theme } from 'styled-system'
+import { themeGet } from 'styled-system'
 import Headroom from 'react-headroom'
 import { lighten, transparentize } from 'polished'
 
@@ -9,12 +9,12 @@ import Box from '../Box'
 import Logo from '../Logo'
 import Menu from './Menu'
 
-const HeaderWrapper = Wrapper.withComponent('header').extend`
+const HeaderWrapper = styled(Wrapper).attrs({ as: 'header' })`
   align-items: center;
   display: flex;
   justify-content: space-between;
 
-	@media (max-width: ${theme('breakpoints.1')}) {
+	@media (max-width: ${themeGet('breakpoints.1')}) {
 		padding: 0;
 	}
 `
@@ -25,7 +25,7 @@ const HeaderContainer = styled(Headroom)`
       farthest-side at bottom center,
       ${props =>
         transparentize(0.025, lighten(0.025, props.theme.colors.base))},
-      ${theme('colors.base')}
+      ${themeGet('colors.base')}
     );
     z-index: 2 !important;
   }
@@ -34,7 +34,7 @@ const HeaderContainer = styled(Headroom)`
     background: none;
   }
 
-  @media (max-width: ${theme('breakpoints.1')}) {
+  @media (max-width: ${themeGet('breakpoints.1')}) {
     height: 0 !important;
 
     & > .headroom {
@@ -42,7 +42,7 @@ const HeaderContainer = styled(Headroom)`
         farthest-side at top center,
         ${props =>
           transparentize(0.025, lighten(0.025, props.theme.colors.base))},
-        ${theme('colors.base')}
+        ${themeGet('colors.base')}
       ) !important;
       box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.025);
       position: fixed !important;

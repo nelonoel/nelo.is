@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
-import { theme } from 'styled-system'
+import { themeGet } from 'styled-system'
 import { transparentize } from 'polished'
 import { Folder, Mail } from 'react-feather'
 
@@ -15,21 +15,21 @@ import mp4Cover from '../../assets/vid/landing-cover.mp4'
 import svgSilhouette from '../../assets/img/silhouette.svg'
 import svgFace from '../../assets/img/avatar.svg'
 
-const Container = BannerContainer.extend`
-  background: ${theme('colors.base')};
+const Container = styled(BannerContainer)`
+  background: ${themeGet('colors.base')};
   margin-top: -8em;
   opacity: 1;
   overflow: hidden;
   position: relative;
 
-  @media (max-width: ${theme('breakpoints.2')}) {
+  @media (max-width: ${themeGet('breakpoints.2')}) {
     background: ${props =>
       props.theme.name === 'dark'
         ? props.theme.colors.dark[2]
         : props.theme.colors.dark[3]};
   }
 
-  @media (max-width: ${theme('breakpoints.1')}) {
+  @media (max-width: ${themeGet('breakpoints.1')}) {
     margin-top: 0;
   }
 `
@@ -48,7 +48,7 @@ const Video = styled.video.attrs({
   transform: translateX(-50%) translateY(-50%);
   z-index: -1;
 
-  @media (max-width: ${theme('breakpoints.2')}) {
+  @media (max-width: ${themeGet('breakpoints.2')}) {
     display: none;
   }
 `
@@ -57,7 +57,7 @@ const Hero = styled.section`
   display: flex;
   justify-content: space-evenly;
 
-  @media (max-width: ${theme('breakpoints.2')}) {
+  @media (max-width: ${themeGet('breakpoints.2')}) {
     flex-direction: column;
   }
 `
@@ -66,7 +66,7 @@ const Avatar = styled.div`
   align-self: flex-end;
   position: relative;
 
-  @media (max-width: ${theme('breakpoints.2')}) {
+  @media (max-width: ${themeGet('breakpoints.2')}) {
     align-self: center;
     height: 24em;
     min-height: 50vh;
@@ -84,12 +84,12 @@ const Silhouette = styled.img.attrs({
   margin: 0;
   opacity: 0.5;
 
-  @media (max-width: ${theme('breakpoints.2')}) {
+  @media (max-width: ${themeGet('breakpoints.2')}) {
     height: 100%;
   }
 `
 
-const Face = Silhouette.extend.attrs({
+const Face = styled(Silhouette).attrs({
   alt: 'Nelo',
   src: svgFace,
   title: 'Nelo'
@@ -119,12 +119,12 @@ const Copy = styled.div`
     font-size: 1em;
     line-height: 1.5;
     margin: 0 auto 0.6em;
-    max-width: ${theme('breakpoints.0')};
+    max-width: ${themeGet('breakpoints.0')};
     opacity: 0.95;
   }
 
-  @media (max-width: ${theme('breakpoints.2')}) {
-    background: ${theme('colors.dark.1')};
+  @media (max-width: ${themeGet('breakpoints.2')}) {
+    background: ${themeGet('colors.dark.1')};
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -153,7 +153,7 @@ export default class Banner extends PureComponent {
     return (
       <Container>
         <Video
-          innerRef={video => {
+          ref={video => {
             this.video = video
           }}
           poster={cover}

@@ -1,14 +1,12 @@
 import styled from 'styled-components'
-import { selection } from 'polished'
-import { theme } from 'styled-system'
-import globalStyles from '../../styles/global'
+// import { selection } from 'polished'
+import { themeGet } from 'styled-system'
 import { link } from '../../styles/typography'
 
 const Page = styled.div`
-	${props => selection({ backgroundColor: props.theme.colors.selection }, '*')}
-
-	background: ${theme('colors.base')};
-	color: ${theme('colors.text')};
+	/* ${props => selection({ backgroundColor: props.theme.colors.selection }, '*')} */
+	background: ${themeGet('colors.base')};
+	color: ${themeGet('colors.text')};
   display: flex;
   flex-direction: column;
 	min-height: 100vh;

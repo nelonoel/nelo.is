@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import { theme } from 'styled-system'
+import { themeGet } from 'styled-system'
 
 const Badge = styled.span`
-  border: ${theme('colors.secondary')} solid 2px;
-  border-radius: ${theme('radii.2')};
-  color: ${theme('colors.secondary')};
+  border: ${themeGet('colors.secondary')} solid 2px;
+  border-radius: ${themeGet('radii.2')};
+  color: ${themeGet('colors.secondary')};
   display: inline-block;
   font-size: 0.5em;
   font-weight: bold;

@@ -1,10 +1,9 @@
-import { injectGlobal } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 import { normalize } from 'polished'
-import { light as theme } from './theme'
 import { fontFaces, body } from './typography'
 import 'focus-visible'
 
-injectGlobal`
+const GlobalStyles = createGlobalStyle`
 	${normalize()}
 	${fontFaces}
 
@@ -23,8 +22,8 @@ injectGlobal`
 	}
 
   body {
-    font-size: ${theme.baseFontSize};
-    line-height: ${theme.lineHeights[2]};
+    font-size: ${props => props.theme.baseFontSize};
+    line-height: ${props => props.theme.lineHeights[2]};
     margin: 0;
     padding: 0;
   }
@@ -36,3 +35,5 @@ injectGlobal`
     top: 0.15em;
   }
 `
+
+export default GlobalStyles

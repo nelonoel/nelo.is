@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
-import { display, space, theme } from 'styled-system'
+import { display, space, themeGet } from 'styled-system'
 import { Home, Folder, Book, Mail, Sun, Moon } from 'react-feather'
 import { rgba } from 'polished'
 
@@ -24,22 +24,22 @@ const NavItem = styled.li`
   ${display} ${space};
 `
 
-const NavLink = ButtonLink.extend.attrs({
+const NavLink = styled(ButtonLink).attrs({
   transparent: true,
   sharp: true
 })`
-	color: ${theme('colors.contrast.4')};
+	color: ${themeGet('colors.contrast.4')};
 	font-size: 1em;
 	line-height: 1;
 	margin: 0;
   padding: 1.5em 0.75em;
 	transition: none;
 
-  @media (max-width: ${theme('breakpoints.1')}) {
-		box-shadow: inset -1px 0 0 ${theme('colors.dark.0')};
+  @media (max-width: ${themeGet('breakpoints.1')}) {
+		box-shadow: inset -1px 0 0 ${themeGet('colors.dark.0')};
 		display: inline-flex;
 		flex-direction: column;
-		font-size: ${theme('fontSizes.0')};
+		font-size: ${themeGet('fontSizes.0')};
 		line-height: 1;
 		padding: 0.5em;
 		width: 20vw;
@@ -52,7 +52,7 @@ const NavLink = ButtonLink.extend.attrs({
   }
 `
 
-const ButtonToggle = NavLink.withComponent('button')
+const ButtonToggle = styled(NavLink).attrs({ as: 'button' })``
 
 class Menu extends PureComponent {
   constructor(props) {

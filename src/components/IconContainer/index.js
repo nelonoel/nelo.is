@@ -1,13 +1,13 @@
 import styled from 'styled-components'
-import { theme } from 'styled-system'
+import { themeGet } from 'styled-system'
 import Box from '../Box'
 
-const IconContainer = Box.extend`
+const IconContainer = styled(Box)`
   align-items: center;
   justify-content: center;
-  background: ${theme('colors.contrast.0')};
-  color: ${theme('colors.contrast.3')};
-  border-radius: ${theme('radii.4')};
+  background: ${themeGet('colors.contrast.0')};
+  color: ${themeGet('colors.contrast.3')};
+  border-radius: ${themeGet('radii.4')};
   display: inline-flex;
   font-size: 1em;
 

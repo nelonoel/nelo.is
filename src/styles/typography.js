@@ -1,5 +1,5 @@
 import { css } from 'styled-components'
-import { theme } from 'styled-system'
+import { themeGet } from 'styled-system'
 
 import woffMontserratBold from '../assets/font/montserrat/montserrat-bold-webfont.woff'
 import woff2MontserratBold from '../assets/font/montserrat/montserrat-bold-webfont.woff2'
@@ -39,18 +39,18 @@ export const monospace = `
 `
 
 export const link = css`
-  border-bottom: ${theme('colors.contrast.0')} solid 2px;
+  border-bottom: ${themeGet('colors.contrast.0')} solid 2px;
   color: inherit;
   text-decoration: none;
 
   &:hover,
   &.focus-visible {
-    border-bottom-color: ${theme('colors.primary')};
+    border-bottom-color: ${themeGet('colors.primary')};
     transition: border-color 0.1s ease;
   }
 
   &:active {
-    border-bottom-color: ${theme('colors.dark.2')};
+    border-bottom-color: ${themeGet('colors.dark.2')};
   }
 `
 

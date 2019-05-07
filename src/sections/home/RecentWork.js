@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
-import { theme } from 'styled-system'
+import { themeGet } from 'styled-system'
 import get from 'lodash/get'
 import { ArrowRight } from 'react-feather'
 
@@ -13,7 +13,7 @@ import Text from '../../components/Text'
 import Wrapper from '../../components/Wrapper'
 
 const Container = styled.section`
-  background: ${theme('colors.dark.2')};
+  background: ${themeGet('colors.dark.2')};
 
   & > ${Wrapper} {
     padding-top: 3rem;

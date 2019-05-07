@@ -7,6 +7,7 @@
     "url": "https://github.com/nelonoel/nelo.is/issues"
   },
   "dependencies": {
+    "ajv": "^6.10.0",
     "focus-visible": "^4.1.5",
     "gatsby": "^2.3.17",
     "gatsby-image": "^2.0.37",
@@ -31,6 +32,7 @@
     "gatsby-source-filesystem": "^2.0.29",
     "gatsby-transformer-remark": "^2.3.8",
     "gatsby-transformer-sharp": "^2.1.17",
+    "graphql": "^14.3.0",
     "install": "^0.12.2",
     "lodash": "^4.17.11",
     "polished": "^3.2.0",
@@ -46,7 +48,8 @@
     "rellax": "^1.9.1",
     "store": "^2.0.12",
     "styled-components": "^4.2.0",
-    "styled-system": "^2.2.0"
+    "styled-system": "^4.2.1",
+    "typescript": "^3.4.5"
   },
   "devDependencies": {
     "eslint": "^5.16.0",

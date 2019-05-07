@@ -1,8 +1,7 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
-import { theme, boxShadow } from 'styled-system'
+import { themeGet, boxShadow } from 'styled-system'
 import { Zap } from 'react-feather'
-import get from 'lodash/get'
 import { darken } from 'polished'
 
 import Text from '../../components/Text'
@@ -14,23 +13,23 @@ import Subheading from '../../components/Subheading'
 import TextField from '../../components/TextField'
 
 const Container = styled.div`
-  background: ${theme('colors.light.1')};
+  background: ${themeGet('colors.light.1')};
   background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.025' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
-  border-bottom: ${theme('colors.dark.0')} solid 1px;
+  border-bottom: ${themeGet('colors.dark.0')} solid 1px;
   padding: 2em 0 2.25em;
   position: relative;
 `
 
-const Label = Subheading.extend`
+const Label = styled(Subheading)`
   display: flex;
   margin: 0.125em 0;
 `.withComponent('label')
 
-const Input = TextField.extend`
-  background: ${theme('colors.dark.0')};
+const Input = styled(TextField)`
+  background: ${themeGet('colors.dark.0')};
   display: flex;
-  font-size: ${theme('fontSizes.1')};
-  padding: ${theme('space.3')}px;
+  font-size: ${themeGet('fontSizes.1')};
+  padding: ${themeGet('space.3')}px;
 
   &:focus {
     box-shadow: inset 0 0 0 2px
@@ -38,7 +37,7 @@ const Input = TextField.extend`
   }
 `
 
-const SubmitButton = Button.extend`
+const SubmitButton = styled(Button)`
   margin: 0;
   padding: 0.25em 1.5em;
   position: relative;

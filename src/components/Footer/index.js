@@ -1,22 +1,21 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
-import { theme } from 'styled-system'
+import { themeGet } from 'styled-system'
 import {
   Inbox,
   Smartphone,
-  Github,
+  GitHub,
   Twitter,
   Instagram,
   FileText
 } from 'react-feather'
-import { darken, transparentize } from 'polished'
 
 import { subheading } from '../../styles/typography'
 import { ButtonLink } from '../Button'
 import Wrapper from '../Wrapper'
 import Logo, { Dot } from '../Logo'
 
-const FooterContainer = Wrapper.withComponent('footer').extend`
+const FooterContainer = styled(Wrapper).attrs({ as: 'footer' })`
   align-items: flex-start;
   display: grid;
 	grid-template-columns: repeat(12, 1fr);
@@ -27,17 +26,17 @@ const FooterContainer = Wrapper.withComponent('footer').extend`
 const Box = styled.div`
   & > h5 {
 		${subheading}
-		color: ${theme('colors.contrast.2')};
+		color: ${themeGet('colors.contrast.2')};
 		letter-spacing: 0.125em;
     margin: 0 0 0.35em;
 	}
 `
 
-const FooterLink = ButtonLink.extend.attrs({
+const FooterLink = styled(ButtonLink).attrs({
   transparent: true,
   sharp: true
 })`
-	color: ${theme('colors.contrast.2')};
+	color: ${themeGet('colors.contrast.2')};
 	display: flex;
 	font-size: 0.85em;
   line-height: 1.3;
@@ -53,12 +52,12 @@ const FooterLink = ButtonLink.extend.attrs({
   &:hover, &.focus-visible {
 		background: none;
 		box-shadow: none;
-		color: ${theme('colors.contrast.3')};
+		color: ${themeGet('colors.contrast.3')};
 		transition: color .2s ease;
 	}
 `
 
-const LogoBox = Box.extend`
+const LogoBox = styled(Box)`
   display: flex;
   flex-direction: column;
   grid-column: span 3;
@@ -68,10 +67,10 @@ const LogoBox = Box.extend`
     z-index: 0;
 
     & > a {
-      color: ${theme('colors.contrast.2')};
+      color: ${themeGet('colors.contrast.2')};
 
       &.focus-visible {
-        text-shadow: -2px 2px 0 ${theme('colors.contrast.0')};
+        text-shadow: -2px 2px 0 ${themeGet('colors.contrast.0')};
       }
     }
   }
@@ -82,11 +81,11 @@ const LogoBox = Box.extend`
 
   ${Dot} {
     &:before {
-      color: ${theme('colors.contrast.2')};
+      color: ${themeGet('colors.contrast.2')};
     }
   }
 
-  @media (max-width: ${theme('breakpoints.1')}) {
+  @media (max-width: ${themeGet('breakpoints.1')}) {
     grid-column: span 12;
     grid-row: 3;
     margin-top: 0.75em;
@@ -94,34 +93,32 @@ const LogoBox = Box.extend`
   }
 `
 
-const LatestArticles = Box.extend`
+const LatestArticles = styled(Box)`
   grid-column: span 6;
 
-  @media (max-width: ${theme('breakpoints.1')}) {
+  @media (max-width: ${themeGet('breakpoints.1')}) {
     grid-column: span 7;
   }
 
-  @media (max-width: ${theme('breakpoints.0')}) {
+  @media (max-width: ${themeGet('breakpoints.0')}) {
     grid-column: span 12;
   }
 `
 
-const Links = Box.extend`
+const Links = styled(Box)`
   grid-column: span 3;
 
-  @media (max-width: ${theme('breakpoints.1')}) {
+  @media (max-width: ${themeGet('breakpoints.1')}) {
     grid-column: span 5;
     margin-left: 0.75em;
   }
 
-  @media (max-width: ${theme('breakpoints.0')}) {
+  @media (max-width: ${themeGet('breakpoints.0')}) {
     grid-column: span 12;
     margin-left: 0;
     margin-top: 1em;
   }
 `
-
-const ExternalLink = FooterLink.withComponent('a')
 
 class Footer extends PureComponent {
   render() {
@@ -144,31 +141,27 @@ class Footer extends PureComponent {
         </LatestArticles>
         <Links>
           <h5>Connect</h5>
-          <ExternalLink href={`mailto:${email}`}>
-            <Inbox /> E-mail
-          </ExternalLink>
-          <ExternalLink href="tel:+639168375550">
-            <Smartphone /> Mobile
-          </ExternalLink>
-          <FooterLink to="//github.com/nelonoel" target="_blank" rel="nofollow">
-            <Github /> Github
+          <FooterLink as="a" href={`mailto:${email}`}>
+						<Inbox /> E-mail
           </FooterLink>
-          <FooterLink
-            to="//twitter.com/nelonoel"
-            target="_blank"
-            rel="nofollow"
+          <FooterLink as="a" href="tel:+639168375550">
+						<Smartphone /> Mobile
+          </FooterLink>
+					<FooterLink as="a" href="//github.com/nelonoel" target="_blank" rel="nofollow">
+						<GitHub /> GitHub
+          </FooterLink>
+					<FooterLink as="a"
+            href="//twitter.com/nelonoel"target="_blank" rel="nofollow"
           >
-            <Twitter /> Twitter
+						<Twitter /> Twitter
           </FooterLink>
-          <FooterLink
-            to="//instagram.com/nelonoel"
-            target="_blank"
-            rel="nofollow"
+					<FooterLink as="a"
+            href="//instagram.com/si.nelo" target="_blank" rel="nofollow"
           >
-            <Instagram /> Instagram
+						<Instagram /> Instagram
           </FooterLink>
-          <FooterLink to="/resume.pdf" target="_blank" rel="nofollow">
-            <FileText /> Resumé
+          <FooterLink as="a" href="/resume.pdf" target="_blank" rel="nofollow">
+						<FileText /> Resumé
           </FooterLink>
         </Links>
       </FooterContainer>

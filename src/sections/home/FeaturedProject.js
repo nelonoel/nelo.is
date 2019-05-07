@@ -74,7 +74,7 @@ export default class FeaturedProject extends PureComponent {
           position="relative"
         >
           <Wrapper>
-            <Grid py={[4, 4, 5]} gap="1em 2em">
+            <Grid py={[4, 4, 5]} gap="1em 2em" width={320}>
               <Text color="contrast.4" maxWidth="20em" mx="auto">
                 Designed and developed Phaxio's brand identity, website, and
                 app. Crafted a responsive UI from the ground up while preserving

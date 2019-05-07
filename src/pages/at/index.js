@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
-import { theme } from 'styled-system'
+import { themeGet } from 'styled-system'
 import { Send } from 'react-feather'
 
 import SEO from '../../components/SEO'
@@ -27,11 +27,11 @@ const Field = styled.div`
   max-width: 25em;
 `
 
-const Label = Subheading.extend`
-  color: ${theme('colors.contrast.4')};
+const Label = styled(Subheading).attrs(() => ({ as: 'label' }))`
+  color: ${themeGet('colors.contrast.4')};
   display: flex;
   margin-bottom: 0.25em;
-`.withComponent('label')
+`
 
 class ContactPage extends PureComponent {
   render() {

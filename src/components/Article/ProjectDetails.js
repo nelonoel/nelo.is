@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
-import { theme } from 'styled-system'
+import { themeGet } from 'styled-system'
 import { transparentize } from 'polished'
 import { fullWidth } from '../../styles/mixins'
 
@@ -10,7 +10,7 @@ import Subheading from '../Subheading'
 
 const Container = styled.section`
 	${fullWidth}
-	border-bottom: ${theme('colors.dark.1')} solid 1px;
+	border-bottom: ${themeGet('colors.dark.1')} solid 1px;
 	position: relative;
 `
 
@@ -20,21 +20,21 @@ const Content = styled.div`
   grid-gap: 2em;
   padding-bottom: 1em;
 
-  @media (max-width: ${theme('breakpoints.2')}) {
+  @media (max-width: ${themeGet('breakpoints.2')}) {
     grid-template-columns: 1fr;
     grid-gap: 0.5em;
     margin: auto;
-    max-width: ${theme('breakpoints.1')};
+    max-width: ${themeGet('breakpoints.1')};
     padding: 0 0 1.5em;
   }
 `
 
 const Item = styled.div`
-  color: ${theme('colors.contrast.4')};
+  color: ${themeGet('colors.contrast.4')};
   line-height: 1.4;
   margin: 1.5em auto;
 
-  @media (max-width: ${theme('breakpoints.2')}) {
+  @media (max-width: ${themeGet('breakpoints.2')}) {
     margin: 1.5em auto 0;
   }
 
@@ -48,7 +48,7 @@ const Item = styled.div`
     padding: 0;
 
     & > li {
-      background: ${theme('colors.contrast.0')};
+      background: ${themeGet('colors.contrast.0')};
       border-radius: 3px;
       display: inline-block;
       font-size: 1rem;
@@ -60,11 +60,11 @@ const Item = styled.div`
 `
 
 const Description = styled.p`
-  color: ${theme('colors.text')};
+  color: ${themeGet('colors.text')};
   font-size: 1.25em;
   margin: 0.125em 0;
 
-  @media (max-width: ${theme('breakpoints.2')}) {
+  @media (max-width: ${themeGet('breakpoints.2')}) {
     font-size: 1.15em;
   }
 `

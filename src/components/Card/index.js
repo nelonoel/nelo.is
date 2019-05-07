@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
-import { theme } from 'styled-system'
+import { themeGet } from 'styled-system'
 import { Link } from 'gatsby'
 import { darken, rgba } from 'polished'
 import Img from 'gatsby-image'
@@ -28,9 +28,9 @@ const Content = styled.div`
   padding: 1.5em;
 `
 
-const Type = Subheading.extend`
+const Type = styled(Subheading)`
   align-items: center;
-  color: ${theme('colors.contrast.4')};
+  color: ${themeGet('colors.contrast.4')};
   display: flex;
   font-size: 0.75em;
   line-height: 1;
@@ -51,7 +51,7 @@ const Title = styled.h1`
 `
 
 const Subtitle = styled.h2`
-  color: ${theme('colors.contrast.3')};
+  color: ${themeGet('colors.contrast.3')};
   font-size: 1em;
   font-weight: normal;
   line-height: 1.35;
@@ -59,7 +59,7 @@ const Subtitle = styled.h2`
 `
 
 const Date = styled.div`
-  color: ${theme('colors.contrast.1')};
+  color: ${themeGet('colors.contrast.1')};
   font-size: 0.75em;
   font-weight: bold;
   letter-spacing: 0.0612em;
@@ -67,7 +67,7 @@ const Date = styled.div`
   margin: 0.45em 0 -0.45em;
 `
 
-const Category = Subheading.extend`
+const Category = styled(Subheading)`
   align-self: stretch;
   box-sizing: border-box;
   border: ${props =>
@@ -88,24 +88,24 @@ const Category = Subheading.extend`
   width: 100%;
   writing-mode: lr;
 
-  @media (max-width: ${theme('breakpoints.1')}) {
+  @media (max-width: ${themeGet('breakpoints.1')}) {
     padding: 0.5em;
   }
 `
 
-const Item = styled(Link).attrs({
-  to: props => props.slug
-})`
+const Item = styled(Link).attrs(({ slug }) => ({
+  to: slug
+}))`
   align-items: center;
   background: ${props =>
     props.theme.name === 'dark'
       ? props.theme.colors.contrast[0]
       : props.theme.colors.white};
-  border-radius: ${theme('radii.2')};
+  border-radius: ${themeGet('radii.2')};
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.01),
 							0 1px 4px rgba(0, 0, 0, 0.09);
   box-sizing: border-box;
-  color: ${theme('colors.text')};
+  color: ${themeGet('colors.text')};
   cursor: pointer;
   display: grid;
   grid-template-columns: ${props => (props.half ? '1fr' : '8.25em 1fr 1.5em')};
@@ -132,7 +132,7 @@ const Item = styled(Link).attrs({
 		writing-mode: ${props => (props.half ? 'lr' : 'tb-rl')};
 	}
 
-	@media (min-width: ${theme('breakpoints.1')}) {
+	@media (min-width: ${themeGet('breakpoints.1')}) {
 		&.focus-visible {
 			box-shadow: 0 0 0 3px ${props => rgba(props.theme.colors.contrast[2], 0.6)};
 		}
@@ -159,7 +159,7 @@ const Item = styled(Link).attrs({
 	`
       : null}
 
-  @media (max-width: ${theme('breakpoints.1')}) {
+  @media (max-width: ${themeGet('breakpoints.1')}) {
     grid-template-columns: 1fr;
 		grid-template-rows: 6em 1fr 1.5em;
 
@@ -179,7 +179,6 @@ const Item = styled(Link).attrs({
 class Card extends PureComponent {
   render() {
     const {
-      id,
       half,
       slug,
       cover,

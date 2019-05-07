@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { theme } from 'styled-system'
+import { themeGet } from 'styled-system'
 import { darken, lighten } from 'polished'
 import { monospace, subheading, link } from '../../styles/typography'
 import { fullWidth } from '../../styles/mixins'
@@ -31,8 +31,8 @@ const Article = styled.article`
   h4,
   h5,
   h6 {
-		line-height: ${theme('lineHeight.1')};
-    color: ${theme('colors.contrast.4')};
+		line-height: ${themeGet('lineHeight.1')};
+    color: ${themeGet('colors.contrast.4')};
     cursor: text;
     font-weight: bold;
     margin: 20px 0 10px;
@@ -83,18 +83,18 @@ const Article = styled.article`
   }
 
   h4 {
-    color: ${theme('colors.contrast.3')};
+    color: ${themeGet('colors.contrast.3')};
     font-size: 1.15em;
   }
 
   h5 {
-		color: ${theme('colors.contrast.3')};
+		color: ${themeGet('colors.contrast.3')};
     font-size: 1em;
   }
 
   h6 {
 		${subheading}
-		color: ${theme('colors.contrast.2')};
+		color: ${themeGet('colors.contrast.2')};
 		font-size: 0.85em;
 		letter-spacing: 0.0612em;
   }
@@ -128,7 +128,7 @@ const Article = styled.article`
 
   hr {
 		${fullWidth}
-		background: ${theme('colors.dark.0')};
+		background: ${themeGet('colors.dark.0')};
     border: 0 none;
     height: 4px;
 		margin-bottom: 2em;
@@ -237,7 +237,7 @@ const Article = styled.article`
   }
 
   blockquote {
-    border-left: 4px solid ${theme('colors.primary')};
+    border-left: 4px solid ${themeGet('colors.primary')};
     font-size: 1.15em;
     padding: 0.25em 1em;
 
@@ -255,7 +255,7 @@ const Article = styled.article`
   }
 
 	cite {
-		color: ${theme('colors.contrast.3')};
+		color: ${themeGet('colors.contrast.3')};
 		font-size: 0.85em;
 		display: block;
 		margin-top: -0.85em;
@@ -400,20 +400,20 @@ const Article = styled.article`
   code,
   tt {
 		${monospace}
+		word-break: break-word;
+    background: ${props => darken(0.075, props.theme.colors.base)};
+    color: ${themeGet('colors.text')};
     margin: 0 2px;
     padding: 0 5px;
-    background: ${props => darken(0.075, props.theme.colors.base)};
-    color: ${theme('colors.text')};
-		word-break: break-word;
   }
 
   pre code {
 		${monospace}
+    background: transparent;
+    border: none;
     margin: 0;
     padding: 0;
     white-space: pre;
-    border: none;
-    background: transparent;
   }
 
   .gatsby-highlight pre {
@@ -425,7 +425,7 @@ const Article = styled.article`
 	}
 
 	.ui-screenshot .gatsby-resp-image-wrapper {
-		border-radius: ${theme('radii.1')};
+		border-radius: ${themeGet('radii.1')};
 		box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.025),
 								0 1px 3px rgba(0, 0, 0, 0.05),
 								0 2px 6px rgba(0, 0, 0, 0.1);
@@ -442,14 +442,14 @@ const Article = styled.article`
 	}
 
 	figcaption {
-		color: ${theme('colors.contrast.3')};
+		color: ${themeGet('colors.contrast.3')};
 		font-size: 0.8em;
 		margin: -1.25rem auto 2rem;
 		padding: 0 1em;
 		text-align: center;
 
 		* {
-			color: ${theme('colors.contrast.3')};
+			color: ${themeGet('colors.contrast.3')};
 		}
 	}
 
@@ -477,7 +477,7 @@ const Article = styled.article`
 	}
 
   pre {
-		background-color: ${theme('colors.white')};
+		background-color: ${themeGet('colors.white')};
     line-height: 1.4;
     overflow: auto;
     padding: 0.75em 1em;
@@ -502,7 +502,7 @@ const Article = styled.article`
     line-height: 0;
   }
 
-	@media  screen and (max-width: ${theme('breakpoints.1')}) {
+	@media  screen and (max-width: ${themeGet('breakpoints.1')}) {
 		blockquote,
 		.gatsby-highlight {
 			${fullWidth}

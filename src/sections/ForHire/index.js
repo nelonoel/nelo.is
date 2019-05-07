@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
-import { theme, boxShadow } from 'styled-system'
+import { themeGet, boxShadow } from 'styled-system'
 import { Folder, Mail } from 'react-feather'
 import get from 'lodash/get'
 
@@ -12,8 +12,8 @@ import Box from '../../components/Box'
 import Wrapper from '../../components/Wrapper'
 
 const Container = styled.div`
-  border-bottom: ${theme('colors.dark.1')} solid 1px;
-  border-top: ${theme('colors.dark.1')} solid 1px;
+  border-bottom: ${themeGet('colors.dark.1')} solid 1px;
+  border-top: ${themeGet('colors.dark.1')} solid 1px;
   padding: 2em 0;
   position: relative;
 `

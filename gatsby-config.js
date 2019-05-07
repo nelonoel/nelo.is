@@ -60,7 +60,7 @@ module.exports = {
 		},
 		`gatsby-plugin-catch-links`,
 		// `gatsby-plugin-feed`,
-		// `gatsby-plugin-layout`,
+		`gatsby-plugin-layout`,
 		`gatsby-plugin-offline`,
 		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-sitemap`,

@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
-import { theme } from 'styled-system'
+import { themeGet } from 'styled-system'
 import { rgba, darken } from 'polished'
 import Img from 'gatsby-image'
 
@@ -11,21 +11,21 @@ const Window = styled(Box)`
   background: #ebeceb;
   border: ${props => darken(0.03, props.theme.colors.light[4])} solid 0.2em;
   border-bottom: none;
-  border-top-left-radius: ${theme('radii.2')};
-  border-top-right-radius: ${theme('radii.2')};
+  border-top-left-radius: ${themeGet('radii.2')};
+  border-top-right-radius: ${themeGet('radii.2')};
   box-shadow: 0 1px 3px ${props => rgba(props.theme.colors.black, 0.0306)},
     0 5px 25px ${props => rgba(props.theme.colors.black, 0.125)},
     0 20px 100px ${props => rgba(props.theme.colors.black, 0.25)};
   overflow: hidden;
 
-  @media (max-width: ${theme('breakpoints.1')}) {
+  @media (max-width: ${themeGet('breakpoints.1')}) {
     background: #262e3d;
-    border-top-left-radius: ${theme('radii.3')};
-    border-top-right-radius: ${theme('radii.3')};
+    border-top-left-radius: ${themeGet('radii.3')};
+    border-top-right-radius: ${themeGet('radii.3')};
   }
 `
 
-const Frame = Box.extend.attrs({
+const Frame = styled(Box).attrs({
   bg: 'light.4',
   color: 'contrast.1',
   height: '1.75em',
@@ -40,12 +40,12 @@ const Frame = Box.extend.attrs({
 
 	&:before {
 		content: '•••';
-		font-size: ${theme('fontSizes.5')};
+		font-size: ${themeGet('fontSizes.5')};
 		line-height: 0.6;
 	}
 
-	@media (max-width: ${theme('breakpoints.1')}) {
-		color: ${theme('colors.dark.2')};
+	@media (max-width: ${themeGet('breakpoints.1')}) {
+		color: ${themeGet('colors.dark.2')};
 		text-align: center;
 
 		&:before {

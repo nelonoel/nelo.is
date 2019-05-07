@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import { Link } from 'gatsby'
 import styled, { keyframes } from 'styled-components'
-import { theme } from 'styled-system'
+import { themeGet } from 'styled-system'
 import { logo } from '../../styles/typography'
 
 const bounce = keyframes`
@@ -73,7 +73,7 @@ export const Dot = styled.span`
   }
 
   &:before {
-    color: ${theme('colors.primary')};
+    color: ${themeGet('colors.primary')};
   }
 
   &:after {
@@ -94,7 +94,7 @@ const Title = styled.h1`
   }
 
   a {
-    color: ${theme('colors.text')};
+    color: ${themeGet('colors.text')};
     font-size: 0.8em;
     letter-spacing: -0.0362em;
     text-decoration: none;
@@ -118,9 +118,9 @@ const Title = styled.h1`
 
 export const LogoIcon = styled.div`
   ${logo} align-items: center;
-  background: ${theme('colors.text')};
+  background: ${themeGet('colors.text')};
   border-radius: 0.2em;
-  color: ${theme('colors.base')};
+  color: ${themeGet('colors.base')};
   display: inline-flex;
   font-size: 4em;
   height: 1.25em;
@@ -141,13 +141,13 @@ export const LogoIcon = styled.div`
   }
 `
 
-export const LogoLoader = LogoIcon.extend`
+export const LogoLoader = styled(LogoIcon)`
   background: none;
-  color: ${theme('colors.dark.2')};
+  color: ${themeGet('colors.dark.2')};
 
   &:after {
     animation: ${bounce} 1.8s infinite;
-    color: ${theme('colors.dark.2')};
+    color: ${themeGet('colors.dark.2')};
     margin-bottom: 0.25em;
     transform-origin: bottom;
   }

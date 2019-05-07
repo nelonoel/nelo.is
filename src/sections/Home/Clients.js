@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
-import { theme, flex } from 'styled-system'
+import { themeGet, flex } from 'styled-system'
 
 import Text from '../../components/Text'
 import Flex from '../../components/Flex'
@@ -22,11 +22,11 @@ const Container = styled.div`
   position: relative;
 `
 
-const Logo = styled.img.attrs({
+const Logo = styled.img.attrs(({ company }) => ({
   draggable: false,
-  alt: props => props.company,
-  title: props => props.company
-})`
+  alt: company,
+  title: company
+}))`
   max-height: 3em;
   max-width: 7em;
 `
@@ -51,7 +51,7 @@ export default class Services extends PureComponent {
               alignItems="center"
               justifyContent="center"
               my={3}
-              w={[1, 1 / 2, 1 / 3, 1 / 3, 1 / 6, 1 / 6]}
+              width={[1, 1 / 2, 1/3, 1/3, 1/6, 1/6]}
             >
               <Logo src={svgBugwolf} company="Bugwolf" />
             </Flex>
@@ -61,7 +61,7 @@ export default class Services extends PureComponent {
               ml={['auto', 3, 'auto']}
               mr={['auto', '10%', 'auto']}
               my={3}
-              w={[1, 'auto', 1 / 3, 1 / 3, 1 / 6, 1 / 6]}
+              width={[1, 'auto', 1/3, 1/3, 1/6, 1/6]}
             >
               <Logo src={svgXTeam} company="X-Team" />
             </Flex>
@@ -69,7 +69,7 @@ export default class Services extends PureComponent {
               alignItems="center"
               justifyContent="center"
               my={3}
-              w={[1, 1 / 2, 1 / 3, 1 / 3, 1 / 6, 1 / 6]}
+              width={[1, 1 / 2, 1/3, 1/3, 1/6, 1/6]}
             >
               <Logo src={svgPhaxio} company="Phaxio" />
             </Flex>
@@ -79,7 +79,7 @@ export default class Services extends PureComponent {
               ml={['auto', 3, 'auto']}
               mr={['auto', '10%', 'auto']}
               my={3}
-              w={[1, 'auto', 1 / 3, 1 / 3, 1 / 6, 1 / 6]}
+              width={[1, 'auto', 1/3, 1/3, 1/6, 1/6]}
             >
               <Logo src={svgMana} company="MANA" />
             </Flex>
@@ -87,7 +87,7 @@ export default class Services extends PureComponent {
               alignItems="center"
               justifyContent="center"
               my={3}
-              w={[1, 1 / 2, 1 / 3, 1 / 3, 1 / 6, 1 / 6]}
+              width={[1, 1 / 2, 1/3, 1/3, 1/6, 1/6]}
             >
               <Logo src={svgVyllage} company="Vyllage" />
             </Flex>
@@ -97,7 +97,7 @@ export default class Services extends PureComponent {
               ml={['auto', 3, 'auto']}
               mr={['auto', '10%', 'auto']}
               my={3}
-              w={[1, 'auto', 1 / 3, 1 / 3, 1 / 6, 1 / 6]}
+              width={[1, 'auto', 1/3, 1/3, 1/6, 1/6]}
             >
               <Logo src={svgCarful} company="Carful" />
             </Flex>

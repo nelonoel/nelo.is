@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import { rgba } from 'polished'
 import { Link } from 'gatsby'
-import { theme } from 'styled-system'
+import { themeGet } from 'styled-system'
 import { ArrowRight } from 'react-feather'
 
 import Subheading from '../../components/Subheading'
@@ -24,8 +24,8 @@ const ReadMore = styled(Box).attrs({
 `
 
 const Container = styled(Link)`
-  background: ${theme('colors.light.2')};
-  border-bottom: ${theme('colors.dark.0')} solid 1px;
+  background: ${themeGet('colors.light.2')};
+  border-bottom: ${themeGet('colors.dark.0')} solid 1px;
   display: flex;
   margin: 0;
   overflow: hidden;
@@ -54,7 +54,7 @@ const Container = styled(Link)`
     margin-right: 0;
     position: absolute;
     right: 0.75rem;
-    color: ${theme('colors.contrast.4')};
+    color: ${themeGet('colors.contrast.4')};
     font-size: 1em;
     font-weight: 400;
     line-height: 1.25;
