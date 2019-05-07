@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { space, minWidth } from 'styled-system'
 import { lighten, rgba } from 'polished'

@@ -1,5 +1,6 @@
 import { darken, lighten } from 'polished'
 import assign from 'lodash/assign'
+import get from 'lodash/get'
 
 const deriveColors = base => {
   return {

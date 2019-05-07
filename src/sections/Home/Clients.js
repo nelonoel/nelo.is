@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
-import { theme } from 'styled-system'
+import { theme, flex } from 'styled-system'
 
 import Text from '../../components/Text'
 import Flex from '../../components/Flex'
@@ -12,7 +12,6 @@ import svgMana from '../../assets/img/clients/mana.svg'
 import svgPhaxio from '../../assets/img/clients/phaxio.svg'
 import svgVyllage from '../../assets/img/clients/vyllage.svg'
 import svgXTeam from '../../assets/img/clients/x-team.svg'
-import { flex } from 'styled-system/dist/styles'
 
 const Container = styled.div`
   background: ${props =>

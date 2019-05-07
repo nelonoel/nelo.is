@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import { theme } from 'styled-system'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 import { darken, rgba } from 'polished'
 import Img from 'gatsby-image'
 

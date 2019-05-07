@@ -1,3 +1,4 @@
+import { graphql } from 'gatsby'
 import React, { PureComponent } from 'react'
 import get from 'lodash/get'
 import { Calendar, Clock, Tag } from 'react-feather'

@@ -1,3 +1,4 @@
+import { graphql } from 'gatsby'
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
@@ -49,7 +50,7 @@ class Template extends Component {
     const keywords = get(this, 'props.data.site.siteMetadata.keywords')
     const posts = get(this, 'props.data.latestPosts.edges')
     const theme = isDarkMode ? dark : light
-    const content = children()
+    const content = children
     const isLoaded =
       typeof store.storage.name === 'string' &&
       store.storage.name.length > 0 &&
@@ -104,43 +105,49 @@ class Template extends Component {
   }
 }
 
-export default Template
+export default ({ children }) => (
+	<StaticQuery
+		query={graphql`
+			query LayoutQuery {
+				site {
+					siteMetadata {
+						title
+						author
+						email
+						description
+						siteUrl
+						keywords
+					}
+				}
+				defaultCover: file(relativePath: { eq: "img/default-cover.jpg" }) {
+					childImageSharp {
+						resolutions {
+							...GatsbyImageSharpResolutions_noBase64
+						}
+					}
+				}
+				latestPosts: allMarkdownRemark(
+					sort: { fields: [frontmatter___date], order: DESC }
+					limit: 5
+					filter: { frontmatter: { model: { ne: "project" }, draft: { ne: true } } }
+				) {
+					edges {
+						node {
+							id
+							fields {
+								slug
+							}
+							frontmatter {
+								title
+							}
+						}
+					}
+				}
+			}
+		`}
 
-export const pageQuery = graphql`
-  query LayoutQuery {
-    site {
-      siteMetadata {
-        title
-        author
-        email
-        description
-        siteUrl
-        keywords
-      }
-    }
-    defaultCover: file(relativePath: { eq: "img/default-cover.jpg" }) {
-      childImageSharp {
-        resolutions {
-          ...GatsbyImageSharpResolutions_noBase64
-        }
-      }
-    }
-    latestPosts: allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: 5
-      filter: { frontmatter: { model: { ne: "project" }, draft: { ne: true } } }
-    ) {
-      edges {
-        node {
-          id
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-          }
-        }
-      }
-    }
-  }
-`
+		render={data => (
+			<Template data={data} />
+		)}
+	/>
+)

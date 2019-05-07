@@ -2,9 +2,9 @@ import React, { PureComponent } from 'react'
 import Banner, { Emoji, Title, Description } from '../../components/Banner'
 import Wrapper from '../../components/Wrapper'
 import Flex from '../../components/Flex'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 
-class ThanksPage extends PureComponent {
+class SendingMail extends PureComponent {
   render() {
     return (
       <Wrapper>
@@ -23,4 +23,4 @@ class ThanksPage extends PureComponent {
   }
 }
 
-export default ThanksPage
+export default SendingMail

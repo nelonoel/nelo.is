@@ -1,3 +1,4 @@
+import { graphql } from 'gatsby'
 import React, { PureComponent } from 'react'
 import styled, { keyframes } from 'styled-components'
 import get from 'lodash/get'

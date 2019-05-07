@@ -3,7 +3,7 @@ import Banner, { Emoji, Title, Description } from '../../components/Banner'
 import Wrapper from '../../components/Wrapper'
 import Flex from '../../components/Flex'
 
-class ThanksPage extends PureComponent {
+class ReceivingMail extends PureComponent {
   render() {
     return (
       <Wrapper>
@@ -21,4 +21,4 @@ class ThanksPage extends PureComponent {
   }
 }
 
-export default ThanksPage
+export default ReceivingMail

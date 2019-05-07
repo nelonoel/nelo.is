@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 import styled, { keyframes } from 'styled-components'
 import { theme } from 'styled-system'
 import { logo } from '../../styles/typography'

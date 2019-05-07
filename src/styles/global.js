@@ -2,7 +2,7 @@ import { injectGlobal } from 'styled-components'
 import { normalize } from 'polished'
 import { light as theme } from './theme'
 import { fontFaces, body } from './typography'
-require('focus-visible')
+import 'focus-visible'
 
 injectGlobal`
 	${normalize()}
