@@ -70,7 +70,6 @@ module.exports = {
 				color: '#43bf4d',
 				showSpinner: false
 			},
-		},
-		`gatsby-plugin-netlify`
+		}
 	],
 }
