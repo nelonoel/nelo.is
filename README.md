@@ -3,22 +3,23 @@
 Source code for my personal website, portfolio, and blog.
 
 ### TLDR;
-[View live website](https://nelo.is)
+🌏[View live website](https://nelo.is)
 
 ### Stack
- - GatsbyJS
- - ReactJS
+ - GatsbyJS v2
+ - ReactJS v16
  - GraphQL
  - webpack
- - styled-components
- - styled-system
+ - styled-components v4
+ - styled-system v4
  - Netlify Hosting
- 
+
 ### Features
+ - Blog and Project category
  - SEO: Open Graph tags, sitemap
  - Syntax highlighting via PrismJS
  - Constraint-based design via styled-system
- - Dark mode
+ - Dark Theme
  - Traced SVG image preloaders
  - Emojis by Twemoji
- - RSS Feed Generation
+ - Isolated `StaticQuery` per section

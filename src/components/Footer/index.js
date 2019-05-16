@@ -1,6 +1,9 @@
 import React, { PureComponent } from 'react'
+import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import { themeGet } from 'styled-system'
+import get from 'lodash/get'
+
 import {
   Inbox,
   Smartphone,
@@ -122,8 +125,8 @@ const Links = styled(Box)`
 
 class Footer extends PureComponent {
   render() {
-    const posts = this.props.recent
-    const { email } = this.props
+		const email = get(this, 'props.data.site.siteMetadata.email')
+    const posts = get(this, 'props.data.latestPosts.edges')
 
     return (
       <FooterContainer px="1.5em" py={['2rem', '2rem', '3rem']}>
@@ -169,4 +172,34 @@ class Footer extends PureComponent {
   }
 }
 
-export default Footer
+export default () => (
+	<StaticQuery
+		query={graphql`
+			query FooterQuery {
+				site {
+					siteMetadata {
+						email
+					}
+				}
+				latestPosts: allMarkdownRemark(
+					sort: { fields: [frontmatter___date], order: DESC }
+					limit: 5
+					filter: { frontmatter: { model: { ne: "project" }, draft: { ne: true } } }
+				) {
+					edges {
+						node {
+							id
+							fields {
+								slug
+							}
+							frontmatter {
+								title
+							}
+						}
+					}
+				}
+			}
+		`}
+
+		render={data => <Footer data={data} />}
+	/>)

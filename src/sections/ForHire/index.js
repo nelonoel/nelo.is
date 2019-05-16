@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react'
+import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import { themeGet } from 'styled-system'
+import get from 'lodash/get'
 import { Folder, Mail } from 'react-feather'
 
 import Text from '../../components/Text'
@@ -17,9 +19,9 @@ const Container = styled.div`
   position: relative;
 `
 
-export default class ForHire extends PureComponent {
+class ForHire extends PureComponent {
   render() {
-    const { forHire } = this.props
+    const forHire = get(this, 'props.data.site.siteMetadata.forHire', false)
 
     return (
       <Container>
@@ -75,6 +77,17 @@ export default class ForHire extends PureComponent {
   }
 }
 
-ForHire.defaultProps = {
-  forHire: false
-}
+export default () => (
+	<StaticQuery query={graphql`
+		query ForHireQuery {
+			site {
+				siteMetadata {
+					forHire
+				}
+			}
+		}
+	`}
+
+		render={data => <ForHire data={data} />}
+	/>
+)

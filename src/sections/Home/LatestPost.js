@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react'
+import { Link, StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import { rgba } from 'polished'
-import { Link } from 'gatsby'
 import { themeGet } from 'styled-system'
+import get from 'lodash/get'
 import { ArrowRight } from 'react-feather'
 
 import Subheading from '../../components/Subheading'
@@ -68,9 +69,9 @@ const Container = styled(Link)`
   }
 `
 
-export default class LatestPost extends PureComponent {
+class LatestPost extends PureComponent {
   render() {
-    const { post } = this.props
+    const post = get(this, 'props.data.latestPost.edges[0].node')
     const slug = post.fields.slug
     const { title, category } = post.frontmatter
 
@@ -115,3 +116,28 @@ export default class LatestPost extends PureComponent {
     )
   }
 }
+
+export default () => (
+	<StaticQuery query={graphql`
+		query LatestPostQuery {
+			latestPost: allMarkdownRemark(
+				sort: { fields: [frontmatter___date], order: DESC }
+				filter: { frontmatter: { model: { ne: "project" }, draft: { ne: true } } }
+				limit: 1
+			) {
+				edges {
+					node {
+						id
+						fields {
+							slug
+						}
+						frontmatter {
+							title
+							category
+						}
+					}
+				}
+			}
+		}
+	`} render={data => <LatestPost data={data} />} />
+)

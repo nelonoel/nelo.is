@@ -1,6 +1,6 @@
 
-import { StaticQuery, graphql } from 'gatsby'
 import React, { Component, Fragment } from 'react'
+import { StaticQuery, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import Twemoji from 'react-twemoji'
@@ -50,7 +50,6 @@ class Template extends Component {
     const author = get(this, 'props.data.site.siteMetadata.author')
     const email = get(this, 'props.data.site.siteMetadata.email')
     const keywords = get(this, 'props.data.site.siteMetadata.keywords')
-    const posts = get(this, 'props.data.latestPosts.edges')
     const theme = isDarkMode ? dark : light
     const content = children
     const isLoaded =
@@ -94,7 +93,7 @@ class Template extends Component {
 									isDarkMode={isDarkMode}
 								/>
 								<Content>{content}</Content>
-								<Footer email={email} recent={posts} />
+								<Footer />
 							</Page>
 						) : (
 							<Page>
@@ -128,23 +127,6 @@ export default ({ location, history, children }) => (
 					childImageSharp {
 						fixed {
 							...GatsbyImageSharpFixed_noBase64
-						}
-					}
-				}
-				latestPosts: allMarkdownRemark(
-					sort: { fields: [frontmatter___date], order: DESC }
-					limit: 5
-					filter: { frontmatter: { model: { ne: "project" }, draft: { ne: true } } }
-				) {
-					edges {
-						node {
-							id
-							fields {
-								slug
-							}
-							frontmatter {
-								title
-							}
 						}
 					}
 				}

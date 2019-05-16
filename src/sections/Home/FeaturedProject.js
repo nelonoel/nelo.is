@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react'
+import { StaticQuery, graphql } from 'gatsby'
 import { ArrowRight, ExternalLink } from 'react-feather'
+import get from 'lodash/get'
 
 import { ButtonLink, ExternalButtonLink } from '../../components/Button'
 import Box from '../../components/Box'
@@ -9,9 +11,15 @@ import Subheading from '../../components/Subheading'
 import Text from '../../components/Text'
 import Wrapper from '../../components/Wrapper'
 
-export default class FeaturedProject extends PureComponent {
+class FeaturedProject extends PureComponent {
   render() {
-    const { screens } = this.props
+    const screens = {
+      desktop: get(
+        this,
+        'props.data.featuredDesktopScreen.childImageSharp.sizes'
+      ),
+      mobile: get(this, 'props.data.featuredMobileScreen.childImageSharp.sizes')
+    }
 
     return (
       <section>
@@ -90,3 +98,28 @@ export default class FeaturedProject extends PureComponent {
     )
   }
 }
+
+export default () => (
+	<StaticQuery query={graphql`
+		query FeaturedProjectQuery {
+			featuredDesktopScreen: file(
+				relativePath: { eq: "img/featured/desktop.png" }
+			) {
+				childImageSharp {
+					sizes {
+						...GatsbyImageSharpSizes_withWebp
+					}
+				}
+			}
+			featuredMobileScreen: file(
+				relativePath: { eq: "img/featured/mobile.png" }
+			) {
+				childImageSharp {
+					sizes {
+						...GatsbyImageSharpSizes_withWebp
+					}
+				}
+			}
+		}
+	`} render={data => <FeaturedProject data={data} />} />
+)

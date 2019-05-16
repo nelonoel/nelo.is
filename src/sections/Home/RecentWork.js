@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import { themeGet } from 'styled-system'
 import get from 'lodash/get'
@@ -35,9 +36,9 @@ const Container = styled.section`
   }
 `
 
-export default class RecentWork extends PureComponent {
+class RecentWork extends PureComponent {
   render() {
-    const { posts } = this.props
+    const posts = get(this, 'props.data.recentWork.edges')
 
     return (
       <Container>
@@ -94,7 +95,7 @@ export default class RecentWork extends PureComponent {
             )
           })}
           <Box
-            w={['1px', '1px', '1px', '1px', '1.5rem']}
+            width={['1px', '1px', '1px', '1px', '1.5rem']}
             mr={['-1px', '-1px', '-1px', '-1px', '0']}
           />
         </Grid>
@@ -102,3 +103,46 @@ export default class RecentWork extends PureComponent {
     )
   }
 }
+
+export default () => (
+	<StaticQuery query={graphql`
+		query RecentWorkQuery {
+			recentWork: allMarkdownRemark(
+				sort: { fields: [frontmatter___date], order: DESC }
+				filter: {
+					frontmatter: {
+						title: { ne: "Phaxio" }
+						model: { eq: "project" }
+						draft: { ne: true }
+					}
+				}
+				limit: 7
+			) {
+				edges {
+					node {
+						fields {
+							slug
+						}
+						frontmatter {
+							title
+							subtitle
+							cover {
+								childImageSharp {
+									sizes(traceSVG: { background: "#ced9e0", color: "#738694" }) {
+										...GatsbyImageSharpSizes_withWebp_tracedSVG
+									}
+								}
+							}
+							model
+							category
+							type
+							date(formatString: "MMM YYYY")
+						}
+					}
+				}
+			}
+		}
+	`}
+
+	render={data => <RecentWork data={data} />} />
+)

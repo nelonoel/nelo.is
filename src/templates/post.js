@@ -20,7 +20,6 @@ class PostTemplate extends PureComponent {
 		const cover = get(post, 'frontmatter.cover.childImageSharp.fluid')
     const siteUrl = get(this.props, 'data.site.siteMetadata.siteUrl')
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
-    const forHire = get(this, 'props.data.site.siteMetadata.forHire')
     const image =
       siteUrl + get(post, 'frontmatter.ogImage.childImageSharp.fixed.src')
     const {
@@ -85,7 +84,7 @@ class PostTemplate extends PureComponent {
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
         </Wrapper>
-        {model === 'project' ? <ForHire forHire={forHire} /> : <Subscribe />}
+        {model === 'project' ? <ForHire /> : <Subscribe />}
       </Layout>
     )
   }
@@ -98,7 +97,6 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        forHire
         siteUrl
       }
     }
