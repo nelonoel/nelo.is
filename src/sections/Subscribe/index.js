@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
-import { themeGet, boxShadow } from 'styled-system'
+import { themeGet } from 'styled-system'
 import { Zap } from 'react-feather'
 import { darken } from 'polished'
 
@@ -70,7 +70,7 @@ export default class ForHire extends PureComponent {
                 Want more of this?
               </Text>
               <Text textAlign="center" color="contrast.3" lineHeight="1">
-                Code, design, &amp; productivity – no 🐮💩
+                Code, design, &amp; productivity – no <span role="img" aria-label="bull">🐮</span><span role="img" aria-label="shit">💩</span>
               </Text>
             </Box>
           </Flex>

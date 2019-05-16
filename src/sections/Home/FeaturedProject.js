@@ -1,6 +1,4 @@
 import React, { PureComponent } from 'react'
-import styled from 'styled-components'
-import Img from 'gatsby-image'
 import { ArrowRight, ExternalLink } from 'react-feather'
 
 import { ButtonLink, ExternalButtonLink } from '../../components/Button'

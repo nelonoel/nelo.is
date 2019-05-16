@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
-import { themeGet, flex } from 'styled-system'
 
 import Text from '../../components/Text'
 import Flex from '../../components/Flex'

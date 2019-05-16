@@ -9,18 +9,20 @@ import SEO from '../components/SEO'
 import Banner, { Type, Title, Subtitle, Meta } from '../components/Banner'
 import Article from '../components/Article'
 import ProjectDetails from '../components/Article/ProjectDetails'
+import Layout from '../components/Layout'
 import Wrapper from '../components/Wrapper'
 import Text from '../components/Text'
 
 class PostTemplate extends PureComponent {
   render() {
+		const { history, location } = this.props
     const post = this.props.data.markdownRemark
-    const cover = get(post, 'frontmatter.cover.childImageSharp.sizes')
+		const cover = get(post, 'frontmatter.cover.childImageSharp.fluid')
     const siteUrl = get(this.props, 'data.site.siteMetadata.siteUrl')
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     const forHire = get(this, 'props.data.site.siteMetadata.forHire')
     const image =
-      siteUrl + get(post, 'frontmatter.ogImage.childImageSharp.resolutions.src')
+      siteUrl + get(post, 'frontmatter.ogImage.childImageSharp.fixed.src')
     const {
       model,
       title,
@@ -43,7 +45,7 @@ class PostTemplate extends PureComponent {
     }
 
     return (
-      <div>
+      <Layout {...{history, location}}>
         <Wrapper>
           <SEO {...meta} />
           <Banner cover={cover}>
@@ -84,7 +86,7 @@ class PostTemplate extends PureComponent {
           />
         </Wrapper>
         {model === 'project' ? <ForHire forHire={forHire} /> : <Subscribe />}
-      </div>
+      </Layout>
     )
   }
 }
@@ -109,18 +111,18 @@ export const pageQuery = graphql`
         subtitle
         cover {
           childImageSharp {
-            sizes(
+            fluid(
               duotone: { highlight: "#f5f8fa", shadow: "#293742" }
               toFormat: JPG
               jpegProgressive: true
             ) {
-              ...GatsbyImageSharpSizes_withWebp
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
         ogImage: cover {
           childImageSharp {
-            resolutions(
+            fixed(
               width: 1200
               height: 630
               toFormat: JPG

@@ -1,3 +1,4 @@
+
 import { StaticQuery, graphql } from 'gatsby'
 import React, { Component, Fragment } from 'react'
 import Helmet from 'react-helmet'
@@ -5,16 +6,16 @@ import get from 'lodash/get'
 import Twemoji from 'react-twemoji'
 import store from 'store'
 
-import styled, { ThemeProvider } from 'styled-components'
-import { dark, light } from '../styles/theme'
-import GlobalStyles from '../styles/global'
+import { ThemeProvider } from 'styled-components'
+import { dark, light } from '../../styles/theme'
+import GlobalStyles from '../../styles/global'
 
-import SEO from '../components/SEO'
-import Page, { Content } from '../components/Page'
-import Flex from '../components/Flex'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import { LogoLoader } from '../components/Logo'
+import SEO from '../SEO'
+import Page, { Content } from '../Page'
+import Flex from '../Flex'
+import Header from '../Header'
+import Footer from '../Footer'
+import { LogoLoader } from '../Logo'
 
 class Template extends Component {
   constructor(props) {
@@ -45,7 +46,7 @@ class Template extends Component {
     )
     const defaultCover =
       siteUrl +
-      get(this, 'props.data.defaultCover.childImageSharp.resolutions.src')
+      get(this, 'props.data.defaultCover.childImageSharp.fixed.src')
     const author = get(this, 'props.data.site.siteMetadata.author')
     const email = get(this, 'props.data.site.siteMetadata.email')
     const keywords = get(this, 'props.data.site.siteMetadata.keywords')
@@ -62,7 +63,7 @@ class Template extends Component {
       decription: siteDescription,
       image: defaultCover,
       siteTitle: siteTitle
-    }
+		}
 
     return (
       <ThemeProvider theme={theme}>
@@ -125,8 +126,8 @@ export default ({ location, history, children }) => (
 				}
 				defaultCover: file(relativePath: { eq: "img/default-cover.jpg" }) {
 					childImageSharp {
-						resolutions {
-							...GatsbyImageSharpResolutions_noBase64
+						fixed {
+							...GatsbyImageSharpFixed_noBase64
 						}
 					}
 				}

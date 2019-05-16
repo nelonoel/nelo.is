@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import { themeGet } from 'styled-system'
-import { Terminal, Feather, ArrowRight } from 'react-feather'
+import { Terminal, Feather } from 'react-feather'
 
 import Box from '../../components/Box'
 import Flex from '../../components/Flex'

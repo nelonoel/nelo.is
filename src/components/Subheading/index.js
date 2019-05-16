@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import { color, display, space, textAlign, themeGet } from 'styled-system'
 import { subheading } from '../../styles/typography'

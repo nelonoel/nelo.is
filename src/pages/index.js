@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby'
 import React, { PureComponent } from 'react'
-import styled, { keyframes } from 'styled-components'
 import get from 'lodash/get'
+import Layout from '../components/Layout'
 
 import Banner from '../sections/Home/Banner'
 import LatestPost from '../sections/Home/LatestPost'
@@ -13,6 +13,7 @@ import ForHire from '../sections/ForHire'
 
 class Home extends PureComponent {
   render() {
+		const { history, location } = this.props
     const posts = get(this, 'props.data.recentWork.edges')
     const latestPost = get(this, 'props.data.latestPost.edges[0].node')
     const forHire = get(this, 'props.data.site.siteMetadata.forHire')
@@ -29,7 +30,7 @@ class Home extends PureComponent {
     }
 
     return (
-      <div>
+      <Layout {...{ history, location }}>
         <Banner cover={landingCover} />
         <LatestPost post={latestPost} />
         <Services />
@@ -37,7 +38,7 @@ class Home extends PureComponent {
         <RecentWork posts={posts} />
         <Clients />
         <ForHire forHire={forHire} />
-      </div>
+      </Layout>
     )
   }
 }

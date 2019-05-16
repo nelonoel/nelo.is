@@ -2,14 +2,10 @@ import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import { themeGet } from 'styled-system'
 import { Link } from 'gatsby'
-import { darken, rgba } from 'polished'
+import { rgba } from 'polished'
 import Img from 'gatsby-image'
 
 import Subheading from '../Subheading'
-
-const card = {
-  height: 15
-}
 
 const Cover = styled(Img)`
   height: 100%;

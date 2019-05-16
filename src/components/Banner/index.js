@@ -9,32 +9,6 @@ import { cover } from '../../styles/mixins'
 import Subheading from '../Subheading'
 import Flex from '../Flex'
 
-export const Container = styled.div`
-  align-items: center;
-  color: ${themeGet('colors.text')};
-  display: flex;
-  min-height: 8.5em;
-  margin-top: -7em;
-  opacity: 0.9;
-  padding-top: 8em;
-  text-align: center;
-  z-index: 0;
-
-  .cover {
-    left: 0;
-    pointer-events: none;
-    position: absolute !important;
-    top: 0;
-    width: 100%;
-    z-index: -1;
-  }
-
-  @media (max-width: ${themeGet('breakpoints.1')}) {
-    margin-top: 0;
-    padding-top: 2.5em;
-  }
-`
-
 export const Type = styled(Subheading)`
   color: ${themeGet('colors.contrast.3')};
   line-height: 3;
@@ -70,6 +44,32 @@ export const Cover = styled(Img)`
 	&:before {
 		opacity: 0.65;
 	}
+`
+
+export const Container = styled.div`
+  align-items: center;
+  color: ${themeGet('colors.text')};
+  display: flex;
+  min-height: 8.5em;
+  margin-top: -7em;
+  opacity: 0.9;
+  padding-top: 8em;
+  text-align: center;
+  z-index: 0;
+
+  ${Cover} {
+    left: 0;
+    pointer-events: none;
+    position: absolute !important;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+
+  @media (max-width: ${themeGet('breakpoints.1')}) {
+    margin-top: 0;
+    padding-top: 2.5em;
+  }
 `
 
 export const Emoji = styled(Twemoji).attrs({

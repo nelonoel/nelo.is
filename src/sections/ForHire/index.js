@@ -1,8 +1,7 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
-import { themeGet, boxShadow } from 'styled-system'
+import { themeGet } from 'styled-system'
 import { Folder, Mail } from 'react-feather'
-import get from 'lodash/get'
 
 import Text from '../../components/Text'
 import { ButtonLink } from '../../components/Button'

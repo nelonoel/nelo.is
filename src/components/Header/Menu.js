@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import { display, space, themeGet } from 'styled-system'
 import { Home, Folder, Book, Mail, Sun, Moon } from 'react-feather'
-import { rgba } from 'polished'
 
 import { ButtonLink } from '../Button'
 
@@ -55,10 +54,6 @@ const NavLink = styled(ButtonLink).attrs({
 const ButtonToggle = styled(NavLink).attrs({ as: 'button' })``
 
 class Menu extends PureComponent {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     const { toggleDarkMode, isDarkMode } = this.props
 
