@@ -56,7 +56,7 @@ export const link = css`
 
 export const fontFaces = `
 	@font-face {
-		font-display: swap;
+		font-display: block;
 		font-family: "Montserrat";
 		font-weight: bold;
 		src: url(${woffMontserratBold}),
@@ -64,7 +64,7 @@ export const fontFaces = `
 	}
 
 	@font-face {
-		font-display: swap;
+		font-display: block;
 		font-family: "Gravity";
 		font-weight: normal;
 		src: url(${woffGravityRegular}),
@@ -72,7 +72,7 @@ export const fontFaces = `
 	}
 
 	@font-face {
-		font-display: swap;
+		font-display: block;
 		font-family: "Gravity";
 		font-weight: bold;
 		src: url(${woffGravityBold}),
@@ -80,7 +80,7 @@ export const fontFaces = `
 	}
 
 	@font-face {
-		font-display: swap;
+		font-display: block;
 		font-family: "Barlow";
 		font-weight: 600;
 		src: url(${woffBarlowSemibold}),
@@ -90,7 +90,7 @@ export const fontFaces = `
 	}
 
 	@font-face {
-		font-display: swap;
+		font-display: block;
 		font-family: "Inconsolata";
 		font-weight: normal;
 		src: url(${woffInconsolataRegular}),
