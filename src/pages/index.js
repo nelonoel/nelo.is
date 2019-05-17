@@ -16,7 +16,7 @@ class Home extends PureComponent {
 		const { history, location } = this.props
     const landingCover = get(
       this,
-      'props.data.landingCover.childImageSharp.resolutions.src'
+      'props.data.landingCover.childImageSharp.fixed.src'
     )
 
     return (
@@ -39,8 +39,8 @@ export const pageQuery = graphql`
   query HomeQuery {
     landingCover: file(relativePath: { eq: "img/landing-cover.jpg" }) {
       childImageSharp {
-        resolutions {
-          ...GatsbyImageSharpResolutions_withWebp
+        fixed {
+          ...GatsbyImageSharpFixed_withWebp
         }
       }
     }

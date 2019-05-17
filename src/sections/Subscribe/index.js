@@ -14,16 +14,16 @@ import TextField from '../../components/TextField'
 
 const Container = styled.div`
   background: ${themeGet('colors.light.1')};
-  background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.025' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.01' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
   border-bottom: ${themeGet('colors.dark.0')} solid 1px;
   padding: 2em 0 2.25em;
   position: relative;
 `
 
-const Label = styled(Subheading)`
+const Label = styled(Subheading).attrs({ as: 'label', color: 'contrast.4' })`
   display: flex;
   margin: 0.125em 0;
-`.withComponent('label')
+`
 
 const Input = styled(TextField)`
   background: ${themeGet('colors.dark.0')};

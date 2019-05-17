@@ -189,10 +189,9 @@ class Card extends PureComponent {
       <Item slug={slug} half={half}>
         {cover ? (
           <Cover
-            sizes={cover}
+            fluid={cover}
             alt={title}
             title={title}
-            outerWrapperClassName="cover"
           />
         ) : (
           <Placeholder />

@@ -74,14 +74,14 @@ export default class Screen extends PureComponent {
         <Parallax speed={10}>
           <Box display={['none', 'none', 'block']}>
             <Img
-              sizes={screens.desktop}
+              fluid={screens.desktop}
               alt="Desktop Screenshot"
               title="Desktop Screenshot"
             />
           </Box>
           <Box display={['block', 'block', 'none']}>
             <Img
-              sizes={screens.mobile}
+              fluid={screens.mobile}
               alt="Mobile Screenshot"
               title="Mobile Screenshot"
             />

@@ -33,7 +33,7 @@ class BlogIndex extends React.Component {
 								<Card
 									key={node.id}
 									slug={node.fields.slug}
-									cover={get(node, 'frontmatter.cover.childImageSharp.sizes')}
+									cover={get(node, 'frontmatter.cover.childImageSharp.fluid')}
 									title={get(node, 'frontmatter.title') || node.fields.slug}
 									subtitle={get(node, 'frontmatter.subtitle')}
 									category={get(node, 'frontmatter.category')}
@@ -68,8 +68,8 @@ export const pageQuery = graphql`
             subtitle
             cover {
               childImageSharp {
-                sizes(traceSVG: { background: "#ced9e0", color: "#738694" }) {
-                  ...GatsbyImageSharpSizes_withWebp_tracedSVG
+                fluid(traceSVG: { background: "#ced9e0", color: "#738694" }) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
                 }
               }
             }

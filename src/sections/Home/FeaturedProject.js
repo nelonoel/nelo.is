@@ -16,9 +16,9 @@ class FeaturedProject extends PureComponent {
     const screens = {
       desktop: get(
         this,
-        'props.data.featuredDesktopScreen.childImageSharp.sizes'
+        'props.data.featuredDesktopScreen.childImageSharp.fluid'
       ),
-      mobile: get(this, 'props.data.featuredMobileScreen.childImageSharp.sizes')
+      mobile: get(this, 'props.data.featuredMobileScreen.childImageSharp.fluid')
     }
 
     return (
@@ -106,8 +106,8 @@ export default () => (
 				relativePath: { eq: "img/featured/desktop.png" }
 			) {
 				childImageSharp {
-					sizes {
-						...GatsbyImageSharpSizes_withWebp
+					fluid {
+						...GatsbyImageSharpFluid_withWebp
 					}
 				}
 			}
@@ -115,8 +115,8 @@ export default () => (
 				relativePath: { eq: "img/featured/mobile.png" }
 			) {
 				childImageSharp {
-					sizes {
-						...GatsbyImageSharpSizes_withWebp
+					fluid {
+						...GatsbyImageSharpFluid_withWebp
 					}
 				}
 			}

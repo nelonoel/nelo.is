@@ -106,7 +106,7 @@ export const Description = styled(Subtitle).attrs(() => ({ as: 'p' }))`
 	width: 100%;
 `
 
-export const Meta = styled(Subtitle)`
+export const Meta = styled(Subtitle).attrs({ as: 'div' })`
   color: ${themeGet('colors.contrast.2')};
   display: flex;
   font-size: 0.75em;
@@ -136,7 +136,7 @@ export const Meta = styled(Subtitle)`
     height: 1em;
     margin: 0 0.5em -0.125em 0;
   }
-`.withComponent('div')
+`
 
 class Banner extends PureComponent {
   render() {
@@ -146,8 +146,7 @@ class Banner extends PureComponent {
       <Container>
         {cover && (
           <Cover
-            sizes={cover}
-            outerWrapperClassName="cover"
+            fluid={cover}
             alt="Cover Image"
             title="Cover Image"
           />
