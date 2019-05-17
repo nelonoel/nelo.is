@@ -25,6 +25,8 @@ const Container = styled.section`
     overflow-x: auto;
     padding-bottom: 3rem;
     padding-top: 1.5rem;
+		scroll-snap-type: x mandatory;
+		scroll-padding: 0 1.5rem;
 
     &::-webkit-scrollbar {
       display: none;
@@ -32,6 +34,7 @@ const Container = styled.section`
 
     & > a {
       min-width: 16.5em;
+			scroll-snap-align: start;
     }
   }
 `
