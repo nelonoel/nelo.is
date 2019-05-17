@@ -1,61 +1,56 @@
-const _ = require('lodash')
-const Promise = require('bluebird')
-const path = require('path')
-const { createFilePath } = require('gatsby-source-filesystem')
+const path = require("path")
+const { createFilePath } = require("gatsby-source-filesystem")
 
 exports.createPages = ({ graphql, actions }) => {
-	const { createPage } = actions
-
-	return new Promise((resolve, reject) => {
-		const post = path.resolve('./src/templates/post.js')
-		resolve(
-			graphql(
-				`
-          {
-            allMarkdownRemark(
-							limit: 1000
-							filter: { frontmatter: { draft: { ne: true } } }
-						) {
-              edges {
-                node {
-                  fields {
-                    slug
-                  }
-                }
+  const { createPage } = actions
+  const template = path.resolve("./src/templates/post.js")
+  return graphql(
+    `
+      {
+        allMarkdownRemark(
+          limit: 1000
+          filter: { frontmatter: { draft: { ne: true } } }
+        ) {
+          edges {
+            node {
+              fields {
+                slug
               }
             }
           }
-        `
-			).then(result => {
-				if (result.errors) {
-					console.log(result.errors)
-					reject(result.errors)
-				}
+        }
+      }
+    `
+  ).then(result => {
+    if (result.errors) {
+      throw result.errors
+    }
 
-				// Create pages
-				_.each(result.data.allMarkdownRemark.edges, edge => {
-					createPage({
-						path: edge.node.fields.slug,
-						component: post,
-						context: {
-							slug: edge.node.fields.slug,
-						},
-					})
-				})
-			})
-		)
-	})
+    const posts = result.data.allMarkdownRemark.edges
+
+    posts.forEach(post => {
+      createPage({
+        path: post.node.fields.slug,
+        component: template,
+        context: {
+          slug: post.node.fields.slug,
+        },
+      })
+    })
+
+    return null
+  })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-	const { createNodeField } = actions
+  const { createNodeField } = actions
 
-	if (node.internal.type === `MarkdownRemark`) {
-		const value = createFilePath({ node, getNode })
-		createNodeField({
-			name: `slug`,
-			node,
-			value,
-		})
-	}
+  if (node.internal.type === `MarkdownRemark`) {
+    const value = createFilePath({ node, getNode })
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    })
+  }
 }
