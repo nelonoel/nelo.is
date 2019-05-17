@@ -51,7 +51,7 @@ This is a sample paragraph. [Lorem](#) ipsum dolor sit amet, consectetur adipisi
 
 #### Generic Code Block
 
-```
+```bash
 $ vagrant up
 ```
 
@@ -102,7 +102,7 @@ Insert `---` wrapped in new lines.
 
 To add a cover image, add the following on the entry's YAML Frontmatter.
 
-```
+```yml
 image:
   feature: '/blog/images/2012/02/06/technori-pitch/37610099-pitch.jpg'
 ```
