@@ -1,6 +1,7 @@
 const _ = require('lodash')
 const Promise = require('bluebird')
 const path = require('path')
+const ChildProcess = require('child_process');
 const { createFilePath } = require('gatsby-source-filesystem')
 
 exports.createPages = ({ graphql, actions }) => {
@@ -58,4 +59,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 			value,
 		})
 	}
+}
+
+exports.onPostBuild = () => {
+  ChildProcess.execSync("ps aux | grep jest | grep -v grep | awk '{print $2}' | xargs kill");
 }
