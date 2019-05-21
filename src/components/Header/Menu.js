@@ -1,8 +1,9 @@
-import React, { PureComponent } from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { display, space, themeGet } from 'styled-system'
 import { Home, Folder, Book, Mail, Sun, Moon } from 'react-feather'
 
+import { ThemeContext } from '../Theme'
 import { ButtonLink } from '../Button'
 
 const Container = styled.nav`
@@ -53,52 +54,51 @@ const NavLink = styled(ButtonLink).attrs({
 
 const ButtonToggle = styled(NavLink).attrs({ as: 'button' })``
 
-class Menu extends PureComponent {
-  render() {
-    const { toggleDarkMode, isDarkMode } = this.props
+const Menu = () => {
+	const { theme, toggleTheme } = useContext(ThemeContext)
+	const opposite = theme === 'dark' ? 'Light' : 'Dark'
 
-    return (
-      <Container>
-        <Navigation>
-          <NavItem display={['list-item', 'list-item', 'none']}>
-            <NavLink to="/">
-              <Home />
-              Home
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to="/making">
-              <Folder />
-              Projects
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to="/writing">
-              <Book />
-              Journal
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to="/at">
-              <Mail />
-              Contact
-            </NavLink>
-          </NavItem>
-          <NavItem display={['none', 'none', 'list-item']} mr="-1.4em">
-            <ButtonToggle onClick={toggleDarkMode} icon px="1.4em">
-              {isDarkMode ? <Sun /> : <Moon />}
-            </ButtonToggle>
-          </NavItem>
-          <NavItem display={['list-item', 'list-item', 'none']}>
-            <ButtonToggle onClick={toggleDarkMode}>
-              {isDarkMode ? <Sun /> : <Moon />}
-              {isDarkMode ? 'Light' : 'Dark'}
-            </ButtonToggle>
-          </NavItem>
-        </Navigation>
-      </Container>
-    )
-  }
+	return (
+		<Container>
+			<Navigation>
+				<NavItem display={['list-item', 'list-item', 'none']}>
+					<NavLink to="/">
+						<Home />
+						Home
+					</NavLink>
+				</NavItem>
+				<NavItem>
+					<NavLink to="/making">
+						<Folder />
+						Projects
+					</NavLink>
+				</NavItem>
+				<NavItem>
+					<NavLink to="/writing">
+						<Book />
+						Journal
+					</NavLink>
+				</NavItem>
+				<NavItem>
+					<NavLink to="/at">
+						<Mail />
+						Contact
+					</NavLink>
+				</NavItem>
+				<NavItem display={['none', 'none', 'list-item']} mr="-1.4em">
+					<ButtonToggle onClick={() => toggleTheme(opposite.toLowerCase())} icon px="1.4em">
+						{theme === 'dark' ? <Sun /> : <Moon />}
+					</ButtonToggle>
+				</NavItem>
+				<NavItem display={['list-item', 'list-item', 'none']}>
+					<ButtonToggle onClick={() => toggleTheme(opposite.toLowerCase())}>
+						{theme === 'dark' ? <Sun /> : <Moon />}
+						{opposite}
+					</ButtonToggle>
+				</NavItem>
+			</Navigation>
+		</Container>
+	)
 }
 
 export default Menu

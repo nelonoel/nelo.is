@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { themeGet } from 'styled-system'
 import Headroom from 'react-headroom'
@@ -59,21 +59,15 @@ const HeaderContainer = styled(Headroom)`
   }
 `
 
-class Header extends PureComponent {
-  render() {
-    const { toggleDarkMode, isDarkMode } = this.props
-
-    return (
-      <HeaderContainer>
-        <HeaderWrapper>
-          <Box display={['none', 'none', 'inline-block']}>
-            <Logo />
-          </Box>
-          <Menu toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
-        </HeaderWrapper>
-      </HeaderContainer>
-    )
-  }
-}
+const Header = props => (
+	<HeaderContainer>
+		<HeaderWrapper>
+			<Box display={['none', 'none', 'inline-block']}>
+				<Logo />
+			</Box>
+			<Menu />
+		</HeaderWrapper>
+	</HeaderContainer>
+)
 
 export default Header

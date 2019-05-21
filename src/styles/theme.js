@@ -97,7 +97,7 @@ const theme = {
   wrapper
 }
 
-export const light = assign(
+const light = assign(
   {
     name: 'light',
     colors: lightColors
@@ -105,10 +105,15 @@ export const light = assign(
   theme
 )
 
-export const dark = assign(
+const dark = assign(
   {
     name: 'dark',
     colors: darkColors
   },
   theme
 )
+
+export default {
+	light,
+	dark
+}
