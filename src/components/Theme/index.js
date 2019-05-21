@@ -11,21 +11,20 @@ export const ThemeContext = createContext()
 
 const Theme = props => {
 	const mql = global.matchMedia ? global.matchMedia('(prefers-color-scheme: dark)') : {}
-	const [theme, setTheme] = useState(store.get('theme') || mql.matches ? 'dark' : 'light')
-
-	useEventListener(
-		'change',
-		({ matches }) => setTheme(matches ? 'dark' : 'light'), {
-			addEventListener: (_, handler) => mql.addListener && mql.addListener(handler),
-			removeEventListener: (_, handler) => mql.removeListener && mql.removeListener(handler)
-		}
-	)
-
-	const { children } = props
+	const [theme, setTheme] = useState(store.get('theme') || 'light')
 	const toggleTheme = name => {
 		store.set('theme', name)
 		setTheme(name)
 	}
+	const { children } = props
+
+	useEventListener(
+		'change',
+		({ matches }) => toggleTheme(matches ? 'dark' : 'light'), {
+			addEventListener: (_, handler) => mql.addListener && mql.addListener(handler),
+			removeEventListener: (_, handler) => mql.removeListener && mql.removeListener(handler)
+		}
+	)
 
 	return (
 		<ThemeContext.Provider value={{theme, toggleTheme}}>
