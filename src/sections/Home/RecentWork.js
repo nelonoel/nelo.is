@@ -123,6 +123,7 @@ export default () => (
 			) {
 				edges {
 					node {
+						id
 						fields {
 							slug
 						}
