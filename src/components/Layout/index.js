@@ -36,6 +36,10 @@ const Layout = props => {
     <Fragment>
       <Helmet>
         <meta name="theme-color" content={theme.colors.base} />
+				<meta name="theme-color" content={theme.colors.base} />
+				<meta name="msapplication-navbutton-color" content={theme.colors.base} />
+				<meta name="apple-mobile-web-app-capable" content="yes" />
+				<meta name="apple-mobile-web-app-status-bar-style" content={theme.colors.base} />
         <meta name="author" content={`${author}, ${email}`} />
         <meta name="keywords" content={keywords.join(", ")} />
         <meta name="twitter:card" content="summary" />
