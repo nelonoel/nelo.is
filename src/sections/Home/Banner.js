@@ -138,6 +138,7 @@ const Copy = styled.div`
 export default class Banner extends PureComponent {
   componentDidMount() {
     if (
+			typeof window !== 'undefined' &&
       this.video &&
       window.getComputedStyle(this.video, null).display !== 'none'
     ) {
