@@ -1,6 +1,6 @@
 import { darken } from 'polished'
 import styled from 'styled-components'
-import { themeGet } from 'styled-system'
+import themeGet from '@styled-system/theme-get'
 
 const TextField = styled.input`
   background: ${themeGet('colors.dark.1')};

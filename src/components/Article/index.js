@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { themeGet } from 'styled-system'
+import themeGet from '@styled-system/theme-get'
 import { darken, lighten } from 'polished'
 import { monospace, subheading, link } from '../../styles/typography'
 import { fullWidth } from '../../styles/mixins'

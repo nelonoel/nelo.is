@@ -1,5 +1,5 @@
 import { css } from 'styled-components'
-import { themeGet } from 'styled-system'
+import themeGet from '@styled-system/theme-get'
 
 import woffMontserratBold from '../assets/font/montserrat/montserrat-bold-webfont.woff'
 import woff2MontserratBold from '../assets/font/montserrat/montserrat-bold-webfont.woff2'

@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { space, textAlign, themeGet } from 'styled-system'
+import { space, textAlign } from 'styled-system'
+import themeGet from '@styled-system/theme-get'
 
 const Wrapper = styled.div`
   box-sizing: border-box;

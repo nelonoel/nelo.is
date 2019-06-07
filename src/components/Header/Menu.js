@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-import { display, space, themeGet } from 'styled-system'
+import { display, space } from 'styled-system'
+import themeGet from '@styled-system/theme-get'
 import { Home, Folder, Book, Mail, Sun, Moon } from 'react-feather'
 
 import { ThemeContext } from '../Theme'

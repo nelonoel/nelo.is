@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
-import { themeGet } from 'styled-system'
+import themeGet from '@styled-system/theme-get'
 import { Folder, Mail } from 'react-feather'
 
 import { Container as BannerContainer } from '../../components/Banner'

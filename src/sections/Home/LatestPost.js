@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import { rgba } from 'polished'
-import { themeGet } from 'styled-system'
+import themeGet from '@styled-system/theme-get'
 import get from 'lodash/get'
 import { ArrowRight } from 'react-feather'
 

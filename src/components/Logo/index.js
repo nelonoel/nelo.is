@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import { Link } from 'gatsby'
 import styled, { keyframes } from 'styled-components'
-import { themeGet } from 'styled-system'
+import themeGet from '@styled-system/theme-get'
 import { logo } from '../../styles/typography'
 
 const bounce = keyframes`
