@@ -1,21 +1,21 @@
-import { css } from 'styled-components'
-import themeGet from '@styled-system/theme-get'
+import { css } from "styled-components"
+import themeGet from "@styled-system/theme-get"
 
-import woffMontserratBold from '../assets/font/montserrat/montserrat-bold-webfont.woff'
-import woff2MontserratBold from '../assets/font/montserrat/montserrat-bold-webfont.woff2'
+import woffMontserratBold from "../assets/font/montserrat/montserrat-bold-webfont.woff"
+import woff2MontserratBold from "../assets/font/montserrat/montserrat-bold-webfont.woff2"
 
-import woffGravityRegular from '../assets/font/gravity/gravity-regular-webfont.woff'
-import woff2GravityRegular from '../assets/font/gravity/gravity-regular-webfont.woff2'
+import woffGravityRegular from "../assets/font/gravity/gravity-regular-webfont.woff"
+import woff2GravityRegular from "../assets/font/gravity/gravity-regular-webfont.woff2"
 
-import woffGravityBold from '../assets/font/gravity/gravity-bold-webfont.woff'
-import woff2GravityBold from '../assets/font/gravity/gravity-bold-webfont.woff2'
+import woffGravityBold from "../assets/font/gravity/gravity-bold-webfont.woff"
+import woff2GravityBold from "../assets/font/gravity/gravity-bold-webfont.woff2"
 
-import ttfBarlowSemibold from '../assets/font/barlow/barlow-semibold-webfont.ttf'
-import woffBarlowSemibold from '../assets/font/barlow/barlow-semibold-webfont.woff'
-import woff2BarlowSemibold from '../assets/font/barlow/barlow-semibold-webfont.woff2'
+import ttfBarlowSemibold from "../assets/font/barlow/barlow-semibold-webfont.ttf"
+import woffBarlowSemibold from "../assets/font/barlow/barlow-semibold-webfont.woff"
+import woff2BarlowSemibold from "../assets/font/barlow/barlow-semibold-webfont.woff2"
 
-import woffInconsolataRegular from '../assets/font/inconsolata/inconsolata-regular-webfont.woff'
-import woff2InconsolataRegular from '../assets/font/inconsolata/inconsolata-regular-webfont.woff2'
+import woffInconsolataRegular from "../assets/font/inconsolata/inconsolata-regular-webfont.woff"
+import woff2InconsolataRegular from "../assets/font/inconsolata/inconsolata-regular-webfont.woff2"
 
 export const logo = `
 	font-family: "Montserrat", sans-serif;
@@ -39,19 +39,19 @@ export const monospace = `
 `
 
 export const link = css`
-  border-bottom: ${themeGet('colors.contrast.0')} solid 2px;
-  color: inherit;
-  text-decoration: none;
+	border-bottom: ${themeGet("colors.contrast.0")} solid 2px;
+	color: inherit;
+	text-decoration: none;
 
-  &:hover,
-  &.focus-visible {
-    border-bottom-color: ${themeGet('colors.primary')};
-    transition: border-color 0.1s ease;
-  }
+	&:hover,
+	&.focus-visible {
+		border-bottom-color: ${themeGet("colors.primary")};
+		transition: border-color 0.1s ease;
+	}
 
-  &:active {
-    border-bottom-color: ${themeGet('colors.dark.2')};
-  }
+	&:active {
+		border-bottom-color: ${themeGet("colors.dark.2")};
+	}
 `
 
 export const fontFaces = `
