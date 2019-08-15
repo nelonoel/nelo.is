@@ -1,0 +1,66 @@
+Aaron Noel De Leon
+UI Engineer
+
+CONTACT INFO
+e-mail: here@nelo.is
+mobile: +63 916 837 5550
+website: https://nelo.is
+github: https://github.com/nelonoel
+
+TECH STACK
+React, React-Native, CSS-in-JS, styled-system, Electron, GatsbyJS, HTML, CSS, Javascript, a11y, i18n, Redux, Node, GraphQL, Sketch, InVision
+
+SUMMARY
+I'm an experienced software developer focusing on UI Engineering and Design Systems. I spent most of my career as a consultant for clients around the world; crafting delightful apps and websites using modern web technologies.
+
+WORK EXPERIENCE
+
+Intent - Maker
+Mar 2019 → Present
+
+Started Intent (https://addintent.com) – a suite of tools that help users be more intentional with their digital life.
+↳ Crafted a custom, gesture-based Android app launcher using react-native.
+↳ Created browser extensions: Browser which mutes distracting website features, and Timer which provides insights and limits to time spent online.
+↳ Developed the marketing website using GatsbyJS, ReactJS, styled-components, styled-system, and GraphQL.
+
+Karma – UI Engineer
+Jul 2018 → Mar 2019
+
+Crafted Karma (https://karma.wiki) – a web app for sending letters of gratitude and Letter (https://letter.wiki) – a platform for long-form conversations.
+↳ Designed and documented the UI using Sketch, InVision, and StyleGuidist.
+↳ Developed the app using ReactJS, styled-system, and styled-components.
+
+X-Team – Software Engineer
+Jun 2016 - Jun 2018
+
+Developed apps with X-Team (https://x-team.com) – a remote-first consulting agency.
+↳ Made the applicant review process at least 8x more efficient by automating the company's initial vetting process.
+↳ Modernized TokenHub, an Initial Coin Offering (ICO) platform, from a jQuery-based codebase to ReactJS, Redux, and Immutable. Pushed critical fixes to Authentication, Investment, and Dashboard pages.
+↳ Developed Capture (https://bugwolf.com/capture) – a screen casting app that integrates with storage and issue-tracking services. Added automated build and update, audio recording, multi-screen support & cursor tracking using Electron, ReactJS, and RecordRTC.
+
+Phaxio – Front-end Developer & Designer
+Mar 2016 → Feb 2018
+
+Crafted the branding, marketing, documentation, and console app of Phaxio (https://phaxio.com) – an easy-to-use fax API for developers.
+↳ Contributed 4x increase in page views by observing SEO best practices.
+↳ Developed the marketing and documentation website using Jekyll, SCSS, & JS.
+↳ Redesigned the Ruby-based console's front-end using HAML, SCSS, & JS.
+
+Vyllage – Front-end Developer & Designer
+Feb 2015 → Feb 2016
+
+Designed and developed Vyllage (http://vyllage.com) – a collaborative resumé and job referral network for universities.
+↳ Designed prototypes and high-fidelity mockups using Sketch and InVision.
+↳ Lead the front-end implementation using ReactJS, SASS, Webpack, & Reflux.
+↳ Wrote unit tests for components using Jasmine.
+
+Voyager Innovations – Front-end Developer
+
+Contributed to the web apps made by Voyager (https://voyagerinnovation.com) – the digital arm of the top telecommunications company in the Philippines.
+↳ Contributed fixes and new features to SmartNet – a social network aggregating feed from users’ social accounts. Used by thousands of users.
+↳ Crafted Voyager Developer Portal – public APIs for Voyager products.
+↳ Designed Smart Places – a mobile app for location-based reminders and actions. Won Here Open Location Hackathon 2014.
+
+EDUCATION
+Bachelor of Science in Computer Science
+GPA: A+ (Summa Cum Laude)
