@@ -36,7 +36,7 @@ Jun 2016 - Jun 2018
 Developed apps with X-Team (https://x-team.com) – a remote-first consulting agency.
 ↳ Made the applicant review process at least 8x more efficient by automating the company's initial vetting process.
 ↳ Modernized TokenHub, an Initial Coin Offering (ICO) platform, from a jQuery-based codebase to ReactJS, Redux, and Immutable. Pushed critical fixes to Authentication, Investment, and Dashboard pages.
-↳ Developed Capture (https://bugwolf.com/capture) – a screen casting app that integrates with storage and issue-tracking services. Added automated build and update, audio recording, multi-screen support & cursor tracking using Electron, ReactJS, and RecordRTC.
+↳ Developed Capture (https://bugwolf.com/capture) – a screencasting app that integrates with storage and issue-tracking services. Added automated build and update, audio recording, multi-screen support & cursor tracking using Electron, ReactJS, and RecordRTC.
 
 Phaxio – Front-end Developer & Designer
 Mar 2016 → Feb 2018
@@ -55,6 +55,7 @@ Designed and developed Vyllage (http://vyllage.com) – a collaborative resumé 
 ↳ Wrote unit tests for components using Jasmine.
 
 Voyager Innovations – Front-end Developer
+Jun 2014 → Feb 2015
 
 Contributed to the web apps made by Voyager (https://voyagerinnovation.com) – the digital arm of the top telecommunications company in the Philippines.
 ↳ Contributed fixes and new features to SmartNet – a social network aggregating feed from users’ social accounts. Used by thousands of users.
