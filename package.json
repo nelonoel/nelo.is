@@ -47,7 +47,7 @@
     "react-rellax": "^1.0.3",
     "react-twemoji": "^0.1.0",
     "rellax": "^1.9.1",
-    "sharp": "^0.22.1",
+    "sharp": "^0.30.5",
     "store": "^2.0.12",
     "styled-components": "^4.2.0",
     "styled-system": "^5.0.5",
